@@ -3,3 +3,5 @@
 function global_shop:logic/shop/init
 
 function global_shop:logic/scheduler/init
+
+function global_shop:logic/menu_preset/init

@@ -5,7 +5,7 @@
 #### 4.2.1.1 类型和常量定义
 ```c++
 namespace Mini_Ye {
-namespace global_shop {
+namespace glbs_common{
 // 数据类型定义
 
 
@@ -14,7 +14,10 @@ using ErrCode = int;
 
 constexpr ErrCode SUCCESS = 0; // 成功
 
-constexpr ErrCode ? = -1; // TODO
+constexpr ErrCode INVALID_ENV = -1; // 错误的执行环境（执行实体、执行位置、执行维度等不正确）
+constexpr ErrCode NO_PERMISSION = -2; // 无权限
+
+constexpr ErrCode OTHER_ERROR = -10000; // 其他错误
 
 // 常量定义
 constexpr int MAX_CONNECT_PLAYERS = 8; // 允许同时使用商店的最大玩家数量

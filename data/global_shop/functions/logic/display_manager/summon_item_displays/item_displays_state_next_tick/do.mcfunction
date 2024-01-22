@@ -1,0 +1,2 @@
+function global_shop:logic/item_display_entity/set_state_normal
+tag @s remove glbs_to_set_state_normal

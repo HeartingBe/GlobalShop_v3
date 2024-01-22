@@ -59,6 +59,7 @@ TODO
 
 - **数据包名：** GlobalShop
 - **命名空间：** global_shop
+- **标签前缀：** glbs_
 - **记分板前缀：** glbs_
 - **实体共同标签：** global_shop
 
