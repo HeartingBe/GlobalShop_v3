@@ -15,12 +15,31 @@
       # 权限
       scoreboard players set PERMISSION_PLAYER glbs_common 0
       scoreboard players set PERMISSION_ADMIN glbs_common 1
+      # Menu 实体的模式 Mode
+      scoreboard players set MODE_MAIN glbs_common 0
+      scoreboard players set MODE_PLAYER_SHOP_MAIN glbs_common 1
+      scoreboard players set MODE_PLAYER_SHOP_VIEW_ALL glbs_common 2
+      scoreboard players set MODE_PLAYER_SHOP_VIEW_MY_BOUGHT glbs_common 3
+      scoreboard players set MODE_PLAYER_SHOP_VIEW_SOLD glbs_common 4
+      scoreboard players set MODE_PLAYER_SHOP_VIEW_SELLING glbs_common 5
+      scoreboard players set MODE_SELL_SHOP_VIEW_ALL glbs_common 6
+      scoreboard players set MODE_RECYCLE_SHOP_VIEW_ALL glbs_common 7
+      scoreboard players set MODE_MONEY_ITEM_EXCHANGE glbs_common 8
+      scoreboard players set MODE_EDIT glbs_common 9
+      scoreboard players set MODE_EDIT_VIEW_SELL_SHOP glbs_common 10
+      scoreboard players set MODE_EDIT_VIEW_RECYCLE_SHOP glbs_common 11
 
 # open_global_shop 玩家触发记分板
 scoreboard objectives add open_global_shop trigger
 
 # glbs_permission 玩家权限记分板
 scoreboard objectives add glbs_permission dummy
+
+# glbs_mode 记录 Menu 实体 mode_ 记分板
+scoreboard objectives add glbs_mode dummy
+
+# glbs_last_action_target 记录 Menu 实体 lastActionTarget_ 记分板
+scoreboard objectives add glbs_last_action_target dummy
 
 # glbs_err_code 错误码记分板
 scoreboard objectives add glbs_err_code dummy

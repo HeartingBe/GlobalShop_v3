@@ -14,3 +14,4 @@
 
 
 # 执行不同模式的处理逻辑
+function global_shop:logic/menu/polymorphic_mode

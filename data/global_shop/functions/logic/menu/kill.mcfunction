@@ -11,6 +11,7 @@ execute on passengers if entity @s[type=minecraft:interaction] run function glob
 execute on passengers run function global_shop:logic/menu/kill/player
 
 # 清除数据
+scoreboard players reset @s glbs_mode
 #TODO
 
 # 清除自身

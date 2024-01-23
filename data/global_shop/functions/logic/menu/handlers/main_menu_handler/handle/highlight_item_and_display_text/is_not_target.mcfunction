@@ -1,0 +1,1 @@
+execute if entity @s[tag=glbs_item_highlight] run function global_shop:logic/item_display_entity/set_state_normal

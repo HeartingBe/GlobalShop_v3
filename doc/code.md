@@ -5,7 +5,7 @@
 #### 4.2.1.1 类型和常量定义
 ```c++
 namespace Mini_Ye {
-namespace glbs_common{
+namespace global_shop {
 // 数据类型定义
 
 
