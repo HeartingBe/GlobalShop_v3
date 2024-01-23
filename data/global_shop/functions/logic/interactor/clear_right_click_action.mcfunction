@@ -1,0 +1,1 @@
+data remove entity @s interaction

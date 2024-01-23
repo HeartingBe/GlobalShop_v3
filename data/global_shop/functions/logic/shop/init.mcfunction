@@ -28,6 +28,12 @@
       scoreboard players set MODE_EDIT glbs_common 9
       scoreboard players set MODE_EDIT_VIEW_SELL_SHOP glbs_common 10
       scoreboard players set MODE_EDIT_VIEW_RECYCLE_SHOP glbs_common 11
+      # ACTION
+      scoreboard players set NO_ACTION_THIS_PLAYER glbs_common 0
+      scoreboard players set LEFT_CLICK glbs_common 1
+      scoreboard players set LEFT_CLICK_CONFIRM glbs_common 2
+      scoreboard players set RIGHT_CLICK glbs_common 3
+      
 
 # open_global_shop 玩家触发记分板
 scoreboard objectives add open_global_shop trigger
@@ -40,6 +46,9 @@ scoreboard objectives add glbs_mode dummy
 
 # glbs_last_action_target 记录 Menu 实体 lastActionTarget_ 记分板
 scoreboard objectives add glbs_last_action_target dummy
+
+# glbs_last_action 记录 Menu 实体 lastAction_ 记分板
+scoreboard objectives add glbs_last_action dummy
 
 # glbs_err_code 错误码记分板
 scoreboard objectives add glbs_err_code dummy
