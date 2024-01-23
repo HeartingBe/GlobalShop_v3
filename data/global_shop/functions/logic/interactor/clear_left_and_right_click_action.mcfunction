@@ -1,0 +1,2 @@
+function global_shop:logic/interactor/clear_left_click_action
+function global_shop:logic/interactor/clear_right_click_action
