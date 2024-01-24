@@ -36,5 +36,5 @@ execute rotated ~24 ~ positioned ^ ^ ^4 summon minecraft:item_display run functi
 execute rotated ~36 ~ positioned ^ ^ ^4 summon minecraft:item_display run function global_shop:ui/display_manager/summon_item_displays/23
 execute rotated ~48 ~ positioned ^ ^ ^4 summon minecraft:item_display run function global_shop:ui/display_manager/summon_item_displays/26
 
-# 下一个游戏刻将这些物品展示实体变为正常大小
-schedule function global_shop:ui/display_manager/summon_item_displays/item_displays_state_next_tick 1t replace
+# 隔 2 tick 将这些物品展示实体变为正常大小
+schedule function global_shop:ui/display_manager/summon_item_displays/item_displays_state_next_tick 2t replace

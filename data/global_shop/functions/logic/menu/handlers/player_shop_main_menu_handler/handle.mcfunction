@@ -1,14 +1,14 @@
-# @brief 主菜单逻辑
+# @brief 玩家商店主菜单逻辑
 # @executor Menu
 
 # 判断玩家右键
    # 获取右键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_back_action
       # 玩家右键时，需要：
-         # 直接通知玩家在主菜单右键无效
+         # 返回主菜单
          # 手动清除左键信息
          # 更新 lastAction_
-      execute if score temp glbs_common = RIGHT_CLICK glbs_common run return run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_back
+      execute if score temp glbs_common = RIGHT_CLICK glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_back
 
 # 判断玩家看向新的物品
    # 获取看向的控件序号

@@ -1,7 +1,7 @@
 # @brief 切换到玩家商店主界面
 # @executor Menu
 
-# 生成玩家商店主菜单
+# 切换到玩家商店主菜单
    # 取玩家商店主菜单数据
    data modify storage global_shop:common g_itemsToDisplay set from storage global_shop:menu_preset player_shop_main
    # 取角度差 temp
