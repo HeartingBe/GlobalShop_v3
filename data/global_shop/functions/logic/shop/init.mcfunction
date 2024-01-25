@@ -3,6 +3,8 @@
 # glbs_common 共用记分板，存储所有公共变量、常量等（已在 load.mcfunction 中创建）
    # 常量
       # 常数
+      scoreboard players set 3 glbs_common 3
+      scoreboard players set ITEM_NUM_PER_COLUMN glbs_common 3
       scoreboard players set 12 glbs_common 12
       # 约束相关
       scoreboard players set MAX_CONNECT_PLAYERS glbs_common 8
@@ -33,6 +35,21 @@
       scoreboard players set LEFT_CLICK glbs_common 1
       scoreboard players set LEFT_CLICK_CONFIRM glbs_common 2
       scoreboard players set RIGHT_CLICK glbs_common 3
+      # 控件 id
+      scoreboard players set CONTROL_NULL_ITEM glbs_common 0
+      scoreboard players set CONTROL_DATAPACK_INFO glbs_common 1
+      scoreboard players set CONTROL_ENTER_PLAYER_SHOP_MAIN glbs_common 2
+      scoreboard players set CONTROL_ENTER_EDIT glbs_common 3
+      scoreboard players set CONTROL_ENTER_SELL_SHOP glbs_common 4
+      scoreboard players set CONTROL_MONEY_ITEM_EXCHANGE glbs_common 5
+      scoreboard players set CONTROL_ENTER_RECYCLE_SHOP glbs_common 6
+      scoreboard players set CONTROL_SELL_ITEM glbs_common 7
+      scoreboard players set CONTROL_VIEW_PLAYER_SHOP glbs_common 8
+      scoreboard players set CONTROL_VIEW_MY_SELLING glbs_common 9
+      scoreboard players set CONTROL_VIEW_MONEY glbs_common 10
+      scoreboard players set CONTROL_VIEW_RETURN_ITEMS glbs_common 11
+      scoreboard players set CONTROL_VIEW_MY_BOUGHT glbs_common 12
+      scoreboard players set CONTROL_VIEW_MY_SOLD glbs_common 13
       
 
 # open_global_shop 玩家触发记分板
@@ -46,6 +63,9 @@ scoreboard objectives add glbs_mode dummy
 
 # glbs_last_action_target 记录 Menu 实体 lastActionTarget_ 记分板
 scoreboard objectives add glbs_last_action_target dummy
+
+# glbs_begin_index 记录 Menu 实体 beginIndex_ 记分板
+scoreboard objectives add glbs_begin_index dummy
 
 # glbs_last_action 记录 Menu 实体 lastAction_ 记分板
 scoreboard objectives add glbs_last_action dummy

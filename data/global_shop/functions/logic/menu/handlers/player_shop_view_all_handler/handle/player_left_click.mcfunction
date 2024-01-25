@@ -1,0 +1,8 @@
+# @executor Menu
+
+# 获取玩家看向的控件序号（就是 @s glbs_last_action_target）
+scoreboard players operation temp glbs_common = @s glbs_last_action_target
+   # 玩家点击菜单外的地方
+   execute if score temp glbs_common matches -1 run return 0
+      # log
+      execute on passengers if entity @s[type=minecraft:player] run title @s actionbar [{"score":{"objective":"glbs_common","name":"temp"}}]

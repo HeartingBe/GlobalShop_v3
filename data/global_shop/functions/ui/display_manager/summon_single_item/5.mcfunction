@@ -1,0 +1,1 @@
+execute rotated ~-36 ~ positioned ^ ^ ^4 summon minecraft:item_display run function global_shop:ui/display_manager/summon_single_item/summon/5

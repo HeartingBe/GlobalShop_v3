@@ -4,10 +4,7 @@
 # 判断玩家右键
    # 获取右键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_back_action
-      # 玩家右键时，需要：
-         # 返回主菜单
-         # 手动清除左键信息
-         # 更新 lastAction_
+      # 返回主菜单
       execute if score temp glbs_common = RIGHT_CLICK glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_back
 
 # 判断玩家看向新的物品
@@ -23,7 +20,5 @@
 # 判断玩家左键
    # 获取左键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_select_action
-   # 玩家左键时，需要：
-      # 根据控件序号执行相应操作（就是 @s glbs_last_action_target）
-      # 更新 lastAction_
-      execute if score temp glbs_common = LEFT_CLICK glbs_common run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click
+   # 根据控件序号执行相应操作（就是 @s glbs_last_action_target）
+   execute if score temp glbs_common = LEFT_CLICK glbs_common run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click

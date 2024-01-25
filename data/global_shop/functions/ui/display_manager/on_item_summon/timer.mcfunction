@@ -1,0 +1,1 @@
+execute as @e[type=minecraft:item_display,tag=glbs_to_set_state_normal] run function global_shop:ui/display_manager/on_item_summon/do
