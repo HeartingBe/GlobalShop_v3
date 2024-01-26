@@ -11,7 +11,7 @@
    # 展示物品的起始下标
    scoreboard players set @s glbs_begin_index 0
 # 取玩家商店物品数据
-function global_shop:logic/store_manager/get_player_shop_list_page
+function global_shop:storage/store_manager/get_player_shop_list_page
 # 取角度差 temp
 execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_angle_diff
 # 取 temp 最近的 12 的倍数

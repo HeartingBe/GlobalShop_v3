@@ -2,7 +2,7 @@ function global_shop:ui/display_manager/range_update_and_delete
 
 # 计算 begin
 scoreboard players operation begin glbs_common = orderDiff glbs_common
-execute if score orderDiff glbs_common matches 27.. run scoreboard players set begin glbs_common 26
+execute if score orderDiff glbs_common matches 28.. run scoreboard players set begin glbs_common 27
 # log
 #tellraw @a ["begin:",{"score":{"objective":"glbs_common","name":"begin"}}]
 

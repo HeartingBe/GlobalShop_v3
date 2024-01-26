@@ -16,7 +16,7 @@ scoreboard players set @s glbs_last_action_target -1
 scoreboard players operation @s glbs_last_action = NO_ACTION_THIS_PLAYER glbs_common
 
 # 取玩家商店物品数据
-function global_shop:logic/store_manager/get_player_shop_list_page
+function global_shop:storage/store_manager/get_player_shop_list_page
 
 # 物品展示实体的生成、更新和删除
    # 计算 orderDiff
@@ -46,5 +46,7 @@ function global_shop:logic/store_manager/get_player_shop_list_page
 
    scoreboard players operation begin glbs_common = end glbs_common
    scoreboard players set end glbs_common 27
+   # log
+   #tellraw @a ["begin: ",{"score":{"objective":"glbs_common","name":"begin"}},"         end: ",{"score":{"objective":"glbs_common","name":"end"}}]
    execute rotated as @s run function global_shop:ui/display_manager/range_summon
    function global_shop:ui/display_manager/on_item_summon

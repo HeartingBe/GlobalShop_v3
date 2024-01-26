@@ -64,12 +64,12 @@ private:
    {
       // 记 g_columnDiff 为 x
       // 当 x < 0 时，玩家向左旋转
-         // 序号位于 [0, min(26, 3 * -x)) 的物品需要生成
-         // 序号位于 [min(26, 3 * -x), 27 - max(0, 3 * -x)) 的物品需要更新
+         // 序号位于 [0, min(27, 3 * -x)) 的物品需要生成
+         // 序号位于 [min(27, 3 * -x), 27 - max(0, 3 * -x)) 的物品需要更新
          // 序号位于 [27 - max(0, 3 * -x), 27) 的物品需要删除
       // 当 x > 0 时，玩家向右旋转
-         // 序号位于 [0, min(26, 3 * x)) 的物品需要删除
-         // 序号位于 [min(26, 3 * x), 27 - max(0, 3 * x)) 的物品需要更新
+         // 序号位于 [0, min(27, 3 * x)) 的物品需要删除
+         // 序号位于 [min(27, 3 * x), 27 - max(0, 3 * x)) 的物品需要更新
          // 序号位于 [27 - max(0, 3 * x), 27) 的物品需要生成
 
       // 更新 Menu 状态...
@@ -84,7 +84,7 @@ private:
          // 否则等下面生成完，会有重复 order 的实体
          DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, orderDiff);
          
-         int begin = min(26, orderDiff);
+         int begin = min(27, orderDiff);
          execute rotated as @s run -> DisplayManager::RangeSummon(g_itemsToDisplay, 0, begin);// 上面旋转了，切记
          OnItemSummon();
       } else {

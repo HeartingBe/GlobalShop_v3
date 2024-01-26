@@ -7,4 +7,4 @@ data remove storage global_shop:common g_itemsToDisplay
 
 # for i in range [0, 27]
 scoreboard players set temp1 glbs_common 0
-function global_shop:logic/store_manager/get_player_shop_list_page/1
+function global_shop:storage/store_manager/get_player_shop_list_page/1
