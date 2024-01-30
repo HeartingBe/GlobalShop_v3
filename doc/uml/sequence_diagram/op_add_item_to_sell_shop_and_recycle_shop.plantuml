@@ -1,0 +1,30 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 管理员添加物品到出售商店/回收商店
+
+actor 管理员 as player
+participant "menu:Menu" as Menu
+participant StoreManager <<(C, #d884c3)>>
+
+activate Menu
+player -> Menu : 管理员左键被 menu 检测
+alt 选中“向出售商店/回收商店添加物品”控件
+   player <- Menu : 向管理员发送点击文本\n引导管理员上架物品
+end
+
+player -> Menu : 管理员触发记分板指定物品价格
+alt 价格是正数
+   alt 管理员主手有物品
+      Menu -> StoreManager : 将物品加入出售商店/回收商店记录表
+      activate StoreManager
+      Menu <-- StoreManager
+      deactivate StoreManager
+   else
+      player <- Menu : 通知管理员主手为空
+   end
+else
+   player <- Menu : 通知管理员提供的数字有误
+end
+
+@enduml

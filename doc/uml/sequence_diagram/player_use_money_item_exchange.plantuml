@@ -1,0 +1,47 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 玩家进行金钱物品兑换
+
+actor 玩家 as player
+participant "menu:Menu" as Menu
+participant ControlPreset <<(C, #d884c3)>>
+
+activate Menu
+player -> Menu : 玩家左键被 menu 检测
+alt 第一次左键该物品
+   Menu -> Menu : menu 更新自身状态
+   note right
+      玩家连续操作不应再进行确认
+   end note
+   activate Menu
+   deactivate Menu
+else 玩家确认操作
+   Menu -> ControlPreset : 获取金钱物品兑换信息
+   activate ControlPreset
+   Menu <-- ControlPreset
+   deactivate ControlPreset
+   alt 是金钱 -> 物品
+      alt 金钱足够
+         Menu -> Menu : 扣除玩家金钱
+         activate Menu
+         deactivate Menu
+         player <- Menu : ObtainItem()
+      else 金钱不足
+         Menu -> player : 通知玩家金钱不足
+      end
+   else 是物品 -> 金钱
+      alt 物品足够
+         Menu -> Menu : 扣除玩家对应数量的物品
+         activate Menu
+         deactivate Menu
+         Menu -> Menu : 金钱添加到玩家账户
+         activate Menu
+         deactivate Menu
+      else 物品不足
+         Menu -> player : 通知玩家物品不足
+      end
+   end
+end
+
+@enduml

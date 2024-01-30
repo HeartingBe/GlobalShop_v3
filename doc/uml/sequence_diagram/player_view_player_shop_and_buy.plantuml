@@ -1,0 +1,91 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 玩家浏览玩家商店和购买
+
+actor 玩家 as player
+participant "menu:Menu" as Menu
+participant StoreManager <<(C, #d884c3)>>
+participant DisplayManager <<(C, #d884c3)>>
+
+activate Menu
+
+player -> Menu : 玩家左键被 menu 检测
+Menu -> Menu : 获取该物品的 id
+activate Menu
+deactivate Menu
+Menu -> StoreManager : 用 id 换 index
+activate StoreManager
+Menu <-- StoreManager
+deactivate StoreManager
+Menu -> StoreManager : 通过 index 获取物品信息
+activate StoreManager
+Menu <-- StoreManager
+deactivate StoreManager
+alt 物品不存在
+   Menu -> Menu : menu 更新自身状态
+   activate Menu
+   deactivate Menu
+   Menu -> StoreManager : 重新获取整页物品信息
+   activate StoreManager
+   Menu <-- StoreManager
+   deactivate StoreManager
+   Menu -> DisplayManager : 生成物品展示实体
+   activate DisplayManager
+   Menu <-- DisplayManager
+   deactivate DisplayManager
+   player <- Menu : 通知玩家物品不存在
+else 物品存在
+   alt 第一次左键该物品
+      Menu -> Menu : menu 更新自身状态
+      activate Menu
+      deactivate Menu
+   else 玩家确认操作
+      alt 是其他玩家出售的物品
+         alt 钱足够
+            Menu -> StoreManager : 删除该物品
+            activate StoreManager
+            Menu <-- StoreManager
+            deactivate StoreManager
+            Menu -> Menu : 将买家的钱转到卖家账户上\n将该物品 id 从卖家出售 id 列表中删除\n更新卖家出售物品数量
+            activate Menu
+            deactivate Menu
+            Menu -> StoreManager : 写入买家历史购买
+            activate StoreManager
+            Menu <-- StoreManager
+            deactivate StoreManager
+            Menu -> StoreManager : 写入卖家历史出售
+            activate StoreManager
+            Menu <-- StoreManager
+            deactivate StoreManager
+            player <- Menu : ObtainItem()
+            Menu -> StoreManager : 重新获取整页物品信息
+            activate StoreManager
+            Menu <-- StoreManager
+            deactivate StoreManager
+            Menu -> DisplayManager : 生成物品展示实体
+            activate DisplayManager
+            Menu <-- DisplayManager
+            deactivate DisplayManager
+         else 钱不够
+            player <-- Menu : 通知玩家钱不够
+         end
+      else 是自己出售的物品
+         Menu -> StoreManager : 删除该物品
+         activate StoreManager
+         Menu <-- StoreManager
+         deactivate StoreManager
+         player <- Menu : ObtainItem()
+         Menu -> StoreManager : 重新获取整页物品信息
+         activate StoreManager
+         Menu <-- StoreManager
+         deactivate StoreManager
+         Menu -> DisplayManager : 生成物品展示实体
+         activate DisplayManager
+         Menu <-- DisplayManager
+         deactivate DisplayManager
+      end
+   end
+end
+
+@enduml

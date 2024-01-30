@@ -1,0 +1,79 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 玩家浏览自己正在出售的物品
+
+actor 玩家 as player
+participant "menu:Menu" as Menu
+participant StoreManager <<(C, #d884c3)>>
+participant DisplayManager <<(C, #d884c3)>>
+
+activate Menu
+
+== 浏览与下标列表更新 ==
+
+player -> Menu : 玩家转动视角被 menu 检测
+Menu -> Menu : menu 更新自身状态
+activate Menu
+deactivate Menu
+Menu -> StoreManager : 取出一整页物品
+activate StoreManager
+note right
+   此处应根据玩家出售 id 列表
+   从总出售物品表中逐个找出对应物品
+end note
+Menu <-- StoreManager
+deactivate StoreManager
+Menu -> DisplayManager : 生成物品展示实体
+activate DisplayManager
+Menu <-- DisplayManager
+deactivate DisplayManager
+
+== 取回 ==
+player -> Menu : 玩家左键被 menu 检测
+Menu -> Menu : 获取该物品的 index
+activate Menu
+deactivate Menu
+Menu -> StoreManager : 通过 index 获取该物品信息
+activate StoreManager
+Menu <-- StoreManager
+deactivate StoreManager
+alt 物品不存在
+   Menu -> Menu : menu 更新自身状态
+   activate Menu
+   deactivate Menu
+   Menu -> StoreManager : 重新获取一整页物品信息
+   activate StoreManager
+   Menu <-- StoreManager
+   deactivate StoreManager
+   Menu -> DisplayManager : 生成物品展示实体
+   activate DisplayManager
+   Menu <-- DisplayManager
+   deactivate DisplayManager
+   player <- Menu : 通知玩家物品不存在
+else 物品存在
+   alt 第一次左键该物品
+      Menu -> Menu : menu 更新自身状态
+      activate Menu
+      deactivate Menu
+   else 玩家确认操作
+      Menu -> StoreManager : 删除该物品
+      activate StoreManager
+      Menu <-- StoreManager
+      deactivate StoreManager
+      Menu -> Menu : 更新玩家回退物品数量
+      activate Menu
+      deactivate Menu
+      player <- Menu : ObtainItem()
+      Menu -> StoreManager : 重新获取一整页物品信息
+      activate StoreManager
+      Menu <-- StoreManager
+      deactivate StoreManager
+      Menu -> DisplayManager : 生成物品展示实体
+      activate DisplayManager
+      Menu <-- DisplayManager
+      deactivate DisplayManager
+   end
+end
+
+@enduml

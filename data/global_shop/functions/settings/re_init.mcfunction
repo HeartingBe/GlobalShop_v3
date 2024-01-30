@@ -1,0 +1,3 @@
+scoreboard players reset g_isInit glbs_common
+
+tellraw @s [" \n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 \u00a7a已允许重新初始化 \u00a7dGlobalShop\u00a7a, 请分别执行：\n     ",{"text":"禁用 GlobalShop","color":"red","underlined":true,"clickEvent":{"action":"run_command","value":"/datapack disable \"file/GlobalShop_v3\""}}," \u00a78\u00a7o(直接点击执行, 下同)\n     ",{"text":"启用 GlobalShop","color":"green","underlined":true,"clickEvent":{"action":"run_command","value":"/datapack enable \"file/GlobalShop_v3\""}}]

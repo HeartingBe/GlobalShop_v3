@@ -1,0 +1,42 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 返回和退出
+
+actor 玩家 as player
+participant "menu:Menu" as Menu
+participant MenuPreset <<(C, #d884c3)>>
+participant DisplayManager <<(C, #d884c3)>>
+
+== 返回上一级界面 ==
+
+activate Menu
+player -> Menu : 玩家右键被 menu 检测
+alt 在主菜单
+   Menu -> MenuPreset : 获取上一级菜单信息
+   activate MenuPreset
+   Menu <-- MenuPreset
+   deactivate MenuPreset
+   Menu -> Menu : menu 更新自身状态
+   activate Menu
+   deactivate Menu
+   Menu -> DisplayManager : 更新物品展示实体
+   activate DisplayManager
+   Menu <-- DisplayManager
+   deactivate DisplayManager
+else 在子菜单
+   Menu -> player : 通知玩家已经位于主界面
+end
+
+== 退出商店 ==
+
+player -> Menu : 下蹲等情况脱离 Menu\n或退出重进
+Menu -> Menu : 检查玩家状态
+   activate Menu
+   deactivate Menu
+alt 无 rider 玩家或退出重进
+   Menu -> Menu : <<destroy>>\nKill()
+   destroy Menu
+end
+
+@enduml

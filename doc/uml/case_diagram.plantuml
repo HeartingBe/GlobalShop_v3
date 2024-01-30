@@ -1,0 +1,98 @@
+@startuml case diagram
+!theme reddress-lightblue
+
+left to right direction
+
+actor 玩家 as player
+actor 管理员 as op
+
+rectangle shop {
+usecase 打开主菜单 as OpenMenu
+usecase 进入子界面 as EnterSubMenu
+   usecase 进入玩家商店主界面 as EnterPlayerShopMenu
+   usecase 进入玩家商店主界面 as EnterPlayerShopMenu
+      usecase 浏览玩家商店货架 as ViewPlayerShopShelves
+      usecase 查看自己正在出售的物品 as ViewMySellingItems
+      usecase 查看余额 as ViewBalance
+      usecase 查看自己的历史购买物品 as ViewMyBoughtItems
+      usecase 查看自己的历史出售物品 as ViewMySoldItems
+      usecase 查看退回的物品 as ViewReturnItems
+   usecase 浏览出售商店货架 as ViewSellShopShelves
+   usecase 浏览回收商店货架 as ViewRecycleShopShelves
+   usecase 进入金钱和物品互兑界面 as EnterMoneyItemExchangeMenu
+      usecase 金钱兑换物品 as MoneyToItem
+      usecase 物品兑换金钱 as ItemToMoney
+   usecase 进入编辑模式菜单 as EnterEditMenu
+      usecase 添加物品到出售商店 as AddItemsToSellShop
+      usecase 从出售商店删除物品 as RemoveItemsFromSellShop
+      usecase 添加物品到回收商店 as AddItemsToRecycleShop
+      usecase 从回收商店删除物品 as RemoveItemsFromRecycleShop
+      usecase 修改金钱和物品互兑 as EditMoneyItemExchange
+   usecase 快捷跳转 as Skip
+      usecase 跳到指定页面 as SkipToPage
+      usecase 查找某编号的物品 as FindItemById
+   usecase 返回上一级菜单 as Back
+   usecase 退出菜单 as Exit
+   usecase 购买物品 as BuyItem
+   usecase 出售物品 as SellItem
+usecase 查看数据包信息 as ViewDatapackInfo
+usecase 查看作者留言 as ViewAuthorComments
+
+usecase 输入数字 as InputNum
+
+note "返回上一级菜单和退出菜单\n\
+扩展自任意子菜单用例\n\
+即玩家随时可以返回或退出" as BackAndExitNote
+}
+
+:player: <|- :op:
+:player: -- (OpenMenu)
+:player: -- (Back)
+:player: -- (Exit)
+(Back) .. BackAndExitNote
+(Exit) .. BackAndExitNote
+
+(OpenMenu) <.. (EnterSubMenu) : <<Extend>>
+(OpenMenu) <.. (ViewDatapackInfo) : <<Extend>>
+(OpenMenu) <.. (ViewAuthorComments) : <<Extend>>
+
+(EnterSubMenu) <|-- (EnterPlayerShopMenu)
+(EnterSubMenu) <|-- (ViewSellShopShelves)
+(EnterSubMenu) <|-- (ViewRecycleShopShelves)
+(EnterSubMenu) <|-- (EnterMoneyItemExchangeMenu)
+(EnterSubMenu) <|-- (EnterEditMenu)
+:op: -- (EnterEditMenu)
+
+(EnterEditMenu) <.. (AddItemsToSellShop) : <<Extend>>
+(EnterEditMenu) <.. (RemoveItemsFromSellShop) : <<Extend>>
+(EnterEditMenu) <.. (AddItemsToRecycleShop) : <<Extend>>
+(EnterEditMenu) <.. (RemoveItemsFromRecycleShop) : <<Extend>>
+(EnterEditMenu) <.. (EditMoneyItemExchange) : <<Extend>>
+
+(EnterPlayerShopMenu) <.. (ViewPlayerShopShelves) : <<Extend>>
+(EnterPlayerShopMenu) <.. (ViewMySellingItems) : <<Extend>>
+(EnterPlayerShopMenu) <.. (ViewBalance) : <<Extend>>
+(EnterPlayerShopMenu) <.. (ViewMyBoughtItems) : <<Extend>>
+(EnterPlayerShopMenu) <.. (ViewMySoldItems) : <<Extend>>
+(EnterPlayerShopMenu) <.. (ViewReturnItems) : <<Extend>>
+
+(ViewPlayerShopShelves) <.. (Skip) : <<Extend>>
+(Skip) <|-- (SkipToPage)
+(Skip) <|-- (FindItemById)
+
+(AddItemsToSellShop) ..> (InputNum) : <<Include>>
+(AddItemsToRecycleShop) ..> (InputNum) : <<Include>>
+(EditMoneyItemExchange) ..> (InputNum) : <<Include>>
+(SkipToPage) ..> (InputNum) : <<Include>>
+(FindItemById) ..> (InputNum) : <<Include>>
+
+(ViewPlayerShopShelves) <.. (BuyItem) : <<Extend>>
+(ViewSellShopShelves) <.. (BuyItem) : <<Extend>>
+
+(EnterPlayerShopMenu) <.. (SellItem) : <<Extend>>
+(ViewRecycleShopShelves) <.. (SellItem) : <<Extend>>
+
+(EnterMoneyItemExchangeMenu) <.. (MoneyToItem) : <<Extend>>
+(EnterMoneyItemExchangeMenu) <.. (ItemToMoney) : <<Extend>>
+
+@enduml

@@ -1,0 +1,317 @@
+@startuml class diagram
+
+left to right direction
+
+class Scheduler {
+   -g_value: int {static}
+
+   +void Init() {static}
+   +void Timing() {static}
+}
+
+class Shop {
+   -g_connectNum: int {static}
+
+   +void Init() {static}
+   +void Perform() {static}
+   +void Reset() {static}
+   +void Uninstall() {static}
+}
+Scheduler -down- Shop : call >
+
+class Menu {
+   +Menu()
+   +void Perform()
+   +void Kill()
+   -string PolymorphicMode()
+   -void RotateRelatively(columnDiff: int)
+   -ResetNoOperationTime()
+   
+   -interator_: Interactor
+   -items_: List<ItemDisplayEntity>
+   -lastAction_: Action
+   -lastActionTarget_: int
+   -mode_: Mode
+   -handler_: MenuHandler
+   -beginIndex_: int
+   -noOperationSeconds_: int
+}
+Shop -down- Menu : call >
+Menu -up- Mode
+
+class TempWorldEntityUtils {
+   +g_entity: Entity {static}
+
+   +void CarryTempWorldEntity() {static}
+}
+TempWorldEntityUtils -up- Menu
+
+enum Mode {
+   MAIN
+   PLAYER_SHOP_MAIN
+   PLAYER_SHOP_VIEW_ALL
+   PLAYER_SHOP_VIEW_MY_BOUGHT
+   PLAYER_SHOP_VIEW_MY_SOLD
+   PLAYER_SHOP_VIEW_MY_SELLING
+   SELL_SHOP_VIEW_ALL
+   RECYCLE_SHOP_VIEW_ALL
+   MONEY_ITEM_EXCHANGE
+   EDIT
+   EDIT_VIEW_SELL_SHOP
+   EDIT_VIEW_RECYCLE_SHOP
+}
+
+abstract class MenuHandler {
+   #int GetAngleDiff()
+   #ErrCode Rotate(g_columnDiff: int)
+   #int GetViewedItemOrder()
+   +void Handle() {abstract}
+}
+MenuHandler -up- StoreManager
+MenuHandler -down- DisplayManager
+MenuHandler -down- MenuPreset
+MenuHandler -down- ControlPreset
+class MainMenuHandler {
+   +void Handle()
+}
+class PlayerShopMainMenuHandler {
+   +void Handle()
+}
+class PlayerShopViewAllHandler {
+   +void Handle()
+}
+class PlayerShopViewMyBoughtHandler {
+   +void Handle()
+}
+class PlayerShopViewMySoldHandler {
+   +void Handle()
+}
+class PlayerShopViewMySellingHandler {
+   +void Handle()
+}
+class SellShopViewAllHandler {
+   +void Handle()
+}
+class RecycleShopViewAllHandler {
+   +void Handle()
+}
+class MoneyItemExchangeHandler {
+   +void Handle()
+}
+class EditMainMenuHandler {
+   +void Handle()
+}
+class EditViewSellShopHandler {
+   +void Handle()
+}
+class EditViewRecycleShopHandler {
+   +void Handle()
+}
+abstract class RotatableMenuHandler {
+   -int UpdateItems(g_columnDiff: int)
+   +void Handle() {abstract}
+}
+Menu -left- MenuHandler
+MenuHandler <|--- RotatableMenuHandler
+MenuHandler <|-- MainMenuHandler
+MenuHandler <|-- PlayerShopMainMenuHandler
+MenuHandler <|-- EditMainMenuHandler
+MenuHandler <|-- MoneyItemExchangeHandler
+RotatableMenuHandler <|--- PlayerShopViewAllHandler
+RotatableMenuHandler <|--- PlayerShopViewMyBoughtHandler
+RotatableMenuHandler <|--- PlayerShopViewMySoldHandler
+RotatableMenuHandler <|--- PlayerShopViewMySellingHandler
+RotatableMenuHandler <|--- SellShopViewAllHandler
+RotatableMenuHandler <|--- RecycleShopViewAllHandler
+RotatableMenuHandler <|--- EditViewSellShopHandler
+RotatableMenuHandler <|--- EditViewRecycleShopHandler
+
+class Interactor {
+   +pair<Uuid, Action> GetSelectAction()
+   +pair<Uuid, Action> GetExitAction()
+   +void ClearAction()
+}
+Menu "1" *-right- "1" Interactor : carry >
+Interactor - Action
+
+enum Action {
+   NO_ACTION_THIS_PLAYER
+   LEFT_CLICK
+   LEFT_CLICK_CONFIRM
+   RIGHT_CLICK
+}
+
+class Player {
+   +int GetPlayerUid()
+   +int GetRotation()
+   +int GetPermission()
+   +ErrCode SetPermission(permission: int)
+   +string GetName()
+   +void ObtainItem(item: ItemData&)
+
+   -uid_: int
+   -permission_: int
+   -sellingItemNum_: int
+   -returnItemNum_: int
+   -boughtItemNum_: int
+   -soldItemNum_: int
+}
+Player "1" *-- "1" Menu : < carry
+
+class ItemDisplayEntity {
+   -id_: int
+   -item_: ItemData
+
+   +ItemDisplayEntity(data: ItemData)
+   +SetStateNormal()
+   +SetStateHighLight()
+   +DisplayText()
+   +Kill()
+}
+Menu "1" *-- "27" ItemDisplayEntity : manage >
+
+abstract class ItemData {
+   -type_: ItemDataType
+
+   -string PolymorphicType()
+   +Lores GetLores() {abstract}
+}
+ItemDisplayEntity -- ItemData
+enum ItemDataType {
+   Control
+   PlayerShop
+   SellShop
+   RecycleShop
+   MyBought
+   MyBoughtFromSellShop
+   MySold
+   MySoldToRecycleShop
+   Return
+}
+ItemDataType -right- ItemData
+class ControlItemData {
+   -CONTROL_NAME: string
+
+   +Lores ToLores()
+}
+abstract class BaseDynamicItemData {
+   #value_: Item
+   
+   +Lores ToLores() {abstract}
+}
+abstract class DynamicItemData {
+   #id_: int
+   #sourcePlayerUid_: int
+   #price_: int
+   
+   +Lores ToLores() {abstract}
+}
+class ReturnItemData {
+   -returnReason_: string
+
+   +Lores ToLores()
+}
+class PlayerShopItemData {
+   -expireTime_: int
+
+   +Lores ToLores()
+}
+class SellShopItemData {
+   +Lores ToLores()
+}
+class RecycleShopItemData {
+   +Lores ToLores()
+}
+class MyBoughtItemData {
+   +Lores ToLores()
+}
+class MyBoughtFromSellShopItemData {
+   +Lores ToLores()
+}
+class MySoldItemData {
+   +Lores ToLores()
+}
+class MySoldToRecycleShopItemData {
+   +Lores ToLores()
+}
+ItemData <|-down- ControlItemData
+ItemData <|-right- BaseDynamicItemData
+BaseDynamicItemData <|-down- ReturnItemData
+BaseDynamicItemData <|-- DynamicItemData
+DynamicItemData <|-- PlayerShopItemData
+DynamicItemData <|-- SellShopItemData
+DynamicItemData <|-- RecycleShopItemData
+DynamicItemData <|-- MyBoughtItemData
+DynamicItemData <|-- MyBoughtFromSellShopItemData
+DynamicItemData <|-- MySoldItemData
+DynamicItemData <|-- MySoldToRecycleShopItemData
+
+class DisplayManager {
+   +void SummonWholePageItems(g_itemsToDisplay: List<ItemData>&) {static}
+   +void RangeSummon(g_itemsToDisplay: List<ItemData>&, begin: int, end: int) {static}
+   +void RangeUpdateAndDelete(g_itemsToDisplay: List<ItemData>&, orderDiff: int, targetOrder: int) {static}
+}
+
+enum Color {
+   WHITE
+   YELLOW
+}
+
+DisplayManager -up- Color
+
+class MenuPreset {
+   +Init() {static}
+
+   +MAIN_MENU: List<ItemData> {static}
+   +PLAYER_SHOP_MAIN_MENU: List<ItemData> {static}
+   +EDIT_MAIN_MENU: List<ItemData> {static}
+   +MONEY_ITEM_EXCHANGE_MENU: List<ItemData> {static}
+}
+
+class ControlPreset {
+   +Init() {static}
+}
+
+class StoreManager {
+   -g_playerNameMap: unordered_map<playerUid: int, string> {static}
+   -g_playerShopList: list<ItemData> {static}
+   -g_sellShopList: list<ItemData> {static}
+   -g_recycleShopList: list<ItemData> {static}
+   -g_playerBoughtMap: unordered_map<playerUid: int, List<ItemData>> {static}
+   -g_playerSoldMap: unordered_map<playerUid: int, List<ItemData>> {static}
+   -g_playerSellingIdListMap: unordered_map<playerUid: int, List<int>> {static}
+   -g_playerReturnItemsMap: unordered_map<playerUid: int, List<ItemData>> {static}
+
+   +void RegistPlayer() {static}
+   +string GetPlayerName(playerUid: int) {static}
+   +int ReturnOverdueItems() {static}
+
+   +int AppendToPlayerShopList(g_itemData: ItemData&) {static}
+   +int AppendToSellShopList(g_itemData: ItemData&) {static}
+   +int AppendToRecycleShopList(g_itemData: ItemData&) {static}
+   +int AppendToPlayerBoughtList(playerUid: int, g_itemData: ItemData&) {static}
+   +int AppendToPlayerSoldList(playerUid: int, g_itemData: ItemData&) {static}
+   +int AppendToPlayerReturnList(playerUid: int, g_itemData: ItemData&) {static}
+
+   +int LocateIndexInPlayerShopListById(id: int) {static}
+   +void CheckIndexAndId(index: int, id: int) {static}
+   +void GetPlayerShopListElemByIndex(index: int, g_itemData: ItemData&) {static}
+   +void GetPlayerShopListPage(beginIndex: int, g_itemsToDisplay: List<ItemData>&) {static}
+   -void GetPlayerShopListElemByIndexAndAppend(index: int, g_itemsToDisplay: List<ItemData>&) {static}
+   +void UpdateAndGetPlayerSellingListPage(playerUid: int, beginIndex: int, g_itemsToDisplay: List<ItemData>&) {static}
+   +void HandlePlayerBuyPlayerShopItem(index: int, buyerUid: int) {static}
+
+   +void GetSellShopListElemById(id: int, g_itemData: ItemData&) {static}
+   +void GetSellShopListPage(beginIndex: int, g_itemsToDisplay: List<ItemData>&) {static}
+   +void HandlePlayerBuySellShopItem(id: int, buyerUid: int) {static}
+   +void HandleOpRemoveSellShopItem(id: int) {static}
+
+   +void GetRecycleShopListElemById(id: int, g_itemData: ItemData&) {static}
+   +void GetRecycleShopListPage(beginIndex: int, g_itemsToDisplay: List<ItemData>&) {static}
+   +void HandlePlayerSellItemToRecycleShop(id: int, sellerUid: int) {static}
+   +void HandleOpRemoveRecycleShopItem(id: int) {static}
+   
+   +void HandlePlayerCollectReturnItem(id: int) {static}
+}
+
+@enduml

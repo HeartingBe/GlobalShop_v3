@@ -1,0 +1,46 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 管理员从出售商店/回收商店移除物品
+
+actor 管理员 as player
+participant "menu:Menu" as Menu
+participant StoreManager <<(C, #d884c3)>>
+participant DisplayManager <<(C, #d884c3)>>
+
+activate Menu
+player -> Menu : 管理员左键被 menu 检测
+Menu -> Menu : 获取该物品的 id
+activate Menu
+deactivate Menu
+Menu -> StoreManager : 通过 id 获取该物品信息
+activate StoreManager
+Menu <-- StoreManager
+deactivate StoreManager
+alt 物品不存在
+   Menu -> Menu : menu 更新自身状态
+   activate Menu
+   deactivate Menu
+   player <- Menu : 通知管理员物品不存在
+else 物品存在
+   alt 第一次左键该物品
+      Menu -> Menu : menu 更新自身状态
+      activate Menu
+      deactivate Menu
+   else 管理员确认操作
+      Menu -> StoreManager : 删除该物品
+      activate StoreManager
+      Menu <-- StoreManager
+      deactivate StoreManager
+   end
+end
+Menu -> StoreManager : 重新获取一整页物品信息
+activate StoreManager
+Menu <-- StoreManager
+deactivate StoreManager
+Menu -> DisplayManager : 生成物品展示实体
+activate DisplayManager
+Menu <-- DisplayManager
+deactivate DisplayManager
+
+@enduml

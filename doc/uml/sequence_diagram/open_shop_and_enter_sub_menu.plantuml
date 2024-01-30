@@ -1,0 +1,52 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 玩家打开主菜单和进入子菜单
+
+actor 玩家 as player
+participant Shop <<(C, #d884c3)>>
+participant "menu:Menu" as Menu
+participant MenuPreset <<(C, #d884c3)>>
+participant DisplayManager <<(C, #d884c3)>>
+
+== 玩家开始使用商店 ==
+
+player -> Shop : 请求打开主菜单
+alt 同时使用商店人数未达到最大值\n或者该玩家是 op
+   activate Shop
+   Shop -> Menu : 生成菜单实体
+   activate Menu
+   Shop <-- Menu
+   Menu -> MenuPreset : 获取主菜单信息
+   activate MenuPreset
+   Menu <-- MenuPreset
+   deactivate MenuPreset
+   Menu -> DisplayManager : 生成主菜单物品展示实体
+   activate DisplayManager
+   Menu <-- DisplayManager
+   deactivate DisplayManager
+   Shop <-- Menu
+else 同时使用商店人数达到最大值
+   player <- Shop : 通知玩家使用商店人数达到最大值
+   deactivate Shop
+end
+
+== 玩家进入某一子菜单 ==
+
+player -> Menu : 玩家左键被 menu 检测
+Menu -> Menu : 对应状态的 handler\n进行处理
+activate Menu
+deactivate Menu
+Menu -> MenuPreset : 获取子菜单信息
+activate MenuPreset
+Menu <-- MenuPreset
+deactivate MenuPreset
+Menu -> Menu : menu 更新自身状态
+activate Menu
+deactivate Menu
+Menu -> DisplayManager : 更新物品展示实体
+activate DisplayManager
+Menu <-- DisplayManager
+deactivate DisplayManager
+
+@enduml

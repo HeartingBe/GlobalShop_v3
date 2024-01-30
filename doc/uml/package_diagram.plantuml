@@ -1,0 +1,31 @@
+@startuml package diagram
+!theme reddress-lightblue
+
+left to right direction
+
+package "UI" <<folder>> {
+   class DisplayManager
+   class MenuPreset
+   enum Color
+}
+
+package "Logic" <<folder>> {
+   class Scheduler
+   class Shop
+   class Menu
+   class ItemDisplayEntity
+   class ItemData
+   class TempWorldEntityUtils
+   class Player
+}
+
+package "Storage" <<folder>> {
+   class StoreManager
+}
+
+UI ..> Logic
+Logic ..> UI
+Logic ..> Storage
+UI ..> Storage
+
+@enduml

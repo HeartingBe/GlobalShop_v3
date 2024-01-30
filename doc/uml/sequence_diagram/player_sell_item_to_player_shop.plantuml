@@ -1,0 +1,45 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 玩家上架物品到玩家商店
+
+actor 玩家 as player
+participant "menu:Menu" as Menu
+participant StoreManager <<(C, #d884c3)>>
+
+activate Menu
+player -> Menu : 玩家左键被 menu 检测
+alt 选中“向其他玩家出售物品”控件
+   player <- Menu : 向玩家发送点击文本\n引导玩家上架物品
+end
+
+player -> Menu : 玩家触发记分板指定上架价格
+note right
+   这里省略了检查玩家存储物品上限、
+   全部上架物品上限、
+   上架冷却时间
+end note
+alt 价格是正数
+   alt 玩家主手有物品
+      Menu -> StoreManager : 将物品加入玩家商店记录表
+      activate StoreManager
+      Menu <-- StoreManager
+      deactivate StoreManager
+      Menu -> Menu : 移除玩家主手物品
+      activate Menu
+      deactivate Menu
+      Menu -> Menu : 更新玩家信息
+      note right
+         玩家出售 id 列表
+         出售数量
+      end note
+      activate Menu
+      deactivate Menu
+   else
+      player <- Menu : 通知玩家主手为空
+   end
+else
+   player <- Menu : 通知玩家提供的数字有误
+end
+
+@enduml

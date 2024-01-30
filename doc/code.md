@@ -4,40 +4,38 @@
 
 #### 4.2.1.1 类型和常量定义
 ```c++
-namespace Mini_Ye {
-namespace global_shop {
-// 数据类型定义
-
+// 数据类型定义（类图中不体现的在此处说明）
 
 // 错误码定义
 using ErrCode = int;
-
 constexpr ErrCode SUCCESS = 0; // 成功
-
-constexpr ErrCode INVALID_ENV = -1; // 错误的执行环境（执行实体、执行位置、执行维度等不正确）
+constexpr ErrCode INVALID_ENV = -1; // 错误的执行环境（执行实体、执行位置、
+                                    // 执行维度等不正确）
 constexpr ErrCode NO_PERMISSION = -2; // 无权限
-
 constexpr ErrCode OTHER_ERROR = -10000; // 其他错误
 
-// 常量定义
-constexpr int MAX_CONNECT_PLAYERS = 8; // 允许同时使用商店的最大玩家数量
-constexpr int PLAYER_MAX_SELLING_ITEMS = 64; // 每位玩家最大上架物品数量
-constexpr int TOTAL_MAX_SELLING_ITEMS = 64 * 128; // 所有玩家上架物品数量最大总和
-constexpr int PLAYER_MAX_BOUGHT_ITEMS = 32; // 每位玩家最大历史购买物品数量
-constexpr int TOTAL_MAX_BOUGHT_ITEMS = 32 * 128; // 所有玩家历史购买物品数量最大总和
-constexpr int PLAYER_MAX_SOLD_ITEMS = 32; // 每位玩家最大历史出售物品数量
-constexpr int TOTAL_MAX_SOLD_ITEMS = 32 * 128; // 所有玩家历史出售物品数量最大总和
+// 全局变量
+int REGIST_PLAYER_NUM = 0; // 当前注册的玩家数
+int SELL_TOTAL_NUM = 0; // 当前玩家商店玩家正在出售物品的总数
+int NEXT_UID = 1; // 下一个注册的玩家得到的 UID（0 用于表示玩家未注册，
+                  // 适应 scoreboard players get 无分数返回 0 的特性
 
-}// namespace global_shop
-}// namespace Mini_Ye
+// 常量定义
+constexpr int MAX_REGIST_PLAYER_NUM = 1000; // 最大注册玩家数
+constexpr int MAX_CONNECT_NUM = 8; // 允许同时使用商店的最大玩家数量
+constexpr int PLAYER_MAX_SELLING_NUM = 54; // 每位玩家最大上架物品数量
+constexpr int PLAYER_MAX_BOUGHT_NUM = 27; // 每位玩家最大历史购买物品数量
+constexpr int PLAYER_MAX_SOLD_NUM = 27; // 每位玩家最大历史出售物品数量
 ```
 
+StoreManager 关键函数实现：
 ```c++
-static const ItemData CONTROL_NULL_ITEM = {id:"minecraft:black_stained_glass_pane",Count:1b}
+// 空项（其他控件定义见 MenuPreset 类的初始化函数，控件 id 在 Shop#init 当作记分板常量进行初始化）
+static const ItemData CONTROL_NULL_ITEM = {id:"minecraft:black_stained_glass_pane",Count:1b,tag:{id:CONTROL_NULL_ITEM}}
 
 class StoreManager {
 public:
-   static ErrCode GetPlayerShopListPage(int beginIndex, List<ItemData>& g_itemsToDisplay)
+   static void GetPlayerShopListPage(int beginIndex, List<ItemData>& g_itemsToDisplay)
    {
       g_itemsToDisplay.clear();
 
@@ -47,7 +45,7 @@ public:
    }
 
 private:
-   static ErrCode GetPlayerShopListElemByIndexAndAppend(int index, List<ItemData>& g_itemsToDisplay)
+   static void GetPlayerShopListElemByIndexAndAppend(int index, List<ItemData>& g_itemsToDisplay)
    {
       if(index < 0) {
          g_itemsToDisplay.append(NULL_ITEM);
@@ -60,7 +58,7 @@ private:
       g_itemsToDisplay.append(g_playerShopList[index]);// 1()
    }
 
-   static ErrCode RotateAndUpdateItems(int g_columnDiff)
+   static void RotateAndUpdateItems(int g_columnDiff)
    {
       // 记 g_columnDiff 为 x
       // 当 x < 0 时，玩家向左旋转
@@ -72,7 +70,7 @@ private:
          // 序号位于 [min(27, 3 * x), 27 - max(0, 3 * x)) 的物品需要更新
          // 序号位于 [27 - max(0, 3 * x), 27) 的物品需要生成
 
-      // 更新 Menu 状态...
+      // 更新 Menu 状态...（旋转、beginIndex_ 等）
 
       // 取数据...
 
@@ -97,9 +95,12 @@ private:
       }
    }
 }
+```
 
+DisplayManager 关键函数实现：
+```c++
 class DisplayManager {
-   static ErrCode RangeSummon(List<ItemData>& g_itemsToDisplay, int begin, int end)
+   static void RangeSummon(List<ItemData>& g_itemsToDisplay, int begin, int end)
    {
       while(begin < end) {
          SummonSingleItem(g_itemsToDisplay[begin]);
@@ -107,7 +108,7 @@ class DisplayManager {
       }
    }
 
-   static ErrCode RangeUpdateAndDelete(List<ItemData>& g_itemsToDisplay, int orderDiff, int targetOrder)
+   static void RangeUpdateAndDelete(List<ItemData>& g_itemsToDisplay, int orderDiff, int targetOrder)
    {
       execute 所有物品 run {// 1()
          @s.order += orderDiff;
@@ -116,7 +117,7 @@ class DisplayManager {
             return;
          }
 
-         // 如果没有被看，去掉高亮
+         // 如果没有被看，去掉高亮（@s.order_ != targetOrder 就需要去掉高亮）
 
          if((data get @s item.tag.global_shop.id) !=
             (data get storage g_itemsToDisplay[@s.order].tag.global_shop.id))

@@ -1,0 +1,25 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 玩家动态(转动视角)浏览物品
+
+actor 玩家 as player
+participant "menu:Menu" as Menu
+participant StoreManager <<(C, #d884c3)>>
+participant DisplayManager <<(C, #d884c3)>>
+
+activate Menu
+player -> Menu : 玩家转动视角被 menu 检测
+Menu -> StoreManager : 取出物品信息
+activate StoreManager
+Menu <-- StoreManager : 返回物品信息
+deactivate StoreManager
+Menu -> Menu : menu 更新自身状态
+activate Menu
+deactivate Menu
+Menu -> DisplayManager : 生成物品展示实体
+activate DisplayManager
+Menu <-- DisplayManager
+deactivate DisplayManager
+
+@enduml

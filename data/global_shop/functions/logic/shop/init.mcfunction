@@ -7,12 +7,12 @@
       scoreboard players set ITEM_NUM_PER_COLUMN glbs_common 3
       scoreboard players set 12 glbs_common 12
       # 约束相关
-      scoreboard players set MAX_CONNECT_PLAYERS glbs_common 8
-      scoreboard players set PLAYER_MAX_SELLING_ITEMS glbs_common 64
-      scoreboard players set TOTAL_MAX_SELLING_ITEMS glbs_common 8192
-      scoreboard players set PLAYER_MAX_BOUGHT_ITEMS glbs_common 32
+      scoreboard players set MAX_CONNECT_NUM glbs_common 8
+      scoreboard players set PLAYER_MAX_SELLING_NUM glbs_common 54
+      scoreboard players set TOTAL_MAX_SELLING_NUM glbs_common 8192
+      scoreboard players set PLAYER_MAX_BOUGHT_NUM glbs_common 27
       scoreboard players set TOTAL_MAX_BOUGHT_ITEMS glbs_common 4096
-      scoreboard players set PLAYER_MAX_SOLD_ITEMS glbs_common 32
+      scoreboard players set PLAYER_MAX_SOLD_NUM glbs_common 27
       scoreboard players set TOTAL_MAX_SOLD_ITEMS glbs_common 4096
       # 权限
       scoreboard players set PERMISSION_PLAYER glbs_common 0
@@ -50,13 +50,19 @@
       scoreboard players set CONTROL_VIEW_RETURN_ITEMS glbs_common 11
       scoreboard players set CONTROL_VIEW_MY_BOUGHT glbs_common 12
       scoreboard players set CONTROL_VIEW_MY_SOLD glbs_common 13
-      
 
-# open_global_shop 玩家触发记分板
-scoreboard objectives add open_global_shop trigger
+# 玩家相关记分板
+   # open_global_shop 玩家触发记分板
+   scoreboard objectives add open_global_shop trigger
 
-# glbs_permission 玩家权限记分板
-scoreboard objectives add glbs_permission dummy
+   # glbs_permission 玩家权限记分板
+   scoreboard objectives add glbs_permission dummy
+
+   # glbs_sell_num 玩家上架物品数量
+   scoreboard objectives add glbs_sell_num dummy
+
+   # glbs_return_num 玩家回退物品数量
+   scoreboard objectives add glbs_return_num dummy
 
 # glbs_mode 记录 Menu 实体 mode_ 记分板
 scoreboard objectives add glbs_mode dummy
@@ -75,6 +81,7 @@ scoreboard objectives add glbs_err_code dummy
 scoreboard players set SUCCESS glbs_err_code 0
 scoreboard players set INVALID_ENV glbs_err_code -1
 scoreboard players set NO_PERMISSION glbs_err_code -2
+scoreboard players set OTHER_ERROR glbs_err_code -10000
 
 # glbs_id 记录物品展示实体的 id（控件无 id）
 scoreboard objectives add glbs_id dummy
@@ -82,4 +89,5 @@ scoreboard objectives add glbs_id dummy
 # glbs_order 记录物品展示实体的 order
 scoreboard objectives add glbs_order dummy
 
-scoreboard players set OTHER_ERROR glbs_err_code -10000
+# glbs_sell_item 玩家指定出售物品的价格
+scoreboard objectives add glbs_sell_item trigger

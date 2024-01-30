@@ -1,0 +1,30 @@
+@startuml sequence diagram
+!theme reddress-lightblue
+
+header 管理员修改金钱物品兑换
+
+actor 管理员 as player
+participant "menu:Menu" as Menu
+participant ControlPreset <<(C, #d884c3)>>
+
+activate Menu
+player -> Menu : 管理员左键被 menu 检测
+alt 选中“修改金钱物品兑换比率”控件
+   player <- Menu : 向管理员发送点击文本\n引导管理员修改
+end
+
+player -> Menu : 管理员触发记分板指定兑换的金钱数量
+alt 金钱是正数
+   alt 管理员主手有物品
+      Menu -> ControlPreset : 将物品信息存入获取金钱物品兑换控件信息
+      activate ControlPreset
+      Menu <-- ControlPreset
+      deactivate ControlPreset
+   else
+      player <- Menu : 通知管理员主手为空
+   end
+else
+   player <- Menu : 通知管理员提供的数字有误
+end
+
+@enduml
