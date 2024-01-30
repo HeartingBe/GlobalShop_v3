@@ -1,6 +1,6 @@
 # 加载数据包时调用
 
-title @a actionbar ["\u00a7eGlobal Shop loaded"]
+title @a actionbar ["\u00a7dGlobalShop \u00a7eloaded"]
 
 # 共用记分板，存储所有公共变量、常量等（本应放在 Shop#Init 中创建，但下面要用所以在这里创建）
 scoreboard objectives add glbs_common dummy

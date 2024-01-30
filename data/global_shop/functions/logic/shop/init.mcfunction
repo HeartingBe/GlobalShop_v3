@@ -2,18 +2,16 @@
 
 # glbs_common 共用记分板，存储所有公共变量、常量等（已在 load.mcfunction 中创建）
    # 常量
+      scoreboard players set ITEM_NUM_PER_COLUMN glbs_common 3
       # 常数
       scoreboard players set 3 glbs_common 3
-      scoreboard players set ITEM_NUM_PER_COLUMN glbs_common 3
       scoreboard players set 12 glbs_common 12
       # 约束相关
+      scoreboard players set MAX_REGIST_PLAYER_NUM glbs_common 1000
       scoreboard players set MAX_CONNECT_NUM glbs_common 8
       scoreboard players set PLAYER_MAX_SELLING_NUM glbs_common 54
-      scoreboard players set TOTAL_MAX_SELLING_NUM glbs_common 8192
       scoreboard players set PLAYER_MAX_BOUGHT_NUM glbs_common 27
-      scoreboard players set TOTAL_MAX_BOUGHT_ITEMS glbs_common 4096
       scoreboard players set PLAYER_MAX_SOLD_NUM glbs_common 27
-      scoreboard players set TOTAL_MAX_SOLD_ITEMS glbs_common 4096
       # 权限
       scoreboard players set PERMISSION_PLAYER glbs_common 0
       scoreboard players set PERMISSION_ADMIN glbs_common 1
@@ -83,7 +81,7 @@ scoreboard players set INVALID_ENV glbs_err_code -1
 scoreboard players set NO_PERMISSION glbs_err_code -2
 scoreboard players set OTHER_ERROR glbs_err_code -10000
 
-# glbs_id 记录物品展示实体的 id（控件无 id）
+# glbs_id 记录物品展示实体的 id（控件 id 固定，无需使用这个记分板）
 scoreboard objectives add glbs_id dummy
 
 # glbs_order 记录物品展示实体的 order
