@@ -2,7 +2,7 @@
 # @executor Player
 
 # 检查玩家是否注册
-execute unless score @s glbs_uid matches -2147483648..2147483647 store result score ret glbs_common run function global_shop:logic/menu/player_register
+execute unless score @s glbs_uid matches -2147483648..2147483647 store result score ret glbs_common run function global_shop:logic/store_manager/register_player
 
 # 限制同时使用商店的玩家数量
 execute store result score ret glbs_common run function global_shop:logic/menu/menu/check_number_of_using_shop_player
