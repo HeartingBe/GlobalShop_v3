@@ -1,4 +1,4 @@
-# @brief g_playerShop
+# @brief 获取 g_playerShopList[index] 并将其尾插到 g_itemsToDisplay
 # @param index 下标，用 temp2 传入
 # @param g_itemsToDisplay 结果要写入的目标位置，尾插
 # @executor Menu

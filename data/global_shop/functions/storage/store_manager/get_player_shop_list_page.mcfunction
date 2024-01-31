@@ -3,8 +3,14 @@
 # @param g_itemsToDisplay 目标位置，将结果写入该路径
 # @executor Menu
 
+# 已修改，改为从最新的物品开始显示，即从表尾向前取出物品数据。beginIndex_ 先沿对称轴对称到其对称点上，然后向前移动逐个取出
+
 data remove storage global_shop:common g_itemsToDisplay
 
-# for i in range [0, 27]
-scoreboard players set temp1 glbs_common 0
+execute store result score temp1 glbs_common run data get storage global_shop:storage g_playerShopList
+scoreboard players remove temp1 glbs_common 1
+scoreboard players operation temp1 glbs_common -= @s glbs_begin_index
+
+# for(int i = 0; i < 27; ++i)
+scoreboard players set i glbs_common 0
 function global_shop:storage/store_manager/get_player_shop_list_page/1

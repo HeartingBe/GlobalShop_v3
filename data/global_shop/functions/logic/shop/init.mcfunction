@@ -24,7 +24,7 @@
          scoreboard players set 12 glbs_common 12
       # 全局变量
          #define score_holder g_time
-         #define score_holder g_registPlayerNum 当前注册玩家数量
+         #define score_holder g_registeredPlayerNum 当前注册玩家数量
          #define score_holder g_nextUid 下一个注册的玩家得到的UID
          #define score_holder g_nextPlayerShopId
          #define score_holder g_nextSellShopId
@@ -32,9 +32,9 @@
          # g_time
             scoreboard players add g_time glbs_common 0
             execute unless score g_time glbs_common matches 0.. run scoreboard players set g_time glbs_common 0
-         # g_registPlayerNum
-            scoreboard players add g_registPlayerNum glbs_common 0
-            execute unless score g_registPlayerNum glbs_common matches 0.. run scoreboard players set g_registPlayerNum glbs_common 0
+         # g_registeredPlayerNum
+            scoreboard players add g_registeredPlayerNum glbs_common 0
+            execute unless score g_registeredPlayerNum glbs_common matches 0.. run scoreboard players set g_registeredPlayerNum glbs_common 0
          # g_nextUid
             scoreboard players add g_nextUid glbs_common 0
             execute unless score g_nextUid glbs_common matches 1.. run scoreboard players set g_nextUid glbs_common 1
