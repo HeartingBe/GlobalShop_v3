@@ -15,15 +15,20 @@ constexpr ErrCode NO_PERMISSION = -2; // 无权限
 constexpr ErrCode OTHER_ERROR = -10000; // 其他错误
 
 // 全局变量
-int REGIST_PLAYER_NUM = 0; // 当前注册的玩家数
-int SELL_TOTAL_NUM = 0; // 当前玩家商店玩家正在出售物品的总数
-int NEXT_UID = 1; // 下一个注册的玩家得到的 UID（0 用于表示玩家未注册，
+int g_time = 0; // 时间，单位 s
+int g_registPlayerNum = 0; // 当前注册的玩家数
+int g_nextUid = 1; // 下一个注册的玩家得到的 UID（0 用于表示玩家未注册，
                   // 适应 scoreboard players get 无分数返回 0 的特性
+int g_nextPlayerShopId = 1; // 下一个玩家出售物品得到的 id_
+int g_nextSellShopId = 1; // 下一个出售商店物品得到的 id_
+int g_nextRecycleShopId = 1; // 下一个回收商店物品得到的 id_
 
 // 常量定义
+constexpr int SELL_ITEM_COOLING_TIME = 10; // 玩家上架物品冷却时间，单位 s
+constexpr int SELL_ITEM_EFFECTIVE_TIME = 259200; // 玩家上架物品有效时间，超过该时间导致物品回退，单位 s（3600 * 24 * 3）
 constexpr int MAX_REGIST_PLAYER_NUM = 1000; // 最大注册玩家数
 constexpr int MAX_CONNECT_NUM = 8; // 允许同时使用商店的最大玩家数量
-constexpr int PLAYER_MAX_SELLING_NUM = 54; // 每位玩家最大上架物品数量
+constexpr int PLAYER_MAX_SELL_AND_RETURN_NUM = 54; // 每位玩家最大上架物品数量
 constexpr int PLAYER_MAX_BOUGHT_NUM = 27; // 每位玩家最大历史购买物品数量
 constexpr int PLAYER_MAX_SOLD_NUM = 27; // 每位玩家最大历史出售物品数量
 ```

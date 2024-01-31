@@ -2,3 +2,5 @@
 # @executor Menu
 
 execute on passengers if entity @s[type=minecraft:interaction] run return run function global_shop:logic/interactor/get_left_click_action
+
+function global_shop:logic/interactor/get_left_click_action

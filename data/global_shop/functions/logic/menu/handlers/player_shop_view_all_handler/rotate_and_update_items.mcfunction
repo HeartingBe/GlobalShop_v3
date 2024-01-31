@@ -13,7 +13,7 @@ function global_shop:logic/menu/handlers/menu_handler/rotate
 
 # 重置 lastAction_ lastActionTarget_（否则水平旋转后看向新的物品将不会高亮）
 scoreboard players set @s glbs_last_action_target -1
-scoreboard players operation @s glbs_last_action = NO_ACTION_THIS_PLAYER glbs_common
+scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
 
 # 取玩家商店物品数据
 function global_shop:storage/store_manager/get_player_shop_list_page

@@ -16,7 +16,6 @@ end
 player -> Menu : 玩家触发记分板指定上架价格
 note right
    这里省略了检查玩家存储物品上限、
-   全部上架物品上限、
    上架冷却时间
 end note
 alt 价格是正数

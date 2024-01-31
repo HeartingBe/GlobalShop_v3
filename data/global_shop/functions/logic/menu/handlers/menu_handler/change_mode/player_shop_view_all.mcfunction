@@ -5,7 +5,7 @@
    # 清除左右键信息
    execute on passengers if entity @s[type=minecraft:interaction] run function global_shop:logic/interactor/clear_left_and_right_click_action
    # 初始化 lastAction_
-   scoreboard players operation @s glbs_last_action = NO_ACTION_THIS_PLAYER glbs_common
+   scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
    # 上一个看向的目标
    scoreboard players reset @s glbs_last_action_target
    # 展示物品的起始下标
@@ -24,7 +24,7 @@ function global_shop:logic/menu/handlers/menu_handler/rotate
 # 清除周围所有物品展示实体
 execute as @e[distance=..5,type=minecraft:item_display,tag=global_shop] run function global_shop:logic/item_display_entity/kill
 # 更改模式
-scoreboard players operation @s glbs_mode = MODE_PLAYER_SHOP_VIEW_ALL glbs_common
+scoreboard players operation @s glbs_mode = Mode::PLAYER_SHOP_VIEW_ALL glbs_common
 # 通知
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a欢迎浏览"]
 # 生成物品展示实体（注意：上面旋转，但是本函数的执行环境未改变，需要校正旋转角）
