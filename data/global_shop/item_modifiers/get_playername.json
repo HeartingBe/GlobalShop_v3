@@ -1,0 +1,5 @@
+{
+    "function": "set_name",
+    "entity": "this",
+    "name": {"selector":"@s","italic": false}
+}

@@ -1,3 +1,4 @@
+#> global_shop:logic/menu/perform
 # @brief Menu 实体进行处理，完成数据包大部分运行逻辑，实现各种功能
 # @executor Menu
 
