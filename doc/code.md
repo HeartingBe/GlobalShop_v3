@@ -16,7 +16,7 @@ constexpr ErrCode OTHER_ERROR = -10000; // 其他错误
 
 // 全局变量
 int g_time = 0; // 时间，单位 s
-int g_registPlayerNum = 0; // 当前注册的玩家数
+int g_registeredPlayerNum = 0; // 当前注册的玩家数
 int g_nextUid = 1; // 下一个注册的玩家得到的 UID（0 用于表示玩家未注册，
                   // 适应 scoreboard players get 无分数返回 0 的特性
 int g_nextPlayerShopId = 1; // 下一个玩家出售物品得到的 id_
@@ -44,8 +44,16 @@ public:
    {
       g_itemsToDisplay.clear();
 
+      // 假设列表长度为 x，也就是物品下标范围是 0 到 x - 1，
+      // 那么对称轴就是 (0 + (x - 1)) / 2 记为 a
+      // beginIndex_ 到对称轴的距离为 a - beginIndex_
+      // 那么对称点就应该是 beginIndex_ + 2 * (a - beginIndex_)
+      // 将 a 代入可得 beginIndex_' = -b + x - 1
+      int x = g_playerShopList.size();
+      beginIndex = -beginIndex + x - 1;
+
       for(int i = 0; i < 27; ++i) {// 1()
-         GetPlayerShopListElemByIndexAndAppend(beginIndex + i, g_itemsToDisplay);
+         GetPlayerShopListElemByIndexAndAppend(beginIndex - i, g_itemsToDisplay);
       }
    }
 
