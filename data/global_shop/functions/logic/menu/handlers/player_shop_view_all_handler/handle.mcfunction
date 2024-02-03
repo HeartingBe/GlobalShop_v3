@@ -20,20 +20,11 @@
 # 判断玩家看向新的物品
    # 获取看向的控件序号
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_viewed_item_order
-   # 看向新的物品时，需要检查更新
-      # 物品在玩家商店总表中不存在时：
-         # 更新
-      # 物品在玩家商店总表中存在时：
-         # 高亮物品展示实体，并显示文本
-         # 更新上一次看向的物品展示实体的 id lastActionTarget_
-      # 重置 lastAction_
-      # 清除左键信息
-   # log
-   # tellraw @a ["lastActionTarget:",{"score":{"objective":"glbs_last_action_target","name":"@s"}}]
+   # 看向新的物品时 TODO
    execute unless score temp glbs_common = @s glbs_last_action_target run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/target_new_item
    
 # 判断玩家左键
-   # 获取左键情况 TODO 增加确认机制
-   execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_select_action
+   # 获取左键情况
+   execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_select_action
    # 根据控件序号执行相应操作（就是 @s glbs_last_action_target）
-   execute if score temp glbs_common = Action::LEFT_CLICK glbs_common run function global_shop:logic/menu/handlers/player_shop_view_all_handler/handle/player_left_click
+   execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run function global_shop:logic/menu/handlers/player_shop_view_all_handler/handle/player_left_click

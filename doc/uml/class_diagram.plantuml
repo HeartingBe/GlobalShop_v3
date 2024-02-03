@@ -175,7 +175,7 @@ abstract class ItemData {
    -type_: ItemDataType
 
    -string PolymorphicType()
-   +Lores GetLores() {abstract}
+   +Lores ToString() {abstract}
 }
 ItemDisplayEntity -- ItemData
 enum ItemDataType {
@@ -193,45 +193,46 @@ ItemDataType -right- ItemData
 class ControlItemData {
    -CONTROL_NAME: string
 
-   +Lores ToLores()
+   +Lores ToString()
 }
 abstract class BaseDynamicItemData {
-   +Lores ToLores() {abstract}
+   #id_: int
+
+   +Lores ToString() {abstract}
 }
 abstract class DynamicItemData {
-   #id_: int
    #sourcePlayerUid_: int
    #price_: int
    
-   +Lores ToLores() {abstract}
+   +Lores ToString() {abstract}
 }
 class ReturnItemData {
    -returnReason_: string
 
-   +Lores ToLores()
+   +Lores ToString()
 }
 class PlayerShopItemData {
    -expireTime_: int
 
-   +Lores ToLores()
+   +Lores ToString()
 }
 class SellShopItemData {
-   +Lores ToLores()
+   +Lores ToString()
 }
 class RecycleShopItemData {
-   +Lores ToLores()
+   +Lores ToString()
 }
 class MyBoughtItemData {
-   +Lores ToLores()
+   +Lores ToString()
 }
 class MyBoughtFromSellShopItemData {
-   +Lores ToLores()
+   +Lores ToString()
 }
 class MySoldItemData {
-   +Lores ToLores()
+   +Lores ToString()
 }
 class MySoldToRecycleShopItemData {
-   +Lores ToLores()
+   +Lores ToString()
 }
 ItemData <|-down- ControlItemData
 ItemData <|-right- BaseDynamicItemData
