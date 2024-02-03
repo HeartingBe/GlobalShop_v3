@@ -180,8 +180,5 @@ scoreboard players set NO_PERMISSION glbs_err_code -2
 scoreboard players set REGIST_PLAYER_NUM_LIMIT glbs_err_code -3
 scoreboard players set OTHER_ERROR glbs_err_code -10000
 
-# glbs_id 记录物品展示实体的 id（控件 id 固定，无需使用这个记分板）
-scoreboard objectives add glbs_id dummy
-
 # glbs_order 记录物品展示实体的 order
 scoreboard objectives add glbs_order dummy

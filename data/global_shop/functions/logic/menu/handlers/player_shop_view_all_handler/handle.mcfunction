@@ -17,7 +17,7 @@
    # 转动更新
    execute unless score g_columnDiff glbs_common matches 0 run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/rotate_and_update_items
 
-# 判断玩家看向新的物品
+# 判断玩家看向新的物品实体
    # 获取看向的控件序号
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_viewed_item_order
    # 看向新的物品时 TODO
