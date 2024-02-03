@@ -158,14 +158,17 @@
 # glbs_mode 记录 Menu 实体 mode_ 记分板
 scoreboard objectives add glbs_mode dummy
 
-# glbs_last_action_target 记录 Menu 实体 lastActionTarget_ 记分板
-scoreboard objectives add glbs_last_action_target dummy
+# glbs_last_action_target_order 记录 Menu 实体 lastActionTarget_ 记分板
+scoreboard objectives add glbs_last_action_target_order dummy
 
 # glbs_begin_index 记录 Menu 实体 beginIndex_ 记分板
 scoreboard objectives add glbs_begin_index dummy
 
 # glbs_last_action 记录 Menu 实体 lastAction_ 记分板
 scoreboard objectives add glbs_last_action dummy
+
+# glbs_last_action_target_id 记录 Menu 实体 lastAction_ 记分板
+scoreboard objectives add glbs_last_action_target_id dummy
 
 # glbs_err_code 错误码记分板
 scoreboard objectives add glbs_err_code dummy
