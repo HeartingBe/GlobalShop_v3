@@ -1,0 +1,1 @@
+$data modify storage global_shop:common args.text set value '[$(text)]'
