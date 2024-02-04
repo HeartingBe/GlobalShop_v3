@@ -12,5 +12,4 @@ execute unless score g_isInit glbs_common matches 1 run function global_shop:ini
 function global_shop:logic/scheduler/timing
 
 #定义
-#define storage global_shop:temp
 #define storage global_shop:common

@@ -1,1 +1,1 @@
-$data modify storage global_shop:temp jtext set value $(Name)
+$data modify storage global_shop:common temp.jtext set value $(Name)
