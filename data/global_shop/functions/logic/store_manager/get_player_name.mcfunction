@@ -1,7 +1,7 @@
 #> global_shop:logic/store_manager/get_player_name
 #@output global_shop:common temp.output
 #暂存一号位物品的NBT值
-data remove storage global_shop:common temp.inventory
+data remove storage global_shop:common temp
 execute if data entity @s Inventory[{Slot:9b}] run data modify storage global_shop:common temp.inventory set from entity @s Inventory[{Slot:9b}]
 #取代1号位物品
 execute unless data entity @s Inventory[{Slot:9b}] run item replace entity @s inventory.0 with stone
