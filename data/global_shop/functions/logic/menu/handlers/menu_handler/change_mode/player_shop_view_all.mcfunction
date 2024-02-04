@@ -7,7 +7,7 @@
    # 初始化 lastAction_
    scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
    # 上一个看向的目标
-   scoreboard players reset @s glbs_last_action_target
+   scoreboard players reset @s glbs_last_action_target_order
    # 展示物品的起始下标
    scoreboard players set @s glbs_begin_index 0
 # 取玩家商店物品数据

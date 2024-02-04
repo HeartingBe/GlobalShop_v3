@@ -7,7 +7,7 @@
    # 初始化 lastAction_
    scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
    # 上一个看向的目标
-   scoreboard players reset @s glbs_last_action_target
+   scoreboard players reset @s glbs_last_action_target_order
 # 取玩家商店主菜单数据
 data modify storage global_shop:common g_itemsToDisplay set from storage global_shop:menu_preset_and_control player_shop_main
 # 取角度差 temp

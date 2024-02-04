@@ -158,14 +158,17 @@
 # glbs_mode 记录 Menu 实体 mode_ 记分板
 scoreboard objectives add glbs_mode dummy
 
-# glbs_last_action_target 记录 Menu 实体 lastActionTarget_ 记分板
-scoreboard objectives add glbs_last_action_target dummy
+# glbs_last_action_target_order 记录 Menu 实体 lastActionTarget_ 记分板
+scoreboard objectives add glbs_last_action_target_order dummy
 
 # glbs_begin_index 记录 Menu 实体 beginIndex_ 记分板
 scoreboard objectives add glbs_begin_index dummy
 
 # glbs_last_action 记录 Menu 实体 lastAction_ 记分板
 scoreboard objectives add glbs_last_action dummy
+
+# glbs_last_action_target_id 记录 Menu 实体 lastAction_ 记分板
+scoreboard objectives add glbs_last_action_target_id dummy
 
 # glbs_err_code 错误码记分板
 scoreboard objectives add glbs_err_code dummy
@@ -179,9 +182,6 @@ scoreboard players set INVALID_ENV glbs_err_code -1
 scoreboard players set NO_PERMISSION glbs_err_code -2
 scoreboard players set REGIST_PLAYER_NUM_LIMIT glbs_err_code -3
 scoreboard players set OTHER_ERROR glbs_err_code -10000
-
-# glbs_id 记录物品展示实体的 id（控件 id 固定，无需使用这个记分板）
-scoreboard objectives add glbs_id dummy
 
 # glbs_order 记录物品展示实体的 order
 scoreboard objectives add glbs_order dummy

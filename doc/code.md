@@ -93,14 +93,14 @@ private:
       if(g_columnDiff < 0) {// 1()
          // 必须先调用 RangeUpdateAndDelete 删除、更新物品
          // 否则等下面生成完，会有重复 order 的实体
-         DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, orderDiff);
+         DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, orderDiff, targetOrder);
          
          int begin = min(27, orderDiff);
          execute rotated as @s run -> DisplayManager::RangeSummon(g_itemsToDisplay, 0, begin);// 上面旋转了，切记
          OnItemSummon();
       } else {
          // -
-         DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, -orderDiff);
+         DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, -orderDiff, targetOrder);
          
          int end = 27 - max(0, orderDiff);
          execute rotated as @s run -> DisplayManager::RangeSummon(g_itemsToDisplay, end, 27);// 上面旋转了，切记

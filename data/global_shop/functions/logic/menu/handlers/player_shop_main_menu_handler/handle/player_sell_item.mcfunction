@@ -24,8 +24,6 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
       # 写入 id_
       execute store result storage global_shop:common g_itemData.tag.global_shop.id int 1 run scoreboard players get g_nextPlayerShopId glbs_common
       scoreboard players add g_nextPlayerShopId glbs_common 1
-      # 写入 sourcePlayerUid_
-      execute store result storage global_shop:common g_itemData.tag.global_shop.sourcePlayerUid int 1 run scoreboard players get @s glbs_uid
       # 写入 price_
       execute store result storage global_shop:common g_itemData.tag.global_shop.price int 1 run scoreboard players get @s glbs_sell_item_price
       # 写入到期时间 expireTime_
@@ -36,7 +34,7 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
    # 设置玩家上架物品冷却时间
    scoreboard players operation @s glbs_sell_item_cooling_time = SELL_ITEM_COOLING_TIME glbs_common
    
-   # 将物品写入玩家出售物品总表
+   # 将物品写入玩家商店出售物品总表 以及该玩家正在出售的物品列表
    function global_shop:storage/store_manager/append_to_player_shop_list
 
    # 移除玩家手中的物品
