@@ -13,7 +13,7 @@ data modify storage global_shop:common g_itemsToDisplay set from storage global_
 # 取角度差 temp
 execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_angle_diff
 # 取 temp 最近的 12 的倍数
-execute store result score temp glbs_common run function global_shop:logic/math_utils/get_recent_12_multiples
+execute store result score temp glbs_common run function global_shop:utils/math_utils/get_recent_12_multiples
 # 旋转
 execute store result score g_columnDiff glbs_common run scoreboard players operation temp glbs_common /= 12 glbs_common
 function global_shop:logic/menu/handlers/menu_handler/rotate

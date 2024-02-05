@@ -1,8 +1,7 @@
-# @brief 令临时世界实体骑到调用者上，并保持和调用者相同的视线角度
-# @executor Entity
+# @executor Menu
 
-kill 00000d3a-0000-0d3a-0000-0d3a00000d3a
+# 00000d3a-0000-0d3a-0000-17cc000017cc
+summon minecraft:marker ~ ~ ~ {Tags:["global_shop"],UUID:[I;3386,3386,6092,6092]}
 
-summon minecraft:marker ~ ~ ~ {Tags:["global_shop"],UUID:[I;3386,3386,3386,3386]}
-
-tp 00000d3a-0000-0d3a-0000-0d3a00000d3a ~ ~ ~ ~ ~
+ride 00000d3a-0000-0d3a-0000-17cc000017cc dismount
+ride 00000d3a-0000-0d3a-0000-17cc000017cc mount @s

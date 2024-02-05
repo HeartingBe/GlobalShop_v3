@@ -14,5 +14,8 @@
    # 检查玩家退出重进
 
 
+# 申请临时世界实体
+function global_shop:logic/temp_world_entity_utils/carry_temp_world_entity
+
 # 执行不同模式的处理逻辑
 function global_shop:logic/menu/polymorphic_mode

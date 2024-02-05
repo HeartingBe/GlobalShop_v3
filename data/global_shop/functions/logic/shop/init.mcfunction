@@ -135,7 +135,10 @@
 
 # 玩家相关记分板
    # glbs_uid 玩家 uid
-   scoreboard objectives add glbs_uid trigger
+   scoreboard objectives add glbs_uid dummy
+   
+   # glbs_money 玩家默认金钱记分板
+   scoreboard objectives add glbs_money dummy
 
    # open_global_shop 玩家触发记分板
    scoreboard objectives add open_global_shop trigger

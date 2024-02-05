@@ -11,14 +11,8 @@ participant DisplayManager <<(C, #d884c3)>>
 activate Menu
 
 player -> Menu : 玩家左键被 menu 检测
-Menu -> Menu : 获取该物品的 id
-activate Menu
-deactivate Menu
-Menu -> StoreManager : 用 id 换 index
-activate StoreManager
-Menu <-- StoreManager
 deactivate StoreManager
-Menu -> StoreManager : 通过 index 获取物品信息
+Menu -> StoreManager : 用 id 在该玩家正在出售的物品列表中获取物品信息
 activate StoreManager
 Menu <-- StoreManager
 deactivate StoreManager

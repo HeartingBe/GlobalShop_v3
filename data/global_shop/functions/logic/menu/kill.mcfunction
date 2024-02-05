@@ -12,6 +12,9 @@ execute on passengers run function global_shop:logic/menu/kill/player
 
 # 清除数据
 scoreboard players reset @s glbs_mode
+scoreboard players reset @s glbs_last_action
+scoreboard players reset @s glbs_last_action_target_order
+scoreboard players reset @s glbs_last_action_target_id
 #TODO
 
 # 清除自身

@@ -10,11 +10,7 @@
 # 判断玩家看向新的物品
    # 获取看向的控件序号
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_viewed_item_order
-   # 看向新的物品时，需要：
-      # 高亮物品展示实体，并显示文本
-      # 更新上一次看向的物品展示实体的序号 lastActionTarget_
-      # 重置 lastAction_
-      # 清除左键信息
+   # 看向新的物品时
    execute unless score temp glbs_common = @s glbs_last_action_target_order run return run function global_shop:logic/menu/handlers/menu_handler/target_new_item
    
 # 判断玩家左键

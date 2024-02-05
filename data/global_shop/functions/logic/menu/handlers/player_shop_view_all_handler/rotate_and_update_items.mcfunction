@@ -23,12 +23,10 @@ function global_shop:storage/store_manager/get_player_shop_list_page
       # log
       #tellraw @a ["g_columnDiff:",{"score":{"objective":"glbs_common","name":"g_columnDiff"}}]
    scoreboard players operation temp glbs_common = g_columnDiff glbs_common
-   execute store result score temp glbs_common run function global_shop:logic/math_utils/abs
+   execute store result score temp glbs_common run function global_shop:utils/math_utils/abs
       # log
       #tellraw @a ["abs(g_columnDiff):",{"score":{"objective":"glbs_common","name":"temp"}}]
    execute store result score orderDiff glbs_common run scoreboard players operation temp glbs_common *= 3 glbs_common
-   # 获取 targetOrder
-   execute store result score targetOrder glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_viewed_item_order
 # if(g_columnDiff < 0)
    execute if score g_columnDiff glbs_common matches ..-1 run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/rotate_and_update_items/1
 # else

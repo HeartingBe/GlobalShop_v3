@@ -69,7 +69,7 @@ abstract class MenuHandler {
 }
 MenuHandler -up- StoreManager
 MenuHandler -down- DisplayManager
-MenuHandler -down- MenuPreset
+MenuHandler -down- MenuPresetAndControl
 MenuHandler -down- ControlPreset
 class MainMenuHandler {
    +void Handle()
@@ -259,17 +259,14 @@ enum Color {
 
 DisplayManager -up- Color
 
-class MenuPreset {
-   +Init() {static}
+class MenuPresetAndControl {
+   +void Init() {static}
+   +ControlItemData GetControl(id: int) {static}
 
    +MAIN_MENU: List<ItemData> {static}
    +PLAYER_SHOP_MAIN_MENU: List<ItemData> {static}
    +EDIT_MAIN_MENU: List<ItemData> {static}
    +MONEY_ITEM_EXCHANGE_MENU: List<ItemData> {static}
-}
-
-class ControlPreset {
-   +Init() {static}
 }
 
 class StoreManager {
