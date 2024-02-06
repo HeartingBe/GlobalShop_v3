@@ -11,6 +11,6 @@ execute store result score temp1 glbs_common run data get storage global_shop:st
 scoreboard players remove temp1 glbs_common 1
 scoreboard players operation temp1 glbs_common -= @s glbs_begin_index
 
-# for(int i = 0; i < 27; ++i)
+# for (int i = 0; i < 27; ++i)
 scoreboard players set i glbs_common 0
 function global_shop:storage/store_manager/get_player_shop_list_page/1

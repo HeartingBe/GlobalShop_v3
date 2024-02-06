@@ -6,13 +6,15 @@ execute if score @s glbs_last_action_target_order matches -1 run return run func
 # 用 glbs_last_action_target_id 获取物品信息
    # 玩家点击空项，无任何效果，然后返回
    execute if score @s glbs_last_action_target_id matches 0 run return run function global_shop:logic/menu/handlers/rotatable_menu_handler/handle/player_left_click/click_control_null_item
-   # 玩家点击非空项
-   function global_shop:storage/store_manager/get_player_selling_list_elem_by_id
+   # 玩家点击非空项，先获取物品信息
+      # 同时，物品的 index 会存储在 index glbs_common
+   function global_shop:storage/store_manager/get_player_shop_list_elem_by_id
 
 # 物品不存在，刷新显示
 execute unless data storage global_shop:common g_itemData run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/handle/item_not_exist
 
 # 玩家左键确认
+   # index glbs_common 在下面这个函数中还要使用
 execute if score @s glbs_last_action = Action::LEFT_CLICK_CONFIRM glbs_common run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/handle/player_left_click_confirm
 
 # 玩家首次左键

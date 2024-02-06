@@ -1,0 +1,24 @@
+{
+   "pools": [
+      {
+         "rolls": 1,
+         "entries": [
+            {
+               "type": "minecraft:item",
+               "name": "minecraft:stone_button",
+               "functions": [
+                  {
+                     "function": "minecraft:set_name",
+                     "entity": "this",
+                     "name": {
+                        "type": "nbt",
+                        "entity": "@s",
+                        "nbt": "SelectedItem.tag"
+                     }
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

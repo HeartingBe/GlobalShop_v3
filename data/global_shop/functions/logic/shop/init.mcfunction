@@ -20,6 +20,7 @@
             scoreboard players set PLAYER_MAX_BOUGHT_NUM glbs_common 27
             scoreboard players set PLAYER_MAX_SOLD_NUM glbs_common 27
       # 常数
+         scoreboard players set 2 glbs_common 2
          scoreboard players set 3 glbs_common 3
          scoreboard players set 12 glbs_common 12
       # 全局变量

@@ -292,12 +292,12 @@ class StoreManager {
    +int AppendToPlayerReturnList(playerUid: int, g_itemData: ItemData&) {static}
 
    +int LocateIndexInPlayerShopListById(id: int) {static}
-   +void CheckIndexAndId(index: int, id: int) {static}
-   +void GetPlayerShopListElemByIndex(index: int, g_itemData: ItemData&) {static}
    +void GetPlayerShopListPage(beginIndex: int, g_itemsToDisplay: List<ItemData>&) {static}
+   +void GetPlayerShopListElemByIndex(index: int) {static}
    -void GetPlayerShopListElemByIndexAndAppend(index: int, g_itemsToDisplay: List<ItemData>&) {static}
-   +void GetPlayerSellingIdListPage(playerUid: int, beginIndex: int, g_list: List<ItemData>&) {static}
-   +void HandlePlayerBuyPlayerShopItem(index: int, buyerUid: int) {static}
+   +void GetPlayerSellingListPage(playerUid: int, beginIndex: int, g_itemsToDisplay: List<ItemData>&) {static}
+   +void DeletePlayerShopElemById(playerUid: int, id: int) {static}
+   +void DeletePlayerShopElemByIndex(playerUid: int, index: int) {static}
 
    +void GetSellShopListElemById(id: int, g_itemData: ItemData&) {static}
    +void GetSellShopListPage(beginIndex: int, g_itemsToDisplay: List<ItemData>&) {static}

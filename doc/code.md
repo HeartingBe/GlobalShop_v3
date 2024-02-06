@@ -2,7 +2,37 @@
 
 ---
 
-#### 4.2.1.1 类型和常量定义
+## tellraw 模板
+```mcfunction
+# 消息前缀：
+#  \n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 
+# tellraw @s [" \n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 "]
+
+# 输出
+   # 分数
+   # tellraw @s [{"score":{"objective":"","name":""}}]
+
+   # nbt
+      # entity
+      # tellraw @s [{"type":"nbt","entity":"","nbt":""}]
+      # storage
+      # tellraw @s [{"type":"nbt","storage":"","nbt":""}]
+
+# 点击字
+   # 填入聊天栏
+   # {"text":"","color":"","clickEvent":{"action":"suggest_command","value":"/"}}
+
+   # 直接执行
+   # {"text":"","color":"","clickEvent":{"action":"run_command","value":"/"}}
+
+# 鼠标悬停
+   # 显示文字（wiki 显示 contents 必须是复合标签，实际测试列表也可以）
+   # {"text":"","color":"","hoverEvent":{"action":"show_text","contents":[""]}}
+   # 显示物品
+   # {"text":"","color":"","hoverEvent":{"action":"show_item","contents":{"id":"","count":,"tag":"{}"}}}
+```
+
+## 类型和常量定义
 ```c++
 // 数据类型定义（类图中不体现的在此处说明）
 
@@ -33,7 +63,7 @@ constexpr int PLAYER_MAX_BOUGHT_NUM = 27; // 每位玩家最大历史购买物�
 constexpr int PLAYER_MAX_SOLD_NUM = 27; // 每位玩家最大历史出售物品数量
 ```
 
-StoreManager 关键函数实现：
+## StoreManager 关键函数实现
 ```c++
 // 空项（其他控件定义见 MenuPreset 类的初始化函数，控件 id 在 Shop#init 当作记分板常量进行初始化）
 static const ItemData CONTROL_NULL_ITEM = {id:"minecraft:black_stained_glass_pane",Count:1b,tag:{id:CONTROL_NULL_ITEM}}
@@ -52,7 +82,7 @@ public:
       int x = g_playerShopList.size();
       beginIndex = -beginIndex + x - 1;
 
-      for(int i = 0; i < 27; ++i) {// 1()
+      for (int i = 0; i < 27; ++i) {// 1()
          GetPlayerShopListElemByIndexAndAppend(beginIndex - i, g_itemsToDisplay);
       }
    }
@@ -60,11 +90,11 @@ public:
 private:
    static void GetPlayerShopListElemByIndexAndAppend(int index, List<ItemData>& g_itemsToDisplay)
    {
-      if(index < 0) {
+      if (index < 0) {
          g_itemsToDisplay.append(NULL_ITEM);
          return;
       }
-      if(g_playerShopList.size() - 1 < index) {
+      if (g_playerShopList.size() - 1 < index) {
          g_itemsToDisplay.append(NULL_ITEM);
          return;
       }
@@ -89,50 +119,67 @@ private:
 
       // 转动更新逻辑
       int orderDiff = 3 * abs(g_columnDiff);
-      int targetOrder = GetViewedItemOrder();
-      if(g_columnDiff < 0) {// 1()
+      if (g_columnDiff < 0) {// 1()
          // 必须先调用 RangeUpdateAndDelete 删除、更新物品
          // 否则等下面生成完，会有重复 order 的实体
-         DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, orderDiff, targetOrder);
+         DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, orderDiff);
          
          int begin = min(27, orderDiff);
          execute rotated as @s run -> DisplayManager::RangeSummon(g_itemsToDisplay, 0, begin);// 上面旋转了，切记
          OnItemSummon();
       } else {
          // -
-         DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, -orderDiff, targetOrder);
+         DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, -orderDiff);
          
          int end = 27 - max(0, orderDiff);
          execute rotated as @s run -> DisplayManager::RangeSummon(g_itemsToDisplay, end, 27);// 上面旋转了，切记
          OnItemSummon();
       }
+
+      int LocateIndexInPlayerShopListById(int id)
+      {
+         int left = 0;
+         int right = g_playerShopList.size() - 1;
+
+         while (left <= right) {
+            int mid = (left + right) / 2;
+            if (id > g_playerShopList[mid].tag.global_shop.id) {
+               left = mid + 1;
+            } else if (id < g_playerShopList[mid].tag.global_shop.id) {
+               right = mid - 1;
+            } else {
+               return mid;
+            }
+         }
+         return -1;
+      }
    }
 }
 ```
 
-DisplayManager 关键函数实现：
+## DisplayManager 关键函数实现
 ```c++
 class DisplayManager {
    static void RangeSummon(List<ItemData>& g_itemsToDisplay, int begin, int end)
    {
-      while(begin < end) {
+      while (begin < end) {
          SummonSingleItem(g_itemsToDisplay[begin]);
          ++begin;
       }
    }
 
-   static void RangeUpdateAndDelete(List<ItemData>& g_itemsToDisplay, int orderDiff, int targetOrder)
+   static void RangeUpdateAndDelete(List<ItemData>& g_itemsToDisplay, int orderDiff)
    {
       execute 所有物品 run {// 1()
          @s.order += orderDiff;
-         if(@s.order < 0 || @s.order > 26) {
+         if (@s.order < 0 || @s.order > 26) {
             Kill();
             return;
          }
 
-         // 如果没有被看，去掉高亮（@s.order_ != targetOrder 就需要去掉高亮）
+         // 去掉高亮
 
-         if((data get @s item.tag.global_shop.id) !=
+         if ((data get @s item.tag.global_shop.id) !=
             (data get storage g_itemsToDisplay[@s.order].tag.global_shop.id))
          {// macro_if.mcfunction -> 2/0()~26()
             data modify @s item.id set from g_itemsToDisplay[@s.order].id;
