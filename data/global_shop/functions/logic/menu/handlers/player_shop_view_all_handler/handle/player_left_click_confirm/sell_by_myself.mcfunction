@@ -3,7 +3,7 @@
 # @param index 物品数据 g_itemData 在玩家商店总列表中对应的下标
 # @executor Menu
 
-# log
+# 通知
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["自己出售的物品, 已取回"]
 
 # 删除物品

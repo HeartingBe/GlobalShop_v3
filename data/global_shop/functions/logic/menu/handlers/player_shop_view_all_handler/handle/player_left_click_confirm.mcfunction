@@ -11,9 +11,9 @@
    # temp1: 物品来源玩家 id；temp2: 玩家 uid
    execute store result score temp1 glbs_common run data get storage global_shop:common g_itemData.tag.global_shop.sourcePlayerUid
    execute on passengers if entity @s[type=minecraft:player] store result score temp2 glbs_common run scoreboard players get @s glbs_uid
-   
+
    # log
-   tellraw @a ["temp1: ",{"score":{"objective":"glbs_common","name":"temp1"}},"    temp2: ",{"score":{"objective":"glbs_common","name":"temp2"}}]
+   #tellraw @a ["temp1: ",{"score":{"objective":"glbs_common","name":"temp1"}},"    temp2: ",{"score":{"objective":"glbs_common","name":"temp2"}}]
 
    # 是自己出售的物品
    execute if score temp1 glbs_common = temp2 glbs_common run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/handle/player_left_click_confirm/sell_by_myself

@@ -2,7 +2,7 @@
 # @executor Menu
 
 # log
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["delete_player_shop_elem_by_index()"]
+#execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["delete_player_shop_elem_by_index()"]
 
 # 从玩家商店总表中删除
 $data remove storage global_shop:storage g_playerShopList[$(index)]
