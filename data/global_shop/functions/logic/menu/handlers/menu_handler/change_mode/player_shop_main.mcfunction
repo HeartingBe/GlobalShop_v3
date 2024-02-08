@@ -17,10 +17,8 @@ execute store result score temp glbs_common run function global_shop:utils/math_
 # 旋转
 execute store result score g_columnDiff glbs_common run scoreboard players operation temp glbs_common /= 12 glbs_common
 function global_shop:logic/menu/handlers/menu_handler/rotate
-# 申请临时世界实体
-#execute at @s run function global_shop:logic/temp_world_entity_utils/carry_temp_world_entity
 # 清除周围所有物品展示实体
-execute as @e[distance=..5,type=minecraft:item_display,tag=global_shop] run function global_shop:logic/item_display_entity/kill
+function global_shop:logic/menu/kill_item_display_entities_around
 # 更改模式
 scoreboard players operation @s glbs_mode = Mode::PLAYER_SHOP_MAIN glbs_common
 # 通知

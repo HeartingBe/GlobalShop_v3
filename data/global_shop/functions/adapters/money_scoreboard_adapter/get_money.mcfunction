@@ -3,4 +3,4 @@
 
 data remove storage global_shop:common temp
 data modify storage global_shop:common temp.scoreboard set from storage global_shop:storage g_scoreboard
-function global_shop:adapters/money_scoreboard_adapters/get_money/macro_get_money with storage global_shop:storage temp
+function global_shop:adapters/money_scoreboard_adapter/get_money/macro_get_money with storage global_shop:common temp

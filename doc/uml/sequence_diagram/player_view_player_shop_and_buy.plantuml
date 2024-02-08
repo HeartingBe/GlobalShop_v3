@@ -41,7 +41,7 @@ else 物品存在
             activate StoreManager
             Menu <-- StoreManager
             deactivate StoreManager
-            Menu -> Menu : 将买家的钱转到卖家账户上\n将该物品 id 从卖家出售 id 列表中删除\n更新卖家出售物品数量
+            Menu -> Menu : 将买家的钱加到卖家的收益上\n更新卖家出售物品数量
             activate Menu
             deactivate Menu
             Menu -> StoreManager : 写入买家历史购买

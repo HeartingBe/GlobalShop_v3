@@ -252,13 +252,6 @@ class DisplayManager {
    +void RangeUpdateAndDelete(g_itemsToDisplay: List<ItemData>&, orderDiff: int, targetOrder: int) {static}
 }
 
-enum Color {
-   WHITE
-   YELLOW
-}
-
-DisplayManager -up- Color
-
 class MenuPresetAndControl {
    +void Init() {static}
    +ControlItemData GetControl(id: int) {static}
@@ -274,10 +267,10 @@ class StoreManager {
    -g_playerShopList: list<ItemData> {static}
    -g_sellShopList: list<ItemData> {static}
    -g_recycleShopList: list<ItemData> {static}
-   -g_playerBoughtMap: unordered_map<playerUid: int, List<ItemData>> {static}
-   -g_playerSoldMap: unordered_map<playerUid: int, List<ItemData>> {static}
+   -g_playerBoughtListMap: unordered_map<playerUid: int, List<ItemData>> {static}
+   -g_playerSoldListMap: unordered_map<playerUid: int, List<ItemData>> {static}
    -g_playerSellingListMap: unordered_map<playerUid: int, List<ItemData>> {static}
-   -g_playerReturnItemsMap: unordered_map<playerUid: int, List<ItemData>> {static}
+   -g_playerReturnListMap: unordered_map<playerUid: int, List<ItemData>> {static}
 
    +void RegistPlayer() {static}
    +string GetPlayerName(playerUid: int) {static}

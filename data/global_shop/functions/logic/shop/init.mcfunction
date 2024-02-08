@@ -141,6 +141,9 @@
    # glbs_money 玩家默认金钱记分板
    scoreboard objectives add glbs_money dummy
 
+   # glbs_income 玩家收入记分板
+   scoreboard objectives add glbs_income dummy
+
    # open_global_shop 玩家触发记分板
    scoreboard objectives add open_global_shop trigger
 

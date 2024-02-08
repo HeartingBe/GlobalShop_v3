@@ -22,3 +22,4 @@ execute if score @s glbs_last_action = Action::LEFT_CLICK_CONFIRM glbs_common ru
    execute on passengers if entity @s[type=minecraft:player] run title @s actionbar ["首次左键"]
    # Menu 更新自身状态
       # 实际此处无状态量和记录量需要更新
+   # TODO 玩家首次左键应向玩家 tellraw 发送该物品信息

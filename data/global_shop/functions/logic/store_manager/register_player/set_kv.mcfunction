@@ -1,1 +1,1 @@
-$data modify storage global_shop:common g_playerNameMap.$(id) set value $(output)
+$data modify storage global_shop:storage g_playerNameMap.$(id) set value $(output)
