@@ -10,7 +10,6 @@ scoreboard players operation @s glbs_uid = g_nextUid glbs_common
 scoreboard players add g_nextUid glbs_common 1
 
 # 解析和存储玩家名
-data remove storage global_shop:common temp.output
 function global_shop:logic/store_manager/get_player_name
 execute store result storage global_shop:common temp.id int 1.0 run scoreboard players get @s glbs_uid
 function global_shop:logic/store_manager/register_player/set_kv with storage global_shop:common temp

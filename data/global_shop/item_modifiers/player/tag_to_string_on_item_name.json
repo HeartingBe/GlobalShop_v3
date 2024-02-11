@@ -1,0 +1,9 @@
+{
+   "function": "minecraft:set_name",
+   "entity": "this",
+   "name": {
+      "type": "nbt",
+      "storage": "global_shop:common",
+      "nbt": "g_itemData.tag"
+   }
+}

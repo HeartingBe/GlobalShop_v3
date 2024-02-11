@@ -1,5 +1,5 @@
 {
-    "function": "set_name",
+    "function": "minecraft:set_name",
     "entity": "this",
-    "name": {"selector":"@s","italic": false}
+    "name": {"selector":"@s"}
 }

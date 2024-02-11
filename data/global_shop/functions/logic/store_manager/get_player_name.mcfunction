@@ -1,17 +1,14 @@
 #> global_shop:logic/store_manager/get_player_name
-#@output global_shop:common temp.output
-#暂存一号位物品的NBT值
-data remove storage global_shop:common temp
-execute if data entity @s Inventory[{Slot:9b}] run data modify storage global_shop:common temp.inventory set from entity @s Inventory[{Slot:9b}]
-#取代1号位物品
-execute unless data entity @s Inventory[{Slot:9b}] run item replace entity @s inventory.0 with stone
+# @executor Player
+# @output global_shop:common temp.output
+
+# 暂存和取代 1 号位物品的 NBT 值
+function global_shop:logic/player/replace_inventory0
+#解析玩家名
 item modify entity @s inventory.0 global_shop:get_playername
 #获取名字的NBT值作为宏参数
 function global_shop:logic/store_manager/get_player_name/macro with entity @s Inventory[{Slot:9b}].tag.display
 #获得玩家名字global_shop:common temp.jtext
 data modify storage global_shop:common temp.output set from storage global_shop:common temp.jtext.hoverEvent.contents.name
-#恢复1号位物品
-execute if data storage global_shop:common temp.inventory.tag run return run function global_shop:logic/store_manager/get_player_name/restore_itemname_with_tag with storage global_shop:common temp.inventory
-execute if data storage global_shop:common temp.inventory run return run function global_shop:logic/store_manager/get_player_name/restore_itemname with storage global_shop:common temp.inventory
-execute unless data storage global_shop:common temp.inventory run item replace entity @s inventory.0 with air
-return 0
+# 恢复 1 号位物品
+function global_shop:logic/player/restore_inventory0_from_storage

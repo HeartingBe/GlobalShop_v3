@@ -1,5 +1,5 @@
 {
-    "function": "copy_nbt",
+    "function": "minecraft:copy_nbt",
     "source": {
         "type": "storage",
         "source": "global_shop:temp"

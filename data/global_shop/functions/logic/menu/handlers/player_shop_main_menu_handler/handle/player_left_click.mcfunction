@@ -16,5 +16,7 @@ scoreboard players operation temp glbs_common = @s glbs_last_action_target_order
       # 7 >> 切换到玩家商店浏览
       execute if score temp glbs_common matches 7 run return run function global_shop:logic/menu/handlers/menu_handler/change_mode/player_shop_view_all
 
+      # 13 >> 获取自己余额
+
       # 19 >> 切换到玩家浏览自己的历史购买物品
       execute if score temp glbs_common matches 19 run return run function global_shop:logic/menu/handlers/menu_handler/change_mode/player_shop_view_my_bought
