@@ -1,6 +1,8 @@
 # @brief 根据传入 id 获取控件信息
 # @param g_itemData 出参
 
+# @other 这里不要使用变量 temp
+
 data remove storage global_shop:common g_itemData
 
 # TODO 返回对应 id 的控件信息

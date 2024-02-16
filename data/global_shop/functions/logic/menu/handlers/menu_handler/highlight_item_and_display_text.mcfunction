@@ -1,4 +1,5 @@
 # @brief 非旋转模式下，玩家看向新的物品时高亮显示该物品。获取该物品 id 并写入 Menu
+# @param temp 玩家看向的物品序号
 # @executor ItemDisplayEntity
 
 # 不是被看的物品，且正在高亮，就去掉高亮
@@ -14,7 +15,7 @@ execute unless score @s glbs_order = temp glbs_common run return run function gl
    execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run function global_shop:storage/menu_preset_and_control/get_control
    
       # 物品不存在时忽略（未定义行为：控件信息不存在）
-      execute unless data storage global_shop:common g_itemData run return 0
+      execute unless data storage global_shop:common g_itemData as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run return run scoreboard players set @s glbs_last_action_target_id -1
       # 物品存在，高亮、展示文本
       function global_shop:logic/item_display_entity/set_state_highlight
       function global_shop:logic/item_display_entity/display_text

@@ -1,12 +1,9 @@
+# @param temp 玩家看向的物品序号
 # @executor Menu
 
 # 高亮物品展示实体，并显示文本
-   # 用 temp2 存储高亮物品的 id，初始化为 0
-   scoreboard players set temp2 glbs_common 0
-   # 高亮（约定好将新的被看物品的 id 写入记分板 temp2 glbs_common）
+   # 高亮，并记录看向物品的 id。若记录 0 说明看向的物品为空项；若记录 -1 说明不存在
    execute as @e[distance=..5,type=minecraft:item_display,tag=global_shop] run function global_shop:logic/menu/handlers/menu_handler/highlight_item_and_display_text
-   # 物品不存在时刷新整页
-   execute if score @s glbs_last_action_target_id matches -1 run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/handle/item_not_exist
 
 # 更新上一次看向的物品展示实体的序号 lastActionTarget_
 scoreboard players operation @s glbs_last_action_target_order = temp glbs_common

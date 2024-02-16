@@ -5,8 +5,12 @@
 ## tellraw 模板
 ```mcfunction
 # 消息前缀：
-#  \n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 
-# tellraw @s [" \n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 "]
+   # 简化形式
+   # \n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 
+   # tellraw @s ["\n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 "]
+   # 完整形式
+   {"text":"","extra":[{"text":"","extra":["\\n"]},{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}
+   # tellraw @s [{"text":"","extra":[{"text":"","extra":["\\n"]},{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}]
 
 # 输出
    # 分数
@@ -160,6 +164,7 @@ private:
 ## DisplayManager 关键函数实现
 ```c++
 class DisplayManager {
+public:
    static void RangeSummon(List<ItemData>& g_itemsToDisplay, int begin, int end)
    {
       while (begin < end) {
