@@ -1,5 +1,5 @@
 # @brief 将 g_itemData 中的数据解析成文本写入 g_text，根据 type 调不同类型的物品数据类解析
-# @executor ItemDisplayEntity
+# @executor TextDisplay
 
 # @other 这里不要使用变量 temp
 

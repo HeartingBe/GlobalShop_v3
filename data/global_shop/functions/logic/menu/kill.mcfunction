@@ -4,6 +4,9 @@
 # 清除物品展示实体
 execute as @e[type=minecraft:item_display,tag=global_shop,distance=..5] run function global_shop:logic/item_display_entity/kill
 
+# 清除文本展示实体
+execute positioned ~ ~1 ~ run kill @e[type=minecraft:text_display,distance=..5,tag=global_shop]
+
 # 清除交互实体
 execute on passengers if entity @s[type=minecraft:interaction] run function global_shop:logic/interactor/kill
 

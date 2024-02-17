@@ -1,0 +1,1 @@
+data modify storage global_shop:common g_text[-1] append value {"storage":"global_shop:common","nbt":"g_itemData.tag.display.Lore[0]","interpret":1}

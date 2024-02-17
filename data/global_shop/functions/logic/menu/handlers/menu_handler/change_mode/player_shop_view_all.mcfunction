@@ -2,14 +2,7 @@
 # @executor Menu
 
 # 初始化自身数据
-   # 清除左右键信息
-   execute on passengers if entity @s[type=minecraft:interaction] run function global_shop:logic/interactor/clear_left_and_right_click_action
-   # 初始化 lastAction_
-   scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
-   # 上一个看向的目标
-   scoreboard players reset @s glbs_last_action_target_order
-   # 展示物品的起始下标
-   scoreboard players set @s glbs_begin_index 0
+function global_shop:logic/menu/handlers/menu_handler/change_mode/reset_state
 # 取玩家商店物品数据
 function global_shop:storage/store_manager/get_player_shop_list_page
 # 取角度差 temp
