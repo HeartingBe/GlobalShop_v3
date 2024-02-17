@@ -1,1 +1,1 @@
-data modify storage global_shop:common g_text append from storage global_shop:storage SEPERATOR
+data modify storage global_shop:common g_text append from storage global_shop:storage char.SEPERATOR

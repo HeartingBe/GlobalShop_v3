@@ -1,1 +1,1 @@
-execute store success score temp1 glbs_common run data get storage global_shop:const enchantment."$(id)"
+$execute store success score temp1 glbs_common run data modify storage global_shop:common temp.translate_key set from storage global_shop:storage enchantment."$(id)"

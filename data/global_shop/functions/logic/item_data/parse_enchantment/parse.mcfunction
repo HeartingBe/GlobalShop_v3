@@ -1,16 +1,9 @@
-#查表
-function global_shop:logic/item_data/parse_enchantment/macro/find_translate_key with storage global_shop:common temp.enchantments[0]
-execute if score temp1 glbs_common matches 1 run return 0
+#获取翻译文本
+function global_shop:logic/item_data/parse_enchantment/get_translate_string
 
-#没有找到键值对，开始遍历字符串
-data modify storage global_shop:args splitNamespaceID.namespaceID set from storage global_shop:common temp.enchantments[0].id
-function global_shop:utils/string_helper/split_namespace_id
-#拼接翻译字符串
-function global_shop:logic/item_data/parse_enchantment/macro/concat_string with storage global_shop:common return
-#存表
-function global_shop:logic/item_data/parse_enchantment/macro/set_pair with storage global_shop:common
-#对于默认的minecraft命名空间，要存两份
-execute store success score isntDefault glbs_common run data modify storage global_shop:common return.namespace set value "minecraft"
-execute if score isntDefault glbs_common matches 0 run return 0
-data modify storage global_shop:common temp.enchantments[0].id set from storage global_shop:common return.id
-function global_shop:logic/item_data/parse_enchantment/macro/set_pair with storage global_shop:common
+#添加到文本展示实体
+data modify storage global_shop:common temp.jsontext.translate set from storage global_shop:common temp.translate_key
+data modify storage global_shop:common temp.jsontext.fallback set from storage global_shop:common temp.enchantments[0].id
+data modify storage global_shop:common temp.jsontext merge value {type:"translatable",color:"gray",italic:0}
+data modify storage global_shop:common g_text append from storage global_shop:common temp.jsontext
+function global_shop:logic/item_data/to_string/add_seperator
