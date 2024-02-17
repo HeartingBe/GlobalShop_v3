@@ -1,0 +1,2 @@
+execute if score size glbs_common matches 9..12 run function global_shop:logic/item_data/parse_lore/9_to_12
+execute if score size glbs_common matches 13.. run function global_shop:logic/item_data/parse_lore/13_to_16
