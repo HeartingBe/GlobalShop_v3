@@ -1,0 +1,1 @@
+execute store success score temp1 glbs_common run data get storage global_shop:const enchantment."$(id)"

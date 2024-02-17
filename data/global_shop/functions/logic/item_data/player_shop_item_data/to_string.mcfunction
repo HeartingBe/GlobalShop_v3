@@ -13,7 +13,7 @@ function global_shop:logic/item_data/add_prefix
 function global_shop:logic/item_data/parse_customname
 
 # 解析附魔
-
+function global_shop:logic/item_data/parse_enchantment
 
 # 解析 Lore
 function global_shop:logic/item_data/parse_lore

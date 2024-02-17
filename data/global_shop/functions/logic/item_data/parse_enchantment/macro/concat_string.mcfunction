@@ -1,0 +1,1 @@
+$data modify storage global_shop:common temp.translate_key set value enchantment.$(namespace).$(id)
