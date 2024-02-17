@@ -1,6 +1,6 @@
 # @param g_itemData
 # @param g_text
-# @executor ItemDisplayEntity
+# @executor TextDisplay
 
 # @other 这里不要使用变量 temp
 

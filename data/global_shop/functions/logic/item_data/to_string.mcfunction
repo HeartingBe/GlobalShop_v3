@@ -1,7 +1,7 @@
 # @brief 将 g_itemData 中的数据解析成文本写入 g_text
 # @param g_itemData
 # @param g_text
-# @executor ItemDisplayEntity
+# @executor TextDisplay
 
 # @other 这里不要使用变量 temp
 
