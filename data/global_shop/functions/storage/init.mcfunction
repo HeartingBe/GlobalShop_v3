@@ -19,7 +19,9 @@ execute unless data storage global_shop:storage g_scoreboard run data modify sto
    data modify storage global_shop:storage char.BLANK set value ""
    #换行符
    data modify storage global_shop:storage char.LINE_BREAK set value '"\\n"'
+   data modify storage global_shop:storage char.LINE_BREAK_WITH_PADDING set value '"  \\n  "'
    data modify storage global_shop:storage char.SEPERATOR set value {"storage":"global_shop:storage","nbt":"char.LINE_BREAK","interpret":1}
+   data modify storage global_shop:storage char.SEPERATOR_WITH_PADDING set value {"storage":"global_shop:storage","nbt":"char.LINE_BREAK_WITH_PADDING","interpret":1}
 #endregion
 
 # region enchantment 记录附魔文本用的键值对

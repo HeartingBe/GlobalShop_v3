@@ -1,3 +1,4 @@
+#> global_shop:logic/item_data/parse_enchantment/get_translate_string
 #查表
 scoreboard players set isntDefault glbs_common 1
 execute store success score noError glbs_common run function global_shop:logic/item_data/parse_enchantment/macro/find_translate_key with storage global_shop:common temp.enchantments[0]
