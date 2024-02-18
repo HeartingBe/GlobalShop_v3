@@ -7,6 +7,8 @@
 
 data remove storage global_shop:common g_text
 
+data modify storage global_shop:common g_text append value {"text":"  "}
+
 # 解析原版物品信息
     # 解析物品名字
     function global_shop:logic/item_data/parse_customname
@@ -33,3 +35,4 @@ function global_shop:logic/item_data/parse_item_id
 
 # 解析 nbt 标签数量
 function global_shop:logic/item_data/parse_nbt_num
+data modify storage global_shop:common g_text append value {"text":"  "}
