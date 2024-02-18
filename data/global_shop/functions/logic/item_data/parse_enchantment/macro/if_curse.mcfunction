@@ -1,0 +1,2 @@
+$execute store success score ifCurse glbs_common run data get storage global_shop:storage curse."$(id)"
+execute if score ifCurse glbs_common matches 1 run data modify storage global_shop:common temp.jsontext.color set value "red"

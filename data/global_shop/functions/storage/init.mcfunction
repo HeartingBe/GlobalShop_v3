@@ -5,22 +5,22 @@
 # 金钱记分板名称
 execute unless data storage global_shop:storage g_scoreboard run data modify storage global_shop:storage g_scoreboard set value "glbs_money"
 
-# 消息前缀
+# region 消息前缀
    # 简化形式，两层引号
    data modify storage global_shop:storage TEXT_PREFIX_SIMPLE set value '"\\u00a7f\\u25a0\\u00a77\\u25a0\\u00a78\\u25a0 "'
    # 标准形式，一层引号
    data modify storage global_shop:storage g_text_prefix set value {"text":"","extra":[{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}
-#
+#endregion
 
-# char 记录某些常量字符
+# region char 记录某些常量字符
    data modify storage global_shop:storage char.":" set value ":"
    data modify storage global_shop:storage char.BLANK set value ""
    #换行符
    data modify storage global_shop:storage char.LINE_BREAK set value '"\\n"'
    data modify storage global_shop:storage char.SEPERATOR set value {"storage":"global_shop:storage","nbt":"char.LINE_BREAK","interpret":1}
-#
+#endregion
 
-# enchantment 记录附魔文本用的键值对
+# region enchantment 记录附魔文本用的键值对
    data modify storage global_shop:storage enchantment.aqua_affinity set value "enchantment.minecraft.aqua_affinity"
    data modify storage global_shop:storage enchantment.bane_of_arthropods set value "enchantment.minecraft.bane_of_arthropods"
    data modify storage global_shop:storage enchantment.binding_curse set value "enchantment.minecraft.binding_curse"
@@ -99,5 +99,9 @@ execute unless data storage global_shop:storage g_scoreboard run data modify sto
    data modify storage global_shop:storage enchantment."minecraft:thorns" set value "enchantment.minecraft.thorns"
    data modify storage global_shop:storage enchantment."minecraft:unbreaking" set value "enchantment.minecraft.unbreaking"
    data modify storage global_shop:storage enchantment."minecraft:vanishing_curse" set value "enchantment.minecraft.vanishing_curse"
-#
+#endregion
 
+# 诅咒附魔
+   data modify storage global_shop:storage curse set value {"minecraft:binding_curse":0b,"minecraft:vanishing_curse":0b,"binding_curse":0b,"vanishing_curse":0b}
+# 等级I附魔
+   data modify storage global_shop:storage level1 set value {"aqua_affinity":0b,"channeling":0b,"binding_curse":0b,"vanishing_curse":0b,"flame":0b,"infinity":0b,"mending":0b,"multishot":0b,"silk_touch":0b,"minecraft:aqua_affinity":0b,"minecraft:channeling":0b,"minecraft:binding_curse":0b,"minecraft:vanishing_curse":0b,"minecraft:flame":0b,"minecraft:infinity":0b,"minecraft:mending":0b,"minecraft:multishot":0b,"minecraft:silk_touch":0b}
