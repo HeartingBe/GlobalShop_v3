@@ -31,5 +31,5 @@ function global_shop:logic/item_data/player_shop_item_data/parse_global_shop_inf
 # 解析物品命名空间 id
 function global_shop:logic/item_data/parse_item_id
 
-# 解析 nbt 标签
+# 解析 nbt 标签数量
 function global_shop:logic/item_data/parse_nbt_num

@@ -1,0 +1,2 @@
+# 临时世界物品实体 00000d3a-0000-0d3a-0000-17cc0000edf9
+summon minecraft:item ~ ~ ~ {Tags:["global_shop"],UUID:[I;3386,3386,6092,60921],Age:-32768s,PickupDelay:32767s,Item:{id:"minecraft:stone_button",Count:1b},Invulnerable:1b,NoGravity:1b}

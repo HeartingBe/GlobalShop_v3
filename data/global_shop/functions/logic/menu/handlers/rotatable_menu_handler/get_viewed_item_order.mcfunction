@@ -6,4 +6,5 @@ execute if score temp glbs_common matches -6..6 run return 13
 
 execute if score temp glbs_common matches 7..18 run return 14
 
-return -1
+# 返回 0 代表玩家没有看向物品实体
+return 0

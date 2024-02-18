@@ -12,7 +12,7 @@ scoreboard players operation @s glbs_begin_index += temp glbs_common
 function global_shop:logic/menu/handlers/menu_handler/rotate
 
 # 重置 lastAction_ lastActionTarget_（否则水平旋转后看向新的物品将不会高亮）
-scoreboard players set @s glbs_last_action_target_order -1
+scoreboard players set @s glbs_last_action_target_order 0
 scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
 
 # 取玩家历史购买物品数据

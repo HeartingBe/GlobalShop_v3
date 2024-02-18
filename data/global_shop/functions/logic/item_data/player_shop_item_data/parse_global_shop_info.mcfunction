@@ -5,14 +5,14 @@
 # @other 这里不要使用变量 temp
 
 # 换行
-execute if data storage global_shop:common g_text run function global_shop:logic/item_data/to_string/add_seperator
+function global_shop:logic/item_data/to_string/add_seperator
 
 # 分割线（会新起一行）
 function global_shop:logic/item_data/add_diviver
 
 # 写入 id
    # 换行
-   execute if data storage global_shop:common g_text run function global_shop:logic/item_data/to_string/add_seperator
+   function global_shop:logic/item_data/to_string/add_seperator
    # 文字和 id
    data modify storage global_shop:common g_text append value {"text":"编号: ","color":"white","extra":[{"storage":"global_shop:common","nbt":"g_itemData.tag.global_shop.id","color":"yellow"}]}
 

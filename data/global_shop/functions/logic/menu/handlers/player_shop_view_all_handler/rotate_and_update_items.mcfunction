@@ -1,19 +1,11 @@
+#> global_shop:logic/menu/handlers/player_shop_view_all_handler/rotate_and_update_items
 # @brief 产生水平转动导致出现列数差时，更新菜单
 # @param g_itemsToDisplay 物品数据
 # @param g_columnDiff 列数差
 # @executor Menu
 
-# 更新自身 beginIndex_
-scoreboard players operation temp glbs_common = g_columnDiff glbs_common
-scoreboard players operation temp glbs_common *= ITEM_NUM_PER_COLUMN glbs_common
-scoreboard players operation @s glbs_begin_index += temp glbs_common
-
-# 旋转
-function global_shop:logic/menu/handlers/menu_handler/rotate
-
-# 重置 lastAction_ lastActionTarget_（否则水平旋转后看向新的物品将不会高亮）
-scoreboard players set @s glbs_last_action_target_order -1
-scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
+# 更新 Menu 状态
+function global_shop:logic/menu/handlers/rotatable_menu_handler/rotate_and_update_items/update_menu_state
 
 # 取玩家商店物品数据
 function global_shop:storage/store_manager/get_player_shop_list_page
@@ -28,7 +20,7 @@ function global_shop:storage/store_manager/get_player_shop_list_page
       #tellraw @a ["abs(g_columnDiff):",{"score":{"objective":"glbs_common","name":"temp"}}]
    execute store result score orderDiff glbs_common run scoreboard players operation temp glbs_common *= 3 glbs_common
 # if (g_columnDiff < 0)
-   execute if score g_columnDiff glbs_common matches ..-1 run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/rotate_and_update_items/1
+   execute if score g_columnDiff glbs_common matches ..-1 run return run function global_shop:logic/menu/handlers/rotatable_menu_handler/rotate_and_update_items/1
 # else
    # 计算 end（先计算，避免下面调 RangeUpdateAndDelete 传第二个参数时 orderDiff 改变符号）
    scoreboard players operation end glbs_common = orderDiff glbs_common
