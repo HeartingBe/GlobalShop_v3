@@ -1,6 +1,7 @@
 # @brief 根据 g_itemsToDisplay 参数提供的物品数据生成物品展示实体
 # @param g_itemsToDisplay: List<ItemData>
 
+# log
 execute unless data storage global_shop:common g_itemsToDisplay[26] run tellraw @a ["\u00a7c物品不足 27 个，生成错误"]
 
 function global_shop:ui/display_manager/summon_single_item/0

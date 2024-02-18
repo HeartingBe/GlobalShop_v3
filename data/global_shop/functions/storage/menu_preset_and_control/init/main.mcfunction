@@ -8,7 +8,7 @@ data modify storage global_shop:menu_preset_and_control main append from storage
 data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 # 4
-data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_DATAPACK_INFO
+data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_ENTER_EDIT
 # 5~9
 data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
@@ -20,7 +20,7 @@ data modify storage global_shop:menu_preset_and_control main append from storage
 # 11 
 data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 # 12
-data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_ENTER_EDIT
+data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_DATAPACK_INFO
 # 13
 data modify storage global_shop:menu_preset_and_control main append from storage global_shop:menu_preset_and_control CONTROL_ENTER_SELL_SHOP
 # 14

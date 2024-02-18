@@ -91,19 +91,15 @@
       #define score_holder ItemDataType::SELL_SHOP
       #define score_holder ItemDataType::RECYCLE_SHOP
       #define score_holder ItemDataType::MY_BOUGHT
-      #define score_holder ItemDataType::MY_BOUGHT_FROM_SELL_SHOP
       #define score_holder ItemDataType::MY_SOLD
-      #define score_holder ItemDataType::MY_SOLD_TO_RECYCLE_SHOP
       #define score_holder ItemDataType::RETURN
       scoreboard players set ItemDataType::CONTROL glbs_common 0
       scoreboard players set ItemDataType::PLAYER_SHOP glbs_common 1
       scoreboard players set ItemDataType::SELL_SHOP glbs_common 2
       scoreboard players set ItemDataType::RECYCLE_SHOP glbs_common 3
       scoreboard players set ItemDataType::MY_BOUGHT glbs_common 4
-      scoreboard players set ItemDataType::MY_BOUGHT_FROM_SELL_SHOP glbs_common 5
-      scoreboard players set ItemDataType::MY_SOLD glbs_common 6
-      scoreboard players set ItemDataType::MY_SOLD_TO_RECYCLE_SHOP glbs_common 7
-      scoreboard players set ItemDataType::RETURN glbs_common 8
+      scoreboard players set ItemDataType::MY_SOLD glbs_common 5
+      scoreboard players set ItemDataType::RETURN glbs_common 6
       # 控件 id
          #define score_holder CONTROL_NULL_ITEM
          #define score_holder CONTROL_DATAPACK_INFO

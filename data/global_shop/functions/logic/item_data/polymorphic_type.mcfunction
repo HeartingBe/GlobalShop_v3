@@ -5,6 +5,7 @@
 
 execute store result score temp2 glbs_common run data get storage global_shop:common g_itemData.tag.global_shop.type
 
-# 暂时用分数，之后改成宏
-   # 玩家商店的物品
-   execute if score temp2 glbs_common = ItemDataType::PLAYER_SHOP glbs_common run function global_shop:logic/item_data/player_shop_item_data/to_string
+# 调不同 ItemData 的 ToString()
+   execute if score temp2 glbs_common matches 0..3 run return run function global_shop:logic/item_data/polymorphic_type/0_to_3
+
+   execute if score temp2 glbs_common matches 4..6 run return run function global_shop:logic/item_data/polymorphic_type/4_to_6

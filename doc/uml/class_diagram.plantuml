@@ -184,9 +184,7 @@ enum ItemDataType {
    SellShop
    RecycleShop
    MyBought
-   MyBoughtFromSellShop
    MySold
-   MySoldToRecycleShop
    Return
 }
 ItemDataType -right- ItemData
@@ -225,13 +223,7 @@ class RecycleShopItemData {
 class MyBoughtItemData {
    +Lores ToString()
 }
-class MyBoughtFromSellShopItemData {
-   +Lores ToString()
-}
 class MySoldItemData {
-   +Lores ToString()
-}
-class MySoldToRecycleShopItemData {
    +Lores ToString()
 }
 ItemData <|-down- ControlItemData
@@ -242,9 +234,7 @@ DynamicItemData <|-- PlayerShopItemData
 DynamicItemData <|-- SellShopItemData
 DynamicItemData <|-- RecycleShopItemData
 DynamicItemData <|-- MyBoughtItemData
-DynamicItemData <|-- MyBoughtFromSellShopItemData
 DynamicItemData <|-- MySoldItemData
-DynamicItemData <|-- MySoldToRecycleShopItemData
 
 class DisplayManager {
    +void SummonWholePageItems(g_itemsToDisplay: List<ItemData>&) {static}
