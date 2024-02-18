@@ -1,3 +1,4 @@
+#> global_shop:logic/item_display_entity/display_text
 # @param g_itemData 物品信息
 # @executor ItemDisplayEntity
 

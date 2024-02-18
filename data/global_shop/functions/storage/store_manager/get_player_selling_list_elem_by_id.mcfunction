@@ -1,3 +1,4 @@
+#> global_shop:storage/store_manager/get_player_selling_list_elem_by_id
 # @brief 获取 g_playerSellingListMap.<uid>[{id:<id>}]
 # @param sellerUid 卖家的 uid
 # @param g_itemData 出参
