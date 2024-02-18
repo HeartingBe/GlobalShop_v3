@@ -9,4 +9,3 @@ function global_shop:logic/item_data/parse_enchantment/parse
 
 data remove storage global_shop:common temp.enchantments[0]
 function global_shop:logic/item_data/parse_enchantment/foreach
-

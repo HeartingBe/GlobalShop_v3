@@ -50,6 +50,8 @@
             scoreboard players add g_nextRecycleShopId glbs_common 0
             execute unless score g_nextRecycleShopId glbs_common matches 1.. run scoreboard players set g_nextRecycleShopId glbs_common 1
    # Permission 权限
+      #define score_holder Permission::PLAYER
+      #define score_holder Permission::ADMIN
       scoreboard players set Permission::PLAYER glbs_common 0
       scoreboard players set Permission::ADMIN glbs_common 1
    # Menu 实体的模式 Mode

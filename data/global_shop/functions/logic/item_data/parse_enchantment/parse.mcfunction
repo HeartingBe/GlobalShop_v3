@@ -13,7 +13,9 @@ execute if score isntDefault glbs_common matches 0 run function global_shop:logi
 execute if score isntDefault glbs_common matches 0 run function global_shop:logic/item_data/parse_enchantment/append_level_string
 execute if score isntDefault glbs_common matches 1 run function global_shop:logic/item_data/parse_enchantment/macro/append_level_string with storage global_shop:common temp.enchantments[0]
 
-data modify storage global_shop:common g_text append from storage global_shop:common temp.jsontext
-data remove storage global_shop:common temp.jsontext
-
-function global_shop:logic/item_data/to_string/add_seperator
+# 将结果写入 g_text
+   # 换行
+   execute if data storage global_shop:common g_text run function global_shop:logic/item_data/to_string/add_seperator
+   # 写入
+   data modify storage global_shop:common g_text append from storage global_shop:common temp.jsontext
+   data remove storage global_shop:common temp.jsontext

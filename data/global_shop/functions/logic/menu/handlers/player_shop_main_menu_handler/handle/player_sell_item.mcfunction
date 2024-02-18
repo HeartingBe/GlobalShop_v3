@@ -2,7 +2,7 @@
 # @executor Player
 
 # 该玩家冷却时间未结束
-execute if score @s glbs_sell_item_cooling_time matches 1.. run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/cooling_time_not_end
+execute if score @s glbs_sell_item_cooling_time matches 1.. unless score @s glbs_permission = Permission::ADMIN glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/cooling_time_not_end
 
 # 该玩家上架和回退物品总数达到最大值
 scoreboard players operation temp glbs_common = @s glbs_sell_num

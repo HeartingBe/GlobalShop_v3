@@ -17,11 +17,14 @@ data remove storage global_shop:common g_text
     # 解析 Lore
     function global_shop:logic/item_data/parse_lore
 
-    # TODO 解析属性
+    # 解析属性
+    # 暂时不做
 
-    # TODO 解析无法破坏标签
+    # 解析无法破坏标签
+    # 暂时不做
 
-    # TODO 解析，可以被放置在方块上，可以破坏方块的标签
+    # 解析可以被放置在方块上，可以破坏方块的标签
+    # 暂时不做
 # 解析商店物品信息
 function global_shop:logic/item_data/player_shop_item_data/parse_global_shop_info
 
