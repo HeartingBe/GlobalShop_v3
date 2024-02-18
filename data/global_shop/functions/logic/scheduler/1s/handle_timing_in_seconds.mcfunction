@@ -1,3 +1,4 @@
+#> global_shop:logic/scheduler/1s/handle_timing_in_seconds
 # @executor Player
 
 # 减少玩家上架物品冷却

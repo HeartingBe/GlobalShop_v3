@@ -1,3 +1,4 @@
+#> global_shop:logic/text_display/text_display
 # @brief 生成文本展示实体
 # @param g_text
 # @executor Menu
