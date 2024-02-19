@@ -15,7 +15,7 @@
    # 转换为列数差
    execute store result score g_columnDiff glbs_common run scoreboard players operation temp glbs_common /= 12 glbs_common
    # 转动更新
-   execute unless score g_columnDiff glbs_common matches 0 run return run function global_shop:logic/menu/handlers/player_shop_view_my_bought_handler/rotate_and_update_items
+   execute unless score g_columnDiff glbs_common matches 0 run function global_shop:logic/menu/handlers/player_shop_view_my_bought_handler/rotate_and_update_items
 
 # 判断玩家看向新的物品实体
    # 获取看向的控件序号

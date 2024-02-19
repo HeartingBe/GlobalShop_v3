@@ -7,4 +7,4 @@
 function global_shop:logic/text_display/kill
 
 # 生成新的文本展示实体
-execute on passengers if entity @s[type=minecraft:player] at @s anchored eyes rotated ~20 ~ positioned ^ ^ ^3.6 summon minecraft:text_display run function global_shop:logic/text_display/text_display/parse_text_and_set_state
+execute on passengers if entity @s[type=minecraft:player] anchored eyes rotated as @s positioned ^ ^ ^2.8 summon minecraft:text_display run function global_shop:logic/text_display/text_display/parse_text_and_set_state
