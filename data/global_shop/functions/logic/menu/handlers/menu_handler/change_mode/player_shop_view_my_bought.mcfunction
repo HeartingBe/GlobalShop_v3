@@ -2,7 +2,7 @@
 # @executor Menu
 
 # 初始化自身数据
-function global_shop:logic/menu/handlers/menu_handler/change_mode/reset_state
+function global_shop:logic/menu/handlers/menu_handler/change_mode/reset_state_rotatable
 # 取玩家历史购买物品数据
 data remove storage global_shop:common temp
 execute on passengers if entity @s[type=minecraft:player] store result storage global_shop:common temp.uid int 1 run scoreboard players get @s glbs_uid
@@ -14,8 +14,6 @@ execute store result score temp glbs_common run function global_shop:utils/math_
 # 旋转
 execute store result score g_columnDiff glbs_common run scoreboard players operation temp glbs_common /= 12 glbs_common
 function global_shop:logic/menu/handlers/menu_handler/rotate
-# 清除周围所有物品展示实体
-function global_shop:logic/menu/kill_item_display_entities_around
 # 更改模式
 scoreboard players operation @s glbs_mode = Mode::PLAYER_SHOP_VIEW_MY_BOUGHT glbs_common
 # 通知

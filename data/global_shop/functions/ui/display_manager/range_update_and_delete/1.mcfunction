@@ -1,3 +1,5 @@
+# @executor ItemDisplayEntity
+
 # 先更新 order_
 scoreboard players operation @s glbs_order += orderDiff glbs_common
 

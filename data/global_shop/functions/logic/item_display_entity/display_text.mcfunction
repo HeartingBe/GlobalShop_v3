@@ -1,4 +1,5 @@
 #> global_shop:logic/item_display_entity/display_text
+# @brief 将物品展示实体所含有的物品信息解析和展示到新生成的文本展示实体上
 # @param g_itemData 物品信息
 # @executor ItemDisplayEntity
 

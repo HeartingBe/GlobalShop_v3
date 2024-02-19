@@ -28,9 +28,9 @@
          #define score_holder g_time
          #define score_holder g_registeredPlayerNum 当前注册玩家数量
          #define score_holder g_nextUid 下一个注册的玩家得到的UID
-         #define score_holder g_nextPlayerShopId
-         #define score_holder g_nextSellShopId
-         #define score_holder g_nextRecycleShopId
+         #define score_holder g_nextPlayerShopId 下一个玩家上架物品的 id
+         #define score_holder g_nextSellShopId 下一个管理员设置的出售商店物品的 id
+         #define score_holder g_nextRecycleShopId 下一个管理员设置的回收商店物品的 id
          # g_time
             scoreboard players add g_time glbs_common 0
             execute unless score g_time glbs_common matches 0.. run scoreboard players set g_time glbs_common 0

@@ -5,7 +5,7 @@
    # 获取右键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_back_action
       # 返回玩家商店主菜单
-      execute if score temp glbs_common = Action::RIGHT_CLICK glbs_common run return run function global_shop:logic/menu/handlers/player_shop_view_all_handler/handle/player_back
+      execute if score temp glbs_common = Action::RIGHT_CLICK glbs_common run return run function global_shop:logic/menu/handlers/player_shop_view_my_bought_handler/handle/player_back
 
 # 玩家旋转
    # 取角度差 temp

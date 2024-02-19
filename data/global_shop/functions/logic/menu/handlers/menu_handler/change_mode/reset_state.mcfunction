@@ -1,4 +1,4 @@
-# @brief 切换模式时重置 Menu 记录的各种状态量
+# @brief 切换非旋转模式时重置 Menu 记录的各种状态量
 # @executor Menu
 
 # 清除左右键信息
@@ -13,3 +13,5 @@ scoreboard players reset @s glbs_last_action_target_id
 scoreboard players set @s glbs_begin_index 0
 # 清除周围的文本展示实体
 function global_shop:logic/text_display/kill
+# 清除周围所有物品展示实体
+function global_shop:logic/menu/kill_item_display_entities_around

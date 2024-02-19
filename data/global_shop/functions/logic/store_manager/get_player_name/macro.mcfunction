@@ -1,1 +1,0 @@
-$data modify storage global_shop:common temp.jtext set value $(Name)

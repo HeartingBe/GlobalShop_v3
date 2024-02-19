@@ -2,3 +2,6 @@
 # @executor ItemDisplayEntity
 
 say 更新动画
+
+# 刷新显示的数量
+function global_shop:logic/item_display_entity/display_count
