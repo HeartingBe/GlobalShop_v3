@@ -8,6 +8,9 @@ scoreboard players operation temp glbs_common = @s glbs_last_action_target_order
 
    # log
    execute on passengers if entity @s[type=minecraft:player] run title @s actionbar [{"score":{"objective":"glbs_common","name":"temp"}}]
+
+   # 4 >> 切换到编辑模式界面
+   execute if score temp glbs_common matches 4 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_edit_mode
       
    # 10 >> 切换到玩家商店主界面
    execute if score temp glbs_common matches 10 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_shop_main

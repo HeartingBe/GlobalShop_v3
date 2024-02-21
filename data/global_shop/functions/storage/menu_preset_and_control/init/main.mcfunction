@@ -1,3 +1,4 @@
+#> global_shop:storage/menu_preset_and_control/init/main
 # @brief 初始化主菜单
 
 data remove storage global_shop:menu_preset_and_control main

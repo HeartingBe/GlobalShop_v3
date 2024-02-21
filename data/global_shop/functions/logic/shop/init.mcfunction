@@ -61,12 +61,12 @@
       #define score_holder Mode::PLAYER_SHOP_VIEW_MY_BOUGHT
       #define score_holder Mode::PLAYER_SHOP_VIEW_SOLD
       #define score_holder Mode::PLAYER_SHOP_VIEW_SELLING
-      #define score_holder Mode::SELL_SHOP_VIEW_ALL
-      #define score_holder Mode::RECYCLE_SHOP_VIEW_ALL
-      #define score_holder Mode::MONEY_ITEM_EXCHANGE
-      #define score_holder Mode::EDIT
-      #define score_holder Mode::EDIT_VIEW_SELL_SHOP
-      #define score_holder Mode::EDIT_VIEW_RECYCLE_SHOP
+      #define score_holder Mode::SELL_SHOP_VIEW_ALL 在出售商店中查看所有物品
+      #define score_holder Mode::RECYCLE_SHOP_VIEW_ALL 在回收商店中查看所有物品
+      #define score_holder Mode::MONEY_ITEM_EXCHANGE 
+      #define score_holder Mode::EDIT_MODE 在编辑模式菜单中
+      #define score_holder Mode::EDIT_VIEW_SELL_SHOP 在编辑模式中查看出售商店
+      #define score_holder Mode::EDIT_VIEW_RECYCLE_SHOP 在编辑模式中查看回收商店
       scoreboard players set Mode::MAIN glbs_common 0
       scoreboard players set Mode::PLAYER_SHOP_MAIN glbs_common 1
       scoreboard players set Mode::PLAYER_SHOP_VIEW_ALL glbs_common 2
@@ -76,9 +76,10 @@
       scoreboard players set Mode::SELL_SHOP_VIEW_ALL glbs_common 6
       scoreboard players set Mode::RECYCLE_SHOP_VIEW_ALL glbs_common 7
       scoreboard players set Mode::MONEY_ITEM_EXCHANGE glbs_common 8
-      scoreboard players set Mode::EDIT glbs_common 9
+      scoreboard players set Mode::EDIT_MODE glbs_common 9
       scoreboard players set Mode::EDIT_VIEW_SELL_SHOP glbs_common 10
       scoreboard players set Mode::EDIT_VIEW_RECYCLE_SHOP glbs_common 11
+      
    # 玩家操作类型 ACTION
       #define score_holder Action::NO_ACTION_THIS_PLAYER
       #define score_holder Action::LEFT_CLICK
@@ -118,6 +119,14 @@
          #define score_holder CONTROL_VIEW_RETURN_ITEMS
          #define score_holder CONTROL_VIEW_MY_BOUGHT
          #define score_holder CONTROL_VIEW_MY_SOLD
+         #define score_holder CONTROL_ADD_ITEM_TO_SELL_SHOP
+         #define score_holder CONTROL_REMOVE_ITEM_FROM_SELL_SHOP
+         #define score_holder CONTROL_ADD_ITEM_TO_RECYCLE_SHOP
+         #define score_holder CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP
+         #define score_holder CONTROL_COIN_EXCHANGE
+         #define score_holder CONTROL_CHANGE_EXCHANGE_RATE
+         #define score_holder CONTROL_RETURN_TO_MAIN
+         #define score_holder CONTROL_EXIT_EDIT_MODE
          scoreboard players set CONTROL_NULL_ITEM glbs_common 0
          scoreboard players set CONTROL_DATAPACK_INFO glbs_common 1
          scoreboard players set CONTROL_ENTER_PLAYER_SHOP_MAIN glbs_common 2
@@ -132,6 +141,15 @@
          scoreboard players set CONTROL_VIEW_RETURN_ITEMS glbs_common 11
          scoreboard players set CONTROL_VIEW_MY_BOUGHT glbs_common 12
          scoreboard players set CONTROL_VIEW_MY_SOLD glbs_common 13
+         scoreboard players set CONTROL_ADD_ITEM_TO_SELL_SHOP glbs_common 14
+         scoreboard players set CONTROL_REMOVE_ITEM_FROM_SELL_SHOP glbs_common 15
+         scoreboard players set CONTROL_ADD_ITEM_TO_RECYCLE_SHOP glbs_common 16
+         scoreboard players set CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP glbs_common 17
+         scoreboard players set CONTROL_TOGGLE_MONEY_EXCHANGE glbs_common 18
+         scoreboard players set CONTROL_CHANGE_EXCHANGE_RATE glbs_common 19
+         scoreboard players set CONTROL_RETURN_MAIN_MENU glbs_common 20
+         scoreboard players set CONTROL_EXIT_EDIT_MODE glbs_common 21
+
 
 # 玩家相关记分板
    # glbs_uid 玩家 uid

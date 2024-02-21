@@ -1,3 +1,4 @@
+#> global_shop:logic/menu/handlers/main_menu_handler/handle
 # @brief 主菜单逻辑
 # @executor Menu
 

@@ -1,3 +1,5 @@
+#> global_shop:logic/menu/polymorphic_mode/0_to_2
+
 # 主菜单的处理逻辑 0
 execute if score @s glbs_mode = Mode::MAIN glbs_common run return run function global_shop:logic/menu/handlers/main_menu_handler/handle
 
