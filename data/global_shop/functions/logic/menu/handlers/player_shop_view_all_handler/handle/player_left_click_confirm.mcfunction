@@ -47,6 +47,8 @@
       # 更新卖家的出售物品数量
       function global_shop:logic/menu/handlers/player_shop_view_all_handler/handle/player_left_click_confirm/macro_update_seller_sell_num with storage global_shop:common temp
    # 写入买家历史购买
+      # 去掉时间
+      data remove storage global_shop:common g_itemData.tag.global_shop.expireTime
       # 修改物品 type
       execute store result storage global_shop:common g_itemData.tag.global_shop.type int 1 run scoreboard players get ItemDataType::MY_BOUGHT glbs_common
       # 构造宏参数 {playerUid: int}

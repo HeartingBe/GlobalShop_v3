@@ -1,3 +1,4 @@
+#> global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item
 # @brief 上架玩家主手的物品
 # @executor Player
 
