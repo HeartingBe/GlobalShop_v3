@@ -47,10 +47,6 @@ else 物品存在
          Menu -> Menu : 扣除玩家对应数量的该种物品
          activate Menu
          deactivate Menu
-         Menu -> StoreManager : 写入玩家历史出售
-         activate StoreManager
-         Menu <-- StoreManager
-         deactivate StoreManager
       else 物品不足
          player <- Menu : 通知玩家物品不足
       end

@@ -1,17 +1,12 @@
-# @brief 返回从下标 beginIndex 开始的数据， beginIndex < 0 或者溢出最大范围的部分填充空项
-# @macro {uid: int}
+# @brief 返回玩家历史购买列表中，从下标 beginIndex 开始的数据, beginIndex < 0 或者溢出最大范围的部分填充空项
 # @param beginIndex 开始下标，从 Menu 的记分板取得
 # @param g_itemsToDisplay 目标位置，将结果写入该路径
 # @executor Menu
 
-# 从最新的物品开始显示，即从表尾向前取出物品数据。beginIndex_ 先沿对称轴对称到其对称点上，然后向前移动逐个取出
+# 先取出玩家的历史购买列表，存储在 global_shop:storage g_tempList
+data remove storage global_shop:common temp
+execute on passengers if entity @s[type=minecraft:player] store result storage global_shop:common temp.uid int 1 run scoreboard players get @s glbs_uid
+function global_shop:storage/store_manager/cache_player_shop_my_bought_list with storage global_shop:common temp
 
-data remove storage global_shop:common g_itemsToDisplay
-
-$execute store result score temp1 glbs_common run data get storage global_shop:storage g_playerBoughtListMap.$(uid)
-scoreboard players remove temp1 glbs_common 1
-scoreboard players operation temp1 glbs_common -= @s glbs_begin_index
-
-# for (int i = 0; i < 27; ++i)
-scoreboard players set i glbs_common 0
-function global_shop:storage/store_manager/get_player_shop_my_bought_list_page/1
+# 从缓存中取从 beginIndex_ 开始的一整页数据
+function global_shop:storage/store_manager/get_cache_list_page

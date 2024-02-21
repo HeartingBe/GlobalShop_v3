@@ -67,5 +67,7 @@
    execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/player/obtain_item
    # 刷新显示
    function global_shop:logic/menu/handlers/player_shop_view_all_handler/refresh
+   # 清除周围的文本展示实体
+   function global_shop:logic/text_display/kill
    # 通知
    execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["购买成功"]

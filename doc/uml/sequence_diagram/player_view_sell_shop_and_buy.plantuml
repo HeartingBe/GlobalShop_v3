@@ -47,10 +47,6 @@ else 物品存在
          Menu -> Menu : 扣除玩家金钱
          activate Menu
          deactivate Menu
-         Menu -> StoreManager : 写入玩家历史购买
-         activate StoreManager
-         Menu <-- StoreManager
-         deactivate StoreManager
          player <- Menu : ObtainItem()
       else 钱不够
          player <- Menu : 通知玩家钱不够

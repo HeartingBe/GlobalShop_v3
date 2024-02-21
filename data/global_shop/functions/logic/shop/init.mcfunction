@@ -71,7 +71,7 @@
       scoreboard players set Mode::PLAYER_SHOP_MAIN glbs_common 1
       scoreboard players set Mode::PLAYER_SHOP_VIEW_ALL glbs_common 2
       scoreboard players set Mode::PLAYER_SHOP_VIEW_MY_BOUGHT glbs_common 3
-      scoreboard players set Mode::PLAYER_SHOP_VIEW_SOLD glbs_common 4
+      scoreboard players set Mode::PLAYER_SHOP_VIEW_MY_SOLD glbs_common 4
       scoreboard players set Mode::PLAYER_SHOP_VIEW_SELLING glbs_common 5
       scoreboard players set Mode::SELL_SHOP_VIEW_ALL glbs_common 6
       scoreboard players set Mode::RECYCLE_SHOP_VIEW_ALL glbs_common 7

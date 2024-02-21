@@ -1,12 +1,10 @@
-# @brief 切换到玩家浏览自己的历史出售
+# @brief 切换到玩家浏览自己的历史购买
 # @executor Menu
 
 # 初始化自身数据
 function global_shop:logic/menu/handlers/menu_handler/change_mode/reset_state_rotatable
 # 取玩家历史购买物品数据
-data remove storage global_shop:common temp
-execute on passengers if entity @s[type=minecraft:player] store result storage global_shop:common temp.uid int 1 run scoreboard players get @s glbs_uid
-function global_shop:storage/store_manager/get_player_shop_my_bought_list_page with storage global_shop:common temp
+function global_shop:storage/store_manager/get_player_shop_my_bought_list_page
 # 取角度差 temp
 execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_angle_diff
 # 取 temp 最近的 12 的倍数

@@ -21,3 +21,5 @@ scoreboard players operation temp glbs_common = @s glbs_last_action_target_order
 
       # 19 >> 切换到玩家浏览自己的历史购买物品
       execute if score temp glbs_common matches 19 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/change_mode_to_player_shop_view_my_bought
+
+      execute if score temp glbs_common matches 22 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/change_mode_to_player_shop_view_my_sold
