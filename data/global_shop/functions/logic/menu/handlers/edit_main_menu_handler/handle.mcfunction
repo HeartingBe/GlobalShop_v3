@@ -3,7 +3,10 @@
 # @executor Menu
 
 # 判断管理员向出售商店添加物品
-execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_set_sell_shop_item_price matches 0 run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_sell_item
+execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_set_sell_shop_item_price matches 0 run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_sell_item
+
+# 判断管理员向回收商店添加物品
+execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_set_recycle_shop_item_price matches 0 run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_recycle_item
 
 # 判断玩家右键
    # 获取右键情况

@@ -93,13 +93,13 @@
       scoreboard players set Action::LEFT_CLICK_CONFIRM glbs_common 2
       scoreboard players set Action::RIGHT_CLICK glbs_common 3
    # 物品类型 ItemDataType
-      #define score_holder ItemDataType::CONTROL
-      #define score_holder ItemDataType::PLAYER_SHOP
-      #define score_holder ItemDataType::SELL_SHOP
-      #define score_holder ItemDataType::RECYCLE_SHOP
-      #define score_holder ItemDataType::MY_BOUGHT
-      #define score_holder ItemDataType::MY_SOLD
-      #define score_holder ItemDataType::RETURN
+      #define score_holder ItemDataType::CONTROL 表示控件的物品
+      #define score_holder ItemDataType::PLAYER_SHOP 玩家商店的物品
+      #define score_holder ItemDataType::SELL_SHOP  出售商店的物品
+      #define score_holder ItemDataType::RECYCLE_SHOP 回收商店的物品
+      #define score_holder ItemDataType::MY_BOUGHT 玩家的购买记录中展示的物品
+      #define score_holder ItemDataType::MY_SOLD 玩家出售记录中展示的物品
+      #define score_holder ItemDataType::RETURN 玩家超时未卖出的回退物品
       scoreboard players set ItemDataType::CONTROL glbs_common 0
       scoreboard players set ItemDataType::PLAYER_SHOP glbs_common 1
       scoreboard players set ItemDataType::SELL_SHOP glbs_common 2
@@ -184,6 +184,9 @@
 
    # glbs_set_sell_shop_item_price 管理员指定出售商店物品的价格
    scoreboard objectives add glbs_set_sell_shop_item_price trigger
+
+   # glbs_set_recycle_shop_item_price 管理员指定回收商店物品的价格
+   scoreboard objectives add glbs_set_recycle_shop_item_price trigger
    
 # glbs_mode 记录 Menu 实体 mode_ 记分板
 scoreboard objectives add glbs_mode dummy

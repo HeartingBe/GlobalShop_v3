@@ -1,12 +1,12 @@
-#> global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_sell_item
+#> global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_sell_item
 # @brief 上架玩家主手的物品
 # @executor Player
 
 # 输入是负数
-execute if score @s glbs_set_sell_shop_item_price matches ..0 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_sell_item/invalid_num
+execute if score @s glbs_set_sell_shop_item_price matches ..0 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_sell_item/invalid_num
 
 # 主手为空
-execute unless data entity @s SelectedItem run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_sell_item/main_hand_has_no_item
+execute unless data entity @s SelectedItem run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_sell_item/main_hand_has_no_item
 
 # 检查通过：
    # 构造 SellShopItemData
