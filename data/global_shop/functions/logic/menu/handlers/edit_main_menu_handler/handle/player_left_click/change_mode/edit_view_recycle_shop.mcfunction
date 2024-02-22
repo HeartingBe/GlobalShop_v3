@@ -1,0 +1,1 @@
+function global_shop:logic/menu/handlers/menu_handler/change_mode/edit_view_recycle_shop
