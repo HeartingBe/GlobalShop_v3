@@ -1,4 +1,4 @@
-#> global_shop:storage/store_manager/delete_sell_shop_elem_by_id
+#> global_shop:storage/store_manager/delete_recycle_shop_elem_by_id
 #
 # 从出售商店中中删除该 id 对应的物品
 # @param id 物品分配的 id

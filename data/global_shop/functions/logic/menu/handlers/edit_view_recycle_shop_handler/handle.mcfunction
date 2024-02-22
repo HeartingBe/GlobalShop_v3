@@ -6,7 +6,7 @@
 # 判断玩家右键
    # 获取右键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_back_action
-      # 返回玩家商店主菜单
+      # 返回编辑模式主菜单
       execute if score temp glbs_common = Action::RIGHT_CLICK glbs_common run return run function global_shop:logic/menu/handlers/edit_view_recycle_shop_handler/handle/player_back
 
 # 玩家旋转

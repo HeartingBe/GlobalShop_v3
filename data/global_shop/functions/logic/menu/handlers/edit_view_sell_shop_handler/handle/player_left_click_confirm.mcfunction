@@ -3,9 +3,6 @@
 # 双击确认删除物品
 # @executor Menu
 
-# 高亮取消
-team empty glsp_will_delete
-
 # 左键状态重置
 scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
 

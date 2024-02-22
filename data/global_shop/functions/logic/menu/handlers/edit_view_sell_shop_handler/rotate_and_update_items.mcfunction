@@ -7,7 +7,7 @@
 # 更新 Menu 状态
 function global_shop:logic/menu/handlers/rotatable_menu_handler/rotate_and_update_items/update_menu_state
 
-# 取玩家历史购买物品数据
+# 取出售商店物品数据
 function global_shop:storage/store_manager/get_sell_shop_list_page
 
 # 物品展示实体的生成、更新和删除（旋转模式都是以下逻辑）

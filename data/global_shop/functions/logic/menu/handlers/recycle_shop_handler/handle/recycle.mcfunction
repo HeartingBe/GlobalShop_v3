@@ -19,4 +19,5 @@ scoreboard players operation newCount glbs_common = remainingCount glbs_common
 function global_shop:logic/player/modify_item_count
 
 # 通知
-tellraw @s ["回收成功？"]
+execute store result score playerMoney glbs_common run function global_shop:logic/player/get_money
+tellraw @s ["\u00a7a回收成功, 获得收入: ",{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"},"\u00a7a, 现在你有 ",{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"}," \u00a7a金钱"]

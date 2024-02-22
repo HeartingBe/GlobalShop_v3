@@ -3,4 +3,4 @@
 
 function global_shop:logic/menu/handlers/edit_view_sell_shop_handler/refresh
 
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7c该历史购买记录不存在, 已刷新显示"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7c该出售商店物品不存在, 已刷新显示"]

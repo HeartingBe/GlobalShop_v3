@@ -7,4 +7,6 @@ tag @s add glbs_to_kill_2
 
 scoreboard players reset @s glbs_order
 
+team leave @s
+
 function global_shop:logic/item_display_entity/disappear

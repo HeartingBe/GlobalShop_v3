@@ -1,9 +1,9 @@
-# @brief 切换到浏览出售商店
+# @brief 切换到浏览回收商店
 # @executor Menu
 
 # 清除上一个页面，初始化自身数据，准备加载此页面
 function global_shop:logic/menu/handlers/menu_handler/change_mode/reset_state_rotatable
-# 读取出售商店的物品数据
+# 读取回收商店的物品数据
 function global_shop:storage/store_manager/get_recycle_shop_list_page
 # 取角度差 temp
 execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_angle_diff
@@ -18,6 +18,3 @@ scoreboard players operation @s glbs_mode = Mode::EDIT_VIEW_RECYCLE_SHOP glbs_co
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a欢迎编辑浏览回收商店"]
 # 生成物品展示实体（注意：上面旋转，但是本函数的执行环境未改变，需要校正旋转角）
 execute rotated as @s run function global_shop:ui/display_manager/summon_whole_page_items
-# 重置出售价格和回收价格记分板
-execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_set_sell_shop_item_price 0
-execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_set_recycle_shop_item_price 0

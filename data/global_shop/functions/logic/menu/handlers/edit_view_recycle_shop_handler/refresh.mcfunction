@@ -9,7 +9,7 @@ scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER
 # 重置 last_glbs_last_action_target_id
 scoreboard players set @s glbs_last_action_target_id 0
 
-# 取玩家历史购买物品数据
+# 取回收商店物品数据
 function global_shop:storage/store_manager/get_recycle_shop_list_page
 
 # 更新物品展示实体
