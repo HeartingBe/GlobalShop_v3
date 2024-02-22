@@ -1,7 +1,9 @@
 # @executor Menu
 
+scoreboard players operation now_selected glbs_common = @s glbs_last_action_target_order
+
 # 玩家点击菜单外的地方
-execute if score @s glbs_last_action_target_order matches -1 run return run function global_shop:logic/menu/handlers/menu_handler/handle/player_left_click/null
+execute if score now_selected glbs_common matches -1 run return run function global_shop:logic/menu/handlers/menu_handler/handle/player_left_click/null
 
 # 用 glbs_last_action_target_id 获取物品信息
    # 玩家点击空项，无任何效果，然后返回
@@ -16,6 +18,9 @@ execute unless data storage global_shop:common g_itemData run return run functio
 # 玩家左键确认
    # index glbs_common 在下面这个函数中还要使用
 execute if score @s glbs_last_action = Action::LEFT_CLICK_CONFIRM glbs_common run return run function global_shop:logic/menu/handlers/player_shop_handler/handle/player_left_click_confirm
+
+# 对此物品进行高亮显示
+execute as @e[distance=..5,type=item_display,tag=global_shop] if score @s glbs_order = now_selected glbs_common run team join glsp_will_buy @s
 
 # 玩家首次左键
    # log
