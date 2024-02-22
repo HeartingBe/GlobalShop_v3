@@ -10,6 +10,3 @@ execute unless score g_isInit glbs_common matches 1 run function global_shop:ini
 
 # Scheduler 类是定时器，按一定频率调用 Shop#Perform 驱动整个数据包工作，考虑每次都检查
 function global_shop:logic/scheduler/timing
-
-#定义
-#define storage global_shop:common

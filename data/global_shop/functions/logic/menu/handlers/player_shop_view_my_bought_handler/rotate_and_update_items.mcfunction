@@ -10,7 +10,7 @@ function global_shop:logic/menu/handlers/rotatable_menu_handler/rotate_and_updat
 # 取玩家历史购买物品数据
 function global_shop:storage/store_manager/get_player_shop_my_bought_list_page
 
-# 物品展示实体的生成、更新和删除
+# 物品展示实体的生成、更新和删除（旋转模式都是以下逻辑）
    # 计算 orderDiff
       # log
       #tellraw @a ["g_columnDiff:",{"score":{"objective":"glbs_common","name":"g_columnDiff"}}]

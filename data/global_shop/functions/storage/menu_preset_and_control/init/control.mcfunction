@@ -83,7 +83,7 @@ execute store result storage global_shop:menu_preset_and_control CONTROL_NULL_IT
     execute store result storage global_shop:menu_preset_and_control CONTROL_ADD_ITEM_TO_SELL_SHOP.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 
     #从出售商店中去除物品
-    data modify storage global_shop:menu_preset_and_control CONTROL_REMOVE_ITEM_FROM_SELL_SHOP set value {id:"minecraft:barrel",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"从出售商店中去除物品","color":"yellow"}]}},Enchantments:[{id:"minecraft:protection",lvl:1s}],HideFlags:1b}
+    data modify storage global_shop:menu_preset_and_control CONTROL_REMOVE_ITEM_FROM_SELL_SHOP set value {id:"minecraft:barrel",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"从出售商店中去除物品","color":"yellow"}]},Enchantments:[{id:"minecraft:protection",lvl:1s}]},HideFlags:1b}
     execute store result storage global_shop:menu_preset_and_control CONTROL_REMOVE_ITEM_FROM_SELL_SHOP.tag.global_shop.id int 1 run scoreboard players get CONTROL_REMOVE_ITEM_FROM_SELL_SHOP glbs_common
     execute store result storage global_shop:menu_preset_and_control CONTROL_REMOVE_ITEM_FROM_SELL_SHOP.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 

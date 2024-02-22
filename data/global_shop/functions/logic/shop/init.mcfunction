@@ -1,6 +1,9 @@
 #> global_shop:logic/shop/init
 # 添加记分板、创建常量、枚举等
 
+#定义
+#define storage global_shop:common
+
 # glbs_common 共用记分板，存储所有公共变量、常量等（已在 load.mcfunction 中创建）
    # 常量
       #define score_holder ITEM_NUM_PER_COLUMN
@@ -57,24 +60,24 @@
    # Menu 实体的模式 Mode
       #define score_holder Mode::MAIN
       #define score_holder Mode::PLAYER_SHOP_MAIN
-      #define score_holder Mode::PLAYER_SHOP_VIEW_ALL
+      #define score_holder Mode::PLAYER_SHOP
       #define score_holder Mode::PLAYER_SHOP_VIEW_MY_BOUGHT
       #define score_holder Mode::PLAYER_SHOP_VIEW_SOLD
       #define score_holder Mode::PLAYER_SHOP_VIEW_SELLING
-      #define score_holder Mode::SELL_SHOP_VIEW_ALL 在出售商店中查看所有物品
-      #define score_holder Mode::RECYCLE_SHOP_VIEW_ALL 在回收商店中查看所有物品
+      #define score_holder Mode::SELL_SHOP 在出售商店中查看所有物品
+      #define score_holder Mode::RECYCLE_SHOP 在回收商店中查看所有物品
       #define score_holder Mode::MONEY_ITEM_EXCHANGE 
       #define score_holder Mode::EDIT_MODE 在编辑模式菜单中
       #define score_holder Mode::EDIT_VIEW_SELL_SHOP 在编辑模式中查看出售商店
       #define score_holder Mode::EDIT_VIEW_RECYCLE_SHOP 在编辑模式中查看回收商店
       scoreboard players set Mode::MAIN glbs_common 0
       scoreboard players set Mode::PLAYER_SHOP_MAIN glbs_common 1
-      scoreboard players set Mode::PLAYER_SHOP_VIEW_ALL glbs_common 2
+      scoreboard players set Mode::PLAYER_SHOP glbs_common 2
       scoreboard players set Mode::PLAYER_SHOP_VIEW_MY_BOUGHT glbs_common 3
       scoreboard players set Mode::PLAYER_SHOP_VIEW_MY_SOLD glbs_common 4
       scoreboard players set Mode::PLAYER_SHOP_VIEW_SELLING glbs_common 5
-      scoreboard players set Mode::SELL_SHOP_VIEW_ALL glbs_common 6
-      scoreboard players set Mode::RECYCLE_SHOP_VIEW_ALL glbs_common 7
+      scoreboard players set Mode::SELL_SHOP glbs_common 6
+      scoreboard players set Mode::RECYCLE_SHOP glbs_common 7
       scoreboard players set Mode::MONEY_ITEM_EXCHANGE glbs_common 8
       scoreboard players set Mode::EDIT_MODE glbs_common 9
       scoreboard players set Mode::EDIT_VIEW_SELL_SHOP glbs_common 10
@@ -178,6 +181,9 @@
 
    # glbs_sell_item_price 玩家指定出售物品的价格
    scoreboard objectives add glbs_sell_item_price trigger
+
+   # glbs_set_sell_shop_item_price 管理员指定出售商店物品的价格
+   scoreboard objectives add glbs_set_sell_shop_item_price trigger
    
 # glbs_mode 记录 Menu 实体 mode_ 记分板
 scoreboard objectives add glbs_mode dummy

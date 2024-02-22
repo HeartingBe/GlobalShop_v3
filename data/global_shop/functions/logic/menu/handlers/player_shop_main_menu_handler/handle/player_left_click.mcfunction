@@ -14,7 +14,7 @@ scoreboard players operation temp glbs_common = @s glbs_last_action_target_order
       execute if score temp glbs_common matches 4 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/sell_item
 
       # 7 >> 切换到玩家商店浏览
-      execute if score temp glbs_common matches 7 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/change_mode_to_player_shop_view_all
+      execute if score temp glbs_common matches 7 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/change_mode_to_player_shop
 
       # 13 >> 获取自己余额
       execute if score temp glbs_common matches 13 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/tellraw_money

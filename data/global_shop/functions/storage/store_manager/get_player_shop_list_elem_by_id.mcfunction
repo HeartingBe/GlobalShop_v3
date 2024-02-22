@@ -1,5 +1,6 @@
 # @brief 用 Menu 记录的玩家看向的物品的 id 在玩家商店总列表中获取对应的物品信息
 # @param g_itemData 出参
+# @param index 出参，物品在玩家商店总列表中的下标
 # @executor Menu
 
 scoreboard players operation id glbs_common = @s glbs_last_action_target_id
