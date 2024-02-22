@@ -1,3 +1,4 @@
+#> global_shop:storage/store_manager/delete_player_shop_elem_by_index
 # @brief 从玩家商店总列表和玩家正在出售的列表中删除该 index 对应的物品
 # @param index 物品数据 g_itemData 在玩家商店总列表中对应的下标
 # @param uid 卖家的 uid

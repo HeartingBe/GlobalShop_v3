@@ -128,7 +128,7 @@
          #define score_holder CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP
          #define score_holder CONTROL_COIN_EXCHANGE
          #define score_holder CONTROL_CHANGE_EXCHANGE_RATE
-         #define score_holder CONTROL_RETURN_TO_MAIN
+         #define score_holder CONTROL_SETTING_PAGE
          #define score_holder CONTROL_EXIT_EDIT_MODE
          scoreboard players set CONTROL_NULL_ITEM glbs_common 0
          scoreboard players set CONTROL_DATAPACK_INFO glbs_common 1
@@ -150,7 +150,7 @@
          scoreboard players set CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP glbs_common 17
          scoreboard players set CONTROL_TOGGLE_MONEY_EXCHANGE glbs_common 18
          scoreboard players set CONTROL_CHANGE_EXCHANGE_RATE glbs_common 19
-         scoreboard players set CONTROL_RETURN_MAIN_MENU glbs_common 20
+         scoreboard players set CONTROL_SETTING_PAGE glbs_common 20
          scoreboard players set CONTROL_EXIT_EDIT_MODE glbs_common 21
 
 

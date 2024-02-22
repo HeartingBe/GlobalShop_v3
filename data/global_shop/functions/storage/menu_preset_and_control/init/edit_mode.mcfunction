@@ -34,7 +34,7 @@ data modify storage global_shop:menu_preset_and_control edit_mode append from st
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
-data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_RETURN_MAIN_MENU
+data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM

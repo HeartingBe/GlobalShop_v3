@@ -19,7 +19,7 @@ execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_s
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_viewed_item_order
    # 看向新的物品时
    execute unless score temp glbs_common = @s glbs_last_action_target_order run return run function global_shop:logic/menu/handlers/menu_handler/target_new_item
-   
+
 # 判断玩家左键
    # 获取左键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_select_action
