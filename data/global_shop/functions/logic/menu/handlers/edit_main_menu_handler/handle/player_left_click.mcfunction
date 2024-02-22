@@ -17,5 +17,11 @@ scoreboard players operation temp glbs_common = @s glbs_last_action_target_order
       # 4 >> 添加要出售的物品
       execute if score temp glbs_common matches 4 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/add_sell_item
 
+      # 7 >> 编辑购买商店
+      execute if score temp glbs_common matches 7 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/edit_view_sell_shop
+
       # 10 >> 添加回收的物品
       execute if score temp glbs_common matches 10 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/add_recycle_item
+
+      # 13 >> 编辑回收商店
+      execute if score temp glbs_common matches 13 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/edit_view_recycle_shop

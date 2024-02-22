@@ -14,4 +14,7 @@ function global_shop:storage/menu_preset_and_control/init
 # 有关 storage global_shop:storage 的初始化
 function global_shop:storage/init
 
+# 有关发光实体显示的队伍的初始化
+function global_shop:team/init
+
 scoreboard players set g_isInit glbs_common 1

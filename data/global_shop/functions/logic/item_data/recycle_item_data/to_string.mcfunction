@@ -1,4 +1,4 @@
-#> global_shop:logic/item_data/sell_item_data/to_string
+#> global_shop:logic/item_data/recycle_item_data/to_string
 # @param g_itemData
 # @param g_text
 # @executor TextDisplay

@@ -24,5 +24,3 @@ data modify entity @s text set value '{"nbt":"g_text","storage":"global_shop:com
    # scale 以原点为中心缩放模型
    # translation 平移变换
 data merge entity @s {billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15},transformation:{scale:[0.87f,0.87f,0.87f],translation:[1.2f,-1.0f,0.0f]}}
-
-# TODO 给展示实体添加内边距，可以使用两个展示实体或者在字符串的开头和末尾添加空格和空行实现

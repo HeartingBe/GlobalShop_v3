@@ -1,3 +1,4 @@
+#> global_shop:logic/menu/handlers/player_shop_view_my_bought_handler/refresh
 # @brief 保持 beginIndex_ 不变，旋转角不变，刷新当前展示的物品
 # @executor Menu
 
