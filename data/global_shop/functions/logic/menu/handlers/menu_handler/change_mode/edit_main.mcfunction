@@ -26,6 +26,6 @@ scoreboard players operation @s glbs_mode = Mode::EDIT_MODE glbs_common
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a进入编辑模式菜单"]
 # 生成物品展示实体（注意：上面旋转，但是本函数的执行环境未改变，需要校正旋转角）
 execute rotated as @s run function global_shop:ui/display_manager/summon_whole_page_items
-# 重置管理员指定出售商店物品价格的记分板（避免管理员在非编辑模式主界面指定价格，未及时处理，等进入界面后突然设置物品）
+# 重置管理员指定出售商店和回收商店物品价格的记分板（避免管理员在非编辑模式主界面指定价格，未及时处理，等进入界面后突然设置物品）
 execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_set_sell_shop_item_price 0
-   # TODO 还需要重置设置回收商店的记分板
+execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_set_recycle_shop_item_price 0

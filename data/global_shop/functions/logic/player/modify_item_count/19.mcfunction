@@ -1,0 +1,1 @@
+item modify entity @s inventory.10 global_shop:player/modify_item_count

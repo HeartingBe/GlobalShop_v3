@@ -1,0 +1,11 @@
+{
+    "function": "minecraft:set_count",
+    "count": {
+        "type": "score",
+        "score": "glbs_common",
+        "target": {
+            "type": "fixed",
+            "name": "newCount"
+        }
+    }
+}

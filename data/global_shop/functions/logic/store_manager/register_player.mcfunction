@@ -20,7 +20,7 @@ scoreboard players add g_nextUid glbs_common 1
          # 出参在 g_playerNameJson:{name:""}，是单层引号 json
          data remove storage global_shop:common temp
          data modify storage global_shop:common temp.input set from storage global_shop:common g_playerNameJson
-         function global_shop:logic/player/parse_player_name_get_name with storage global_shop:common temp
+         function global_shop:logic/player/parse_player_name/get_name with storage global_shop:common temp
    # 用临时标签解析，最后去掉
    tag @s remove glbs_temp_parse_player_name
 

@@ -1,0 +1,1 @@
+item modify entity @s hotbar.2 global_shop:player/modify_item_count

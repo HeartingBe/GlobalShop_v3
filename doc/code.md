@@ -196,3 +196,30 @@ public:
    }
 }
 ```
+
+## global_shop:logic/menu/handlers/recycle_shop_handler/handle/inventory_check/check_all_slot 实现
+```c++
+void CheckAllSlot(g_itemDataToCmp: const ItemData, requiredCount: int, g_checkSlotResult: List<int>&, remainingCount: Score&)
+{
+   g_checkSlotResult.Clear();
+
+   List<ItemData> inventory = @s.Inventory;
+   while (!inventory.isEmpty()) {
+      if (inventory[0].Slot < 0 || inventory[0].Slot >= 36) {
+         inventory.pop_front();
+         continue;
+      }
+      g_itemDataThisSlot = inventory[0];
+      inventory.pop_front();
+      int thisSlotCount = g_itemDataThisSlot.Count;
+      if (RevertItemDataAndRemoveCount(g_itemDataThisSlot) == g_itemDataToCmp) {
+         g_checkSlotResult.emplace_back(thisSlot);
+         requiredCount -= thisSlotCount;
+      }
+      if(count < 0) {
+         break;
+      }
+   }
+   remainingCount = -requiredCount;
+}
+```
