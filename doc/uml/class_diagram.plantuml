@@ -56,7 +56,7 @@ enum Mode {
    SELL_SHOP_VIEW_ALL
    RECYCLE_SHOP_VIEW_ALL
    MONEY_ITEM_EXCHANGE
-   EDIT
+   EDIT_MAIN
    EDIT_VIEW_SELL_SHOP
    EDIT_VIEW_RECYCLE_SHOP
 }
@@ -77,7 +77,7 @@ class MainMenuHandler {
 class PlayerShopMainMenuHandler {
    +void Handle()
 }
-class PlayerShopViewAllHandler {
+class PlayerShopHandler {
    +void Handle()
 }
 class PlayerShopViewMyBoughtHandler {
@@ -89,10 +89,10 @@ class PlayerShopViewMySoldHandler {
 class PlayerShopViewMySellingHandler {
    +void Handle()
 }
-class SellShopViewAllHandler {
+class SellShopHandler {
    +void Handle()
 }
-class RecycleShopViewAllHandler {
+class RecycleShopHandler {
    +void Handle()
 }
 class MoneyItemExchangeHandler {
