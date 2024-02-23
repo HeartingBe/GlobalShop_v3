@@ -239,7 +239,7 @@ DynamicItemData <|-- MySoldItemData
 class DisplayManager {
    +void SummonWholePageItems(g_itemsToDisplay: List<ItemData>&) {static}
    +void RangeSummon(g_itemsToDisplay: List<ItemData>&, begin: int, end: int) {static}
-   +void RangeUpdateAndDelete(g_itemsToDisplay: List<ItemData>&, orderDiff: int, targetOrder: int) {static}
+   +void RangeUpdateAndDelete(g_itemsToDisplay: List<ItemData>&, orderDiff: int) {static}
 }
 
 class MenuPresetAndControl {

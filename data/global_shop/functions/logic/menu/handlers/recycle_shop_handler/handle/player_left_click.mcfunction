@@ -13,6 +13,9 @@ execute unless data storage global_shop:common g_itemData run return run functio
 execute if score @s glbs_last_action = Action::LEFT_CLICK_CONFIRM glbs_common run return run function global_shop:logic/menu/handlers/recycle_shop_handler/handle/player_left_click_confirm
 
 # 玩家首次左键
+   # 物品变橙提示玩家即将回收该物品
+   scoreboard players operation targetOrder glbs_common = @s glbs_last_action_target_order
+   execute as @e[distance=..5,type=minecraft:item_display,tag=global_shop] if score @s glbs_order = targetOrder glbs_common run function global_shop:logic/item_display_entity/set_state_will_recycle
    # log
    #execute on passengers if entity @s[type=minecraft:player] run title @s actionbar ["首次左键"]
    # Menu 更新自身状态
