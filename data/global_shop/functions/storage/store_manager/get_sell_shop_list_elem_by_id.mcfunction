@@ -6,7 +6,7 @@
 
 data remove storage global_shop:common g_itemData
 
-scoreboard players operation id glbs_common = @s glbs_last_action_target_id
+scoreboard players operation id glbs_common = @s glbs_last_view_id
 
 # left、right
 scoreboard players set left glbs_common 0

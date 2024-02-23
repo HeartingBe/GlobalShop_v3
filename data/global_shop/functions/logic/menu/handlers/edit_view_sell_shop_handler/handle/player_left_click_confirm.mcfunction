@@ -7,11 +7,11 @@
 scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
 
 # 移除这个物品
-scoreboard players operation id glbs_common = @s glbs_last_action_target_order
+scoreboard players operation id glbs_common = @s glbs_last_view_order
 function global_shop:storage/store_manager/delete_sell_shop_elem_by_id
 
 # 刷新
 function global_shop:logic/menu/handlers/edit_view_sell_shop_handler/refresh
 
 # 通知玩家
-execute on passengers if entity @s[type=player] run tellraw @s ["删除成功"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["删除成功"]

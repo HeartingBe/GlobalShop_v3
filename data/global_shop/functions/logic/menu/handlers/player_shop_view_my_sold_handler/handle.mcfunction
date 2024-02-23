@@ -21,10 +21,10 @@
    # 获取看向的控件序号
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_viewed_item_order
    # 看向新的物品时，检查物品。存在时展示信息，不存在时刷新
-   execute unless score temp glbs_common = @s glbs_last_action_target_order run return run function global_shop:logic/menu/handlers/player_shop_view_my_sold_handler/target_new_item
+   execute unless score temp glbs_common = @s glbs_last_view_order run return run function global_shop:logic/menu/handlers/player_shop_view_my_sold_handler/target_new_item
    
 # 判断玩家左键 玩家浏览自己的历史出售物品暂无左键逻辑
    # 获取左键情况
    #execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_select_action
-   # 根据控件序号执行相应操作（就是 @s glbs_last_action_target_order）
+   # 根据控件序号执行相应操作（就是 @s glbs_last_view_order）
    #execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run function global_shop:logic/menu/handlers/player_shop_view_my_sold_handler/handle/player_left_click

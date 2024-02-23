@@ -3,7 +3,7 @@
 # @param index 出参，物品在玩家商店总列表中的下标
 # @executor Menu
 
-scoreboard players operation id glbs_common = @s glbs_last_action_target_id
+scoreboard players operation id glbs_common = @s glbs_last_view_id
 execute store result score index glbs_common run function global_shop:storage/store_manager/locate_index_in_player_shop_list_by_id
 
 function global_shop:storage/store_manager/get_player_shop_list_elem_by_index

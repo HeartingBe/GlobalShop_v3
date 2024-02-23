@@ -8,7 +8,7 @@ execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["自�
 
 # 删除物品
 execute on passengers if entity @s[type=minecraft:player] run scoreboard players operation uid glbs_common = @s glbs_uid
-scoreboard players operation id glbs_common = @s glbs_last_action_target_id
+scoreboard players operation id glbs_common = @s glbs_last_view_id
 function global_shop:storage/store_manager/delete_player_shop_elem_by_index
 
 # 将物品直接退给玩家

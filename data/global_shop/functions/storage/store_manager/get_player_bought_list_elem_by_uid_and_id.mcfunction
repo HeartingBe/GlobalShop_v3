@@ -7,7 +7,7 @@
 # 构造参数 temp:{id:<id>,uid:<uid>},其中 uid 是要获取的历史购买记录所属的这个玩家的 uid
    data remove storage global_shop:common temp
    # id
-   execute store result storage global_shop:common temp.id int 1 run scoreboard players get @s glbs_last_action_target_id
+   execute store result storage global_shop:common temp.id int 1 run scoreboard players get @s glbs_last_view_id
    # uid
    execute store result storage global_shop:common temp.uid int 1 run scoreboard players get uid glbs_common
 # 初始化出参

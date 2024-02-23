@@ -12,4 +12,4 @@ execute on passengers if entity @s[type=minecraft:player] store result score tem
 execute if score temp1 glbs_common matches -54..53 if score temp2 glbs_common matches -18..18 run return run function global_shop:logic/menu/handlers/menu_handler/get_viewed_item_order/1
 
 # 没有看向物品
-return 0
+return -1

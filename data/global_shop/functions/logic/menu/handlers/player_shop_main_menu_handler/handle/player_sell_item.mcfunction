@@ -2,6 +2,9 @@
 # @brief 上架玩家主手的物品
 # @executor Player
 
+# 玩家在点击出售物品后，又点击别的地方（4 是出售物品控件的 order）
+execute on vehicle unless score @s glbs_last_target matches 4 on passengers if entity @s[type=minecraft:player] run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/not_click_sell_item_control
+
 # 该玩家冷却时间未结束
 execute if score @s glbs_sell_item_cooling_time matches 1.. unless score @s glbs_permission = Permission::ADMIN glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/cooling_time_not_end
 
@@ -11,7 +14,7 @@ scoreboard players operation temp glbs_common += @s glbs_return_num
 execute if score temp glbs_common >= PLAYER_MAX_SELL_AND_RETURN_NUM glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/reach_the_limit
 
 # 输入是负数
-execute if score @s glbs_sell_item_price matches ..0 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/invalid_num
+execute if score @s glbs_inputter_1 matches ..0 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/invalid_num
 
 # 主手为空
 execute unless data entity @s SelectedItem run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/main_hand_has_no_item
@@ -26,7 +29,7 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
       execute store result storage global_shop:common g_itemData.tag.global_shop.id int 1 run scoreboard players get g_nextPlayerShopId glbs_common
       scoreboard players add g_nextPlayerShopId glbs_common 1
       # 写入 price_
-      execute store result storage global_shop:common g_itemData.tag.global_shop.price int 1 run scoreboard players get @s glbs_sell_item_price
+      execute store result storage global_shop:common g_itemData.tag.global_shop.price int 1 run scoreboard players get @s glbs_inputter_1
       # 写入到期时间 expireTime_
       scoreboard players operation temp glbs_common = g_time glbs_common
       scoreboard players operation temp glbs_common += SELL_ITEM_EFFECTIVE_TIME glbs_common
@@ -47,4 +50,4 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
    # 通知
    tellraw @s ["\u00a7a出售成功"]
 
-scoreboard players set @s glbs_sell_item_price 0
+scoreboard players set @s glbs_inputter_1 0

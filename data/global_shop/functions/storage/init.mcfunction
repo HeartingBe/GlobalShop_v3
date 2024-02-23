@@ -5,6 +5,8 @@
 # 金钱记分板名称
 execute unless data storage global_shop:storage g_scoreboard run data modify storage global_shop:storage g_scoreboard set value "glbs_money"
 
+# 金币 <···> 物品
+#execute unless data storage global_shop:storage g_moneyItemExchangeInfo run data modify storage global_shop:storage g_moneyItemExchangeInfo set value {id:"minecraft:diamond",}
 
 # region 消息前缀，两层引号
    #简化形式

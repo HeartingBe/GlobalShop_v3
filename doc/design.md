@@ -64,6 +64,7 @@ TODO
 - **实体 Tags 标签前缀：** glbs_
 - **物品 NBT tag 标签：** global_shop
 - **记分板前缀：** glbs_
+- **队伍前缀：** glbs_
 - **实体共同标签：** global_shop
 
 ## 4.2 模块划分

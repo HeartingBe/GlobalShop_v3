@@ -1,6 +1,17 @@
 #> global_shop:logic/shop/init
 # 添加记分板、创建常量、枚举等
 
+# 发光实体显示的队伍
+   # 确认删除的物品
+   team add glbs_will_delete
+      team modify glbs_will_delete color red
+   # 确认购买的物品
+   team add glbs_will_buy
+      team modify glbs_will_buy color green
+   # 确认回收的物品
+   team add glbs_will_recycle
+      team modify glbs_will_recycle color gold
+
 #定义
 #define storage global_shop:common
 
@@ -153,7 +164,6 @@
          scoreboard players set CONTROL_SETTING_PAGE glbs_common 20
          scoreboard players set CONTROL_EXIT_EDIT_MODE glbs_common 21
 
-
 # 玩家相关记分板
    # glbs_uid 玩家 uid
    scoreboard objectives add glbs_uid dummy
@@ -179,20 +189,14 @@
    # glbs_sell_item_cooling_time 玩家上架物品冷却（单位 s）
    scoreboard objectives add glbs_sell_item_cooling_time dummy
 
-   # glbs_sell_item_price 玩家指定出售物品的价格
-   scoreboard objectives add glbs_sell_item_price trigger
-
-   # glbs_set_sell_shop_item_price 管理员指定出售商店物品的价格
-   scoreboard objectives add glbs_set_sell_shop_item_price trigger
-
-   # glbs_set_recycle_shop_item_price 管理员指定回收商店物品的价格
-   scoreboard objectives add glbs_set_recycle_shop_item_price trigger
+   # glbs_inputter_1 玩家输入
+   scoreboard objectives add glbs_inputter_1 trigger
    
 # glbs_mode 记录 Menu 实体 mode_ 记分板
 scoreboard objectives add glbs_mode dummy
 
-# glbs_last_action_target_order 记录 Menu 实体 lastActionTarget_ 记分板
-scoreboard objectives add glbs_last_action_target_order dummy
+# glbs_last_view_order 记录 Menu 实体 lastActionTarget_ 记分板
+scoreboard objectives add glbs_last_view_order dummy
 
 # glbs_begin_index 记录 Menu 实体 beginIndex_ 记分板
 scoreboard objectives add glbs_begin_index dummy
@@ -200,8 +204,13 @@ scoreboard objectives add glbs_begin_index dummy
 # glbs_last_action 记录 Menu 实体 lastAction_ 记分板
 scoreboard objectives add glbs_last_action dummy
 
-# glbs_last_action_target_id 记录 Menu 实体 lastAction_ 记分板
-scoreboard objectives add glbs_last_action_target_id dummy
+# glbs_last_view_id 记录 Menu 实体 lastAction_ 记分板（Menu 记录玩家看向的物品的 id，随旋转改变）
+scoreboard objectives add glbs_last_view_id dummy
+
+# glbs_last_target 玩家左键时记录，记录 -1 代表无效
+   # 非旋转模式时 Menu 记录玩家左键的物品的 id
+   # 旋转模式时 Menu 记录玩家左键的物品的 order
+scoreboard objectives add glbs_last_target dummy
 
 # glbs_err_code 错误码记分板
 scoreboard objectives add glbs_err_code dummy
