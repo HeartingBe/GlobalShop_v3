@@ -29,7 +29,7 @@
 # 钱足够
    # 删除物品
    execute store result score uid glbs_common run data get storage global_shop:common g_itemData.tag.global_shop.sourcePlayerUid
-   scoreboard players operation id glbs_common = @s glbs_last_action_target_id
+   scoreboard players operation id glbs_common = @s glbs_last_view_id
    function global_shop:storage/store_manager/delete_player_shop_elem_by_index
    # 将买家的钱加到卖家的收益上
       # 扣除买家的钱（temp2 是上面获取的物品价格）

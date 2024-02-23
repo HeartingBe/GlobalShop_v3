@@ -2,6 +2,6 @@
 # @executor Menu
 
 # 清除周围的文本展示实体
-function global_shop:logic/text_display/kill
+function global_shop:logic/text_display/kill_text_display_around
 
 execute as @e[distance=..5,type=minecraft:item_display,tag=global_shop] run function global_shop:ui/display_manager/update_whole_page/1

@@ -5,4 +5,4 @@
 scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
 
 # log
-#execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["左键空项无效果"]
+#execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["左键空项或菜单外，无效果"]

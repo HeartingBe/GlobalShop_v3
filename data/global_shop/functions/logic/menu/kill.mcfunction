@@ -4,20 +4,22 @@
 # 清除物品展示实体
 execute as @e[type=minecraft:item_display,tag=global_shop,distance=..5] run function global_shop:logic/item_display_entity/kill
 
-# 清除文本展示实体
-execute positioned ~ ~1 ~ run kill @e[type=minecraft:text_display,distance=..5,tag=global_shop]
+# 清除周围的文本展示实体
+function global_shop:logic/text_display/kill_text_display_around
 
 # 清除交互实体
 execute on passengers if entity @s[type=minecraft:interaction] run function global_shop:logic/interactor/kill
 
 # 需要对玩家进行的操作（玩家可能不存在，例如玩家脱离，但不影响）
-execute on passengers run function global_shop:logic/menu/kill/player
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/kill/player
 
 # 清除数据
 scoreboard players reset @s glbs_mode
 scoreboard players reset @s glbs_last_action
-scoreboard players reset @s glbs_last_action_target_order
-scoreboard players reset @s glbs_last_action_target_id
+scoreboard players reset @s glbs_last_view_order
+scoreboard players reset @s glbs_last_view_id
+scoreboard players reset @s glbs_last_target
+scoreboard players reset @s glbs_begin_index
 #TODO
 
 # 清除自身

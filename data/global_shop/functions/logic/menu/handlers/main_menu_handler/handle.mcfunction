@@ -12,10 +12,10 @@
    # 获取看向的控件序号
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_viewed_item_order
    # 看向新的物品时
-   execute unless score temp glbs_common = @s glbs_last_action_target_order run return run function global_shop:logic/menu/handlers/menu_handler/target_new_item
+   execute unless score temp glbs_common = @s glbs_last_view_order run return run function global_shop:logic/menu/handlers/menu_handler/target_new_item
    
 # 判断玩家左键
    # 获取左键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_select_action
-   # 根据控件序号执行相应操作（就是 @s glbs_last_action_target_order）
+   # 根据控件序号执行相应操作（就是 @s glbs_last_view_order）
    execute if score temp glbs_common = Action::LEFT_CLICK glbs_common run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click

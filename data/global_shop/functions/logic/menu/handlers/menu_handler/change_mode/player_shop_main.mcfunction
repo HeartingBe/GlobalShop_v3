@@ -20,5 +20,3 @@ scoreboard players operation @s glbs_mode = Mode::PLAYER_SHOP_MAIN glbs_common
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a欢迎使用玩家商店"]
 # 生成物品展示实体（注意：上面旋转，但是本函数的执行环境未改变，需要校正旋转角）
 execute rotated as @s run function global_shop:ui/display_manager/summon_whole_page_items
-# 重置玩家指定出售价格记分板（避免玩家在非玩家商店主界面指定价格，未及时处理，等进入界面后突然卖出物品）
-execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_sell_item_price 0

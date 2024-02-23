@@ -55,7 +55,7 @@ execute store result storage global_shop:menu_preset_and_control CONTROL_NULL_IT
     execute store result storage global_shop:menu_preset_and_control CONTROL_VIEW_MY_SELLING.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 
     #查询余额
-    data modify storage global_shop:menu_preset_and_control CONTROL_VIEW_MONEY set value {id:"minecraft:gold_ingot",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"查看自己的金钱: ","color":"white"}]}}}
+    data modify storage global_shop:menu_preset_and_control CONTROL_VIEW_MONEY set value {id:"minecraft:gold_ingot",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"查看自己的金钱","color":"gold"}]}}}
     execute store result storage global_shop:menu_preset_and_control CONTROL_VIEW_MONEY.tag.global_shop.id int 1 run scoreboard players get CONTROL_VIEW_MONEY glbs_common
     execute store result storage global_shop:menu_preset_and_control CONTROL_VIEW_MONEY.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 

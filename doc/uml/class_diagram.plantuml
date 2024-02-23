@@ -117,12 +117,12 @@ MenuHandler <|-- MainMenuHandler
 MenuHandler <|-- PlayerShopMainMenuHandler
 MenuHandler <|-- EditMainMenuHandler
 MenuHandler <|-- MoneyItemExchangeHandler
-RotatableMenuHandler <|--- PlayerShopViewAllHandler
+RotatableMenuHandler <|--- PlayerShopHandler
 RotatableMenuHandler <|--- PlayerShopViewMyBoughtHandler
 RotatableMenuHandler <|--- PlayerShopViewMySoldHandler
 RotatableMenuHandler <|--- PlayerShopViewMySellingHandler
-RotatableMenuHandler <|--- SellShopViewAllHandler
-RotatableMenuHandler <|--- RecycleShopViewAllHandler
+RotatableMenuHandler <|--- SellShopHandler
+RotatableMenuHandler <|--- RecycleShopHandler
 RotatableMenuHandler <|--- EditViewSellShopHandler
 RotatableMenuHandler <|--- EditViewRecycleShopHandler
 

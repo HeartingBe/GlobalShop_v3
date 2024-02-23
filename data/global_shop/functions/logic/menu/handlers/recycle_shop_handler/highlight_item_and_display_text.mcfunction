@@ -11,12 +11,12 @@ execute unless score @s glbs_order = temp glbs_common run return run function gl
    # 获取 id 并写入 Menu 中
    execute store result score temp2 glbs_common run data get entity @s item.tag.global_shop.id
    # 是空项，直接返回
-   execute if score temp2 glbs_common matches 0 as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run return run scoreboard players set @s glbs_last_action_target_id 0
+   execute if score temp2 glbs_common matches 0 as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run return run scoreboard players set @s glbs_last_view_id 0
    # 获取物品信息
-   execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run scoreboard players operation @s glbs_last_action_target_id = temp2 glbs_common
+   execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run scoreboard players operation @s glbs_last_view_id = temp2 glbs_common
    execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run function global_shop:storage/store_manager/get_recycle_shop_list_elem_by_id
       # 物品不存在
-      execute unless data storage global_shop:common g_itemData as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run return run scoreboard players set @s glbs_last_action_target_id -1
+      execute unless data storage global_shop:common g_itemData as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run return run scoreboard players set @s glbs_last_view_id -1
       # 物品存在，高亮、展示文本
       function global_shop:logic/item_display_entity/set_state_highlight
       function global_shop:logic/item_display_entity/display_text

@@ -2,11 +2,11 @@
 # @executor Menu
 
 # 重置 lastAction_ lastActionTarget_（使物品在下一个处理周期能重新高亮）
-scoreboard players set @s glbs_last_action_target_order 0
+scoreboard players set @s glbs_last_view_order 0
 scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
 
-# 重置 last_glbs_last_action_target_id
-scoreboard players set @s glbs_last_action_target_id 0
+# 重置 last_glbs_last_view_id
+scoreboard players set @s glbs_last_view_id 0
 
 # 取出售商店物品数据
 function global_shop:storage/store_manager/get_sell_shop_list_page

@@ -3,8 +3,8 @@
 # 处理编辑菜单的左键操作
 # @executor Menu
 
-# 获取玩家看向的控件序号（就是 @s glbs_last_action_target_order）
-scoreboard players operation temp glbs_common = @s glbs_last_action_target_order
+# 获取玩家看向的控件序号（就是 @s glbs_last_view_order）
+scoreboard players operation temp glbs_common = @s glbs_last_view_order
    # log
    #execute on passengers if entity @s[type=minecraft:player] run title @s actionbar [{"score":{"objective":"glbs_common","name":"temp"}}]
 

@@ -1,9 +1,9 @@
 # @param temp 玩家看向的物品序号
 # @executor Menu
 
-# 原先的 glbs_last_action_target_id > 0 时，
+# 原先的 glbs_last_view_id > 0 时，
 # 说明上一次的物品展示了信息，此时要清除周围的文本展示实体
-execute if score @s glbs_last_action_target_id matches 1.. run function global_shop:logic/text_display/kill
+execute if score @s glbs_last_view_id matches 1.. run function global_shop:logic/text_display/kill_text_display_around
 
 # 高亮物品展示实体，并显示文本
    # 高亮，并记录看向物品的 id
