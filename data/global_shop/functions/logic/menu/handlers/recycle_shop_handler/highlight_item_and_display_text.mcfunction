@@ -1,3 +1,4 @@
+#> global_shop:logic/menu/handlers/recycle_shop_handler/highlight_item_and_display_text
 # @brief 玩家浏览回收商店物品并看向新的物品时高亮显示该物品。获取该物品 id 并写入 Menu
 # @param temp 玩家看向的物品展示实体的序号
 # @executor ItemDisplayEntity
