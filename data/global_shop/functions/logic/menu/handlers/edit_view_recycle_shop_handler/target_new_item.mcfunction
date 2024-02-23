@@ -5,9 +5,6 @@
 
 # temp 是传入的参数，以下临时变量不要用 temp
 
-# 把之前高亮的物品取消高亮
-team empty glsp_will_delete
-
 # 原先的 glbs_last_action_target_id > 0 时，
 # 说明上一次的物品展示了信息，此时要清除周围的文本展示实体
 execute if score @s glbs_last_action_target_id matches 1.. run function global_shop:logic/text_display/kill

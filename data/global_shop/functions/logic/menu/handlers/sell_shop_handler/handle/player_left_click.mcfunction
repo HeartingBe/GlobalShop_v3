@@ -1,8 +1,5 @@
 # @executor Menu
 
-# 玩家点击菜单外的地方
-execute if score @s glbs_last_action_target_order matches -1 run return run function global_shop:logic/menu/handlers/menu_handler/handle/player_left_click/null
-
 # 用 glbs_last_action_target_id 获取物品信息
    # 玩家点击空项，无任何效果，然后返回
    execute if score @s glbs_last_action_target_id matches 0 run return run function global_shop:logic/menu/handlers/rotatable_menu_handler/handle/player_left_click/click_control_null_item

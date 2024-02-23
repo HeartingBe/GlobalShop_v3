@@ -4,9 +4,6 @@
 # @executor Menu
 # @other 进入该函数时，物品一定存在
 
-# 高亮移除
-team empty glsp_will_buy
-
 # log
 #execute on passengers if entity @s[type=minecraft:player] run title @s actionbar ["左键确认"]
 

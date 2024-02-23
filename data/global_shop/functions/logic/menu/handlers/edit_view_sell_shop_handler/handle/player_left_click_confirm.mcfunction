@@ -14,4 +14,4 @@ function global_shop:storage/store_manager/delete_sell_shop_elem_by_id
 function global_shop:logic/menu/handlers/edit_view_sell_shop_handler/refresh
 
 # 通知玩家
-execute on passengers if entity @s[type=player] run tellraw @s ["删除成功"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["删除成功"]
