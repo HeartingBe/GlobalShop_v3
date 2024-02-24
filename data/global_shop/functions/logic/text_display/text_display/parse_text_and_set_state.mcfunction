@@ -22,5 +22,7 @@ data modify entity @s text set value '{"nbt":"g_text","storage":"global_shop:com
    # sky 渲染使用的天空光照等级，取值为 0-15。
 # transformation 变换
    # scale 以原点为中心缩放模型
-   # translation 平移变换
-data merge entity @s {billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15},transformation:{scale:[0.87f,0.87f,0.87f],translation:[1.2f,-1.0f,0.0f]}}
+   # translation 平移变换，x 指向右侧，z 指向后方
+#data merge entity @s {billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15},transformation:{scale:[0.87f,0.87f,0.87f],translation:[1.2f,-1.0f,0.0f]}}
+   # 尝试将物品展示实体生成到玩家处，然后用偏移将渲染位置改为玩家右前方
+   data merge entity @s {billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15},transformation:{scale:[0.7f,0.7f,0.7f],translation:[1.4f,0.5f,-3.0f]}}

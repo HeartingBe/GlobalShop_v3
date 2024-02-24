@@ -1,4 +1,4 @@
-#> global_shop:logic/store_manager/register_player
+#> global_shop:storage/store_manager/register_player
 # 执行玩家注册相关操作
 # @executor Player
 # @throw REGIST_PLAYER_NUM_LIMIT=-3 注册玩家数量达到上限
@@ -29,6 +29,6 @@ scoreboard players add g_nextUid glbs_common 1
    data remove storage global_shop:common temp
    execute store result storage global_shop:common temp.uid int 1.0 run scoreboard players get @s glbs_uid
    data modify storage global_shop:common temp.playerName set from storage global_shop:common g_playerNameJson.name
-   function global_shop:logic/store_manager/register_player/set_kv with storage global_shop:common temp
+   function global_shop:storage/store_manager/register_player/set_kv with storage global_shop:common temp
 
 return run scoreboard players get SUCCESS glbs_err_code

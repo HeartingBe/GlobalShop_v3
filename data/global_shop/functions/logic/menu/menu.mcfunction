@@ -3,7 +3,7 @@
 
 # 检查玩家是否注册
 scoreboard players operation ret glbs_common = SUCCESS glbs_err_code
-execute unless score @s glbs_uid matches -2147483648..2147483647 store result score ret glbs_common run function global_shop:logic/store_manager/register_player
+execute unless score @s glbs_uid matches -2147483648..2147483647 store result score ret glbs_common run function global_shop:storage/store_manager/register_player
 execute unless score ret glbs_common = SUCCESS glbs_err_code run return run tellraw @s ["\u00a7c全球商店注册玩家数量达到上限, 已停止注册"]
 
 # 限制同时使用商店的玩家数量
