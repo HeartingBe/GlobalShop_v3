@@ -16,6 +16,3 @@
 data remove storage global_shop:common g_itemData
 
 function global_shop:storage/store_manager/get_player_selling_list_elem_by_id/macro_get_elem with storage global_shop:common temp
-
-# 写入 sourcePlayerUid_，因为玩家正在出售的物品列表中不含该参数
-execute if data storage global_shop:common g_itemData store result storage global_shop:common g_itemData.tag.global_shop.sourcePlayerUid int 1 run scoreboard players get sellerUid glbs_common

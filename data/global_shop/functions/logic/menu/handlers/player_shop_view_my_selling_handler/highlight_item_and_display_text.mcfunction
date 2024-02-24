@@ -1,4 +1,4 @@
-# @brief 玩家浏览历史物品并看向新的物品时高亮显示该物品。获取该物品 id 并写入 Menu
+# @brief 玩家浏览正在出售的物品并看向新的物品时高亮显示该物品。获取该物品 id 并写入 Menu
 # @param targetOrder 玩家看向的物品展示实体的序号
 # @executor ItemDisplayEntity
 
@@ -12,8 +12,9 @@ execute unless score @s glbs_order = targetOrder glbs_common run return run func
    execute if score temp2 glbs_common matches 0 as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run return run scoreboard players set @s glbs_last_view_id 0
    # 获取物品信息
    execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run scoreboard players operation @s glbs_last_view_id = temp2 glbs_common
+      # 传入的 uid 是这个物品的卖家的 uid，但在此处卖家就是这个玩家
    execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle on passengers if entity @s[type=minecraft:player] store result score uid glbs_common run scoreboard players get @s glbs_uid
-   execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run function global_shop:storage/store_manager/get_player_bought_list_elem_by_uid_and_id
+   execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run function global_shop:storage/store_manager/get_player_selling_list_elem_by_uid_and_id
       # 物品不存在
       execute unless data storage global_shop:common g_itemData as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run return run scoreboard players set @s glbs_last_view_id -1
       # 物品存在，高亮、展示文本

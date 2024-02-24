@@ -1,10 +1,10 @@
 #> global_shop:logic/menu/handlers/edit_view_recycle_shop_handler/highlight_item_and_display_text
 # @brief 浏览出售物品并看向新的物品时高亮显示该物品。获取该物品 id 并写入 Menu
-# @param temp 看向的物品展示实体的序号
+# @param targetOrder 看向的物品展示实体的序号
 # @executor ItemDisplayEntity
 
 # 不是被看的物品，且正在高亮，就去掉高亮
-execute unless score @s glbs_order = temp glbs_common run return run function global_shop:logic/menu/handlers/main_menu_handler/handle/highlight_item_and_display_text/is_not_target
+execute unless score @s glbs_order = targetOrder glbs_common run return run function global_shop:logic/menu/handlers/main_menu_handler/handle/highlight_item_and_display_text/is_not_target
 
 # 是被看的物品（只可能有一个物品展示实体执行到），检查是否存在
    # 获取 id 并写入 Menu 中

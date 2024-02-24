@@ -20,7 +20,7 @@ function global_shop:storage/store_manager/get_player_shop_my_bought_list_page
       #tellraw @a ["abs(g_columnDiff):",{"score":{"objective":"glbs_common","name":"temp"}}]
    execute store result score orderDiff glbs_common run scoreboard players operation temp glbs_common *= 3 glbs_common
 # if (g_columnDiff < 0)
-   execute if score g_columnDiff glbs_common matches ..-1 run return run function global_shop:logic/menu/handlers/player_shop_view_my_bought_handler/rotate_and_update_items/1
+   execute if score g_columnDiff glbs_common matches ..-1 run return run function global_shop:logic/menu/handlers/rotatable_menu_handler/rotate_and_update_items/1
 # else
    # 计算 end（先计算，避免下面调 RangeUpdateAndDelete 传第二个参数时 orderDiff 改变符号）
    scoreboard players operation end glbs_common = orderDiff glbs_common

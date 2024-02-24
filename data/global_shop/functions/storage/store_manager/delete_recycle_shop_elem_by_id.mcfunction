@@ -5,7 +5,7 @@
 # @executor Menu
 
 # 获取下标
-function global_shop:storage/store_manager/locate_index_in_recycle_shop_list_by_id
+execute store result score index glbs_common run function global_shop:storage/store_manager/locate_index_in_recycle_shop_list_by_id
 
 # 构造宏 {index: int}
    data remove storage global_shop:common temp

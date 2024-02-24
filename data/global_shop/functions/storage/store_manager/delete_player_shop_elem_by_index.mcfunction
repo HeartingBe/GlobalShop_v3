@@ -8,11 +8,6 @@
 # log
 #execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["index: ",{"score":{"objective":"glbs_common","name":"index"}},"     uid: ",{"score":{"objective":"glbs_common","name":"uid"}},"     id: ",{"score":{"objective":"glbs_common","name":"id"}}]
 
-# 参数校验
-execute if score index glbs_common matches ..-1 run return 0
-execute if score uid glbs_common matches ..0 run return 0
-execute if score id glbs_common matches ..0 run return 0
-
 # 从玩家商店总列表和玩家正在出售的列表中删除
 # 构造宏 {index: int, uid: int, id: int}
    data remove storage global_shop:common temp

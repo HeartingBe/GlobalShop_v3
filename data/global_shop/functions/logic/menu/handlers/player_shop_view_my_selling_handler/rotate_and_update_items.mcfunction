@@ -1,4 +1,4 @@
-#> global_shop:logic/menu/handlers/edit_view_recycle_shop_handler/rotate_and_update_items
+#> global_shop:logic/menu/handlers/player_shop_view_my_selling_handler/rotate_and_update_items
 # @brief 产生水平转动导致出现列数差时，更新菜单
 # @param g_itemsToDisplay 物品数据
 # @param g_columnDiff 列数差
@@ -7,8 +7,8 @@
 # 更新 Menu 状态
 function global_shop:logic/menu/handlers/rotatable_menu_handler/rotate_and_update_items/update_menu_state
 
-# 取回收商店物品数据
-function global_shop:storage/store_manager/get_recycle_shop_list_page
+# 取玩家正在出售的物品数据
+function global_shop:storage/store_manager/get_player_shop_my_selling_list_page
 
 # 物品展示实体的生成、更新和删除（旋转模式都是以下逻辑）
    # 计算 orderDiff

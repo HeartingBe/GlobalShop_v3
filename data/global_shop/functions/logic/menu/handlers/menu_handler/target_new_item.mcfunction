@@ -1,4 +1,4 @@
-# @param temp 玩家看向的物品序号
+# @param targetOrder 玩家看向的物品序号
 # @executor Menu
 
 # 原先的 glbs_last_view_id > 0 时，

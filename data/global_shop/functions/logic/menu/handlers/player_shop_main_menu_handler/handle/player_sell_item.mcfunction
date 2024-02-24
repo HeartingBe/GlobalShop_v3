@@ -28,6 +28,8 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
       # 写入 id_
       execute store result storage global_shop:common g_itemData.tag.global_shop.id int 1 run scoreboard players get g_nextPlayerShopId glbs_common
       scoreboard players add g_nextPlayerShopId glbs_common 1
+      # 写入 sourcePlayerUid_
+      execute store result storage global_shop:common g_itemData.tag.global_shop.sourcePlayerUid int 1 run scoreboard players get @s glbs_uid
       # 写入 price_
       execute store result storage global_shop:common g_itemData.tag.global_shop.price int 1 run scoreboard players get @s glbs_inputter_1
       # 写入到期时间 expireTime_

@@ -1,8 +1,6 @@
 # @brief 玩家看向新的物品时，高亮物品，检查是否存在并更新，更新记录量、状态量
-# @param temp 玩家看向的物品展示实体的序号
+# @param targetOrder 玩家看向的物品展示实体的序号
 # @executor Menu
-
-# temp 是传入的参数，以下临时变量不要用 temp
 
 # 原先的 glbs_last_view_id > 0 时，
 # 说明上一次的物品展示了信息，此时要清除周围的文本展示实体

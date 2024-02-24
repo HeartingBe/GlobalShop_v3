@@ -9,9 +9,6 @@
 # 物品不存在，刷新显示
 execute unless data storage global_shop:common g_itemData run return run function global_shop:logic/menu/handlers/recycle_shop_handler/handle/item_not_exist
 
-# 更新上一次左键的物品的 id（此模式暂时无更新需求）
-#function global_shop:logic/menu/handlers/rotatable_menu_handler/handle/update_last_click_id
-
 # 玩家左键确认
 execute if score @s glbs_last_action = Action::LEFT_CLICK_CONFIRM glbs_common run return run function global_shop:logic/menu/handlers/recycle_shop_handler/handle/player_left_click_confirm
 
