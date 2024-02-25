@@ -2,8 +2,6 @@
 # @param g_text
 # @executor TextDisplay
 
-# @other 这里不要使用变量 temp
-
 # 换行
 function global_shop:logic/item_data/to_string/add_seperator
 

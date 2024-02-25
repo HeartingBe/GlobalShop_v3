@@ -4,6 +4,4 @@
 # @param g_text
 # @executor TextDisplay
 
-# @other 这里不要使用变量 temp
-
 function global_shop:logic/item_data/polymorphic_type

@@ -4,8 +4,8 @@
 # 清除物品展示实体
 execute as @e[type=minecraft:item_display,tag=global_shop,distance=..5] run function global_shop:logic/item_display_entity/kill
 
-# 清除周围的文本展示实体
-function global_shop:logic/text_display/kill_text_display_around
+# 清除 Interactor、TextDisplay
+function global_shop:logic/menu/kill/kill_passengers
 
 # 清除交互实体
 execute on passengers if entity @s[type=minecraft:interaction] run function global_shop:logic/interactor/kill

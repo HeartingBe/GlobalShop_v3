@@ -25,6 +25,6 @@
    
 # 判断玩家左键 玩家浏览自己正在出售的物品暂无左键逻辑 TODO 添加删除逻辑
    # 获取左键情况
-   #execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_select_action
+   execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_select_action
    # 根据控件序号执行相应操作（就是 @s glbs_last_view_order）
-   #execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run function global_shop:logic/menu/handlers/player_shop_view_my_selling_handler/handle/player_left_click
+   execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run function global_shop:logic/menu/handlers/player_shop_view_my_selling_handler/handle/player_left_click

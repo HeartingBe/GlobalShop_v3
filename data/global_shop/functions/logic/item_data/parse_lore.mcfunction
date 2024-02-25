@@ -1,5 +1,4 @@
 # @brief 构造 json 列表遍历 Lore
-# @other 这里不要使用变量 temp
 
 # Lore.size()
 execute store result score size glbs_common run data get storage global_shop:common g_itemData.tag.display.Lore

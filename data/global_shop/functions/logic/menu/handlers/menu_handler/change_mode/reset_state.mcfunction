@@ -15,7 +15,7 @@ scoreboard players set @s glbs_begin_index 0
 scoreboard players set @s glbs_last_target -1
 # 玩家输入记分板
 execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_inputter_1 0
-# 清除周围的文本展示实体
-function global_shop:logic/text_display/kill_text_display_around
+# 清除文本展示实体的文字
+execute on passengers if entity @s[type=minecraft:text_display] run function global_shop:logic/text_display/clear_text
 # 清除周围所有物品展示实体
 function global_shop:logic/menu/kill_item_display_entities_around

@@ -1,0 +1,1 @@
+data merge entity @s {Tags:["global_shop"],width:0.6f,height:1.45f}

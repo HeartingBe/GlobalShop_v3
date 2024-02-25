@@ -4,8 +4,6 @@
 # @param g_itemData 出参
 # @executor Menu
 
-# 以下临时变量不要用 temp
-
 # 构造参数 temp:{id:<id>,uid:<uid>},其中 uid 应该是卖家的 uid
    data remove storage global_shop:common temp
    # id

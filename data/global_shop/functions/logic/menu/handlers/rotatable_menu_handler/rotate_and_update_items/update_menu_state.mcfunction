@@ -2,8 +2,8 @@
 # @param g_columnDiff 列数差
 # @executor Menu
 
-# 清除周围的文本展示实体
-function global_shop:logic/text_display/kill_text_display_around
+# 清除文本展示实体的文字
+execute on passengers if entity @s[type=minecraft:text_display] run function global_shop:logic/text_display/clear_text
 
 # 更新自身 beginIndex_
 scoreboard players operation temp glbs_common = g_columnDiff glbs_common

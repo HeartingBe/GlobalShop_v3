@@ -13,9 +13,9 @@ execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_i
 
 # 判断玩家看向新的物品
    # 获取看向的控件序号
-   execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_viewed_item_order
+   execute store result score targetOrder glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_viewed_item_order
    # 看向新的物品时
-   execute unless score temp glbs_common = @s glbs_last_view_order run return run function global_shop:logic/menu/handlers/menu_handler/target_new_item
+   execute unless score targetOrder glbs_common = @s glbs_last_view_order run return run function global_shop:logic/menu/handlers/menu_handler/target_new_item
 
 # 判断玩家左键
    # 获取左键情况

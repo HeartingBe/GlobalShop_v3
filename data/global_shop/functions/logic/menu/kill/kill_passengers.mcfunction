@@ -1,0 +1,1 @@
+execute on passengers run function global_shop:logic/menu/kill/kill_passengers/1
