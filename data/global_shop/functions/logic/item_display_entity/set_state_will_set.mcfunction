@@ -1,0 +1,1 @@
+team join glbs_will_set @s

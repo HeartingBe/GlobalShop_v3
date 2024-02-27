@@ -1,3 +1,4 @@
+#> global_shop:logic/text_display/parse_and_set_text
 # @param g_itemData
 # @executor TextDisplay
 

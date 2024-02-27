@@ -11,6 +11,9 @@
    # 确认回收的物品
    team add glbs_will_recycle
       team modify glbs_will_recycle color gold
+   # 确认将被修改的选项或物品
+   team add glbs_will_set
+      team modify glbs_will_set color yellow
 
 #定义
 #define storage global_shop:common
@@ -37,6 +40,7 @@
       # 常数
          scoreboard players set 2 glbs_common 2
          scoreboard players set 3 glbs_common 3
+         scoreboard players set 7 glbs_common 7
          scoreboard players set 12 glbs_common 12
       # 全局变量
          #define score_holder g_time
@@ -81,6 +85,7 @@
       #define score_holder Mode::EDIT_MODE 在编辑模式菜单中
       #define score_holder Mode::EDIT_VIEW_SELL_SHOP 在编辑模式中查看出售商店
       #define score_holder Mode::EDIT_VIEW_RECYCLE_SHOP 在编辑模式中查看回收商店
+      #define score_holder Mode::EDIT_CASH_EXCHANGE 编辑货币兑换
       scoreboard players set Mode::MAIN glbs_common 0
       scoreboard players set Mode::PLAYER_SHOP_MAIN glbs_common 1
       scoreboard players set Mode::PLAYER_SHOP glbs_common 2
@@ -93,6 +98,7 @@
       scoreboard players set Mode::EDIT_MODE glbs_common 9
       scoreboard players set Mode::EDIT_VIEW_SELL_SHOP glbs_common 10
       scoreboard players set Mode::EDIT_VIEW_RECYCLE_SHOP glbs_common 11
+      scoreboard players set Mode::EDIT_CASH_EXCHANGE glbs_common 12
       
    # 玩家操作类型 ACTION
       #define score_holder Action::NO_ACTION_THIS_PLAYER
@@ -111,6 +117,7 @@
       #define score_holder ItemDataType::MY_BOUGHT 玩家的购买记录中展示的物品
       #define score_holder ItemDataType::MY_SOLD 玩家出售记录中展示的物品
       #define score_holder ItemDataType::RETURN 玩家超时未卖出的回退物品
+      #define score_holder ItemDataType::CASH 货币
       scoreboard players set ItemDataType::CONTROL glbs_common 0
       scoreboard players set ItemDataType::PLAYER_SHOP glbs_common 1
       scoreboard players set ItemDataType::SELL_SHOP glbs_common 2
@@ -118,29 +125,34 @@
       scoreboard players set ItemDataType::MY_BOUGHT glbs_common 4
       scoreboard players set ItemDataType::MY_SOLD glbs_common 5
       scoreboard players set ItemDataType::RETURN glbs_common 6
+      scoreboard players set ItemDataType::CASH glbs_common 7
       # 控件 id
-         #define score_holder CONTROL_NULL_ITEM
-         #define score_holder CONTROL_DATAPACK_INFO
-         #define score_holder CONTROL_ENTER_PLAYER_SHOP_MAIN
-         #define score_holder CONTROL_ENTER_EDIT
-         #define score_holder CONTROL_ENTER_SELL_SHOP
-         #define score_holder CONTROL_MONEY_ITEM_EXCHANGE
-         #define score_holder CONTROL_ENTER_RECYCLE_SHOP
-         #define score_holder CONTROL_SELL_ITEM
-         #define score_holder CONTROL_VIEW_PLAYER_SHOP
-         #define score_holder CONTROL_VIEW_MY_SELLING
-         #define score_holder CONTROL_VIEW_MONEY
-         #define score_holder CONTROL_VIEW_RETURN_ITEMS
-         #define score_holder CONTROL_VIEW_MY_BOUGHT
-         #define score_holder CONTROL_VIEW_MY_SOLD
-         #define score_holder CONTROL_ADD_ITEM_TO_SELL_SHOP
-         #define score_holder CONTROL_REMOVE_ITEM_FROM_SELL_SHOP
-         #define score_holder CONTROL_ADD_ITEM_TO_RECYCLE_SHOP
-         #define score_holder CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP
-         #define score_holder CONTROL_COIN_EXCHANGE
-         #define score_holder CONTROL_CHANGE_EXCHANGE_RATE
-         #define score_holder CONTROL_SETTING_PAGE
-         #define score_holder CONTROL_EXIT_EDIT_MODE
+         #define score_holder CONTROL_NULL_ITEM 空
+         #define score_holder CONTROL_DATAPACK_INFO 数据包信息
+         #define score_holder CONTROL_ENTER_PLAYER_SHOP_MAIN 进入玩家商店的按钮
+         #define score_holder CONTROL_ENTER_EDIT 进入编辑模式的按钮
+         #define score_holder CONTROL_ENTER_SELL_SHOP 进入出售商店的按钮
+         #define score_holder CONTROL_MONEY_ITEM_EXCHANGE 货币兑换的按钮
+         #define score_holder CONTROL_ENTER_RECYCLE_SHOP 进入回收商店的按钮
+         #define score_holder CONTROL_SELL_ITEM 
+         #define score_holder CONTROL_VIEW_PLAYER_SHOP 浏览玩家商店的按钮
+         #define score_holder CONTROL_VIEW_MY_SELLING 浏览自己上架的物品
+         #define score_holder CONTROL_VIEW_MONEY 查询钱本
+         #define score_holder CONTROL_VIEW_RETURN_ITEMS 查询回退的物品
+         #define score_holder CONTROL_VIEW_MY_BOUGHT 查询购买记录
+         #define score_holder CONTROL_VIEW_MY_SOLD 查询出售记录
+         #define score_holder CONTROL_ADD_ITEM_TO_SELL_SHOP 添加物品到出售商店
+         #define score_holder CONTROL_REMOVE_ITEM_FROM_SELL_SHOP 从出售商店移除物品
+         #define score_holder CONTROL_ADD_ITEM_TO_RECYCLE_SHOP 添加物品到回收商店
+         #define score_holder CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP 从回收商店移除物品
+         #define score_holder CONTROL_COIN_EXCHANGE 货币交换
+         #define score_holder CONTROL_CHANGE_EXCHANGE_RATE 更改货币兑换率
+         #define score_holder CONTROL_SETTING_PAGE 设置页面
+         #define score_holder CONTROL_EXIT_EDIT_MODE 退出编辑模式
+         #define score_holder CONTROL_EDIT_CASH_ITEM 编辑货币的item
+         #define score_holder CONTROL_EDIT_CASH_PRICE 编辑货币的价值
+         #define score_holder CONTROL_DELETE_CASH 设置货币
+         #define score_holder CONTROL_DISABLED_CASH 被禁用的货币
          scoreboard players set CONTROL_NULL_ITEM glbs_common 0
          scoreboard players set CONTROL_DATAPACK_INFO glbs_common 1
          scoreboard players set CONTROL_ENTER_PLAYER_SHOP_MAIN glbs_common 2
@@ -163,6 +175,10 @@
          scoreboard players set CONTROL_CHANGE_EXCHANGE_RATE glbs_common 19
          scoreboard players set CONTROL_SETTING_PAGE glbs_common 20
          scoreboard players set CONTROL_EXIT_EDIT_MODE glbs_common 21
+         scoreboard players set CONTROL_EDIT_CASH_ITEM glbs_common 22
+         scoreboard players set CONTROL_EDIT_CASH_PRICE glbs_common 23
+         scoreboard players set CONTROL_DELETE_CASH glbs_common 24
+         scoreboard players set CONTROL_DISABLED_CASH glbs_common 25
 
 # 玩家相关记分板
    # glbs_uid 玩家 uid
@@ -191,6 +207,9 @@
 
    # glbs_inputter_1 玩家输入
    scoreboard objectives add glbs_inputter_1 trigger
+
+   # glbs_inputter_2 玩家输入
+   scoreboard objectives add glbs_inputter_2 trigger
    
 # glbs_mode 记录 Menu 实体 mode_ 记分板
 scoreboard objectives add glbs_mode dummy
