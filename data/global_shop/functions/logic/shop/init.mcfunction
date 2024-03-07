@@ -26,6 +26,7 @@
       scoreboard players set ITEM_NUM_PER_COLUMN glbs_common 3
       scoreboard players set ITEM_NUM_PER_PAGE glbs_common 27
       scoreboard players set SELL_ITEM_COOLING_TIME glbs_common 10
+      # 3天 = 259200s
       scoreboard players set SELL_ITEM_EFFECTIVE_TIME glbs_common 259200
          # 约束相关
             #define score_holder MAX_REGIST_PLAYER_NUM 最大注册玩家数量
@@ -43,6 +44,7 @@
          scoreboard players set 3 glbs_common 3
          scoreboard players set 7 glbs_common 7
          scoreboard players set 12 glbs_common 12
+         scoreboard players set 27 glbs_common 27
       # 全局变量
          #define score_holder g_time
          #define score_holder g_registeredPlayerNum 当前注册玩家数量
