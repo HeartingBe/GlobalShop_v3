@@ -113,3 +113,22 @@ execute store result storage global_shop:menu_preset_and_control CONTROL_NULL_IT
     execute store result storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 
 #endregion
+
+# region 货币设置页面
+    #设置货币物品
+    data modify storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_ITEM set value {id:"minecraft:cyan_wool",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"设置货币物品","color":"gold"}]}}}
+    execute store result storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_ITEM.tag.global_shop.id int 1 run scoreboard players get CONTROL_EDIT_CASH_ITEM glbs_common
+    execute store result storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_ITEM.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
+    #设置货币价格
+    data modify storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_PRICE set value {id:"minecraft:yellow_wool",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"设置货币价格","color":"gold"}]}}}
+    execute store result storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_PRICE.tag.global_shop.id int 1 run scoreboard players get CONTROL_EDIT_CASH_PRICE glbs_common
+    execute store result storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_PRICE.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
+    #禁用/启用货币
+    data modify storage global_shop:menu_preset_and_control CONTROL_DELETE_CASH set value {id:"minecraft:red_wool",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"禁用/启用货币","color":"gold"}]}}}
+    execute store result storage global_shop:menu_preset_and_control CONTROL_DELETE_CASH.tag.global_shop.id int 1 run scoreboard players get CONTROL_DELETE_CASH glbs_common
+    execute store result storage global_shop:menu_preset_and_control CONTROL_DELETE_CASH.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
+    #被禁用的货币
+    data modify storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH set value {id:"minecraft:barrier",Count:1b,tag:{global_shop:{text:[{"text":"此货币已被禁用","color":"red"}]}}}
+    execute store result storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH.tag.global_shop.id int 1 run scoreboard players get CONTROL_DISABLED_CASH glbs_common
+    execute store result storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
+#endregion

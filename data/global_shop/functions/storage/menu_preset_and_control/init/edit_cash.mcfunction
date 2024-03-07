@@ -1,0 +1,41 @@
+#> global_shop:storage/menu_preset_and_control/init/edit_cash
+# 
+# 初始化编辑货币的菜单
+
+data remove storage global_shop:menu_preset_and_control edit_cash
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_ITEM
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_PRICE
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DELETE_CASH
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM

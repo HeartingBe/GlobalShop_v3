@@ -1,3 +1,4 @@
+#> global_shop:logic/menu/handlers/menu_handler/highlight_item_and_display_text
 # @brief 非旋转模式下，玩家看向新的物品时高亮显示该物品。获取该物品 id 并写入 Menu
 # @param targetOrder 玩家看向的物品序号
 # @executor ItemDisplayEntity
