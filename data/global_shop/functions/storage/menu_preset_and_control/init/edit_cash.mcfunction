@@ -26,7 +26,7 @@ data modify storage global_shop:menu_preset_and_control edit_cash append from st
 
 data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH
-data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DELETE_CASH
+data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_CASH_SWITCH_STATUS
 
 data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 data modify storage global_shop:menu_preset_and_control edit_cash append from storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH

@@ -153,7 +153,7 @@
          #define score_holder CONTROL_EXIT_EDIT_MODE 退出编辑模式
          #define score_holder CONTROL_EDIT_CASH_ITEM 编辑货币的item
          #define score_holder CONTROL_EDIT_CASH_PRICE 编辑货币的价值
-         #define score_holder CONTROL_DELETE_CASH 设置货币
+         #define score_holder CONTROL_CASH_SWITCH_STATUS 货币禁用开关
          #define score_holder CONTROL_DISABLED_CASH 被禁用的货币
          scoreboard players set CONTROL_NULL_ITEM glbs_common 0
          scoreboard players set CONTROL_DATAPACK_INFO glbs_common 1
@@ -179,7 +179,7 @@
          scoreboard players set CONTROL_EXIT_EDIT_MODE glbs_common 21
          scoreboard players set CONTROL_EDIT_CASH_ITEM glbs_common 22
          scoreboard players set CONTROL_EDIT_CASH_PRICE glbs_common 23
-         scoreboard players set CONTROL_DELETE_CASH glbs_common 24
+         scoreboard players set CONTROL_CASH_SWITCH_STATUS glbs_common 24
          scoreboard players set CONTROL_DISABLED_CASH glbs_common 25
 
 # 玩家相关记分板
