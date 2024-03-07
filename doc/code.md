@@ -139,24 +139,41 @@ private:
          execute rotated as @s run -> DisplayManager::RangeSummon(g_itemsToDisplay, end, 27);// 上面旋转了，切记
          OnItemSummon();
       }
+   }
 
-      int LocateIndexInPlayerShopListById(int id)
-      {
-         int left = 0;
-         int right = g_playerShopList.size() - 1;
+   int LocateIndexInPlayerShopListById(int id)
+   {
+      int left = 0;
+      int right = g_playerShopList.size() - 1;
 
-         while (left <= right) {
-            int mid = (left + right) / 2;
-            if (id > g_playerShopList[mid].tag.global_shop.id) {
-               left = mid + 1;
-            } else if (id < g_playerShopList[mid].tag.global_shop.id) {
-               right = mid - 1;
-            } else {
-               return mid;
-            }
+      while (left <= right) {
+         int mid = (left + right) / 2;
+         if (id > g_playerShopList[mid].tag.global_shop.id) {
+            left = mid + 1;
+         } else if (id < g_playerShopList[mid].tag.global_shop.id) {
+            right = mid - 1;
+         } else {
+            return mid;
          }
-         return -1;
       }
+      return -1;
+   }
+
+   int GetExpireNum()
+   {
+      int left = 0;
+      int right = g_playerShopList.size() - 1;
+
+      while (left <= right) {
+         int mid = left + ((right - left) >> 1);
+
+         if (g_playerShopList[mid].tag.global_shop.expireTime_ <= g_time) {
+            left = mid + 1;
+         } else {
+            right = mid - 1;
+         }
+      }
+      return left;
    }
 }
 ```

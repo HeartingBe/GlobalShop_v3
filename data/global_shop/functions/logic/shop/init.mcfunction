@@ -21,6 +21,7 @@
       #define score_holder SELL_ITEM_COOLING_TIME
       #define score_holder SELL_ITEM_EFFECTIVE_TIME
       scoreboard players set ITEM_NUM_PER_COLUMN glbs_common 3
+      scoreboard players set ITEM_NUM_PER_PAGE glbs_common 27
       scoreboard players set SELL_ITEM_COOLING_TIME glbs_common 10
       scoreboard players set SELL_ITEM_EFFECTIVE_TIME glbs_common 259200
          # 约束相关
@@ -45,6 +46,7 @@
          #define score_holder g_nextPlayerShopId 下一个玩家上架物品的 id
          #define score_holder g_nextSellShopId 下一个管理员设置的出售商店物品的 id
          #define score_holder g_nextRecycleShopId 下一个管理员设置的回收商店物品的 id
+         #define score_holder g_connectNum 同时使用商店的玩家数量
          # g_time
             scoreboard players add g_time glbs_common 0
             execute unless score g_time glbs_common matches 0.. run scoreboard players set g_time glbs_common 0
