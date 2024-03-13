@@ -2,5 +2,6 @@
 # @macro {scoreboard: string}
 # @param addAmount 要增加的数额
 # @executor Player
+# @return 增加后的数额
 
-$scoreboard players operation @s $(scoreboard) += addAmount glbs_common
+$return run scoreboard players operation @s $(scoreboard) += addAmount glbs_common

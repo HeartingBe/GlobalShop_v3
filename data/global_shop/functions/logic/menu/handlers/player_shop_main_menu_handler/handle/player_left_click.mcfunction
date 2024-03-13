@@ -15,6 +15,9 @@ scoreboard players operation temp glbs_common = @s glbs_last_view_order
       # 10 >> 切换到玩家查看自己正在出售的物品
       execute if score temp glbs_common matches 10 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/change_mode_to_player_shop_view_my_selling
 
+      # 12 >> 领取收入
+      execute if score temp glbs_common matches 12 on passengers if entity @s[type=minecraft:player] run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/collect_income
+
       # 13 >> 获取自己金钱数量
       execute if score temp glbs_common matches 13 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/tellraw_money
 

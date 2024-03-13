@@ -6,8 +6,8 @@ execute store result score Count glbs_common run data get entity @s item.Count
 # Count<=1 不显示
 execute if score Count glbs_common matches ..1 run return run data merge entity @s {CustomName:'""', CustomNameVisible:0b}
 # 显示
-   # 申请世界临时文本展示实体 00000d3a-0000-0d3a-0000-17cc0000edfa
-   function global_shop:logic/temp_world_text_display_utils/call_temp_world_text_display
+   # 申请临时世界文本展示实体 00000d3a-0000-0d3a-0000-17cc0000edfa
+   function global_shop:logic/temp_world_entity/text_display/call
    # 解析
    data modify entity 00000d3a-0000-0d3a-0000-17cc0000edfa text set value '{"score":{"objective":"glbs_common","name":"Count"}}'
    # 显示

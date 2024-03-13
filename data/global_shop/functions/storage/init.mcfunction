@@ -7,11 +7,11 @@ execute unless data storage global_shop:storage g_scoreboard run data modify sto
 
 # 金币 <···> 物品
    #默认
-   execute unless data storage global_shop:storage g_cashInfo run data modify storage global_shop:storage g_cashInfo set value [{item:{id:"paper",Count:1b,tag:{display:{Name:'{"text":"1","italic":false}'},global_shop:{price:1}}},price:1},{item:{id:"paper",Count:1b,tag:{display:{Name:'{"text":"5","italic":false}'},global_shop:{price:5}}},price:1},{item:{id:"paper",Count:1b,tag:{display:{Name:'{"text":"10","italic":false}'},global_shop:{price:10}}},price:10},{item:{id:"paper",Count:1b,tag:{display:{Name:'{"text":"50","italic":false}'},global_shop:{price:50}}},price:50},{item:{id:"paper",Count:1b,tag:{display:{Name:'{"text":"100","italic":false}'},global_shop:{price:100}}},price:100}]
-   data modify storage global_shop:storage g_cashInfo[].item.tag.global_shop.id set value 5
+   execute unless data storage global_shop:storage g_cashInfo run data modify storage global_shop:storage g_cashInfo set value [{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"1"}'},global_shop:{price:1}}},price:1},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"5"}'},global_shop:{price:5}}},price:1},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"10"}'},global_shop:{price:10}}},price:10},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"50"}'},global_shop:{price:50}}},price:50},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"100"}'},global_shop:{price:100}}},price:100}]
+   execute store result storage global_shop:storage g_cashInfo[].item.tag.global_shop.id int 1 run scoreboard players get CONTROL_CASH_EXCHANGE glbs_common
    execute store result storage global_shop:storage g_cashInfo[].item.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CASH glbs_common
    #空。空货币不具有价格，便于判断
-   data modify storage global_shop:storage null_cash set value {item:{id:"barrier",Count:1b,tag:{display:{Name:'{"text":"未定义此货币","italic":false, "color":"red"}'},global_shop:{price:-1}}}}
+   data modify storage global_shop:storage null_cash set value {item:{id:"minecraft:barrier",Count:1b,tag:{display:{Name:'{"text":"未定义此货币","color":"red"}'},global_shop:{price:-1}}}}
 
 # region 消息前缀，两层引号
    #简化形式

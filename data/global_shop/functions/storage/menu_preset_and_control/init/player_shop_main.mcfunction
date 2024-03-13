@@ -19,9 +19,10 @@ data modify storage global_shop:menu_preset_and_control player_shop_main append 
 data modify storage global_shop:menu_preset_and_control player_shop_main append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 # 10
 data modify storage global_shop:menu_preset_and_control player_shop_main append from storage global_shop:menu_preset_and_control CONTROL_VIEW_MY_SELLING
-# 11~12
+# 11
 data modify storage global_shop:menu_preset_and_control player_shop_main append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
-data modify storage global_shop:menu_preset_and_control player_shop_main append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+# 12
+data modify storage global_shop:menu_preset_and_control player_shop_main append from storage global_shop:menu_preset_and_control CONTROL_COLLECT_INCOME
 # 13
 data modify storage global_shop:menu_preset_and_control player_shop_main append from storage global_shop:menu_preset_and_control CONTROL_VIEW_MONEY
 # 14~15

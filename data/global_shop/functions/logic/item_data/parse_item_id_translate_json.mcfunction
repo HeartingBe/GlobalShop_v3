@@ -6,10 +6,10 @@
 data remove storage global_shop:common g_itemIdTranslateJson
 
 # 申请临时世界物品实体
-function global_shop:logic/temp_world_item_entity_utils/call_temp_world_item_entity
+function global_shop:logic/temp_world_entity/item/call
 
 # 申请临时世界文本展示实体
-function global_shop:logic/temp_world_text_display_utils/call_temp_world_text_display
+function global_shop:logic/temp_world_entity/text_display/call
 
 # 将物品 id 写入临时世界物品实体
 data modify entity 00000d3a-0000-0d3a-0000-17cc0000edf9 Item.id set from storage global_shop:common g_itemData.id
