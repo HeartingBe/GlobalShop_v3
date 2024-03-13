@@ -53,9 +53,10 @@ enum Mode {
    PLAYER_SHOP_VIEW_MY_BOUGHT
    PLAYER_SHOP_VIEW_MY_SOLD
    PLAYER_SHOP_VIEW_MY_SELLING
+   PLAYER_SHOP_VIEW_RETURN
    SELL_SHOP_VIEW_ALL
    RECYCLE_SHOP_VIEW_ALL
-   MONEY_ITEM_EXCHANGE
+   EDIT_CASH_EXCHANGE
    EDIT_MAIN
    EDIT_VIEW_SELL_SHOP
    EDIT_VIEW_RECYCLE_SHOP
@@ -89,13 +90,16 @@ class PlayerShopViewMySoldHandler {
 class PlayerShopViewMySellingHandler {
    +void Handle()
 }
+class PlayerShopViewReturnHandler {
+   +void Handle()
+}
 class SellShopHandler {
    +void Handle()
 }
 class RecycleShopHandler {
    +void Handle()
 }
-class MoneyItemExchangeHandler {
+class CashExchangeHandler {
    +void Handle()
 }
 class EditMainMenuHandler {
@@ -116,11 +120,12 @@ MenuHandler <|--- RotatableMenuHandler
 MenuHandler <|-- MainMenuHandler
 MenuHandler <|-- PlayerShopMainMenuHandler
 MenuHandler <|-- EditMainMenuHandler
-MenuHandler <|-- MoneyItemExchangeHandler
+MenuHandler <|-- CashExchangeHandler
 RotatableMenuHandler <|--- PlayerShopHandler
 RotatableMenuHandler <|--- PlayerShopViewMyBoughtHandler
 RotatableMenuHandler <|--- PlayerShopViewMySoldHandler
 RotatableMenuHandler <|--- PlayerShopViewMySellingHandler
+RotatableMenuHandler <|--- PlayerShopViewReturnHandler
 RotatableMenuHandler <|--- SellShopHandler
 RotatableMenuHandler <|--- RecycleShopHandler
 RotatableMenuHandler <|--- EditViewSellShopHandler

@@ -18,6 +18,9 @@ scoreboard players operation temp glbs_common = @s glbs_last_view_order
       # 13 >> 获取自己金钱数量
       execute if score temp glbs_common matches 13 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/tellraw_money
 
+      # 16 >> 切换到玩家查看退回的物品
+      execute if score temp glbs_common matches 16 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/change_mode_to_player_shop_view_return
+
       # 19 >> 切换到玩家浏览自己的历史购买物品
       execute if score temp glbs_common matches 19 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_left_click/change_mode_to_player_shop_view_my_bought
 

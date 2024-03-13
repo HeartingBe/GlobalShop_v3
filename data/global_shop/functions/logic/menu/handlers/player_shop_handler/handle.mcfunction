@@ -23,6 +23,9 @@
    # 看向新的物品时，检查物品。存在时展示信息，不存在时刷新
       # glbs_last_view_order 记录 0 说明 看向的物品为空项 或者 没有看向物品 或者 物品不存在
    execute unless score targetOrder glbs_common = @s glbs_last_view_order run return run function global_shop:logic/menu/handlers/player_shop_handler/target_new_item
+
+# 判断玩家输入
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/player_shop_handler/handle/check_player_input
    
 # 判断玩家左键
    # 获取左键情况

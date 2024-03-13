@@ -20,10 +20,11 @@ execute unless data storage global_shop:storage g_scoreboard run data modify sto
    data modify storage global_shop:storage TEXT_PREFIX_SIMPLE set value '"\\u00a7f\\u25a0\\u00a77\\u25a0\\u00a78\\u25a0 "'
    #标准形式，用于直接写进 nbt 列表
    data modify storage global_shop:storage TEXT_PREFIX set value {"text":"","extra":[{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}
+   data modify storage global_shop:storage TEXT_PREFIX_INDENTATION set value {"text":"    ","color":"white"}
 #endregion
 
 # region char 记录某些常量字符
-   data modify storage global_shop:storage char.":" set value ":"
+   data modify storage global_shop:storage char.SCOPE_RESOLUTION set value ":"
    data modify storage global_shop:storage char.BLANK set value ""
    #换行符
    data modify storage global_shop:storage char.LINE_BREAK set value '"\\n"'

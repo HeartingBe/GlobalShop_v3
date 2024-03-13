@@ -12,6 +12,6 @@
 execute if score num glbs_common matches ..0 run return 0
 
 # 换行
-function global_shop:logic/item_data/to_string/add_seperator
+function global_shop:logic/item_data/add_seperator
 
 data modify storage global_shop:common g_text append value {"translate":"item.nbt_tags","color":"dark_gray","with":[{"score":{"objective":"glbs_common","name":"num"},"color":"dark_gray"}]}

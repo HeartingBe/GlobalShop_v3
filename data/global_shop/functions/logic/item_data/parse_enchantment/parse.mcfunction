@@ -15,7 +15,7 @@ execute if score isntDefault glbs_common matches 1 run function global_shop:logi
 
 # 将结果写入 g_text
    # 换行
-   function global_shop:logic/item_data/to_string/add_seperator
+   function global_shop:logic/item_data/add_seperator
    # 写入
    data modify storage global_shop:common g_text append from storage global_shop:common temp.jsontext
    data remove storage global_shop:common temp.jsontext

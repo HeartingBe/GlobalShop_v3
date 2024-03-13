@@ -83,9 +83,9 @@
       #define score_holder Mode::PLAYER_SHOP_VIEW_MY_BOUGHT
       #define score_holder Mode::PLAYER_SHOP_VIEW_SOLD
       #define score_holder Mode::PLAYER_SHOP_VIEW_MY_SELLING
+      #define score_holder Mode::PLAYER_SHOP_VIEW_RETURN
       #define score_holder Mode::SELL_SHOP 在出售商店中查看所有物品
       #define score_holder Mode::RECYCLE_SHOP 在回收商店中查看所有物品
-      #define score_holder Mode::MONEY_ITEM_EXCHANGE 
       #define score_holder Mode::EDIT_MODE 在编辑模式菜单中
       #define score_holder Mode::EDIT_VIEW_SELL_SHOP 在编辑模式中查看出售商店
       #define score_holder Mode::EDIT_VIEW_RECYCLE_SHOP 在编辑模式中查看回收商店
@@ -96,9 +96,9 @@
       scoreboard players set Mode::PLAYER_SHOP_VIEW_MY_BOUGHT glbs_common 3
       scoreboard players set Mode::PLAYER_SHOP_VIEW_MY_SOLD glbs_common 4
       scoreboard players set Mode::PLAYER_SHOP_VIEW_MY_SELLING glbs_common 5
-      scoreboard players set Mode::SELL_SHOP glbs_common 6
-      scoreboard players set Mode::RECYCLE_SHOP glbs_common 7
-      scoreboard players set Mode::MONEY_ITEM_EXCHANGE glbs_common 8
+      scoreboard players set Mode::PLAYER_SHOP_VIEW_RETURN glbs_common 6
+      scoreboard players set Mode::SELL_SHOP glbs_common 7
+      scoreboard players set Mode::RECYCLE_SHOP glbs_common 8
       scoreboard players set Mode::EDIT_MODE glbs_common 9
       scoreboard players set Mode::EDIT_VIEW_SELL_SHOP glbs_common 10
       scoreboard players set Mode::EDIT_VIEW_RECYCLE_SHOP glbs_common 11
