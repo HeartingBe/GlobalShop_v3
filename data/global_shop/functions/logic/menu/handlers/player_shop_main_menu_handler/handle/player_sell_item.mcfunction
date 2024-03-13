@@ -9,8 +9,10 @@ execute on vehicle unless score @s glbs_last_target matches 4 on passengers if e
 execute if score @s glbs_sell_item_cooling_time matches 1.. unless score @s glbs_permission = Permission::ADMIN glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/cooling_time_not_end
 
 # 该玩家上架和回退物品总数达到最大值
-scoreboard players operation temp glbs_common = @s glbs_sell_num
-scoreboard players operation temp glbs_common += @s glbs_return_num
+   # 获取该玩家存储物品总数
+   execute store result score temp glbs_common run function global_shop:storage/store_manager/get_player_store_item_num
+   # log
+   #tellraw @s ["玩家存储物品总数: ",{"score":{"objective":"glbs_common","name":"temp"}}]
 execute if score temp glbs_common >= PLAYER_MAX_SELL_AND_RETURN_NUM glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/reach_the_limit
 
 # 输入是负数
@@ -45,9 +47,6 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
 
    # 移除玩家手中的物品
    item replace entity @s weapon.mainhand with minecraft:air
-
-   # 更新玩家出售物品的数量
-   scoreboard players add @s glbs_sell_num 1
 
    # 通知
    tellraw @s ["\u00a7a出售成功"]

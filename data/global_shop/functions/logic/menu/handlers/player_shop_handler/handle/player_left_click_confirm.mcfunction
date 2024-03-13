@@ -45,8 +45,6 @@
       data remove storage global_shop:common temp
       data modify storage global_shop:common temp.playerName set from storage global_shop:common g_playerName
       function global_shop:logic/menu/handlers/player_shop_handler/handle/player_left_click_confirm/macro_add_seller_income with storage global_shop:common temp
-      # 更新卖家的出售物品数量
-      function global_shop:logic/menu/handlers/player_shop_handler/handle/player_left_click_confirm/macro_update_seller_sell_num with storage global_shop:common temp
    # 写入买家历史购买
       # 去掉时间
       data remove storage global_shop:common g_itemData.tag.global_shop.expireTime

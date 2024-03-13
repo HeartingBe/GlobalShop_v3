@@ -200,12 +200,6 @@
    # glbs_permission 玩家权限记分板
    scoreboard objectives add glbs_permission dummy
 
-   # glbs_sell_num 玩家上架物品数量
-   scoreboard objectives add glbs_sell_num dummy
-
-   # glbs_return_num 玩家回退物品数量
-   scoreboard objectives add glbs_return_num dummy
-
    # glbs_sell_item_cooling_time 玩家上架物品冷却（单位 s）
    scoreboard objectives add glbs_sell_item_cooling_time dummy
 
