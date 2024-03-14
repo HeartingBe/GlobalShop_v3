@@ -16,3 +16,6 @@ scoreboard players operation temp glbs_common = @s glbs_last_view_order
 
    # 16 >> 切换到回收商店
    execute if score temp glbs_common matches 16 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_recycle_shop
+
+   # 22 >> 玩家个人设置
+   execute if score temp glbs_common matches 22 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_setting

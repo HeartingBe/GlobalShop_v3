@@ -1,1 +1,1 @@
-function global_shop:logic/text_display/text_display/set_state_and_parse_text
+function global_shop:logic/text_display/text_display/set_state

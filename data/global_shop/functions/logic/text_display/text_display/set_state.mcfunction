@@ -1,5 +1,4 @@
-#> global_shop:logic/text_display/text_display/set_state_and_parse_text
-# @param g_itemData
+#> global_shop:logic/text_display/text_display/set_state
 # @executor TextDisplay
 
 # 面朝玩家渲染固定轴 billboard
@@ -14,11 +13,14 @@
    # sky 渲染使用的天空光照等级，取值为 0-15。
 # transformation 变换
    # scale 以原点为中心缩放模型
-   # translation 平移变换，x 指向右侧，z 指向后方
+   # translation 平移变换，x 指向右侧，y 指向上方，z 指向后方
 # text_opacity 文本不透明度
 #data merge entity @s {billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15},transformation:{scale:[0.87f,0.87f,0.87f],translation:[1.2f,-1.0f,0.0f]}}
    # 尝试将文本展示实体生成到玩家处，然后用偏移将渲染位置改为玩家右前方
-   data merge entity @s {Tags:["global_shop"],billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15},transformation:{scale:[0.7f,0.7f,0.7f],translation:[1.4f,0.55f,-3.0f]}}
+   data merge entity @s {Tags:["global_shop"],billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15}}
 
-# 解析并写入文本
-function global_shop:logic/text_display/parse_and_set_text
+# 调整玩家自定义的大小
+function global_shop:logic/text_display/text_display/set_custom_size
+
+# 调整玩家自定义的位置
+function global_shop:logic/text_display/text_display/set_custom_position

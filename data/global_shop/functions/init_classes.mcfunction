@@ -11,7 +11,7 @@ function global_shop:logic/scheduler/stop
    function global_shop:logic/shop/init
    # 定时器初始化
    function global_shop:logic/scheduler/init
-   # 有关 storage global_shop:menu_preset_and_control 的初始化（主菜单和控件）
+   # 有关 storage global_shop:menu_preset_and_control 的初始化（主菜单、控件和设置选项）
    function global_shop:storage/menu_preset_and_control/init
    # 有关 storage global_shop:storage 的初始化（永久性存储的信息）
    function global_shop:storage/init

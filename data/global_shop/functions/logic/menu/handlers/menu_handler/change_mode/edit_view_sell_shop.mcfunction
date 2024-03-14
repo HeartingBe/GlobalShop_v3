@@ -15,6 +15,6 @@ function global_shop:logic/menu/handlers/menu_handler/rotate
 # 更改模式
 scoreboard players operation @s glbs_mode = Mode::EDIT_VIEW_SELL_SHOP glbs_common
 # 通知
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a欢迎编辑浏览出售商店"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a欢迎编辑出售商店"]
 # 生成物品展示实体（注意：上面旋转，但是本函数的执行环境未改变，需要校正旋转角）
 execute rotated as @s run function global_shop:ui/display_manager/summon_whole_page_items

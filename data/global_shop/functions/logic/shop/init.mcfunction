@@ -34,11 +34,14 @@
             #define score_holder PLAYER_MAX_SELL_AND_RETURN_NUM
             #define score_holder PLAYER_MAX_BOUGHT_NUM
             #define score_holder PLAYER_MAX_SOLD_NUM
+            #define score_holder MAX_PLAYER_INPUT 玩家最大输入值
             scoreboard players set MAX_REGIST_PLAYER_NUM glbs_common 1000
             scoreboard players set MAX_CONNECT_NUM glbs_common 8
             scoreboard players set PLAYER_MAX_SELL_AND_RETURN_NUM glbs_common 54
             scoreboard players set PLAYER_MAX_BOUGHT_NUM glbs_common 27
             scoreboard players set PLAYER_MAX_SOLD_NUM glbs_common 27
+            # 玩家最大输入，int32 最大值为 2147483647，此处取 2^20
+            scoreboard players set MAX_PLAYER_INPUT glbs_common 1048576
       # 常数
          scoreboard players set 2 glbs_common 2
          scoreboard players set 3 glbs_common 3
@@ -46,8 +49,10 @@
          scoreboard players set 12 glbs_common 12
          scoreboard players set 27 glbs_common 27
          scoreboard players set 120 glbs_common 120
+         scoreboard players set INT32_MAX glbs_common 2147483647
+         scoreboard players set INT32_MAX_HALF glbs_common 1073741823
       # 全局变量
-         #define score_holder g_time
+         #define score_holder g_time 时间，用于处理超时物品退回
          #define score_holder g_registeredPlayerNum 当前注册玩家数量
          #define score_holder g_nextUid 下一个注册的玩家得到的UID
          #define score_holder g_nextPlayerShopId 下一个玩家上架物品的 id
@@ -91,6 +96,8 @@
       #define score_holder Mode::EDIT_VIEW_SELL_SHOP 在编辑模式中查看出售商店
       #define score_holder Mode::EDIT_VIEW_RECYCLE_SHOP 在编辑模式中查看回收商店
       #define score_holder Mode::EDIT_CASH_EXCHANGE 编辑货币兑换
+      #define score_holder Mode::PLAYER_SETTING 玩家个人设置
+      #define score_holder Mode::ADMIN_SETTING 管理员全局设置
       scoreboard players set Mode::MAIN glbs_common 0
       scoreboard players set Mode::PLAYER_SHOP_MAIN glbs_common 1
       scoreboard players set Mode::PLAYER_SHOP glbs_common 2
@@ -104,6 +111,8 @@
       scoreboard players set Mode::EDIT_VIEW_SELL_SHOP glbs_common 10
       scoreboard players set Mode::EDIT_VIEW_RECYCLE_SHOP glbs_common 11
       scoreboard players set Mode::EDIT_CASH_EXCHANGE glbs_common 12
+      scoreboard players set Mode::PLAYER_SETTING glbs_common 13
+      scoreboard players set Mode::ADMIN_SETTING glbs_common 14
       
    # 玩家操作类型 ACTION
       #define score_holder Action::NO_ACTION_THIS_PLAYER
@@ -123,6 +132,7 @@
       #define score_holder ItemDataType::MY_SOLD 玩家出售记录中展示的物品
       #define score_holder ItemDataType::RETURN 玩家超时未卖出的回退物品
       #define score_holder ItemDataType::CASH 货币
+      #define score_holder ItemDataType::SETTING 设置
       scoreboard players set ItemDataType::CONTROL glbs_common 0
       scoreboard players set ItemDataType::PLAYER_SHOP glbs_common 1
       scoreboard players set ItemDataType::SELL_SHOP glbs_common 2
@@ -131,6 +141,7 @@
       scoreboard players set ItemDataType::MY_SOLD glbs_common 5
       scoreboard players set ItemDataType::RETURN glbs_common 6
       scoreboard players set ItemDataType::CASH glbs_common 7
+      scoreboard players set ItemDataType::SETTING glbs_common 8
       # 控件 id
          #define score_holder CONTROL_NULL_ITEM 空
          #define score_holder CONTROL_DATAPACK_INFO 数据包信息
@@ -187,6 +198,24 @@
          scoreboard players set CONTROL_EDIT_CASH_PRICE glbs_common 25
          scoreboard players set CONTROL_CASH_SWITCH_STATUS glbs_common 26
          scoreboard players set CONTROL_DISABLED_CASH glbs_common 27
+      # 设置按钮(0 是空项，从 1 开始编号)
+         # 玩家个人设置
+         #define score_holder SETTING_MODIFY_ITEM_FRAME_SIZE 调整物品信息框大小
+         #define score_holder SETTING_MODIFY_ITEM_FRAME_SIZE_RST 恢复默认物品信息框大小
+         #define score_holder SETTING_MODIFY_ITEM_FRAME_POSITION_V 调整物品信息框上下位置
+         #define score_holder SETTING_MODIFY_ITEM_FRAME_POSITION_H 调整物品信息框左右位置
+         #define score_holder SETTING_MODIFY_ITEM_FRAME_POSITION_D 调整物品信息框前后位置
+         #define score_holder SETTING_MODIFY_ITEM_FRAME_POSITION_RST 恢复默认物品信息框位置
+         scoreboard players set SETTING_MODIFY_ITEM_FRAME_SIZE glbs_common 1
+         scoreboard players set SETTING_MODIFY_ITEM_FRAME_SIZE_RST glbs_common 2
+         scoreboard players set SETTING_MODIFY_ITEM_FRAME_POSITION_V glbs_common 3
+         scoreboard players set SETTING_MODIFY_ITEM_FRAME_POSITION_H glbs_common 4
+         scoreboard players set SETTING_MODIFY_ITEM_FRAME_POSITION_D glbs_common 5
+         scoreboard players set SETTING_MODIFY_ITEM_FRAME_POSITION_RST glbs_common 6
+         # 管理员全局设置
+         #define score_holder SETTING_MODIFY_MONEY_SCOREBOARD 修改自定义金钱记分板
+         scoreboard players set SETTING_MODIFY_MONEY_SCOREBOARD glbs_common 3
+         
 
 # 玩家相关记分板
    # glbs_uid 玩家 uid
@@ -212,6 +241,17 @@
 
    # glbs_inputter_2 玩家输入
    scoreboard objectives add glbs_inputter_2 trigger
+
+   # 玩家自定义设置相关记分板
+      # 物品信息框相对大小
+      scoreboard objectives add glbs_st_item_frame_size dummy
+      # 物品信息框相对位置
+         # 上下
+         scoreboard objectives add glbs_st_item_frame_pos_v dummy
+         # 左右
+         scoreboard objectives add glbs_st_item_frame_pos_h dummy
+         # 前后
+         scoreboard objectives add glbs_st_item_frame_pos_d dummy  
    
 # glbs_mode 记录 Menu 实体 mode_ 记分板
 scoreboard objectives add glbs_mode dummy

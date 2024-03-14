@@ -184,13 +184,14 @@ abstract class ItemData {
 }
 ItemDisplayEntity -- ItemData
 enum ItemDataType {
-   Control
-   PlayerShop
-   SellShop
-   RecycleShop
-   MyBought
-   MySold
-   Return
+   CONTROL
+   PLAYER_SHOP
+   SELL_SHOP
+   RECYCLE_SHOP
+   MY_BOUGHT
+   MY_SOLD
+   RETURN
+   SETTING
 }
 ItemDataType -right- ItemData
 class ControlItemData {
@@ -231,6 +232,12 @@ class MyBoughtItemData {
 class MySoldItemData {
    +Lores ToString()
 }
+class ReturnItemData {
+   +Lores ToString()
+}
+class SettingItemData {
+   +Lores ToString()
+}
 ItemData <|-down- ControlItemData
 ItemData <|-right- BaseDynamicItemData
 BaseDynamicItemData <|-down- ReturnItemData
@@ -240,6 +247,8 @@ DynamicItemData <|-- SellShopItemData
 DynamicItemData <|-- RecycleShopItemData
 DynamicItemData <|-- MyBoughtItemData
 DynamicItemData <|-- MySoldItemData
+DynamicItemData <|-- ReturnItemData
+DynamicItemData <|-- SettingItemData
 
 class DisplayManager {
    +void SummonWholePageItems(g_itemsToDisplay: List<ItemData>&) {static}

@@ -1,14 +1,14 @@
 # @brief 玩家商店主菜单逻辑
 # @executor Menu
 
-# 判断玩家出售物品
-execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_inputter_1 matches 0 run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item
-
 # 判断玩家右键
    # 获取右键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_back_action
       # 返回主菜单
       execute if score temp glbs_common = Action::RIGHT_CLICK glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_back
+
+# 判断玩家出售物品
+execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_inputter_1 matches 0 run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item
 
 # 判断玩家看向新的物品
    # 获取看向的控件序号

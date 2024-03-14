@@ -1,9 +1,13 @@
 #> global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_recycle_item
-# @brief 上架玩家主手的物品
+# @brief 管理员向回收商店添加物品
 # @executor Admin
 
+# tag 玩家输入
+
 # 输入是负数
-execute if score @s glbs_inputter_1 matches ..0 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_recycle_item/invalid_num
+execute if score @s glbs_inputter_1 matches ..-1 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_recycle_item/negative_num
+# 输入过大
+execute if score @s glbs_inputter_1 > MAX_PLAYER_INPUT glbs_common run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_recycle_item/too_large_input
 
 # 主手为空
 execute unless data entity @s SelectedItem run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_recycle_item/main_hand_has_no_item

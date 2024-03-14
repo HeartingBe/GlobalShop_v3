@@ -3,12 +3,12 @@
 # @executor Menu
 
 # 判断管理员进行操作输入
+# tag 玩家输入
 execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_inputter_2 matches 0 run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input
 
 # 判断管理员输入价格
-
+# tag 玩家输入
 execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_inputter_1 matches 0 run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_price
-
 
 # 判断玩家右键
    # 获取右键情况
