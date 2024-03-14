@@ -1,5 +1,6 @@
 # @brief 关闭该连接，清除实体和数据
 # @executor Menu
+# @other 必须选中 Menu 并 at @s 后才能执行该函数
 
 # 清除物品展示实体
 execute as @e[type=minecraft:item_display,tag=global_shop,distance=..5] run function global_shop:logic/item_display_entity/kill

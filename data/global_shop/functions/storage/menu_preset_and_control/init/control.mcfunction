@@ -118,7 +118,7 @@ execute store result storage global_shop:menu_preset_and_control CONTROL_NULL_IT
     execute store result storage global_shop:menu_preset_and_control CONTROL_CHANGE_EXCHANGE_RATE.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 
     #进入设置页面
-    data modify storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE set value {id:"minecraft:crafting_table",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"设置","color":"gold"}]}}}
+    data modify storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE set value {id:"minecraft:crafting_table",Count:1b,tag:{global_shop:{text:[{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1},{"text":"全局设置","color":"gold"}]}}}
     execute store result storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE.tag.global_shop.id int 1 run scoreboard players get CONTROL_SETTING_PAGE glbs_common
     execute store result storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 

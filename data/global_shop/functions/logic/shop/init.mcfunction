@@ -45,6 +45,7 @@
          scoreboard players set 7 glbs_common 7
          scoreboard players set 12 glbs_common 12
          scoreboard players set 27 glbs_common 27
+         scoreboard players set 120 glbs_common 120
       # 全局变量
          #define score_holder g_time
          #define score_holder g_registeredPlayerNum 当前注册玩家数量

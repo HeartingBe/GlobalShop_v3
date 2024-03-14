@@ -11,6 +11,7 @@ execute if score g_connectNum glbs_common >= MAX_CONNECT_NUM glbs_common unless 
 
 # 检查玩家是否重复打开商店、检查维度
 execute store result score ret glbs_common run function global_shop:logic/menu/menu/check_env
+execute if score ret glbs_common matches 1 run return 0
 
 # 检查周围 10 格内是否有玩家正在使用商店
 execute store result score ret glbs_common run function global_shop:logic/menu/menu/check_if_player_using_shop_around
