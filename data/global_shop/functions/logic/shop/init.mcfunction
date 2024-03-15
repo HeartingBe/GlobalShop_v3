@@ -42,12 +42,15 @@
             scoreboard players set PLAYER_MAX_SOLD_NUM glbs_common 27
             # 玩家最大输入，int32 最大值为 2147483647，此处取 2^20
             scoreboard players set MAX_PLAYER_INPUT glbs_common 1048576
+            # 玩家单次打开商店最长的使用时间（单位：s，600s = 10min）
+            scoreboard players set MAX_EACH_USE_TIME glbs_common 600
       # 常数
          scoreboard players set 2 glbs_common 2
          scoreboard players set 3 glbs_common 3
          scoreboard players set 7 glbs_common 7
          scoreboard players set 12 glbs_common 12
          scoreboard players set 27 glbs_common 27
+         scoreboard players set 60 glbs_common 60
          scoreboard players set 120 glbs_common 120
          scoreboard players set INT32_MAX glbs_common 2147483647
          scoreboard players set INT32_MAX_HALF glbs_common 1073741823
@@ -217,31 +220,23 @@
          scoreboard players set SETTING_MODIFY_MONEY_SCOREBOARD glbs_common 3
          
 
-# 玩家相关记分板
+# Player 相关记分板
    # glbs_uid 玩家 uid
    scoreboard objectives add glbs_uid dummy
-   
    # glbs_money 玩家默认金钱记分板
    scoreboard objectives add glbs_money dummy
-
    # glbs_income 玩家收入记分板
    scoreboard objectives add glbs_income dummy
-
    # open_global_shop 玩家触发记分板
    scoreboard objectives add open_global_shop trigger
-
    # glbs_permission 玩家权限记分板
    scoreboard objectives add glbs_permission dummy
-
    # glbs_sell_item_cooling_time 玩家上架物品冷却（单位 s）
    scoreboard objectives add glbs_sell_item_cooling_time dummy
-
    # glbs_inputter_1 玩家输入
    scoreboard objectives add glbs_inputter_1 trigger
-
    # glbs_inputter_2 玩家输入
    scoreboard objectives add glbs_inputter_2 trigger
-
    # 玩家自定义设置相关记分板
       # 物品信息框相对大小
       scoreboard objectives add glbs_st_item_frame_size dummy
@@ -251,29 +246,29 @@
          # 左右
          scoreboard objectives add glbs_st_item_frame_pos_h dummy
          # 前后
-         scoreboard objectives add glbs_st_item_frame_pos_d dummy  
-   
-# glbs_mode 记录 Menu 实体 mode_ 记分板
-scoreboard objectives add glbs_mode dummy
+         scoreboard objectives add glbs_st_item_frame_pos_d dummy
+   # 玩家退出游戏
+   scoreboard objectives add glbs_leave_game minecraft.custom:leave_game
+   # 玩家本次使用商店的时长（单位：s，用于限制玩家单次使用商店的时长，避免挂机长时间占用商店）
+   scoreboard objectives add glbs_use_time dummy
 
-# glbs_last_view_order 记录 Menu 实体 lastActionTarget_ 记分板
-scoreboard objectives add glbs_last_view_order dummy
+# Menu 相关记分板
+   # glbs_mode 记录 mode_ 记分板
+   scoreboard objectives add glbs_mode dummy
+   # glbs_last_view_order 记录 lastActionTarget_ 记分板
+   scoreboard objectives add glbs_last_view_order dummy
+   # glbs_begin_index 记录 beginIndex_ 记分板
+   scoreboard objectives add glbs_begin_index dummy
+   # glbs_last_action 记录 lastAction_ 记分板
+   scoreboard objectives add glbs_last_action dummy
+   # glbs_last_view_id 记录 lastAction_ 记分板（Menu 记录玩家看向的物品的 id，随旋转改变）
+   scoreboard objectives add glbs_last_view_id dummy
+   # glbs_last_target 玩家左键时记录，记录 -1 代表无效
+      # 非旋转模式时玩家左键的物品的 id
+      # 旋转模式时玩家左键的物品的 order
+   scoreboard objectives add glbs_last_target dummy
 
-# glbs_begin_index 记录 Menu 实体 beginIndex_ 记分板
-scoreboard objectives add glbs_begin_index dummy
-
-# glbs_last_action 记录 Menu 实体 lastAction_ 记分板
-scoreboard objectives add glbs_last_action dummy
-
-# glbs_last_view_id 记录 Menu 实体 lastAction_ 记分板（Menu 记录玩家看向的物品的 id，随旋转改变）
-scoreboard objectives add glbs_last_view_id dummy
-
-# glbs_last_target 玩家左键时记录，记录 -1 代表无效
-   # 非旋转模式时 Menu 记录玩家左键的物品的 id
-   # 旋转模式时 Menu 记录玩家左键的物品的 order
-scoreboard objectives add glbs_last_target dummy
-
-# glbs_err_code 错误码记分板
+# glbs_err_code 错误码记分板（基本弃用）
 scoreboard objectives add glbs_err_code dummy
 #define score_holder SUCCESS 成功
 #define score_holder INVALID_ENV 环境错误

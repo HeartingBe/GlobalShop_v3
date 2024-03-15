@@ -1,4 +1,4 @@
-#> global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_sell_item/cooling_time_not_end
+#> global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_recycle_item/cooling_time_not_end
 # @executor Player
 
 tellraw @s ["冷却时间未到, 还剩 ",{"score":{"objective":"glbs_sell_item_cooling_time","name":"@s"}}," s"]

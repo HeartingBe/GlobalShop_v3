@@ -38,5 +38,5 @@ function global_shop:storage/store_manager/get_recycle_shop_list_page
    scoreboard players set end glbs_common 27
    # log
    #tellraw @a ["begin: ",{"score":{"objective":"glbs_common","name":"begin"}},"         end: ",{"score":{"objective":"glbs_common","name":"end"}}]
-   execute rotated as @s run function global_shop:ui/display_manager/range_summon
+   function global_shop:ui/display_manager/range_summon
    function global_shop:ui/display_manager/on_item_summon

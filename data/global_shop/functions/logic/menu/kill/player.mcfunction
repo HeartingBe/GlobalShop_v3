@@ -1,5 +1,6 @@
-# 清除 trigger
-scoreboard players reset @s glbs_inputter_1
-scoreboard players reset @s glbs_inputter_2
+# 重置玩家相关记分板
+function global_shop:logic/player/init_scoreboard
 
 tellraw @s ["\u00a7e商店已关闭, 欢迎下次使用"]
+
+ride @s dismount

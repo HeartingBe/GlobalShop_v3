@@ -13,9 +13,9 @@ execute unless score @s glbs_order = targetOrder glbs_common unless score @s glb
    # 获取 id 并写入 Menu 中
    execute store result score temp2 glbs_common run data get entity @s item.tag.global_shop.id
       # 是空项，直接返回
-      execute if score temp2 glbs_common matches 0 as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run return run scoreboard players set @s glbs_last_view_id 0
+      execute if score temp2 glbs_common matches 0 on vehicle run return run scoreboard players set @s glbs_last_view_id 0
       # 写入
-      execute as 00000d3a-0000-0d3a-0000-17cc000017cc on vehicle run scoreboard players operation @s glbs_last_view_id = temp2 glbs_common
+      execute on vehicle run scoreboard players operation @s glbs_last_view_id = temp2 glbs_common
    # 物品信息已完整拷贝在 @s item
    data modify storage global_shop:common g_itemData set from entity @s item
    # 高亮、展示文本

@@ -4,4 +4,4 @@
 # 清除文本展示实体的文字
 execute on passengers if entity @s[type=minecraft:text_display] run function global_shop:logic/text_display/clear_text
 
-execute as @e[distance=..5,type=minecraft:item_display,tag=global_shop] run function global_shop:ui/display_manager/update_whole_page/1
+execute on passengers if entity @s[type=minecraft:item_display,tag=!glbs_killed] run function global_shop:ui/display_manager/update_whole_page/1

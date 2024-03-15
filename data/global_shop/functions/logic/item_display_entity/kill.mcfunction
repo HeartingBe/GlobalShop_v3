@@ -1,9 +1,8 @@
 # @brief 清除物品展示实体和数据
 # @executor ItemDisplayEntity
 
-tag @s remove global_shop
-tag @s add glbs_to_kill_1
-tag @s add glbs_to_kill_2
+tag @s add glbs_killed
+tag @s add glbs_kill_delay
 
 scoreboard players reset @s glbs_order
 

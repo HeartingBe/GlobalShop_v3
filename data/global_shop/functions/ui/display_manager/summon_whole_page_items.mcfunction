@@ -1,8 +1,13 @@
 # @brief 根据 g_itemsToDisplay 参数提供的物品数据生成物品展示实体
 # @param g_itemsToDisplay: List<ItemData>
+# @executor Menu
 
 # log
 #execute unless data storage global_shop:common g_itemsToDisplay[26] run tellraw @a ["\u00a7c物品不足 27 个，生成错误"]
+
+tag @s add glbs_to_carry_item_display
+
+execute store result score g_baseRotation glbs_common run data get entity @s Rotation[0]
 
 function global_shop:ui/display_manager/summon_single_item/0
 function global_shop:ui/display_manager/summon_single_item/1
@@ -31,6 +36,8 @@ function global_shop:ui/display_manager/summon_single_item/23
 function global_shop:ui/display_manager/summon_single_item/24
 function global_shop:ui/display_manager/summon_single_item/25
 function global_shop:ui/display_manager/summon_single_item/26
+
+tag @s remove glbs_to_carry_item_display
 
 # 将这些物品展示实体变为正常大小
 function global_shop:ui/display_manager/on_item_summon

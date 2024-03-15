@@ -17,5 +17,7 @@ execute if score ret glbs_common matches 1 run return 0
 execute store result score ret glbs_common run function global_shop:logic/menu/menu/check_if_player_using_shop_around
 execute if score ret glbs_common matches 1 run return run tellraw @s ["\u00a7c周围有玩家在使用商店, 请相隔一定距离"]
 
+# TODO 检查周围有没有非法方块
+
 # 检查通过
 function global_shop:logic/menu/menu/open_menu_success

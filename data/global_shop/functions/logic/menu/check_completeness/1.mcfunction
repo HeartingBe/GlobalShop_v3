@@ -1,0 +1,2 @@
+execute if entity @s[type=minecraft:player] run return run scoreboard players add temp glbs_common 1
+execute if entity @s[tag=global_shop,tag=!glbs_killed] run scoreboard players add temp glbs_common 1

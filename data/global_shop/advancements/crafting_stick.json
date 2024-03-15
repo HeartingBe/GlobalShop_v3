@@ -1,0 +1,24 @@
+{
+    "criteria": {
+        "stick": {
+            "trigger": "minecraft:recipe_crafted",
+            "conditions": {
+                "recipe_id": "global_shop:open_shop",
+                "ingredients": [
+                ]
+            }
+        }
+    },
+    "display": {
+        "icon": {
+            "item": "minecraft:chest_minecart"
+        },
+        "title": "",
+        "description": "",
+        "announce_to_chat": false,
+        "show_toast": false
+    },
+    "rewards": {
+        "function": "global_shop:advancements/craft_stick_open_shop"
+    }
+}

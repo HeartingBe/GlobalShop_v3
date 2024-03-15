@@ -8,5 +8,5 @@ execute if score orderDiff glbs_common matches 28.. run scoreboard players set b
 
 scoreboard players operation end glbs_common = begin glbs_common
 scoreboard players set begin glbs_common 0
-execute rotated as @s run function global_shop:ui/display_manager/range_summon
+function global_shop:ui/display_manager/range_summon
 function global_shop:ui/display_manager/on_item_summon

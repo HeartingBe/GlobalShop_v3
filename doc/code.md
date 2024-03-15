@@ -129,14 +129,14 @@ private:
          DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, orderDiff);
          
          int begin = min(27, orderDiff);
-         execute rotated as @s run -> DisplayManager::RangeSummon(g_itemsToDisplay, 0, begin);// 上面旋转了，切记
+         DisplayManager::RangeSummon(g_itemsToDisplay, 0, begin);// 上面旋转了，切记
          OnItemSummon();
       } else {
          // -
          DisplayManager::RangeUpdateAndDelete(g_itemsToDisplay, -orderDiff);
          
          int end = 27 - max(0, orderDiff);
-         execute rotated as @s run -> DisplayManager::RangeSummon(g_itemsToDisplay, end, 27);// 上面旋转了，切记
+         DisplayManager::RangeSummon(g_itemsToDisplay, end, 27);// 上面旋转了，切记
          OnItemSummon();
       }
    }

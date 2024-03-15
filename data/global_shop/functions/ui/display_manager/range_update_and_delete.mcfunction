@@ -2,4 +2,4 @@
 # @param orderDiff order 差值，需加上
 # @executor Menu
 
-execute as @e[distance=..5,type=minecraft:item_display,tag=global_shop] run function global_shop:ui/display_manager/range_update_and_delete/1
+execute on passengers if entity @s[type=minecraft:item_display,tag=!glbs_killed] run function global_shop:ui/display_manager/range_update_and_delete/1

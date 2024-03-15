@@ -16,5 +16,5 @@ scoreboard players operation g_columnDiff glbs_common += g_columnIncrement glbs_
 function global_shop:logic/menu/handlers/menu_handler/rotate
 # 更改模式
 scoreboard players operation @s glbs_mode = Mode::MAIN glbs_common
-# 生成物品展示实体（注意：上面旋转，但是本函数的执行环境未改变，需要校正旋转角）
-execute rotated as @s run function global_shop:ui/display_manager/summon_whole_page_items
+# 生成物品展示实体
+function global_shop:ui/display_manager/summon_whole_page_items
