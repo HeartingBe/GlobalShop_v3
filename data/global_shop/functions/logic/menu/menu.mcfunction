@@ -1,6 +1,8 @@
 # @brief 玩家打开商店
 # @executor Player
 
+# @other 已经 at @s
+
 # 检查玩家是否注册
 scoreboard players operation ret glbs_common = SUCCESS glbs_err_code
 execute unless score @s glbs_uid matches -2147483648..2147483647 store result score ret glbs_common run function global_shop:storage/store_manager/register_player
@@ -17,7 +19,8 @@ execute if score ret glbs_common matches 1 run return 0
 execute store result score ret glbs_common run function global_shop:logic/menu/menu/check_if_player_using_shop_around
 execute if score ret glbs_common matches 1 run return run tellraw @s ["\u00a7c周围有玩家在使用商店, 请相隔一定距离"]
 
-# TODO 检查周围有没有非法方块
+# 检查周围非法方块
+execute if predicate global_shop:near_invalid_block run return run function global_shop:logic/menu/menu/invalid_block
 
 # 检查通过
 function global_shop:logic/menu/menu/open_menu_success
