@@ -14,10 +14,12 @@
 # transformation 变换
    # scale 以原点为中心缩放模型
    # translation 平移变换，x 指向右侧，y 指向上方，z 指向后方
-# text_opacity 文本不透明度
-#data merge entity @s {billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15},transformation:{scale:[0.87f,0.87f,0.87f],translation:[1.2f,-1.0f,0.0f]}}
-   # 尝试将文本展示实体生成到玩家处，然后用偏移将渲染位置改为玩家右前方
-   data merge entity @s {Tags:["global_shop"],width:0.6f,height:1.45f,billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15}}
+# text_opacity 文本不透明度，透明度：
+   # 4b 完全透明
+   # -1b 完全不透明
+
+# 将渲染位置偏移到玩家右前方
+data merge entity @s {Tags:["global_shop"],width:0.6f,height:1.45f,billboard:"center",alignment:"left",background:-283703273,see_through:false,line_width:144,brightness:{block:15,sky:15}}
 
 # 调整玩家自定义的大小
 function global_shop:logic/text_display/text_display/set_custom_size

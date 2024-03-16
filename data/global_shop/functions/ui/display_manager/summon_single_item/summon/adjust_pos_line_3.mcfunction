@@ -2,6 +2,9 @@
 
 #data modify entity @s transformation.translation[1] set value 0.0f
 
+execute on passengers run data modify entity @s transformation.translation[0] set value 0.2f
+execute on passengers run data modify entity @s transformation.translation[1] set value -0.2f
+
 #data modify entity @s transformation.translation set value [0.0f,0.46f,-3.98f]
 #data modify entity @s Rotation[1] set value -6.0f
 

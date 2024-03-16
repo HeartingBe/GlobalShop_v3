@@ -2,7 +2,7 @@
 # @executor Menu
 # @other 必须选中 Menu 并 at @s 后才能执行该函数
 
-# 清除 Interactor、TextDisplay
+# 清除 Interactor、TextDisplay、ItemDisplay
 function global_shop:logic/menu/kill/kill_passengers
 
 # 清除交互实体

@@ -3,6 +3,8 @@
 # @param incre 角度增量，incre ∈ [-360, 360]
 # @return 结果旋转角
 
+# @other 调用方不使用 base glbs_common
+
 # 算法：
 # 旋转角范围 [-180, 179]
 # 计算 result = g_baseRotation + incre
