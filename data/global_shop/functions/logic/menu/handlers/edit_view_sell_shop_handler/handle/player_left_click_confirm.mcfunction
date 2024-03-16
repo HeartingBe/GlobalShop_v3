@@ -13,5 +13,8 @@ function global_shop:storage/store_manager/delete_sell_shop_elem_by_id
 # 刷新
 function global_shop:logic/menu/handlers/edit_view_sell_shop_handler/refresh
 
+# 音效 成功
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/success
+
 # 通知玩家
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["删除成功"]

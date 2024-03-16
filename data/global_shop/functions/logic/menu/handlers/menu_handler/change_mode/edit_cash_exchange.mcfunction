@@ -16,7 +16,7 @@ function global_shop:logic/menu/handlers/menu_handler/rotate
 # 更改模式
 scoreboard players operation @s glbs_mode = Mode::EDIT_CASH_EXCHANGE glbs_common
 # 通知
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a欢迎编辑货币"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a货币编辑界面"]
 # 生成物品展示实体
 function global_shop:ui/display_manager/summon_whole_page_items
 # 重置选择

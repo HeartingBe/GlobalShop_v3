@@ -1,0 +1,1 @@
+playsound minecraft:block.shulker_box.open player @s ~ ~ ~ 0.5 1

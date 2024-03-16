@@ -11,3 +11,5 @@ execute positioned ~ ~0.5 ~ run function global_shop:logic/menu/menu/open_menu_s
 tellraw @s ["\u00a7a欢迎使用商店"]
 scoreboard players set g_columnIncrement glbs_common 0
 execute on vehicle at @s run function global_shop:logic/menu/handlers/menu_handler/change_mode/main
+# 音效 打开商店
+function global_shop:sound/open_shop

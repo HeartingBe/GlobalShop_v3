@@ -1,0 +1,1 @@
+playsound minecraft:block.shulker_box.close player @s ~ ~ ~ 0.5 1

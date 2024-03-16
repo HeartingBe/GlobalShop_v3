@@ -70,3 +70,5 @@
    function global_shop:logic/menu/handlers/player_shop_handler/refresh
    # 通知
    execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a成功购买该玩家的物品"]
+   # 音效 成功
+   execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/success

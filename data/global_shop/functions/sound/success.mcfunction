@@ -1,0 +1,1 @@
+playsound minecraft:block.note_block.bell player @s ~ ~ ~ 1 1

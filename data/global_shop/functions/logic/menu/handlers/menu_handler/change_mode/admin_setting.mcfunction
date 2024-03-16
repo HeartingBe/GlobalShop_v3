@@ -15,6 +15,6 @@ function global_shop:logic/menu/handlers/menu_handler/rotate
 # 更改模式
 scoreboard players operation @s glbs_mode = Mode::ADMIN_SETTING glbs_common
 # 通知
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a欢迎进行管理员全局设置"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a管理员设置界面"]
 # 生成物品展示实体
 function global_shop:ui/display_manager/summon_whole_page_items

@@ -1,0 +1,1 @@
+playsound minecraft:block.powder_snow.break player @s ~ ~ ~ 0.8 0.6

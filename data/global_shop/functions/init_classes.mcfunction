@@ -21,7 +21,7 @@ scoreboard players set g_isInit glbs_common 1
 # 标记未运行
 scoreboard players set g_enable glbs_common 0
 
-tellraw @a ["\u00a7dGlobalShop \u00a7a成功初始化, \u00a7c请等待管理员启动运行"]
+tellraw @a ["\u00a7dGlobalShop \u00a7a成功初始化, \u00a7c请管理员启动运行"]
 tellraw @a ["--------------------------------"]
 
 # 引导管理员开启

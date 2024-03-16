@@ -10,6 +10,9 @@
 # 通知
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["已取回自己正在出售的物品"]
 
+# 音效 成功
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/success
+
 # 删除物品
 execute on passengers if entity @s[type=minecraft:player] run scoreboard players operation uid glbs_common = @s glbs_uid
 scoreboard players operation id glbs_common = @s glbs_last_view_id

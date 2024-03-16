@@ -1,0 +1,1 @@
+playsound minecraft:block.note_block.cow_bell player @s ~ ~ ~ 0.1 0.5

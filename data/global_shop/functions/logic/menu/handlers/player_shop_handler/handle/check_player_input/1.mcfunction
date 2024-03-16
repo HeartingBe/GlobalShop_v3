@@ -19,6 +19,8 @@ execute store result score temp glbs_common run function global_shop:storage/sto
    tellraw @s ["\u00a7a已跳转到序号为 ",{"score":{"objective":"glbs_common","name":"temp2"},"color":"white"},"\u00a7a 的物品处开始展示"]
    execute on vehicle run scoreboard players operation @s glbs_begin_index = beginIndex glbs_common
    execute on vehicle run function global_shop:logic/menu/handlers/player_shop_handler/refresh
+   # 音效 跳转
+   execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/jump
 # 重置输入器状态
 scoreboard players set @s glbs_inputter_1 0
 scoreboard players set @s glbs_inputter_2 0
