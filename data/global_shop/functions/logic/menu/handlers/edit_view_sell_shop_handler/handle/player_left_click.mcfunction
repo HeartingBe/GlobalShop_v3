@@ -11,3 +11,5 @@ execute on passengers if entity @s[type=minecraft:item_display,tag=!glbs_killed]
 
 # 删除物品的确认提示
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s {"text": "再次点击确认删除"}
+# 音效
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/target

@@ -20,7 +20,7 @@ execute if score @s glbs_inputter_2 matches ..-1 run return run function global_
    execute on vehicle run scoreboard players operation @s glbs_begin_index = beginIndex glbs_common
    execute on vehicle run function global_shop:logic/menu/handlers/player_shop_handler/refresh
    # 音效 跳转
-   execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/jump
+   function global_shop:sound/jump
 
 # 重置输入器状态
 scoreboard players set @s glbs_inputter_1 0

@@ -16,7 +16,7 @@ execute unless score @s glbs_order = targetOrder glbs_common run return run func
    # 物品信息已完整拷贝在 @s item
    data modify storage global_shop:common g_itemData set from entity @s item
    # 音效 看向新的物品
-   execute on vehicle on passengers if entity @s[type=minecraft:player] run function global_shop:sound/target
+   #execute on vehicle on passengers if entity @s[type=minecraft:player] run function global_shop:sound/target
    # 高亮、展示文本
    function global_shop:logic/item_display_entity/set_state_highlight
    function global_shop:logic/item_display_entity/display_text

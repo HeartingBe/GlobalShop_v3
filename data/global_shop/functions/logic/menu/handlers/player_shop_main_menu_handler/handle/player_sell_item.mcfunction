@@ -53,5 +53,7 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
 
    # 通知
    tellraw @s ["\u00a7a上架成功"]
+   # 音效
+   function global_shop:sound/success
 
 scoreboard players set @s glbs_inputter_1 0

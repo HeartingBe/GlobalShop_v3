@@ -22,3 +22,4 @@
    execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/player/obtain_item
    # 通知
    execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a成功购买该出售商店的物品"]
+   function global_shop:sound/success

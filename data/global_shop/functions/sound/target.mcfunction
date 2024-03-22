@@ -1,1 +1,1 @@
-playsound minecraft:entity.chicken.egg player @s ~ ~ ~ 0.03 0.8
+playsound minecraft:entity.chicken.egg player @s ~ ~ ~ 0.5 0.8

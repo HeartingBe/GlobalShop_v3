@@ -17,3 +17,5 @@ execute store result storage global_shop:common temp.itemInfo.Count int 1 run da
 data modify storage global_shop:common temp.itemInfo.tag set from storage global_shop:common g_itemTagJson
 
 function global_shop:logic/menu/handlers/sell_shop_handler/handle/send_item_info_to_player/tellraw with storage global_shop:common temp.itemInfo
+
+function global_shop:sound/target

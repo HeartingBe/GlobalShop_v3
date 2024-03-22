@@ -6,8 +6,7 @@
 
 # 该玩家不是 op
 execute on passengers if entity @s[type=minecraft:player] run scoreboard players operation temp glbs_common = @s glbs_permission
-execute unless score temp glbs_common = Permission::ADMIN glbs_common on passengers if entity @s[type=minecraft:player] run return run tellraw @s ["\u00a7c你不是管理员"]
-
+execute unless score temp glbs_common = Permission::ADMIN glbs_common on passengers if entity @s[type=minecraft:player] run return run function global_shop:logic/menu/handlers/menu_handler/change_mode/edit_main/no_permission
 # 初始化自身数据
 function global_shop:logic/menu/handlers/menu_handler/change_mode/reset_state
 # 取编辑模式主菜单数据
@@ -26,3 +25,5 @@ scoreboard players operation @s glbs_mode = Mode::EDIT_MODE glbs_common
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a编辑模式主界面"]
 # 生成物品展示实体
 function global_shop:ui/display_manager/summon_whole_page_items
+# 音效
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/change_menu

@@ -2,3 +2,5 @@ tellraw @s ["\u00a7c向出售商店添加失败, 输入的数太大, 你的输�
 
 scoreboard players set @s glbs_inputter_1 0
 scoreboard players enable @s glbs_inputter_1
+
+function global_shop:sound/fail

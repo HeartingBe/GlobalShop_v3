@@ -2,6 +2,7 @@
 
 tellraw @s ["--------------------------------"]
 tellraw @s ["\u00a7a正在启动全球商店数据包..."]
+execute as @a at @s run function global_shop:sound/success
 
 scoreboard players reset * open_global_shop
 

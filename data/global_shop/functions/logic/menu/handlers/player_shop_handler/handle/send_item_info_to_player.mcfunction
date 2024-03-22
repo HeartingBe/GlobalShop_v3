@@ -23,4 +23,6 @@ data modify storage global_shop:common temp.itemInfo.tag set from storage global
    execute if score temp1 glbs_common = temp2 glbs_common run function global_shop:logic/menu/handlers/player_shop_handler/handle/send_item_info_to_player/tellraw_myself with storage global_shop:common temp.itemInfo
    # 别人卖的
    execute unless score temp1 glbs_common = temp2 glbs_common run function global_shop:logic/menu/handlers/player_shop_handler/handle/send_item_info_to_player/tellraw with storage global_shop:common temp.itemInfo
+   # 音效
+   function global_shop:sound/target
 data remove storage global_shop:common temp.itemInfo
