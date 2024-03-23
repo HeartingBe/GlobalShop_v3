@@ -5,7 +5,10 @@
 # @executor Menu
 
 # 获取下标
+scoreboard players operation id glbs_common = @s glbs_last_view_id
 execute store result score index glbs_common run function global_shop:storage/store_manager/locate_index_in_recycle_shop_list_by_id
+
+execute if score index glbs_common matches -1 run return 0
 
 # 构造宏 {index: int}
    data remove storage global_shop:common temp

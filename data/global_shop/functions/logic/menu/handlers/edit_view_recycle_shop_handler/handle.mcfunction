@@ -28,7 +28,5 @@
 # 判断玩家左键
    # 获取左键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_select_action
-   # 单击
-   execute if score temp glbs_common = Action::LEFT_CLICK glbs_common run function global_shop:logic/menu/handlers/edit_view_recycle_shop_handler/handle/player_left_click
-   # 双击确认
-   execute if score temp glbs_common = Action::LEFT_CLICK_CONFIRM glbs_common run function global_shop:logic/menu/handlers/edit_view_recycle_shop_handler/handle/player_left_click_confirm
+   # 如果有左键操作
+   execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run function global_shop:logic/menu/handlers/edit_view_recycle_shop_handler/handle/player_left_click

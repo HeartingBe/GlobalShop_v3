@@ -7,7 +7,6 @@
 scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
 
 # 移除这个物品
-scoreboard players operation id glbs_common = @s glbs_last_view_order
 function global_shop:storage/store_manager/delete_sell_shop_elem_by_id
 
 # 刷新
