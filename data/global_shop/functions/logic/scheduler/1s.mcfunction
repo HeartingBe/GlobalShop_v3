@@ -1,6 +1,5 @@
 # log
 #say 1s
-
 # 增加时间
 scoreboard players add g_time glbs_common 1
 

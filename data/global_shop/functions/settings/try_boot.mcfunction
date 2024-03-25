@@ -2,7 +2,6 @@
 
 tellraw @s ["--------------------------------"]
 tellraw @s ["\u00a7a正在启动全球商店数据包..."]
-execute as @a at @s run function global_shop:sound/success
 
 scoreboard players reset * open_global_shop
 
@@ -20,6 +19,6 @@ execute if score temp glbs_common matches ..65535 run return run tellraw @s ["--
 
 # 成功
 scoreboard players set g_enable glbs_common 1
-function global_shop:logic/scheduler/timing
 execute as @a if score @s glbs_permission = Permission::ADMIN glbs_common run tellraw @s ["\u00a7a全球商店成功启动运行"]
+execute as @a at @s run function global_shop:sound/success
 tellraw @s ["--------------------------------"]

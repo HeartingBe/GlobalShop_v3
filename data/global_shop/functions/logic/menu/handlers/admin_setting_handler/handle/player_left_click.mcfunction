@@ -5,5 +5,7 @@
     execute if score @s glbs_last_view_id matches 0 run return run function global_shop:logic/menu/handlers/rotatable_menu_handler/handle/player_left_click/click_control_null_item
 
 # 处理不同的设置
-    # 设置物品信息框大小
+    # 设置自定义金钱记分板
     execute if score @s glbs_last_view_id = SETTING_MODIFY_MONEY_SCOREBOARD glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/modify_money_scoreboard
+    # 设置自定义语言
+    execute if score @s glbs_last_view_id = SETTING_MODIFY_LANGUAGE glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/modify_language

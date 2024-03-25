@@ -48,10 +48,13 @@
          scoreboard players set 2 glbs_common 2
          scoreboard players set 3 glbs_common 3
          scoreboard players set 7 glbs_common 7
+         scoreboard players set 10 glbs_common 10
          scoreboard players set 12 glbs_common 12
+         scoreboard players set 20 glbs_common 20
          scoreboard players set 27 glbs_common 27
          scoreboard players set 60 glbs_common 60
          scoreboard players set 120 glbs_common 120
+         scoreboard players set 1200 glbs_common 1200
          scoreboard players set INT32_MAX glbs_common 2147483647
          scoreboard players set INT32_MAX_HALF glbs_common 1073741823
       # 全局变量
@@ -217,7 +220,9 @@
          scoreboard players set SETTING_MODIFY_ITEM_FRAME_POSITION_RST glbs_common 6
          # 管理员全局设置
          #define score_holder SETTING_MODIFY_MONEY_SCOREBOARD 修改自定义金钱记分板
-         scoreboard players set SETTING_MODIFY_MONEY_SCOREBOARD glbs_common 3
+         #define score_holder SETTING_MODIFY_LANGUAGE 修改自定义语言
+         scoreboard players set SETTING_MODIFY_MONEY_SCOREBOARD glbs_common 1
+         scoreboard players set SETTING_MODIFY_LANGUAGE glbs_common 2
          
 
 # Player 相关记分板
