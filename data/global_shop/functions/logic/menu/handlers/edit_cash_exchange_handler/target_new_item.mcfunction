@@ -7,6 +7,7 @@ execute if score @s glbs_last_view_id matches 1.. on passengers if entity @s[typ
 
 # 高亮物品展示实体，并显示文本
    # 高亮，并记录看向物品的 id
+   scoreboard players operation last_target glbs_common = @s glbs_last_target
    execute on passengers if entity @s[type=minecraft:item_display,tag=!glbs_killed] run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/highlight_item_and_display_text
 
 # 重置状态量

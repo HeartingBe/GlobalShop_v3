@@ -19,9 +19,8 @@ scoreboard players operation @s glbs_mode = Mode::EDIT_CASH_EXCHANGE glbs_common
 execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a货币编辑界面"]
 # 生成物品展示实体
 function global_shop:ui/display_manager/summon_whole_page_items
-# 重置选择
-scoreboard players set chosen_cash_index glbs_common -1
-scoreboard players set chosen_cash_order glbs_common -1
+# 重置选中的物品的编号
+scoreboard players set @s glbs_last_target -1
 # 重置输入
-scoreboard players set @s glbs_inputter_1 0
-scoreboard players set @s glbs_inputter_2 0
+execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_inputter_1 0
+execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_inputter_2 0

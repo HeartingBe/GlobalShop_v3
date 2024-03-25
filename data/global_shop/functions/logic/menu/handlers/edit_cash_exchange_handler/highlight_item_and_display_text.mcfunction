@@ -4,10 +4,10 @@
 # @executor ItemDisplayEntity
 
 # 不是被看的物品，但是是被选择的物品，直接返回不做处理
-execute unless score @s glbs_order = targetOrder glbs_common if score @s glbs_order = chosen_cash_order glbs_common run return 0
+execute unless score @s glbs_order = targetOrder glbs_common if score @s glbs_order = last_target glbs_common run return 0
 
 # 不是被看的物品，也不是被选择的物品，且正在高亮，就去掉高亮
-execute unless score @s glbs_order = targetOrder glbs_common unless score @s glbs_order = chosen_cash_order glbs_common run return run function global_shop:logic/menu/handlers/main_menu_handler/handle/highlight_item_and_display_text/is_not_target
+execute unless score @s glbs_order = targetOrder glbs_common unless score @s glbs_order = last_target glbs_common run return run function global_shop:logic/menu/handlers/main_menu_handler/handle/highlight_item_and_display_text/is_not_target
 
 # 是被看的物品（只可能有一个物品展示实体执行到），检查是否存在
    # 获取 id 并写入 Menu 中
