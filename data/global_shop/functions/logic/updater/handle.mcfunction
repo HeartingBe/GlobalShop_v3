@@ -1,5 +1,5 @@
 # 停止运行
-function global_shop:logic/scheduler/stop
+function global_shop:logic/shop/stop
 
 # 版本超前, 要求重装(强制)
 # tag 版本号修改点

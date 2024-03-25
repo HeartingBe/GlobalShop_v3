@@ -1,0 +1,1 @@
+execute if score g_enable glbs_common matches 1 run function global_shop:logic/scheduler/1t

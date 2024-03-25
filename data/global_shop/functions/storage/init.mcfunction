@@ -5,6 +5,9 @@
 # 金钱记分板名称
 execute unless data storage global_shop:storage g_scoreboard run data modify storage global_shop:storage g_scoreboard set value "glbs_money"
 
+# 默认语言
+execute unless data storage global_shop:storage g_lang run data modify storage global_shop:storage g_lang set value {lang:"zh_cn"}
+
 # 金币 <···> 物品
    #默认
    execute unless data storage global_shop:storage g_cashInfo run data modify storage global_shop:storage g_cashInfo set value [{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"1"}'},global_shop:{price:1}}},price:1},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"5"}'},global_shop:{price:5}}},price:1},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"10"}'},global_shop:{price:10}}},price:10},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"50"}'},global_shop:{price:50}}},price:50},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"100"}'},global_shop:{price:100}}},price:100}]
@@ -17,10 +20,10 @@ execute unless data storage global_shop:storage g_scoreboard run data modify sto
    #简化形式
       #解析形式
       #{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1}
-   data modify storage global_shop:storage TEXT_PREFIX_SIMPLE set value '"\\u00a7f\\u25a0\\u00a77\\u25a0\\u00a78\\u25a0 "'
+   #data modify storage global_shop:storage TEXT_PREFIX_SIMPLE set value '"\\u00a7f\\u25a0\\u00a77\\u25a0\\u00a78\\u25a0 "'
    #标准形式，用于直接写进 nbt 列表
-   data modify storage global_shop:storage TEXT_PREFIX set value {"text":"","extra":[{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}
-   data modify storage global_shop:storage TEXT_PREFIX_INDENTATION set value {"text":"    ","color":"white"}
+   #data modify storage global_shop:storage TEXT_PREFIX set value {"text":"","extra":[{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}
+   #data modify storage global_shop:storage TEXT_PREFIX_INDENTATION set value {"text":"    ","color":"white"}
 #endregion
 
 # region char 记录某些常量字符
