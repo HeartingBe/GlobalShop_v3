@@ -8,4 +8,4 @@
     # 设置自定义金钱记分板
     execute if score @s glbs_last_view_id = SETTING_MODIFY_MONEY_SCOREBOARD glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/modify_money_scoreboard
     # 设置自定义语言
-    execute if score @s glbs_last_view_id = SETTING_MODIFY_LANGUAGE glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/modify_language
+    execute if score @s glbs_last_view_id = SETTING_MODIFY_LANGUAGE glbs_common run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/modify_language

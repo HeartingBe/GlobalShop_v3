@@ -1,7 +1,7 @@
 #> global_shop:logic/menu/handlers/rotatable_menu_handler/get_select_action
 # @brief 旋转模式情况下获取玩家左键情况，需要进行二次确认
 # @executor Menu
-# @return 左键情况
+# @return Action 左键情况
 
 execute on passengers if entity @s[type=minecraft:interaction] store result score temp glbs_common run function global_shop:logic/interactor/get_left_click_action
 

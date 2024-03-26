@@ -22,6 +22,7 @@ scoreboard players set g_isInit glbs_common 1
 scoreboard players set g_enable glbs_common 0
 
 tellraw @a ["\u00a7dGlobalShop \u00a7a成功初始化, \u00a7c请管理员启动运行"]
+execute as @a at @s run function global_shop:sound/success
 tellraw @a ["--------------------------------"]
 
 # 引导管理员开启

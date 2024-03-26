@@ -21,4 +21,4 @@ execute if score last_chosen_cash_index glbs_common matches 0 run return run fun
 execute if score last_chosen_cash_index glbs_common matches 1 run return run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_item/1
 execute if score last_chosen_cash_index glbs_common matches 2 run return run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_item/2
 execute if score last_chosen_cash_index glbs_common matches 3 run return run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_item/3
-execute if score last_chosen_cash_index glbs_common matches 4 run return run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_item/4
+execute if score last_chosen_cash_index glbs_common matches 4 run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_item/4

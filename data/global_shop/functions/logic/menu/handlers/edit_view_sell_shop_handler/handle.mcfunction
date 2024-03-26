@@ -29,4 +29,4 @@
    # 获取左键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/rotatable_menu_handler/get_select_action
    # 非无操作
-   execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run return run function global_shop:logic/menu/handlers/edit_view_sell_shop_handler/handle/player_left_click
+   execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run function global_shop:logic/menu/handlers/edit_view_sell_shop_handler/handle/player_left_click

@@ -9,4 +9,4 @@ execute store result score temp2 glbs_common run data get storage global_shop:co
 
    execute if score temp2 glbs_common matches 4..7 run return run function global_shop:logic/item_data/polymorphic_type/4_to_7
 
-   execute if score temp2 glbs_common matches 8 run return run function global_shop:logic/item_data/polymorphic_type/8
+   execute if score temp2 glbs_common matches 8 run function global_shop:logic/item_data/polymorphic_type/8

@@ -22,4 +22,4 @@ execute on passengers if entity @s[type=minecraft:player] unless score @s glbs_i
    # 获取左键情况
    execute store result score temp glbs_common run function global_shop:logic/menu/handlers/menu_handler/get_select_action
    # 根据控件序号执行相应操作（就是 @s glbs_last_view_order），修改对应的货币
-   execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run return run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/player_left_click
+   execute unless score temp glbs_common = Action::NO_ACTION_THIS_PLAYER glbs_common run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/player_left_click

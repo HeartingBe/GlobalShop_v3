@@ -5,4 +5,4 @@ execute if score @s glbs_mode = Mode::PLAYER_SHOP_VIEW_MY_SOLD glbs_common run r
 execute if score @s glbs_mode = Mode::PLAYER_SHOP_VIEW_MY_SELLING glbs_common run return run function global_shop:logic/menu/handlers/player_shop_view_my_selling_handler/handle
 
 # 玩家浏览退回物品的处理逻辑 6
-execute if score @s glbs_mode = Mode::PLAYER_SHOP_VIEW_RETURN glbs_common run return run function global_shop:logic/menu/handlers/player_shop_view_return_handler/handle
+execute if score @s glbs_mode = Mode::PLAYER_SHOP_VIEW_RETURN glbs_common run function global_shop:logic/menu/handlers/player_shop_view_return_handler/handle

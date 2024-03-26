@@ -18,4 +18,4 @@
         # 设置物品信息框前后位置
         execute if score @s glbs_last_view_id = SETTING_MODIFY_ITEM_FRAME_POSITION_D glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/player_setting_handler/handle/player_left_click/setting/modify_item_frame_position_d
         # 恢复默认物品信息框位置
-        execute if score @s glbs_last_view_id = SETTING_MODIFY_ITEM_FRAME_POSITION_RST glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/player_setting_handler/handle/player_left_click/setting/modify_item_frame_position_rst
+        execute if score @s glbs_last_view_id = SETTING_MODIFY_ITEM_FRAME_POSITION_RST glbs_common run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/player_setting_handler/handle/player_left_click/setting/modify_item_frame_position_rst

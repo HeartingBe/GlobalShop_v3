@@ -1,3 +1,5 @@
+# @return Action
+
 # 没有右键事件
 execute unless data entity @s interaction run return run scoreboard players get Action::NO_ACTION_THIS_PLAYER glbs_common
 

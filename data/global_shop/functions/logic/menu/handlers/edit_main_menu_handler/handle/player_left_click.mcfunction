@@ -26,4 +26,4 @@ scoreboard players operation temp glbs_common = @s glbs_last_view_order
       execute if score temp glbs_common matches 19 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/edit_cash_exchange
 
       # 22 >> 管理员全局设置
-      execute if score temp glbs_common matches 22 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/admin_setting
+      execute if score temp glbs_common matches 22 run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/admin_setting
