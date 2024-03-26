@@ -14,7 +14,7 @@ scoreboard players set @s glbs_begin_index 0
 # 上一个左键的物品的 order 或 id
 scoreboard players set @s glbs_last_target -1
 # 玩家输入记分板
-execute on passengers if entity @s[type=minecraft:player] run scoreboard players set @s glbs_inputter_1 0
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/inputter/reset_and_disable
 # 清除文本展示实体的文字
 execute on passengers if entity @s[type=minecraft:text_display] run function global_shop:logic/text_display/clear_text
 # 清除持有的物品展示实体

@@ -2,4 +2,4 @@
 # @executor -
 
 # 如需修改延迟，直接修改以下命令的延迟时间
-schedule function global_shop:ui/display_manager/on_item_summon/timer 2t replace
+schedule function global_shop:ui/display_manager/on_item_summon/timer 3t replace

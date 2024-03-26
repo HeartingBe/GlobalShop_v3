@@ -8,13 +8,8 @@ execute unless data storage global_shop:storage g_scoreboard run data modify sto
 # 默认语言
 execute unless data storage global_shop:storage g_lang run data modify storage global_shop:storage g_lang set value {lang:"zh_cn"}
 
-# 金币 <···> 物品
-   #默认
-   execute unless data storage global_shop:storage g_cashInfo run data modify storage global_shop:storage g_cashInfo set value [{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"1"}'},global_shop:{price:1}}},price:1},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"5"}'},global_shop:{price:5}}},price:1},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"10"}'},global_shop:{price:10}}}},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"50"}'},global_shop:{price:50}}}},{item:{id:"minecraft:paper",Count:1b,tag:{display:{Name:'{"text":"100"}'},global_shop:{price:100}}}}]
-   execute store result storage global_shop:storage g_cashInfo[].item.tag.global_shop.id int 1 run scoreboard players get CONTROL_CASH_EXCHANGE glbs_common
-   execute store result storage global_shop:storage g_cashInfo[].item.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CASH glbs_common
-   #空。空货币不具有价格，便于判断
-   data modify storage global_shop:storage null_cash set value {item:{id:"minecraft:barrier",Count:1b,tag:{display:{Name:'{"text":"未定义此货币","color":"red"}'},global_shop:{price:-1}}}}
+# 货币兑换的信息（从默认信息取，仅进行一次初始化）
+execute unless data storage global_shop:storage g_cashInfo run data modify storage global_shop:storage g_cashInfo set from storage global_shop:menu_preset_and_control DEFAULT_CASH_INFO
 
 # region 消息前缀，两层引号
    #简化形式

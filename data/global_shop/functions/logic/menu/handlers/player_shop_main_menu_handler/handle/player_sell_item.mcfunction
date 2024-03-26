@@ -19,7 +19,7 @@ execute if score temp glbs_common >= PLAYER_MAX_SELL_AND_RETURN_NUM glbs_common 
 # 输入是负数
 execute if score @s glbs_inputter_1 matches ..-1 run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/negative_num
 # 输入过大
-execute if score @s glbs_inputter_1 > MAX_PLAYER_INPUT glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/too_large_input
+execute if score @s glbs_inputter_1 > MAX_PLAYER_INPUT glbs_common run return run function global_shop:logic/inputter/too_large_input_1
 
 # 主手为空
 execute unless data entity @s SelectedItem run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/main_hand_has_no_item

@@ -141,4 +141,8 @@ execute store result storage global_shop:menu_preset_and_control CONTROL_NULL_IT
     data modify storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH set value {id:"minecraft:barrier",Count:1b,tag:{global_shop:{text:[{"text":"此货币已被禁用","color":"red"}]}}}
     execute store result storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH.tag.global_shop.id int 1 run scoreboard players get CONTROL_DISABLED_CASH glbs_common
     execute store result storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
+    #重置货币
+    data modify storage global_shop:menu_preset_and_control CONTROL_RESET_CASH set value {id:"minecraft:totem_of_undying",Count:1b,tag:{global_shop:{text:[{"text":"重置所有货币","color":"red"},{"storage":"global_shop:storage","nbt":"SEPERATOR","interpret":1},{"storage":"global_shop:storage","nbt":"SEPERATOR","interpret":1},{"text":"慎重点击！","color":"red","bold":1},{"storage":"global_shop:storage","nbt":"SEPERATOR","interpret":1},{"text":"将五种货币的外观物品、","color":"green"},{"storage":"global_shop:storage","nbt":"SEPERATOR","interpret":1},{"text":"面值、开关状态","color":"green"},{"storage":"global_shop:storage","nbt":"SEPERATOR","interpret":1},{"text":"均还原为初始状态","color":"green"}]}}}
+    execute store result storage global_shop:menu_preset_and_control CONTROL_RESET_CASH.tag.global_shop.id int 1 run scoreboard players get CONTROL_RESET_CASH glbs_common
+    execute store result storage global_shop:menu_preset_and_control CONTROL_RESET_CASH.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 #endregion

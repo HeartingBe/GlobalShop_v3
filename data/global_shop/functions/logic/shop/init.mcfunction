@@ -176,6 +176,7 @@
          #define score_holder CONTROL_EDIT_CASH_PRICE 编辑货币的价值
          #define score_holder CONTROL_CASH_SWITCH_STATUS 货币禁用开关
          #define score_holder CONTROL_DISABLED_CASH 被禁用的货币
+         #define score_holder CONTROL_RESET_CASH 重置货币
          scoreboard players set CONTROL_NULL_ITEM glbs_common 0
          scoreboard players set CONTROL_DATAPACK_INFO glbs_common 1
          scoreboard players set CONTROL_ENTER_PLAYER_SHOP_MAIN glbs_common 2
@@ -204,6 +205,7 @@
          scoreboard players set CONTROL_EDIT_CASH_PRICE glbs_common 25
          scoreboard players set CONTROL_CASH_SWITCH_STATUS glbs_common 26
          scoreboard players set CONTROL_DISABLED_CASH glbs_common 27
+         scoreboard players set CONTROL_RESET_CASH glbs_common 28
       # 设置按钮(0 是空项，从 1 开始编号)
          # 玩家个人设置
          #define score_holder SETTING_MODIFY_ITEM_FRAME_SIZE 调整物品信息框大小

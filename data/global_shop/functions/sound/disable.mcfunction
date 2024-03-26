@@ -1,0 +1,1 @@
+playsound minecraft:block.stone_pressure_plate.click_off player @s ~ ~ ~ 1 1
