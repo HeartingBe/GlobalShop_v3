@@ -7,8 +7,5 @@
    scoreboard players operation temp glbs_common *= 2 glbs_common
    execute if score temp glbs_common <= MAX_CONNECT_NUM glbs_common run function global_shop:storage/store_manager/return_expire_item
 
-# 没有使用商店的玩家，去除输入器权限
-execute as @a[scores={glbs_uid=1..}] run function global_shop:logic/scheduler/1m/disable_inputter
-
 # 清除残留实体
 function global_shop:logic/scheduler/1m/kill_residual_entity

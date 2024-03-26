@@ -4,6 +4,9 @@
 tag @s add glbs_killed
 tag @s add glbs_kill_delay
 
+tag @s remove glbs_item_highlight
+tag @s remove glbs_to_set_state_normal
+
 execute on passengers run function global_shop:logic/text_display/kill
 
 scoreboard players reset @s glbs_order

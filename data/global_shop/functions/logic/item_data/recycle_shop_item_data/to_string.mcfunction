@@ -31,6 +31,6 @@ function global_shop:logic/item_data/recycle_shop_item_data/parse_global_shop_in
 # 解析物品命名空间 id
 function global_shop:logic/item_data/parse_item_id
 
-# 解析 nbt 标签数量
-function global_shop:logic/item_data/parse_nbt_num
+# 解析 nbt 标签数量 弃用
+#function global_shop:logic/item_data/parse_nbt_num
 data modify storage global_shop:common g_text append value {"text":"  "}

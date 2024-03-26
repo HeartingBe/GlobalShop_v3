@@ -11,6 +11,8 @@ scoreboard players operation @s glbs_uid = g_nextUid glbs_common
 scoreboard players add g_nextUid glbs_common 1
 
 # 解析玩家名
+   # 安全措施（避免某些原因使得有玩家残留 glbs_temp_parse_player_name 标签导致解析名字出问题，比如一轮命令没执行完，为了让服主乱玩都不出问题我是真的费心费力。这是低频操作因为每个玩家的注册操作只有一次）
+   tag @a remove glbs_temp_parse_player_name
    # 文本展示实体的 text 解析 json 不能用 @s 代表本函数的执行者（因为 @s 是文本展示实体它自己），所以用临时标签解析
    tag @s add glbs_temp_parse_player_name
    # 解析玩家名，存储在 global_shop:common g_playerNameJson

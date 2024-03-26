@@ -1,3 +1,5 @@
+# @other 弃用
+
 # 获取 nbt 数量（随便糊弄一下玩家(bushi) ）
    # tag
    execute store result score num glbs_common run data get storage global_shop:common g_itemData.tag
