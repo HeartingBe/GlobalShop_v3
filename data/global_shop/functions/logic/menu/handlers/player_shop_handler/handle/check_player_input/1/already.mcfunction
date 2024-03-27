@@ -1,6 +1,6 @@
 # @executor Player
 
-tellraw @s ["\u00a7c你已经在查看序号为 ",{"score":{"objective":"glbs_common","name":"temp2"},"color":"white"},"\u00a7c 的物品, 无需跳转"]
+tellraw @s ["\u00a7c你已经在查看序号为 ",{"score":{"objective":"glbs_common","name":"temp2"},"color":"yellow"}," \u00a7c的物品, 无需跳转"]
 
 function global_shop:sound/fail
 

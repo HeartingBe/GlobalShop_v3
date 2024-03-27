@@ -21,5 +21,5 @@ execute if score @s glbs_last_action = Action::LEFT_CLICK_CONFIRM glbs_common ru
    # Menu 更新自身状态
       # 实际此处无状态量和记录量需要更新
    # 提示信息
-   execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a再次点击来取回这个物品"]
+   execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a再次点击来取回这个退回的物品"]
    function global_shop:sound/target

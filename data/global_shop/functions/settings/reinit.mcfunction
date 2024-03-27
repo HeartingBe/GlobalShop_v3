@@ -1,0 +1,1 @@
+function global_shop:init_classes

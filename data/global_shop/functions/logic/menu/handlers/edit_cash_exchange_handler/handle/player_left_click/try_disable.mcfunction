@@ -3,7 +3,7 @@
 
 execute on vehicle run scoreboard players operation temp2 glbs_common = @s glbs_last_target
 execute if score temp2 glbs_common matches -1 run function global_shop:sound/fail
-execute if score temp2 glbs_common matches -1 run return run tellraw @s {"text":"请左键选择货币后再开关这个货币","color":"red"}
+execute if score temp2 glbs_common matches -1 run return run tellraw @s {"text":"请先左键选中货币后再启用或禁用","color":"red"}
 
 # 计算货币的index
 scoreboard players operation last_chosen_cash_index glbs_common = temp2 glbs_common

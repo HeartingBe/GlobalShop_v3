@@ -1,8 +1,5 @@
 # 调用所有类的 Init 函数初始化
 
-tellraw @a ["--------------------------------"]
-tellraw @a [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.initializing","interpret":true}]
-
 # 停止执行
 function global_shop:logic/shop/stop
 
@@ -21,9 +18,5 @@ scoreboard players set g_isInit glbs_common 1
 # 标记未运行
 scoreboard players set g_enable glbs_common 0
 
-tellraw @a ["\u00a7dGlobalShop \u00a7a成功初始化, \u00a7c请管理员启动运行"]
+tellraw @a ["\u00a7a全球商店初始化完成\n",{"text":"光标移到这里来启动商店","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"},"hoverEvent":{"action":"show_text","contents":["\u00a77(普通玩家请忽略^_^)\n\u00a7a1. 你需要是服务器的 op\n2. 直接左键点击即可"]}}]
 execute as @a at @s run function global_shop:sound/success
-tellraw @a ["--------------------------------"]
-
-# 引导管理员开启
-execute as @a if score @s glbs_permission = Permission::ADMIN glbs_common run tellraw @s ["\n","\u00a7dGlobalShop \u00a7a成功初始化, 要启动运行, 请",{"text":"点击此处","color":"yellow","underlined":true,"clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"}}]

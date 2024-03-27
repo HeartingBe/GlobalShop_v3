@@ -4,7 +4,7 @@
 # @executor Menu
 
 # 通知
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["自己出售的物品, 已取回"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7c这个物品是你自己出售的, 已直接取回"]
 
 # 音效 成功
 execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/success

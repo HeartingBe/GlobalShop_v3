@@ -1,5 +1,5 @@
 # 标记停止运行
-execute if score g_enable glbs_common matches 1 run tellraw @a ["\u00a7c停止运行全球商店数据包..."]
+execute if score g_enable glbs_common matches 1 run tellraw @a ["\u00a7c全球商店已停止运行"]
 scoreboard players set g_enable glbs_common 0
 
 # 强制所有玩家退出

@@ -1,5 +1,5 @@
 # @executor Admin
 
-tellraw @s ["\n","\u00a7dGlobalShop \u00a7c已经初始化了\n\u00a7a要重新初始化, 请",{"text":"点击此处","color":"yellow","underlined":true,"clickEvent":{"action":"run_command","value":"/function global_shop:init_classes"}}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_if_reinit.1","color":"green"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_if_reinit.2","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:init_classes"},"hoverEvent":{"action":"show_text","contents":[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_if_reinit.3","color":"green"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_if_reinit.4","color":"green"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_if_reinit.5","color":"green"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_if_reinit.6","color":"green"}]}}]
 
 execute at @s run function global_shop:sound/success

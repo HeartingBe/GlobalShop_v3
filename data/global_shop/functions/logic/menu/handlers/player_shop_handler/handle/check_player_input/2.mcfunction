@@ -16,7 +16,7 @@ execute if score @s glbs_inputter_2 matches ..-1 run return run function global_
       scoreboard players operation beginIndex glbs_common = temp glbs_common
       scoreboard players remove beginIndex glbs_common 13
    # 跳转
-   tellraw @s ["\u00a7a已为你寻找到 id 为 ",{"score":{"objective":"glbs_common","name":"id"},"color":"white"},"\u00a7a 的物品"]
+   tellraw @s ["\u00a7a已为你寻找到 id 为 ",{"score":{"objective":"glbs_common","name":"id"},"color":"yellow"}," \u00a7a的物品"]
    execute on vehicle run scoreboard players operation @s glbs_begin_index = beginIndex glbs_common
    execute on vehicle run function global_shop:logic/menu/handlers/player_shop_handler/refresh
    # 音效 跳转

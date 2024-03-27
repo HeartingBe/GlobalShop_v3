@@ -1,6 +1,6 @@
 # @executor Player
 
-tellraw @s ["\u00a7c输入的序号是负数, 请输入正数"]
+tellraw @s ["\u00a7c你输入的序号是负数, 请输入正数"]
 
 function global_shop:sound/fail
 

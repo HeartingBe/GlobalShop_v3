@@ -18,6 +18,6 @@ function global_shop:settings_/try_modify_money_scoreboard/macro_get_score with 
 execute if score temp glbs_common matches 0 run return run function global_shop:settings_/try_modify_money_scoreboard/invalid_scoreboard
 
 # 设置成功
-tellraw @s ["\u00a7a成功将全球商店使用的金钱记分板从 ",{"type":"nbt","storage":"global_shop:storage","nbt":"g_scoreboard","color":"yellow"},"\u00a7a 设置为 ",{"type":"nbt","storage":"global_shop:common","nbt":"temp.scoreboard","color":"yellow"}]
+tellraw @s ["\u00a7a成功将商店使用的金钱记分板从 ",{"type":"nbt","storage":"global_shop:storage","nbt":"g_scoreboard","color":"yellow"}," \u00a7a设置为 ",{"type":"nbt","storage":"global_shop:common","nbt":"temp.scoreboard","color":"yellow"}]
 data modify storage global_shop:storage g_scoreboard set from storage global_shop:common temp.scoreboard
 function global_shop:sound/success

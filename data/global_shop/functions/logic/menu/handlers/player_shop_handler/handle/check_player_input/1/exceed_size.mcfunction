@@ -1,6 +1,6 @@
 # @executor Player
 
-tellraw @s ["\u00a7c输入的序号过大, 商店仅有 ",{"score":{"objective":"glbs_common","name":"temp"},"color":"white"},"\u00a7c 个物品"]
+tellraw @s ["\u00a7c你输入的序号过大, 商店仅有 ",{"score":{"objective":"glbs_common","name":"temp"},"color":"yellow"}," \u00a7c个物品"]
 
 function global_shop:sound/fail
 

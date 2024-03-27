@@ -1,4 +1,4 @@
-tellraw @s ["\u00a7c上架失败, 主手为空, 请将要上架的物品拿在主手, 然后重新尝试"]
+tellraw @s ["\u00a7c上架物品失败, 因为你的主手是空的\n请将要上架的物品拿在主手, 然后重新尝试"]
 
 function global_shop:sound/fail
 

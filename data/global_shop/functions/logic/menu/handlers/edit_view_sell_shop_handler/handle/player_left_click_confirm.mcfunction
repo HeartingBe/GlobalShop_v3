@@ -16,4 +16,4 @@ function global_shop:logic/menu/handlers/edit_view_sell_shop_handler/refresh
 execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/success
 
 # 通知玩家
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["删除成功"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a成功删除该出售商店物品"]

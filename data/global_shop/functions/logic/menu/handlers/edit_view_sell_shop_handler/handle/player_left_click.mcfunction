@@ -22,6 +22,6 @@ scoreboard players operation order glbs_common = @s glbs_last_view_order
 execute on passengers if entity @s[type=minecraft:item_display,tag=!glbs_killed] if score @s glbs_order = order glbs_common run function global_shop:logic/item_display_entity/set_state_will_delete
 
 # 删除物品的确认提示
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s {"text": "再次点击确认删除"}
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s {"text":"再次点击确认删除该出售商店物品"}
 # 音效
 execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/target
