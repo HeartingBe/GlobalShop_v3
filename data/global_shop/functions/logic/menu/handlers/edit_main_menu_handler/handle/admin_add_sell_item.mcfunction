@@ -30,7 +30,7 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
    function global_shop:storage/store_manager/append_to_sell_shop_list
 
    # 通知
-   tellraw @s ["\u00a7a成功设置该物品到出售商店"]
+   tellraw @s [{"text":"成功设置该物品到出售商店","color":"green"}]
    function global_shop:sound/success
 
 scoreboard players set @s glbs_inputter_1 0

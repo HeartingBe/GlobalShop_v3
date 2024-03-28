@@ -1,6 +1,6 @@
 # @executor Player
 
-tellraw @s ["\u00a7c你输入的 id 是负数, 请输入正数"]
+tellraw @s [{"text":"你输入的 id 是负数, 请输入正数","color":"red"}]
 
 function global_shop:sound/fail
 

@@ -1,4 +1,4 @@
-tellraw @s ["\u00a7c上架物品失败, 价格必须是正数, 你的输入为 ",{"score":{"objective":"glbs_inputter_1","name":"@s"},"color":"yellow"}," \u00a7c请重新输入"]
+tellraw @s [{"text":"上架物品失败, 价格必须是正数, 你的输入为 ","color":"red"},{"score":{"objective":"glbs_inputter_1","name":"@s"},"color":"yellow"},{"text":" 请重新输入","color":"red"}]
 
 function global_shop:sound/fail
 

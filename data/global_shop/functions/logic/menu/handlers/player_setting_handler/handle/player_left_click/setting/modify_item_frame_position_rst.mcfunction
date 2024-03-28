@@ -2,7 +2,7 @@ scoreboard players set @s glbs_st_item_frame_pos_v 0
 scoreboard players set @s glbs_st_item_frame_pos_h 0
 scoreboard players set @s glbs_st_item_frame_pos_d 0
 
-tellraw @s ["\u00a7a成功重置物品信息框位置"]
+tellraw @s [{"text":"成功重置物品信息框位置","color":"green"}]
 
 function global_shop:sound/success
 

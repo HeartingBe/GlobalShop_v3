@@ -18,5 +18,5 @@ scoreboard players set g_isInit glbs_common 1
 # 标记未运行
 scoreboard players set g_enable glbs_common 0
 
-tellraw @a ["\u00a7a全球商店初始化完成\n",{"text":"光标移到这里来启动商店","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"},"hoverEvent":{"action":"show_text","contents":["\u00a77(普通玩家请忽略^_^)\n\u00a7a1. 你需要是服务器的 op\n2. 直接左键点击即可"]}}]
+tellraw @a [{"text":"全球商店初始化完成","color":"green"},"\n",{"text":"光标移到这里来启动商店","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"},"hoverEvent":{"action":"show_text","contents":[{"text":"(普通玩家请忽略^_^)","color":"gray"},"\n",{"text":"1. 你需要是服务器的 op","color":"green"},"\n",{"text":"2. 直接左键点击即可","color":"green"}]}}]
 execute as @a at @s run function global_shop:sound/success

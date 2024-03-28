@@ -1,6 +1,6 @@
 # @executor Player
 
-tellraw @s ["\u00a7c你已经在看 id 为 ",{"score":{"objective":"glbs_common","name":"id"},"color":"yellow"}," \u00a7c的物品, 无需跳转"]
+tellraw @s [{"text":"你已经在看这个 id 的物品, 无需跳转","color":"red"}]
 
 function global_shop:sound/fail
 

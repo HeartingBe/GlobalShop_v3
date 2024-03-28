@@ -52,7 +52,7 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
    item replace entity @s weapon.mainhand with minecraft:air
 
    # 通知
-   tellraw @s ["\u00a7a上架成功"]
+   tellraw @s [{"text":"成功上架物品","color":"green"}]
    # 音效
    function global_shop:sound/success
 

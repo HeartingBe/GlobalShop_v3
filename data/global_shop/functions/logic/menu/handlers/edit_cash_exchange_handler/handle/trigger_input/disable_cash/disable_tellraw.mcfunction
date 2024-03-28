@@ -1,2 +1,2 @@
-tellraw @s ["\u00a7c已禁用该货币"]
+tellraw @s [{"text":"已禁用该货币","color":"red"}]
 function global_shop:sound/disable

@@ -1,6 +1,6 @@
 scoreboard players set @s glbs_st_item_frame_size 0
 
-tellraw @s ["\u00a7a成功重置物品信息框大小"]
+tellraw @s [{"text":"成功重置物品信息框大小","color":"green"}]
 
 function global_shop:sound/success
 

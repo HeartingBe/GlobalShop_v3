@@ -4,4 +4,4 @@
 #log
 #$say $(id) $(Count) $(tag)
 
-$tellraw @s ["\u00a7a购买记录 -> \u00a7f[",{"storage":"global_shop:common","nbt":"g_itemIdTranslateJson","interpret":true,"hoverEvent":{"action":"show_item","contents":{"id":"$(id)","count":$(Count),"tag":$(tag)}}},"\u00a7f]"]
+$tellraw @s [{"text":"购买记录 -> ","color":"green"},"\u00a7f[",{"storage":"global_shop:common","nbt":"g_itemIdTranslateJson","interpret":true,"hoverEvent":{"action":"show_item","contents":{"id":"$(id)","count":$(Count),"tag":$(tag)}}},"\u00a7f]"]

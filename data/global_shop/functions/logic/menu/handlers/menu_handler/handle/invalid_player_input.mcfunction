@@ -1,6 +1,6 @@
 # @executor Player
 
-tellraw @s ["\u00a7c请先点击对应选项, 然后再输入。请重新输入"]
+tellraw @s [{"text":"请先点击对应选项, 然后再输入。请重新输入","color":"red"}]
 
 # 音效
 function global_shop:sound/fail

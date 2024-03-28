@@ -3,7 +3,7 @@
 # 无收入
 scoreboard players add @s glbs_income 0
 execute if score @s glbs_income matches 0 run function global_shop:sound/fail
-execute if score @s glbs_income matches 0 run return run tellraw @s ["\u00a7c没有待领取的收入, 快向其他人卖东西吧~"]
+execute if score @s glbs_income matches 0 run return run tellraw @s [{"text":"没有待领取的收入, 快向其他人卖东西吧~","color":"red"}]
 
 # 钱太多
 # 判断玩家的钱是否太多
@@ -15,5 +15,5 @@ scoreboard players operation addAmount glbs_common = @s glbs_income
 scoreboard players set @s glbs_income 0
 execute store result score temp glbs_common run function global_shop:adapters/money_scoreboard_adapter/add_money
 
-tellraw @s ["\u00a7a成功领取 ",{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"}," \u00a7a金钱的收入, 现在你拥有 ",{"score":{"objective":"glbs_common","name":"temp"},"color":"yellow"}," \u00a7a金钱"]
+tellraw @s [{"text":"成功领取收入: ","color":"green"},{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"},"\n",{"text":"现在你的金钱为: ","color":"green"},{"score":{"objective":"glbs_common","name":"temp"},"color":"yellow"}]
 function global_shop:sound/success

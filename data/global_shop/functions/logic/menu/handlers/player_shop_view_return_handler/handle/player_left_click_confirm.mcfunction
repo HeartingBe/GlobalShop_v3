@@ -6,7 +6,7 @@
 #execute on passengers if entity @s[type=minecraft:player] run title @s actionbar ["左键确认"]
 
 # 通知
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s ["\u00a7a成功取回该退回的物品"]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s [{"text":"成功取回该退回的物品","color":"green"}]
 
 # 音效 成功
 execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/success

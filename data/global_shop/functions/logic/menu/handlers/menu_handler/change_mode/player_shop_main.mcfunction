@@ -17,6 +17,6 @@ function global_shop:logic/menu/handlers/menu_handler/rotate
 # 更改模式
 scoreboard players operation @s glbs_mode = Mode::PLAYER_SHOP_MAIN glbs_common
 # 通知
-execute on passengers if entity @s[type=minecraft:player] run title @s actionbar ["\u00a7b玩家商店主界面"]
+execute on passengers if entity @s[type=minecraft:player] run title @s actionbar [{"text":"玩家商店主界面","color":"aqua"}]
 # 生成物品展示实体
 function global_shop:ui/display_manager/summon_whole_page_items
