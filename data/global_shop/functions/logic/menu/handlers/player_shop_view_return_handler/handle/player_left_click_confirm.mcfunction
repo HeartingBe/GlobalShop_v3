@@ -6,13 +6,8 @@
 #execute on passengers if entity @s[type=minecraft:player] run title @s actionbar ["左键确认"]
 
 # 通知
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s [{"text":"成功取回该退回的物品","color":"green"}]
-
-# 音效 成功
-execute on passengers if entity @s[type=minecraft:player] run function global_shop:sound/success
-
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/player_shop_view_return_handler/handle/player_left_click_confirm/tip_and_get_player_uid
 # 删除物品
-execute on passengers if entity @s[type=minecraft:player] run scoreboard players operation uid glbs_common = @s glbs_uid
 scoreboard players operation id glbs_common = @s glbs_last_view_id
 function global_shop:storage/store_manager/delete_return_elem_by_uid_and_id
 

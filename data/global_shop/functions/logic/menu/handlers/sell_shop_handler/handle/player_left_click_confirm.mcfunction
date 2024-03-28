@@ -14,12 +14,7 @@
    # 钱不够
    execute if score temp1 glbs_common < temp2 glbs_common run return run function global_shop:logic/menu/handlers/sell_shop_handler/handle/player_left_click_confirm/money_not_enough
 
-# 钱足够
-   # 扣除买家的钱（temp2 是上面获取的物品价格）
+# 钱足够（temp2 是上面获取的物品价格）
    scoreboard players operation reduce glbs_common = temp2 glbs_common
-   execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/player/reduce_money
-   # 把物品给玩家
-   execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/player/obtain_item
-   # 通知
-   execute on passengers if entity @s[type=minecraft:player] run tellraw @s [{"text":"成功购买出售商店的物品","color":"green"}]
-   function global_shop:sound/success
+   # 扣除买家的钱
+   execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/sell_shop_handler/handle/player_left_click_confirm/reduce_give_and_tip
