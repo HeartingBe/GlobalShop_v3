@@ -1,7 +1,6 @@
 {
    "replace": false,
    "values": [
-      "global_shop:load",
-      "global_shop:debug/load"
+      "global_shop:load"
    ]
 }

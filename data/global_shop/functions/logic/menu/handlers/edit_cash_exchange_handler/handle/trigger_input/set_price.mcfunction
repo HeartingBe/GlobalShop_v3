@@ -13,8 +13,12 @@ scoreboard players operation temp_cash_price glbs_common = @s glbs_inputter_1
 
 scoreboard players set @s glbs_inputter_1 0
 
-# 计算货币的index
 execute on vehicle run scoreboard players operation temp_order glbs_common = @s glbs_last_target
+# 若货币被禁用
+function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_price/check_if_disabled
+execute if score if_disabled glbs_common matches 1 run return run tellraw @s {"text":"此货币已被禁用，请启用后再进行修改","color":"red"}
+
+# 计算货币的index
 execute if score temp_order glbs_common matches 7 run return run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_price/0
 execute if score temp_order glbs_common matches 10 run return run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_price/1
 execute if score temp_order glbs_common matches 13 run return run function global_shop:logic/menu/handlers/edit_cash_exchange_handler/handle/trigger_input/set_price/2
