@@ -15,5 +15,5 @@ scoreboard players operation addAmount glbs_common = @s glbs_income
 scoreboard players set @s glbs_income 0
 execute store result score temp glbs_common run function global_shop:adapters/money_scoreboard_adapter/add_money
 
-tellraw @s [{"text":"成功领取收入: ","color":"green"},{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"},"\n",{"text":"现在你的金钱为: ","color":"green"},{"score":{"objective":"glbs_common","name":"temp"},"color":"yellow"}]
+tellraw @s [{"text":"成功领取收入:","color":"green"}," ",{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"},"\n",{"text":"现在你的金钱为:","color":"green"}," ",{"score":{"objective":"glbs_common","name":"temp"},"color":"yellow"}]
 function global_shop:sound/success

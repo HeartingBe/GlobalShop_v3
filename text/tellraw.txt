@@ -1,0 +1,28 @@
+输出
+   分数
+   tellraw @s [{"score":{"objective":"","name":""}}]
+
+   nbt
+      entity
+      tellraw @s [{"type":"nbt","entity":"","nbt":""}]
+      storage
+      tellraw @s [{"type":"nbt","storage":"","nbt":""}]
+
+点击执行命令
+   填入聊天栏
+      {"text":"","color":"","clickEvent":{"action":"suggest_command","value":"/"}}
+
+   直接执行
+      {"text":"","color":"","clickEvent":{"action":"run_command","value":"/"}}
+
+鼠标悬停显示信息
+   显示文字（wiki 显示 contents 必须是复合标签，实际测试列表也可以）
+      {"text":"","color":"","hoverEvent":{"action":"show_text","contents":[""]}}
+   显示物品
+      {"text":"","color":"","hoverEvent":{"action":"show_item","contents":{"id":"","count":,"tag":"{}"}}}
+
+前缀
+   tellraw @s ["\n\u00a76•\u00a7e•\u00a73•\n"]
+
+翻译引用模板（原始 json 文本格式模板）
+   {"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.xxx"}

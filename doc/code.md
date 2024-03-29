@@ -1,41 +1,6 @@
 关键函数、关键实现的伪代码和中级高级语言表示
 
 ---
-
-## tellraw 模板
-```mcfunction
-# 消息前缀：
-   # 简化形式
-   # \n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 
-   # tellraw @s ["\n\u00a7f\u25a0\u00a77\u25a0\u00a78\u25a0 "]
-   # 完整形式
-   {"text":"","extra":[{"text":"","extra":["\\n"]},{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}
-   # tellraw @s [{"text":"","extra":[{"text":"","extra":["\\n"]},{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}]
-
-# 输出
-   # 分数
-   # tellraw @s [{"score":{"objective":"","name":""}}]
-
-   # nbt
-      # entity
-      # tellraw @s [{"type":"nbt","entity":"","nbt":""}]
-      # storage
-      # tellraw @s [{"type":"nbt","storage":"","nbt":""}]
-
-# 点击字
-   # 填入聊天栏
-   # {"text":"","color":"","clickEvent":{"action":"suggest_command","value":"/"}}
-
-   # 直接执行
-   # {"text":"","color":"","clickEvent":{"action":"run_command","value":"/"}}
-
-# 鼠标悬停
-   # 显示文字（wiki 显示 contents 必须是复合标签，实际测试列表也可以）
-   # {"text":"","color":"","hoverEvent":{"action":"show_text","contents":[""]}}
-   # 显示物品
-   # {"text":"","color":"","hoverEvent":{"action":"show_item","contents":{"id":"","count":,"tag":"{}"}}}
-```
-
 ## 类型和常量定义
 ```c++
 // 数据类型定义（类图中不体现的在此处说明）

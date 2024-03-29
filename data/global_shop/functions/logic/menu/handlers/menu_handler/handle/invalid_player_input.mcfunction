@@ -1,9 +1,8 @@
 # @executor Player
 
-tellraw @s [{"text":"请先点击对应选项, 然后再输入。请重新输入","color":"red"}]
-
-# 音效
-function global_shop:sound/fail
-
 scoreboard players set @s glbs_inputter_1 0
 scoreboard players enable @s glbs_inputter
+
+tellraw @s [{"text":"需要先点击选择某个选项才能进行后续操作, 你还没有选择","color":"red"}]
+
+function global_shop:sound/fail

@@ -10,4 +10,4 @@ execute on vehicle run scoreboard players operation temp glbs_common = @s glbs_l
    execute if score temp glbs_common matches 10 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_recycle_item
 
 # 管理员没有先点击控件
-function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_input/not_click_control
+function global_shop:logic/menu/handlers/menu_handler/handle/invalid_player_input

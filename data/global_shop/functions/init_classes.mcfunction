@@ -8,7 +8,7 @@ function global_shop:logic/shop/stop
    function global_shop:logic/shop/init
    # 定时器初始化
    function global_shop:logic/scheduler/init
-   # 有关 storage global_shop:menu_preset_and_control 的初始化（主菜单、控件和设置选项）
+   # 有关 storage global_shop:menu_preset_and_control 的初始化（菜单、控件和设置选项）
    function global_shop:storage/menu_preset_and_control/init
    # 有关 storage global_shop:storage 的初始化（永久性存储的信息）
    function global_shop:storage/init
@@ -18,5 +18,5 @@ scoreboard players set g_isInit glbs_common 1
 # 标记未运行
 scoreboard players set g_enable glbs_common 0
 
-tellraw @a [{"text":"全球商店初始化完成","color":"green"},"\n",{"text":"光标移到这里来启动商店","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"},"hoverEvent":{"action":"show_text","contents":[{"text":"(普通玩家请忽略^_^)","color":"gray"},"\n",{"text":"1. 你需要是服务器的 op","color":"green"},"\n",{"text":"2. 直接左键点击即可","color":"green"}]}}]
+tellraw @a [{"text":"全球商店初始化完成","color":"green"},"\n",{"text":"光标移到这里来启动商店","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"},"hoverEvent":{"action":"show_text","contents":[{"text":"(","color":"gray"},{"text":"普通玩家请忽略","color":"gray"},{"text":"^_^)","color":"gray"},"\n",{"text":"1. ","color":"green"},{"text":"你需要拥有服务器管理员权限","color":"green"},"\n",{"text":"2. ","color":"green"},{"text":"直接左键点击即可","color":"green"}]}}]
 execute as @a at @s run function global_shop:sound/success

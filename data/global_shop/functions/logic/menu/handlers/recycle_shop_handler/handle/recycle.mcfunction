@@ -21,5 +21,5 @@ function global_shop:logic/player/add_money
 
 # 通知
 execute store result score playerMoney glbs_common run function global_shop:logic/player/get_money
-tellraw @s [{"text":"回收成功, 获得金钱 ","color":"green"},{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"},{"text":"   现在你的金钱为 ","color":"green"},{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"}]
+tellraw @s [{"text":"回收成功, 获得金钱","color":"green"}," ",{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"},"\n",{"text":"现在你的金钱为","color":"green"}," ",{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"}]
 function global_shop:sound/success

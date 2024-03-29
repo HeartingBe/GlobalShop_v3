@@ -4,10 +4,11 @@
 $execute store result score temp glbs_common run function global_shop:text/$(input)/init
 
 # 设置失败
-execute unless score temp glbs_common matches 1 run tellraw @s [{"text":"无法将商店的语言从 ","color":"red"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.lang","color":"yellow"},{"text":" 设置为 ","color":"red"},{"type":"nbt","storage":"global_shop:common","nbt":"temp.input","color":"yellow"},"\n",{"text":"可能是语言文件函数不存在或格式有误","color":"red"}]
+#execute unless score temp glbs_common matches 1 run tellraw @s [{"text":"无法将商店的语言从 ","color":"red"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.lang","color":"yellow"},{"text":" 设置为 ","color":"red"},{"type":"nbt","storage":"global_shop:common","nbt":"temp.input","color":"yellow"},"\n",{"text":"可能是语言文件函数不存在或格式有误","color":"red"}]
+execute unless score temp glbs_common matches 1 run tellraw @s [{"text":"无法将商店的语言设置为 ","color":"red"},{"type":"nbt","storage":"global_shop:common","nbt":"temp.input","color":"yellow"},"\n",{"text":"因为语言函数文件不存在或格式有误","color":"red"}]
 execute unless score temp glbs_common matches 1 run return run function global_shop:sound/fail
 
 # 设置成功
-tellraw @s [{"text":"成功将商店的语言从 ","color":"green"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.lang","color":"yellow"},{"text":" 设置为 ","color":"green"},{"type":"nbt","storage":"global_shop:common","nbt":"temp.input","color":"yellow"}]
+tellraw @s [{"text":"商店原先使用的语言为","color":"green"}," ",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.lang","color":"yellow"},"\n",{"text":"成功设置现在使用的语言为","color":"green"}," ",{"type":"nbt","storage":"global_shop:common","nbt":"temp.input","color":"yellow"}]
 data modify storage global_shop:storage g_lang.lang set from storage global_shop:common temp.input
 function global_shop:sound/success
