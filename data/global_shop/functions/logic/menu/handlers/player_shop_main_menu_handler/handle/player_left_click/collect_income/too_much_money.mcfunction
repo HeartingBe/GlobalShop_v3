@@ -2,6 +2,6 @@
 # @executor Player
 
 # 通知
-tellraw @s [{"text":"你的钱太多, 无法领取收入。你的金钱为","color":"red"}," ",{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"},"\n",{"text":"全球商店为了避免整数溢出, 金钱不能超过","color":"red"}," ",{"score":{"objective":"glbs_common","name":"INT32_MAX_HALF"},"color":"yellow"},"\n",{"text":"否则不能领取收入","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop_main.income.too_much_money.1","color":"red"}," ",{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop_main.income.too_much_money.2","color":"red"}," ",{"score":{"objective":"glbs_common","name":"INT32_MAX_HALF"},"color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop_main.income.too_much_money.3","color":"red"}]
 # 音效
 function global_shop:sound/fail

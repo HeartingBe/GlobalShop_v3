@@ -1,4 +1,4 @@
 # @executor Player
 
-tellraw @s [{"text":"无法进入编辑模式, 因为你不是管理员","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.edit_main.no_permission","color":"red"}]
 function global_shop:sound/fail

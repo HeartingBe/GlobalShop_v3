@@ -1,3 +1,3 @@
-tellraw @s [{"text":"再次点击来删除这个回收商店的物品","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.recycle_shop.delete.again","color":"red"}]
 
 function global_shop:sound/target

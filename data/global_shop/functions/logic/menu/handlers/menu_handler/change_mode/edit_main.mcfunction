@@ -24,4 +24,4 @@ scoreboard players operation @s glbs_mode = Mode::EDIT_MODE glbs_common
 # 生成物品展示实体
 function global_shop:ui/display_manager/summon_whole_page_items
 # 通知、音效
-execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/menu_handler/change_mode/edit_main/tip
+execute on passengers if entity @s[type=minecraft:player] run title @s actionbar [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.change_mode.edit_main","color":"aqua"}]

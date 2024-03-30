@@ -1,2 +1,2 @@
-tellraw @s [{"text":"周围有玩家在使用商店, 请相距至少 10 格","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.open.other_shop_around","color":"red"}]
 function global_shop:sound/fail

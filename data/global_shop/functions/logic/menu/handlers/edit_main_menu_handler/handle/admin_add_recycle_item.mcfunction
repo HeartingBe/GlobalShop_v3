@@ -30,7 +30,7 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
    function global_shop:storage/store_manager/append_to_recycle_shop_list
 
    # 通知
-   tellraw @s [{"text":"成功设置该物品到回收商店","color":"green"}]
+   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.recycle_shop.set_success","color":"green"}]
    function global_shop:sound/success
 
 scoreboard players set @s glbs_inputter_1 0

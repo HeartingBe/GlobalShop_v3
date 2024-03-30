@@ -2,20 +2,20 @@
 # @executor op
 
 # 给该 op 权限
-execute unless score @s glbs_permission = Permission::ADMIN glbs_common run tellraw @s [{"text":"已将你设置为商店管理员","color":"green"}]
+execute unless score @s glbs_permission = Permission::ADMIN glbs_common run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.set_admin","color":"green"}]
 scoreboard players operation @s glbs_permission = Permission::ADMIN glbs_common
 
 scoreboard players reset * open_global_shop
 
 # 版本不对应
 # tag 版本号修改点
-execute unless score g_version glbs_common matches 0 if score g_version glbs_common matches 1.. run return run tellraw @s [{"text":"全球商店启动失败","color":"red"},"\n",{"text":"因为这个游戏存档运行过更高版本的全球商店, 版本号为","color":"red"}," ",{"score":{"objective":"glbs_common","name":"g_version"},"color":"yellow"},"\n",{"text":"当前安装的版本号为","color":"red"}," ",{"text":"0","color":"white"},"\n",{"text":"请更换对应版本的全球商店数据包","color":"red"}]
+execute unless score g_version glbs_common matches 0 if score g_version glbs_common matches 1.. run return run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.1","color":"red"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.2","color":"red"}," ",{"score":{"objective":"glbs_common","name":"g_version"},"color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.3","color":"red"}," ",{"text":"0","color":"white"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.4","color":"red"}]
 
 # 连锁命令数不足
 execute store result score temp glbs_common run gamerule maxCommandChainLength
-execute if score temp glbs_common matches ..65535 run return run tellraw @s [{"text":"全球商店启动失败","color":"red"},"\n",{"text":"因为连锁命令数过低, 当前为","color":"red"}," ",{"score":{"objective":"glbs_common","name":"temp"},"color":"yellow"},"\n",{"text":"至少应为原版默认的 65536","color":"red"},"\n",{"text":"1. ","color":"yellow"},{"text":"光标移到这里来修改连锁命令数","color":"yellow","clickEvent":{"action":"suggest_command","value":"/gamerule maxCommandChainLength ?"},"hoverEvent":{"action":"show_text","contents":[{"text":"执行命令:","color":"green"},"\n",{"text":" /gamerule maxCommandChainLength ?","color":"gray"},"\n\n",{"text":"左键点击来将命令填入聊天栏","color":"green"},"\n",{"text":"请将 ? 替换为连锁命令数","color":"green"}]}},"\n",{"text":"2. ","color":"yellow"},{"text":"然后点击这里启动全球商店","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"}}]
+execute if score temp glbs_common matches ..65535 run return run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.chain_command_num_too_low.1","color":"red"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.chain_command_num_too_low.2","color":"red"}," ",{"score":{"objective":"glbs_common","name":"temp"},"color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.chain_command_num_too_low.3","color":"red"},"\n",{"text":"1. ","color":"yellow"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.chain_command_num_too_low.4","color":"yellow","clickEvent":{"action":"suggest_command","value":"/gamerule maxCommandChainLength ?"},"hoverEvent":{"action":"show_text","contents":[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.chain_command_num_too_low.5","color":"green"},"\n",{"text":" /gamerule maxCommandChainLength ?","color":"gray"},"\n\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.chain_command_num_too_low.6","color":"green"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.chain_command_num_too_low.7","color":"green"}]}},"\n",{"text":"2. ","color":"yellow"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.chain_command_num_too_low.8","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"}}]
 
 # 成功
 scoreboard players set g_enable glbs_common 1
-execute as @a run tellraw @s [{"text":"全球商店启动完成, 欢迎使用","color":"green"},{"text":"^_^","color":"green"}]
+execute as @a run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.success","color":"green"},{"text":"^_^","color":"green"}]
 execute as @a at @s run function global_shop:sound/success

@@ -1,3 +1,3 @@
-tellraw @s [{"text":"你已经位于主菜单。要退出商店, 请脱离椅子","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.main.back_fail","color":"red"}]
 
 function global_shop:sound/fail

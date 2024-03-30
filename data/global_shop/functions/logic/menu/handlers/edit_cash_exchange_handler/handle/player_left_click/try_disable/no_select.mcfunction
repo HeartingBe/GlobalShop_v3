@@ -1,2 +1,2 @@
-tellraw @s [{"text":"请先左键选中货币后再启用或禁用","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.cash.disable.no_select","color":"red"}]
 function global_shop:sound/fail

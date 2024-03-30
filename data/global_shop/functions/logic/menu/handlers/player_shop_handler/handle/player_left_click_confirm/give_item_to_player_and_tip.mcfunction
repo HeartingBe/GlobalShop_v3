@@ -1,5 +1,5 @@
 function global_shop:logic/player/obtain_item
 
-tellraw @s [{"text":"成功购买玩家物品","color":"green"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop.buy.success","color":"green"}]
 
 function global_shop:sound/success

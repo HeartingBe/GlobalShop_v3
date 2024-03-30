@@ -1,4 +1,4 @@
-tellraw @s [{"text":"上架物品失败, 因为你的主手是空的","color":"red"},"\n",{"text":"请将要上架的物品拿在主手, 然后重新尝试","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop_main.sell.empty_hand.1","color":"red"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop_main.sell.empty_hand.2","color":"red"}]
 
 function global_shop:sound/fail
 

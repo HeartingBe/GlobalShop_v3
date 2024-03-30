@@ -2,7 +2,7 @@
 
 function global_shop:logic/shop/stop
 
-execute as @a if score @s glbs_permission = Permission::ADMIN glbs_common run tellraw @s [{"text":"全球商店出现错误, 未能完整执行一轮处理中所有的指令","color":"red"},"\n",{"text":"数据可能损坏, 已停止运行","color":"red"}]
+execute as @a if score @s glbs_permission = Permission::ADMIN glbs_common run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.error.incomplete_execution.1","color":"red"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.error.incomplete_execution.2","color":"red"}]
 
 # 提供完整性检查函数, 并给出修复建议
 #- 无法提供，一旦出现执行不完一轮命令的情况，十有八九数据已经完蛋

@@ -1,3 +1,3 @@
-tellraw @s [{"text":"该回收商店物品不存在, 已刷新显示","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.recycle_shop.no_exist","color":"red"}]
 
 function global_shop:sound/fail

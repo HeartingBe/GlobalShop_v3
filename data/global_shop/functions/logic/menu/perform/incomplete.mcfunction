@@ -1,3 +1,3 @@
-execute on passengers if entity @s[type=minecraft:player] run tellraw @s [{"text":"检测到你打开的商店不完整, 已强制关闭, 请重新打开","color":"red"}]
+execute on passengers if entity @s[type=minecraft:player] run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.use.incomplete","color":"red"}]
 
 function global_shop:logic/menu/kill

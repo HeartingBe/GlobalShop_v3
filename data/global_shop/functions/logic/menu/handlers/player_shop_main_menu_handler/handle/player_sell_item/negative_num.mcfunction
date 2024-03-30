@@ -1,4 +1,4 @@
-tellraw @s [{"text":"上架物品失败, 价格必须是正数, 你的输入为","color":"red"}," ",{"score":{"objective":"glbs_inputter_1","name":"@s"},"color":"yellow"}," ",{"text":"请重新输入","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop_main.sell.negative.1","color":"red"}," ",{"score":{"objective":"glbs_inputter_1","name":"@s"},"color":"yellow"}," ",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop_main.sell.negative.2","color":"red"}]
 
 function global_shop:sound/fail
 

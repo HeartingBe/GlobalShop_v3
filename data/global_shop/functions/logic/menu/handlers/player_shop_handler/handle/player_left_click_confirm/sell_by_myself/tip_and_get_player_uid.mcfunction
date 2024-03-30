@@ -1,5 +1,5 @@
 scoreboard players operation uid glbs_common = @s glbs_uid
 
-tellraw @s [{"text":"这个物品是你自己出售的, 已直接取回","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop.buy.yourself","color":"red"}]
 
 function global_shop:sound/success

@@ -11,4 +11,4 @@ execute if score if_disabled glbs_common matches 1 run return run function globa
 # 提示管理员设置价格
 scoreboard players enable @s glbs_inputter_1
 function global_shop:sound/success
-tellraw @s [{"text":"点击这里来设置货币的面值","color":"green","bold":true,"clickEvent":{"action":"suggest_command","value":"/trigger glbs_inputter_1 set ?"},"hoverEvent":{"action":"show_text","contents":[{"text":"请将 ? 更改为你想要的面值","color":"green"}]}}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.cash.tip_input_value.1","color":"green","bold":true,"clickEvent":{"action":"suggest_command","value":"/trigger glbs_inputter_1 set ?"},"hoverEvent":{"action":"show_text","contents":[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.cash.tip_input_value.2","color":"green"}]}}]

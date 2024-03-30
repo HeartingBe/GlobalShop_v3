@@ -1,4 +1,4 @@
-tellraw @s [{"text":"向出售商店添加物品失败, 因为你的主手是空的, 请重新添加","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.sell_shop.set_fail.empty_hand","color":"red"}]
 
 scoreboard players set @s glbs_inputter_1 0
 scoreboard players enable @s glbs_inputter_1

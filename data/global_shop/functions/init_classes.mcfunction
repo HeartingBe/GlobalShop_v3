@@ -18,5 +18,6 @@ scoreboard players set g_isInit glbs_common 1
 # 标记未运行
 scoreboard players set g_enable glbs_common 0
 
-tellraw @a [{"text":"全球商店初始化完成","color":"green"},"\n",{"text":"光标移到这里来启动商店","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"},"hoverEvent":{"action":"show_text","contents":[{"text":"(","color":"gray"},{"text":"普通玩家请忽略","color":"gray"},{"text":"^_^)","color":"gray"},"\n",{"text":"1. ","color":"green"},{"text":"你需要拥有服务器管理员权限","color":"green"},"\n",{"text":"2. ","color":"green"},{"text":"直接左键点击即可","color":"green"}]}}]
+# g_lang.ask_boot
+tellraw @a [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_boot.1","color":"green"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_boot.2","color":"yellow","clickEvent":{"action":"run_command","value":"/function global_shop:settings/try_boot"},"hoverEvent":{"action":"show_text","contents":[{"text":"(","color":"gray"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_boot.3","color":"gray"},{"text":"^_^)","color":"gray"},"\n",{"text":"1. ","color":"green"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_boot.4","color":"green"},"\n",{"text":"2. ","color":"green"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.ask_boot.5","color":"green"}]}}]
 execute as @a at @s run function global_shop:sound/success

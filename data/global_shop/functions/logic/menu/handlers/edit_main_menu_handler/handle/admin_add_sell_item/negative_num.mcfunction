@@ -1,4 +1,4 @@
-tellraw @s [{"text":"向出售商店添加物品失败, 价格必须是正数, 你的输入为:","color":"red"}," ",{"score":{"objective":"glbs_inputter_1","name":"@s"},"color":"yellow"}," ",{"text":"请重新输入","color":"green"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.sell_shop.set_fail.negative.1","color":"red"}," ",{"score":{"objective":"glbs_inputter_1","name":"@s"},"color":"yellow"}," ",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.sell_shop.set_fail.negative.2","color":"green"}]
 
 scoreboard players set @s glbs_inputter_1 0
 scoreboard players enable @s glbs_inputter_1

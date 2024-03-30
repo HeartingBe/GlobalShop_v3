@@ -1,6 +1,6 @@
 # @executor Player
 
-tellraw @s [{"text":"你输入的 id 是负数, 请输入正数","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.player_shop.jump_id.negative","color":"red"}]
 
 function global_shop:sound/fail
 
