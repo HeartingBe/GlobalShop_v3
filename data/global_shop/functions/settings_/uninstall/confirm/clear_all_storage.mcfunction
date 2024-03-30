@@ -61,6 +61,7 @@ data remove storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_PRICE
 data remove storage global_shop:menu_preset_and_control CONTROL_CASH_SWITCH_STATUS
 data remove storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH
 data remove storage global_shop:menu_preset_and_control CONTROL_RESET_CASH
+data remove storage global_shop:menu_preset_and_control CONTROL_DEPOSIT_CASH
 
 data remove storage global_shop:storage g_adminSettingList
 data remove storage global_shop:storage g_playerSettingList
@@ -69,3 +70,4 @@ data remove storage global_shop:menu_preset_and_control edit_cash
 data remove storage global_shop:menu_preset_and_control edit_mode
 data remove storage global_shop:menu_preset_and_control main
 data remove storage global_shop:menu_preset_and_control player_shop_main
+data remove storage global_shop:menu_preset_and_control player_use_money_item_exchange

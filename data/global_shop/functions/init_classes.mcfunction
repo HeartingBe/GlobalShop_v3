@@ -13,6 +13,9 @@ function global_shop:logic/shop/stop
    # 有关 storage global_shop:storage 的初始化（永久性存储的信息）
    function global_shop:storage/init
 
+# 初始化语言翻译串
+function global_shop:text/init
+
 # 标记已初始化
 scoreboard players set g_isInit glbs_common 1
 # 标记未运行
