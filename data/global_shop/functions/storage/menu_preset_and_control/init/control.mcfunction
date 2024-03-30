@@ -149,7 +149,7 @@ execute store result storage global_shop:menu_preset_and_control CONTROL_NULL_IT
 
 # region 货币兑换页面
     #储存主手上的货币
-        data modify storage global_shop:menu_preset_and_control CONTROL_DEPOSIT_CASH set value {id:"minecraft:chest",Count:1b,tag:{global_shop:{text:[{"text":"存入货币","color":"gold"}]}}}
+        data modify storage global_shop:menu_preset_and_control CONTROL_DEPOSIT_CASH set value {id:"minecraft:chest",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.control.cash.save_money","color":"gold"}]}}}
         execute store result storage global_shop:menu_preset_and_control CONTROL_DEPOSIT_CASH.tag.global_shop.id int 1 run scoreboard players get CONTROL_COIN_EXCHANGE glbs_common
         execute store result storage global_shop:menu_preset_and_control CONTROL_DEPOSIT_CASH.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 #endregion

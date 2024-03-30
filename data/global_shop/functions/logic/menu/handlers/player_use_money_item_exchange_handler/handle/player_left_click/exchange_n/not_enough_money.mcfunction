@@ -4,6 +4,7 @@
 # @executor Player
 
 # 通知
-tellraw @s ["\u00a7c余额不足，无法取出。你的金钱有: ",{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"},"\u00a7c, 货币面值为: ",{"score":{"objective":"glbs_common","name":"cashPrice"},"color":"white"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.cash.exchange.money_no_enough.1","color":"red"}," ",{"score":{"objective":"glbs_common","name":"cashPrice"},"color":"yellow"},"   ",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.cash.exchange.money_no_enough.2","color":"red"}," ",{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"}]
+
 # 音效
 function global_shop:sound/fail
