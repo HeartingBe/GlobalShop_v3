@@ -1,1 +1,1 @@
-$data modify storage global_shop:common return.id set string storage global_shop:args splitNamespaceID.namespaceID $(index)
+$data modify storage global_shop:common return.id set string storage global_shop:common splitNamespaceID.namespaceID $(index)
