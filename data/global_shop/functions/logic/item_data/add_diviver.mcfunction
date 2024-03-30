@@ -1,3 +1,4 @@
+#> global_shop:logic/item_data/add_diviver
 # 前面没内容则不要分割线
 execute unless data storage global_shop:common g_text run return 0
 

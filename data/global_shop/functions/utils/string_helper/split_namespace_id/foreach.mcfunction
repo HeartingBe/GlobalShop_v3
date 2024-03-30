@@ -1,6 +1,6 @@
 #> global_shop:utils/string_helper/split_namespace_id/foreach
 #@within global_shop:utils/string_helper/split_namespace_id
-#@input storage global_shop:args splitNamespaceID.namespaceID
+#@input storage global_shop:common splitNamespaceID.namespaceID
 
 execute if score index glbs_common > _length glbs_common run return 0
 data modify storage global_shop:common temp.char set string storage global_shop:common originalString 0 1

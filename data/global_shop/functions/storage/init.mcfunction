@@ -1,6 +1,5 @@
 #> global_shop:storage/init
 #define storage global_shop:storage 储存
-#define storage global_shop:args 函数的参数输入
 
 # 金钱记分板名称
 execute unless data storage global_shop:storage g_scoreboard run data modify storage global_shop:storage g_scoreboard set value "glbs_money"

@@ -7,5 +7,8 @@ data modify storage global_shop:storage g_lang.ask_if_reinit.4 set value "可以
 data modify storage global_shop:storage g_lang.ask_if_reinit.5 set value "但部分数据并不会重新初始化"
 data modify storage global_shop:storage g_lang.ask_if_reinit.6 set value "例如自定义金钱记分板、语言、玩家个人设置数据等"
 
+#data modify storage global_shop:storage g_lang.deposit.show_money.1 set value "已存入："
+#data modify storage global_shop:storage g_lang.deposit.show_money.2 set value "目前余额："
+
 # Do not modify the following command
 return 1

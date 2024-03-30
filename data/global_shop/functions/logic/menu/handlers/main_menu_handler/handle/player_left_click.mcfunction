@@ -14,6 +14,9 @@ scoreboard players operation temp glbs_common = @s glbs_last_view_order
    # 13 >> 切换到出售商店
    execute if score temp glbs_common matches 13 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_sell_shop
 
+   # 14 >> 切换到货币兑换页面
+   execute if score temp glbs_common matches 14 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_use_money_item_exchange
+
    # 16 >> 切换到回收商店
    execute if score temp glbs_common matches 16 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_recycle_shop
 
