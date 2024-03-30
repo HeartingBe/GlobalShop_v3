@@ -22,8 +22,11 @@ scoreboard players operation temp glbs_common = @s glbs_last_view_order
       # 13 >> 编辑回收商店
       execute if score temp glbs_common matches 13 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/edit_view_recycle_shop
 
-      # 19 >> 编辑货币兑换
-      execute if score temp glbs_common matches 19 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/edit_cash_exchange
+      # 16 >> 编辑货币兑换
+      execute if score temp glbs_common matches 16 run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/edit_cash_exchange
 
-      # 22 >> 管理员全局设置
-      execute if score temp glbs_common matches 22 run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/admin_setting
+      # 19 >> 管理员全局设置
+      execute if score temp glbs_common matches 19 run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/change_mode/admin_setting
+
+      # 22 >> 卸载
+      execute if score temp glbs_common matches 22 run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/player_left_click/unistall

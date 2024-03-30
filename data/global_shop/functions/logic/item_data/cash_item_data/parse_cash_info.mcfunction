@@ -13,6 +13,4 @@ function global_shop:logic/item_data/add_diviver
 function global_shop:logic/item_data/add_seperator
 
 # 写入兑换比率
-    data modify storage global_shop:common g_text append value {text:"货币价值：",color:"gold",extra:[{nbt:"g_itemData.tag.global_shop.price",storage:"global_shop:common",color:"aqua"}]}
-    
-   
+data modify storage global_shop:common g_text append value {text:"货币价值：",color:"gold",extra:[{nbt:"g_itemData.tag.global_shop.price",storage:"global_shop:common",color:"aqua"}]}

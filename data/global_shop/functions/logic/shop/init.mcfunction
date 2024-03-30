@@ -168,10 +168,9 @@
          #define score_holder CONTROL_REMOVE_ITEM_FROM_SELL_SHOP 从出售商店移除物品
          #define score_holder CONTROL_ADD_ITEM_TO_RECYCLE_SHOP 添加物品到回收商店
          #define score_holder CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP 从回收商店移除物品
-         #define score_holder CONTROL_COIN_EXCHANGE 货币交换
          #define score_holder CONTROL_CHANGE_EXCHANGE_RATE 更改货币兑换率
-         #define score_holder CONTROL_SETTING_PAGE 设置页面
-         #define score_holder CONTROL_EXIT_EDIT_MODE 退出编辑模式
+         #define score_holder CONTROL_SETTING_PAGE 管理员全局设置页面
+         #define score_holder CONTROL_UNINSTALL 卸载
          #define score_holder CONTROL_EDIT_CASH_ITEM 编辑货币的item
          #define score_holder CONTROL_EDIT_CASH_PRICE 编辑货币的价值
          #define score_holder CONTROL_CASH_SWITCH_STATUS 货币禁用开关
@@ -197,15 +196,14 @@
          scoreboard players set CONTROL_REMOVE_ITEM_FROM_SELL_SHOP glbs_common 17
          scoreboard players set CONTROL_ADD_ITEM_TO_RECYCLE_SHOP glbs_common 18
          scoreboard players set CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP glbs_common 19
-         scoreboard players set CONTROL_TOGGLE_MONEY_EXCHANGE glbs_common 20
-         scoreboard players set CONTROL_CHANGE_EXCHANGE_RATE glbs_common 21
-         scoreboard players set CONTROL_SETTING_PAGE glbs_common 22
-         scoreboard players set CONTROL_EXIT_EDIT_MODE glbs_common 23
-         scoreboard players set CONTROL_EDIT_CASH_ITEM glbs_common 24
-         scoreboard players set CONTROL_EDIT_CASH_PRICE glbs_common 25
-         scoreboard players set CONTROL_CASH_SWITCH_STATUS glbs_common 26
-         scoreboard players set CONTROL_DISABLED_CASH glbs_common 27
-         scoreboard players set CONTROL_RESET_CASH glbs_common 28
+         scoreboard players set CONTROL_CHANGE_EXCHANGE_RATE glbs_common 20
+         scoreboard players set CONTROL_SETTING_PAGE glbs_common 21
+         scoreboard players set CONTROL_UNINSTALL glbs_common 22
+         scoreboard players set CONTROL_EDIT_CASH_ITEM glbs_common 23
+         scoreboard players set CONTROL_EDIT_CASH_PRICE glbs_common 24
+         scoreboard players set CONTROL_CASH_SWITCH_STATUS glbs_common 25
+         scoreboard players set CONTROL_DISABLED_CASH glbs_common 26
+         scoreboard players set CONTROL_RESET_CASH glbs_common 27
       # 设置按钮(0 是空项，从 1 开始编号)
          # 玩家个人设置
          #define score_holder SETTING_MODIFY_ITEM_FRAME_SIZE 调整物品信息框大小

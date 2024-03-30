@@ -1,7 +1,6 @@
 #> global_shop:storage/menu_preset_and_control/init/edit_mode
 # 
 # 初始化编辑模式菜单
-# CONTROL_ADD_ITEM_TO_SELL_SHOP CONTROL_REMOVE_ITEM_FROM_SELL_SHOP CONTROL_ADD_ITEM_TO_RECYCLE_SHOP CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP CONTROL_TOGGLE_MONEY_EXCHANGE CONTROL_CHANGE_EXCHANGE_RATE CONTROL_RETURN_MAIN_MENU CONTROL_EXIT_EDIT CONTROL_NULL_ITEM
 
 data remove storage global_shop:menu_preset_and_control edit_mode
 
@@ -26,15 +25,15 @@ data modify storage global_shop:menu_preset_and_control edit_mode append from st
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
-data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_TOGGLE_MONEY_EXCHANGE
-data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
-
-data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_CHANGE_EXCHANGE_RATE
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE
+data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+
+data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_UNINSTALL
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
 
 data modify storage global_shop:menu_preset_and_control edit_mode append from storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM

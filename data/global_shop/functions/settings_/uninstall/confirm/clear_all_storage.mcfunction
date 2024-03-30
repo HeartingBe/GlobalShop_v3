@@ -1,0 +1,71 @@
+# 清除存储的玩家动态数据，例如上架的物品、退回的物品、历史记录、出售商店等，
+# 不会影响数据包运行的动态数据
+function global_shop:settings_/uninstall/confirm/clear_shop_storage
+
+# 以下清除剩余的所有数据
+data remove storage global_shop:common temp
+data remove storage global_shop:common g_text
+data remove storage global_shop:common g_checkSlotResult
+data remove storage global_shop:common inventory
+data remove storage global_shop:common g_itemIdTranslateJson
+data remove storage global_shop:common g_itemTagJson
+data remove storage global_shop:common g_itemData
+data remove storage global_shop:common g_itemDataTemp
+data remove storage global_shop:common g_itemDataThisSlot
+data remove storage global_shop:common g_itemDataToCmp
+data remove storage global_shop:common return
+data remove storage global_shop:common admin_input
+data remove storage global_shop:common g_itemsToDisplay
+data remove storage global_shop:common g_playerNameJson
+data remove storage global_shop:common elem
+data remove storage global_shop:common g_playerName
+data remove storage global_shop:common item
+data remove storage global_shop:common args
+data remove storage global_shop:common originalString
+data remove storage global_shop:common splitNamespaceID
+
+data remove storage global_shop:storage g_scoreboard
+data remove storage global_shop:storage enchantment
+data remove storage global_shop:storage curse
+data remove storage global_shop:storage level1
+data remove storage global_shop:storage g_cashInfo
+data remove storage global_shop:storage g_lang
+data remove storage global_shop:storage char
+
+data remove storage global_shop:menu_preset_and_control DEFAULT_CASH_INFO
+data remove storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data remove storage global_shop:menu_preset_and_control CONTROL_DATAPACK_INFO
+data remove storage global_shop:menu_preset_and_control CONTROL_ENTER_PLAYER_SHOP_MAIN
+data remove storage global_shop:menu_preset_and_control CONTROL_ENTER_EDIT
+data remove storage global_shop:menu_preset_and_control CONTROL_ENTER_SELL_SHOP
+data remove storage global_shop:menu_preset_and_control CONTROL_CASH_EXCHANGE
+data remove storage global_shop:menu_preset_and_control CONTROL_ENTER_RECYCLE_SHOP
+data remove storage global_shop:menu_preset_and_control CONTROL_PLAYER_SETTINGS
+data remove storage global_shop:menu_preset_and_control CONTROL_SELL_ITEM
+data remove storage global_shop:menu_preset_and_control CONTROL_VIEW_PLAYER_SHOP
+data remove storage global_shop:menu_preset_and_control CONTROL_VIEW_MY_SELLING
+data remove storage global_shop:menu_preset_and_control CONTROL_COLLECT_INCOME
+data remove storage global_shop:menu_preset_and_control CONTROL_VIEW_MONEY
+data remove storage global_shop:menu_preset_and_control CONTROL_VIEW_RETURN_ITEMS
+data remove storage global_shop:menu_preset_and_control CONTROL_VIEW_MY_BOUGHT
+data remove storage global_shop:menu_preset_and_control CONTROL_VIEW_MY_SOLD
+data remove storage global_shop:menu_preset_and_control CONTROL_ADD_ITEM_TO_SELL_SHOP
+data remove storage global_shop:menu_preset_and_control CONTROL_REMOVE_ITEM_FROM_SELL_SHOP
+data remove storage global_shop:menu_preset_and_control CONTROL_ADD_ITEM_TO_RECYCLE_SHOP
+data remove storage global_shop:menu_preset_and_control CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP
+data remove storage global_shop:menu_preset_and_control CONTROL_CHANGE_EXCHANGE_RATE
+data remove storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE
+data remove storage global_shop:menu_preset_and_control CONTROL_UNINSTALL
+data remove storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_ITEM
+data remove storage global_shop:menu_preset_and_control CONTROL_EDIT_CASH_PRICE
+data remove storage global_shop:menu_preset_and_control CONTROL_CASH_SWITCH_STATUS
+data remove storage global_shop:menu_preset_and_control CONTROL_DISABLED_CASH
+data remove storage global_shop:menu_preset_and_control CONTROL_RESET_CASH
+
+data remove storage global_shop:storage g_adminSettingList
+data remove storage global_shop:storage g_playerSettingList
+
+data remove storage global_shop:menu_preset_and_control edit_cash
+data remove storage global_shop:menu_preset_and_control edit_mode
+data remove storage global_shop:menu_preset_and_control main
+data remove storage global_shop:menu_preset_and_control player_shop_main

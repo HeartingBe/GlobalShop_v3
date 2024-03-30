@@ -1,0 +1,4 @@
+team remove glbs_will_delete
+team remove glbs_will_buy
+team remove glbs_will_recycle
+team remove glbs_will_set
