@@ -1,3 +1,4 @@
+#> global_shop:logic/player/obtain_item
 # @param g_itemData 物品数据
 # @executor Player
 

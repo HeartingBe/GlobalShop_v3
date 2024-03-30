@@ -16,3 +16,5 @@ function global_shop:storage/menu_preset_and_control/init/control
    function global_shop:storage/menu_preset_and_control/init/player_setting
    # 管理员全局设置界面
    function global_shop:storage/menu_preset_and_control/init/admin_setting
+   # 玩家货币兑换界面
+   function global_shop:storage/menu_preset_and_control/init/player_use_money_item_exchange

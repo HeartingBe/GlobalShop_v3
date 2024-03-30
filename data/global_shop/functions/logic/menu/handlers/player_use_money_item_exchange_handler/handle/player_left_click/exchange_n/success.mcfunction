@@ -1,0 +1,3 @@
+#tellraw @s [{"nbt":"g_lang.deposit.show_money.1","storage":"global_shop:common"},{"score":{"name":"addAmount","objective":"glbs_common"}}," ",{"nbt":"g_lang.deposit.show_money.2","storage":"global_shop:common"},{"score":{"name":"playerMoney","objective":"glbs_common"}}]
+tellraw @s [{"text":"取出金额：","color":"green"},{"score":{"name":"reduce","objective":"glbs_common"},"color":"aqua"},{"text":" 当前余额：","color":"green"},{"score":{"name":"playerMoney","objective":"glbs_common"},"color":"aqua"}]
+function global_shop:sound/success

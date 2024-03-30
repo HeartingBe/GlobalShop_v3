@@ -18,6 +18,9 @@
 #定义
 #define storage global_shop:common
 
+# 定义实体UUID
+#define entity temp_world_text_display 00000d3a-0000-0d3a-0000-17cc0000edfa
+
 # glbs_common 共用记分板，存储所有公共变量、常量等（已在 load.mcfunction 中创建）
    # 常量
       #define score_holder ITEM_NUM_PER_COLUMN
@@ -104,6 +107,7 @@
       #define score_holder Mode::EDIT_CASH_EXCHANGE 编辑货币兑换
       #define score_holder Mode::PLAYER_SETTING 玩家个人设置
       #define score_holder Mode::ADMIN_SETTING 管理员全局设置
+      #define score_holder Mode::PLAYER_USE_MONEY_ITEM_EXCHANGE 玩家使用货币物品兑换
       scoreboard players set Mode::MAIN glbs_common 0
       scoreboard players set Mode::PLAYER_SHOP_MAIN glbs_common 1
       scoreboard players set Mode::PLAYER_SHOP glbs_common 2
@@ -119,6 +123,7 @@
       scoreboard players set Mode::EDIT_CASH_EXCHANGE glbs_common 12
       scoreboard players set Mode::PLAYER_SETTING glbs_common 13
       scoreboard players set Mode::ADMIN_SETTING glbs_common 14
+      scoreboard players set Mode::PLAYER_USE_MONEY_ITEM_EXCHANGE glbs_common 15
       
    # 玩家操作类型 ACTION
       #define score_holder Action::NO_ACTION_THIS_PLAYER
@@ -168,7 +173,6 @@
          #define score_holder CONTROL_REMOVE_ITEM_FROM_SELL_SHOP 从出售商店移除物品
          #define score_holder CONTROL_ADD_ITEM_TO_RECYCLE_SHOP 添加物品到回收商店
          #define score_holder CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP 从回收商店移除物品
-         #define score_holder CONTROL_COIN_EXCHANGE 货币交换
          #define score_holder CONTROL_CHANGE_EXCHANGE_RATE 更改货币兑换率
          #define score_holder CONTROL_SETTING_PAGE 设置页面
          #define score_holder CONTROL_EXIT_EDIT_MODE 退出编辑模式
@@ -177,6 +181,7 @@
          #define score_holder CONTROL_CASH_SWITCH_STATUS 货币禁用开关
          #define score_holder CONTROL_DISABLED_CASH 被禁用的货币
          #define score_holder CONTROL_RESET_CASH 重置货币
+         #define score_holder CONTROL_COIN_EXCHANGE 货币交换
          scoreboard players set CONTROL_NULL_ITEM glbs_common 0
          scoreboard players set CONTROL_DATAPACK_INFO glbs_common 1
          scoreboard players set CONTROL_ENTER_PLAYER_SHOP_MAIN glbs_common 2
@@ -206,6 +211,7 @@
          scoreboard players set CONTROL_CASH_SWITCH_STATUS glbs_common 26
          scoreboard players set CONTROL_DISABLED_CASH glbs_common 27
          scoreboard players set CONTROL_RESET_CASH glbs_common 28
+         scoreboard players set CONTROL_COIN_EXCHANGE glbs_common 28
       # 设置按钮(0 是空项，从 1 开始编号)
          # 玩家个人设置
          #define score_holder SETTING_MODIFY_ITEM_FRAME_SIZE 调整物品信息框大小
