@@ -15,7 +15,7 @@ scoreboard players operation id glbs_common = @s glbs_last_view_id
 function global_shop:storage/store_manager/delete_player_shop_elem_by_index
 
 # 将物品退给玩家
-execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/player/obtain_item
+execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/player/give_item
 
 # 刷新显示
 function global_shop:logic/menu/handlers/player_shop_view_my_selling_handler/refresh

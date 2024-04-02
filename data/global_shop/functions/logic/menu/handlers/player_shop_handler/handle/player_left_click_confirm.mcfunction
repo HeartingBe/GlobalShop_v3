@@ -16,6 +16,7 @@
    #tellraw @a ["temp1: ",{"score":{"objective":"glbs_common","name":"temp1"}},"    temp2: ",{"score":{"objective":"glbs_common","name":"temp2"}}]
 
    # 是自己出售的物品
+      # index 在此处使用
    execute if score temp1 glbs_common = temp2 glbs_common run return run function global_shop:logic/menu/handlers/player_shop_handler/handle/player_left_click_confirm/sell_by_myself
 
    # 是其他玩家出售的物品，判断金钱是否足够

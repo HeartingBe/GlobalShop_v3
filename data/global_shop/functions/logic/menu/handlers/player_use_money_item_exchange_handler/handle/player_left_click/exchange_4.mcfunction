@@ -27,7 +27,7 @@ data modify storage global_shop:common g_itemData set from storage global_shop:s
     data modify storage global_shop:common g_itemData.tag.display.Lore append value '{"text":"------------","color":"gray"}'
     data modify storage global_shop:common g_itemData.tag.display.Lore append from entity 00000d3a-0000-0d3a-0000-17cc0000edfa text
 # 给物品
-function global_shop:logic/player/give_item
+function global_shop:logic/player/give_money
 
 # 通知
 function global_shop:logic/menu/handlers/player_use_money_item_exchange_handler/handle/player_left_click/exchange_n/success
