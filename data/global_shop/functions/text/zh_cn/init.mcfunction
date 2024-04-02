@@ -232,7 +232,7 @@ data modify storage global_shop:storage g_lang.main.back_fail set value "你已�
 # 编辑模式主菜单
 data modify storage global_shop:storage g_lang.edit_main.no_permission set value "无法进入编辑模式, 因为你不是管理员"
 
-data modify storage global_shop:storage g_lang.edit_main.no_select set value "需要先点击选择某个选项才能进行后续操作, 你还没有选择"
+data modify storage global_shop:storage g_lang.menu.no_select set value "需要先点击选择某个选项才能进行后续操作, 你还没有选择"
 
 data modify storage global_shop:storage g_lang.edit_main.install_tip.1 set value "感谢你使用全球商店数据包"
 data modify storage global_shop:storage g_lang.edit_main.install_tip.2 set value "你需要按照以下步骤先抹除所有数据"

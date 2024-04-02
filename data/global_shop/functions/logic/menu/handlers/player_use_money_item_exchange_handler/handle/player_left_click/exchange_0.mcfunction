@@ -22,7 +22,7 @@ scoreboard players operation playerMoney glbs_common -= cashPrice glbs_common
 data modify storage global_shop:common g_itemData set from storage global_shop:storage g_cashInfo[0].item
     #如果没有Lore就新建Lore列表，然后追加信息
     execute unless data storage global_shop:common g_itemData.tag.display.Lore run data modify storage global_shop:common g_itemData.tag.display.Lore set value []
-    data modify entity 00000d3a-0000-0d3a-0000-17cc0000edfa text set value '[{"text":"货币价值：","color":"gold","italic":false},{"nbt":"g_cashInfo[0].item.tag.global_shop.price","storage":"global_shop:storage","color":"aqua"}]'
+    data modify entity 00000d3a-0000-0d3a-0000-17cc0000edfa text set value '[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.item_frame.cash_value","color":"yellow"},{"text":": ","color":"yellow},{"nbt":"g_cashInfo[0].item.tag.global_shop.price","storage":"global_shop:storage","color":"aqua"}]'
     # TODO 分割线复制于global_shop:logic/item_data/add_diviver。若要把分割线修改为nbt引用，应当同时修改这两个地方
     data modify storage global_shop:common g_itemData.tag.display.Lore append value '{"text":"------------","color":"gray"}'
     data modify storage global_shop:common g_itemData.tag.display.Lore append from entity 00000d3a-0000-0d3a-0000-17cc0000edfa text

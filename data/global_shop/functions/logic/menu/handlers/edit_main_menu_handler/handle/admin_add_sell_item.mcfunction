@@ -12,6 +12,9 @@ execute if score @s glbs_inputter_1 > MAX_PLAYER_INPUT glbs_common run return ru
 # 主手为空
 execute unless data entity @s SelectedItem run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_sell_item/main_hand_has_no_item
 
+# 主手是货币
+execute if data entity @s SelectedItem.tag.global_shop.price run return run function global_shop:logic/menu/handlers/edit_main_menu_handler/handle/admin_add_sell_item/hold_cash
+
 # 检查通过：
    # 构造 SellShopItemData
       # 获取玩家手上的物品

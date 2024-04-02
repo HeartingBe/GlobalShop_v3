@@ -8,6 +8,9 @@ execute on vehicle unless score @s glbs_last_target matches 4 on passengers if e
 # 该玩家冷却时间未结束
 execute if score @s glbs_sell_item_cooling_time matches 1.. unless score @s glbs_permission = Permission::ADMIN glbs_common run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/cooling_time_not_end
 
+# 玩家主手拿着货币，阻止
+execute if data entity @s SelectedItem.tag.global_shop.price run return run function global_shop:logic/menu/handlers/player_shop_main_menu_handler/handle/player_sell_item/hold_cash
+
 # 该玩家上架和回退物品总数达到最大值
    # 获取该玩家存储物品总数
    execute store result score temp glbs_common run function global_shop:storage/store_manager/get_player_store_item_num
