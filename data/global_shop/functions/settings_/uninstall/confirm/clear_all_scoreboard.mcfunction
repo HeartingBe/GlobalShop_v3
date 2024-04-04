@@ -21,3 +21,4 @@ scoreboard objectives remove glbs_last_view_id
 scoreboard objectives remove glbs_last_target
 scoreboard objectives remove glbs_err_code
 scoreboard objectives remove glbs_order
+scoreboard objectives remove glbs_ban

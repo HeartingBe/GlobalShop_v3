@@ -226,11 +226,16 @@
          scoreboard players set SETTING_MODIFY_ITEM_FRAME_POSITION_D glbs_common 5
          scoreboard players set SETTING_MODIFY_ITEM_FRAME_POSITION_RST glbs_common 6
          # 管理员全局设置
-         #define score_holder SETTING_MODIFY_MONEY_SCOREBOARD 修改自定义金钱记分板
-         #define score_holder SETTING_MODIFY_LANGUAGE 修改自定义语言
-         scoreboard players set SETTING_MODIFY_MONEY_SCOREBOARD glbs_common 1
-         scoreboard players set SETTING_MODIFY_LANGUAGE glbs_common 2
-         
+         #define score_holder SETTING_CUSTOM_MONEY_SCOREBOARD 修改自定义金钱记分板
+         #define score_holder SETTING_CUSTOM_LANGUAGE 修改自定义语言
+         #define score_holder SETTING_BAN_PLAYER 商店黑名单
+         #define score_holder SETTING_BAN_PLAYER_STATE 查看某位玩家是否在黑名单内
+         #define score_holder SETTING_RESET_DYNAMIC_DATA 重置所有玩家数据（玩家商店、出售商店、回收商店、购买记录、出售记录、退回物品）
+         scoreboard players set SETTING_CUSTOM_MONEY_SCOREBOARD glbs_common 1
+         scoreboard players set SETTING_CUSTOM_LANGUAGE glbs_common 2
+         scoreboard players set SETTING_BAN_PLAYER glbs_common 3
+         scoreboard players set SETTING_BAN_PLAYER_STATE glbs_common 4
+         scoreboard players set SETTING_RESET_DYNAMIC_DATA glbs_common 5
 
 # Player 相关记分板
    # glbs_uid 玩家 uid
@@ -263,6 +268,8 @@
    scoreboard objectives add glbs_leave_game minecraft.custom:leave_game
    # 玩家本次使用商店的时长（单位：s，用于限制玩家单次使用商店的时长，避免挂机长时间占用商店）
    scoreboard objectives add glbs_use_time dummy
+   # 玩家本是否被禁止使用商店，为 1 说明被封禁，为 0 或者没分数说明没有被封禁
+   scoreboard objectives add glbs_ban dummy
 
 # Menu 相关记分板
    # glbs_mode 记录 mode_ 记分板

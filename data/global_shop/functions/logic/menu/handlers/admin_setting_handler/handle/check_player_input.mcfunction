@@ -5,7 +5,7 @@ execute on vehicle run scoreboard players operation temp glbs_common = @s glbs_l
 
 # 处理不同的设置输入
     # 设置自定义金钱记分板【改为直接在左键选项时发送 tellraw 引导玩家修改】
-    #execute if score temp glbs_common = SETTING_MODIFY_MONEY_SCOREBOARD glbs_common run return run function global_shop:logic/menu/handlers/admin_setting_handler/handle/check_player_input/modify_money_scoreboard
+    #execute if score temp glbs_common = SETTING_CUSTOM_MONEY_SCOREBOARD glbs_common run return run function global_shop:logic/menu/handlers/admin_setting_handler/handle/check_player_input/modify_money_scoreboard
     # 待添加
 
 # 无效输入
