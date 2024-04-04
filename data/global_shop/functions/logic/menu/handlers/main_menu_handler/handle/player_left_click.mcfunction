@@ -11,6 +11,9 @@ scoreboard players operation temp glbs_common = @s glbs_last_view_order
    # 10 >> 切换到玩家商店主界面
    execute if score temp glbs_common matches 10 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_shop_main
 
+   # 12 >> 项目信息
+   execute if score temp glbs_common matches 12 on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/pack_info
+
    # 13 >> 切换到出售商店
    execute if score temp glbs_common matches 13 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_sell_shop
 

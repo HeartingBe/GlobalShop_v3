@@ -7,9 +7,9 @@ scoreboard players operation @s glbs_permission = Permission::ADMIN glbs_common
 
 scoreboard players reset * open_global_shop
 
-# 版本不对应
+# 版本不对应(版本太新。没有版本太旧，因为这是第一个版本)
 # tag 版本号修改点
-execute unless score g_version glbs_common matches 0 if score g_version glbs_common matches 1.. run return run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.1","color":"red"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.2","color":"red"}," ",{"score":{"objective":"glbs_common","name":"g_version"},"color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.3","color":"red"}," ",{"text":"0","color":"white"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.4","color":"red"}]
+execute unless score g_version glbs_common matches 1 if score g_version glbs_common matches 2.. run return run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.newer.1","color":"red"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.newer.2","color":"red"}," ",{"score":{"objective":"glbs_common","name":"g_version"},"color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.newer.3","color":"red"}," ",{"text":"1","color":"white"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.boot.wrong_version.newer.4","color":"red"}]
 
 # 连锁命令数不足
 execute store result score temp glbs_common run gamerule maxCommandChainLength

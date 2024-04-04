@@ -10,17 +10,20 @@ scoreboard objectives add glbs_common dummy
    scoreboard players add g_enable glbs_common 0
    # 版本
    scoreboard players add g_version glbs_common 0
+      # 首次加载数据包，把版本设置为当前包硬编码版本
+      # tag 版本号修改点
+      execute if score g_version glbs_common matches 0 run scoreboard players set g_version glbs_common 1
    # 已初始化标记
    scoreboard players add g_isInit glbs_common 0
 
-# 数据包版本检查和更新（本版本为 v1.0，编号 0）
+# 数据包版本检查和更新（本版本为 v3.0，编号 1）
 # tag 版本号修改点
-execute unless score g_version glbs_common matches 0 run return run function global_shop:logic/updater/handle
+execute unless score g_version glbs_common matches 1 run return run function global_shop:logic/updater/handle
 
-# 首次安装数据包，直接执行初始化函数
+# 首次加载数据包，直接执行初始化函数
 execute if score g_isInit glbs_common matches 0 run return run function global_shop:init_classes
 
-# 执行到此处说明不是首次安装，而是玩家重复 /reload
+# 执行到此处说明不是首次加载，而是玩家重复 /reload
    # 重复执行 /reload 应提示管理员是否重新初始化
    execute if score g_isInit glbs_common matches 1 as @a if score @s glbs_permission = Permission::ADMIN glbs_common run function global_shop:load/ask_if_reinit
    # 数据包未运行时，提示管理员开启
