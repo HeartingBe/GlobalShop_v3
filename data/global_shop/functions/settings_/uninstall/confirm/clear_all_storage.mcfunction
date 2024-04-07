@@ -23,6 +23,7 @@ data remove storage global_shop:common item
 data remove storage global_shop:common args
 data remove storage global_shop:common originalString
 data remove storage global_shop:common splitNamespaceID
+data remove storage global_shop:common enchIdString
 
 data remove storage global_shop:storage g_scoreboard
 data remove storage global_shop:storage enchantment

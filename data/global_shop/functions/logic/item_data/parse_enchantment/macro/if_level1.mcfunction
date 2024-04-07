@@ -1,1 +1,1 @@
-$execute store success score ifLevel1 glbs_common run data get storage global_shop:storage level1."$(id)"
+$execute store success score ifLevel1 glbs_common run data get storage global_shop:storage level1.$(id)

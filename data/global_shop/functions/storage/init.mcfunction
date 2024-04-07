@@ -109,9 +109,14 @@ execute unless data storage global_shop:storage g_cashInfo run data modify stora
    data modify storage global_shop:storage enchantment."minecraft:thorns" set value "enchantment.minecraft.thorns"
    data modify storage global_shop:storage enchantment."minecraft:unbreaking" set value "enchantment.minecraft.unbreaking"
    data modify storage global_shop:storage enchantment."minecraft:vanishing_curse" set value "enchantment.minecraft.vanishing_curse"
+   # 特殊
+      # 解析时存表会出错的情况直接写死
+      data modify storage global_shop:storage enchantment."minecraft:" set value "minecraft:"
+      data modify storage global_shop:storage enchantment.":" set value ":"
 #endregion
 
 # 诅咒附魔
-   data modify storage global_shop:storage curse set value {"minecraft:binding_curse":0b,"minecraft:vanishing_curse":0b,"binding_curse":0b,"vanishing_curse":0b}
+   data modify storage global_shop:storage curse set value {"minecraft:binding_curse":0b,"minecraft:vanishing_curse":0b,":binding_curse":0b,":vanishing_curse":0b,"binding_curse":0b,"vanishing_curse":0b}
 # 等级I附魔
-   data modify storage global_shop:storage level1 set value {"aqua_affinity":0b,"channeling":0b,"binding_curse":0b,"vanishing_curse":0b,"flame":0b,"infinity":0b,"mending":0b,"multishot":0b,"silk_touch":0b,"minecraft:aqua_affinity":0b,"minecraft:channeling":0b,"minecraft:binding_curse":0b,"minecraft:vanishing_curse":0b,"minecraft:flame":0b,"minecraft:infinity":0b,"minecraft:mending":0b,"minecraft:multishot":0b,"minecraft:silk_touch":0b}
+   #data modify storage global_shop:storage level1 set value {"aqua_affinity":0b,"channeling":0b,"binding_curse":0b,"vanishing_curse":0b,"flame":0b,"infinity":0b,"mending":0b,"multishot":0b,"silk_touch":0b,"minecraft:aqua_affinity":0b,"minecraft:channeling":0b,"minecraft:binding_curse":0b,"minecraft:vanishing_curse":0b,"minecraft:flame":0b,"minecraft:infinity":0b,"minecraft:mending":0b,"minecraft:multishot":0b,"minecraft:silk_touch":0b}
+   data modify storage global_shop:storage level1 set value {"aqua_affinity":0b,"channeling":0b,"binding_curse":0b,"vanishing_curse":0b,"flame":0b,"infinity":0b,"mending":0b,"multishot":0b,"silk_touch":0b,":aqua_affinity":0b,":channeling":0b,":binding_curse":0b,":vanishing_curse":0b,":flame":0b,":infinity":0b,":mending":0b,":multishot":0b,":silk_touch":0b,"minecraft:aqua_affinity":0b,"minecraft:channeling":0b,"minecraft:binding_curse":0b,"minecraft:vanishing_curse":0b,"minecraft:flame":0b,"minecraft:infinity":0b,"minecraft:mending":0b,"minecraft:multishot":0b,"minecraft:silk_touch":0b}

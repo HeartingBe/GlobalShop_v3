@@ -12,6 +12,6 @@ data remove storage global_shop:common temp
 execute store result storage global_shop:common temp.uid int 1 run scoreboard players get playerUid glbs_common
 function global_shop:logic/player/get_ban_state with storage global_shop:common temp
 
-execute if score banState glbs_common matches 0 run return run function global_shop:settings/get_player_ban_state/banned
+execute if score banState glbs_common matches 0 run return run function global_shop:settings_/get_player_ban_state/banned
 
-function global_shop:settings/get_player_ban_state/unbanned
+function global_shop:settings_/get_player_ban_state/unbanned

@@ -5,7 +5,7 @@ data modify storage global_shop:common g_itemData set from storage global_shop:s
 # 修改 mode
 execute store result storage global_shop:common g_itemData.tag.global_shop.type int 1 run scoreboard players get ItemDataType::RETURN glbs_common
 # 写入退回理由
-data modify storage global_shop:common g_itemData.tag.global_shop.returnReason set value {"text":"超时下架","color":"red"}
+data modify storage global_shop:common g_itemData.tag.global_shop.returnReason set value {"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.item_frame.return_reason.expire","color":"red"}
 # 取卖家 uid
 data remove storage global_shop:common temp
 data modify storage global_shop:common temp.uid set from storage global_shop:common g_itemData.tag.global_shop.sourcePlayerUid
