@@ -11,5 +11,4 @@ execute positioned ~ ~0.5 ~ run function global_shop:logic/menu/menu/open_menu_s
 scoreboard players set g_columnIncrement glbs_common 0
 execute on vehicle at @s run function global_shop:logic/menu/handlers/menu_handler/change_mode/main
 
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.open.welcome","color":"green"}]
 function global_shop:sound/open_shop

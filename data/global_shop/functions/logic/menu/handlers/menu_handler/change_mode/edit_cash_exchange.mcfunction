@@ -26,4 +26,4 @@ function global_shop:ui/display_manager/summon_whole_page_items
 # 重置选中的物品的编号
 scoreboard players set @s glbs_last_target -1
 # 将所有正在使用货币兑换页面的玩家强制退出
-execute as @a on vehicle if entity @s[type=minecraft:block_display,tag=global_shop] if score @s glbs_mode = Mode::PLAYER_USE_MONEY_ITEM_EXCHANGE glbs_common at @s run function global_shop:logic/menu/handlers/player_use_money_item_exchange_handler/handle/force_back
+execute as @a on vehicle if entity @s[type=minecraft:block_display,tag=global_shop] if score @s glbs_mode = Mode::PLAYER_CASH_EXCHANGE glbs_common at @s run function global_shop:logic/menu/handlers/player_cash_exchange_handler/handle/force_back

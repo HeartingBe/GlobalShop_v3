@@ -1,5 +1,5 @@
 #> global_shop:logic/menu/handlers/menu_handler/change_mode/edit_cash_exchange/get_cashinfo_list
-# 读取现金货币信息的列表
+# 读取编辑货币兑换信息的菜单
 
 data modify storage global_shop:common g_itemsToDisplay set from storage global_shop:menu_preset_and_control edit_cash
 

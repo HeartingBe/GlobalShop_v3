@@ -20,6 +20,5 @@ execute if score @s glbs_last_action = Action::LEFT_CLICK_CONFIRM glbs_common ru
    #execute on passengers if entity @s[type=minecraft:player] run title @s actionbar ["首次左键"]
    # Menu 更新自身状态
       # 实际此处无状态量和记录量需要更新
-   # 提示信息
-   execute on passengers if entity @s[type=minecraft:player] run title @s actionbar [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.view_return.take_back.tip_click_again","color":"green"}]
-   function global_shop:sound/target
+   # 提示
+   execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/player_shop_view_return_handler/handle/player_left_click/send_tip

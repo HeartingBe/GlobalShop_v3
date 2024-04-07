@@ -7,21 +7,24 @@ scoreboard players operation temp glbs_common = @s glbs_last_view_order
 
    # 4 >> 切换到编辑模式界面
    execute if score temp glbs_common matches 4 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_edit_mode
-      
-   # 10 >> 切换到玩家商店主界面
-   execute if score temp glbs_common matches 10 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_shop_main
+
+   # 7 >> 玩家个人设置
+   execute if score temp glbs_common matches 7 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_setting
+
+   # 10 >> 切换到货币兑换页面
+   execute if score temp glbs_common matches 10 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_cash_exchange
 
    # 12 >> 项目信息
    execute if score temp glbs_common matches 12 on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/pack_info
 
-   # 13 >> 切换到出售商店
-   execute if score temp glbs_common matches 13 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_sell_shop
+   # 13 >> welcome
+   execute if score temp glbs_common matches 13 on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/welcome
 
-   # 14 >> 切换到货币兑换页面
-   execute if score temp glbs_common matches 14 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_use_money_item_exchange
+   # 16 >> 切换到玩家商店主界面
+   execute if score temp glbs_common matches 16 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_shop_main
 
-   # 16 >> 切换到回收商店
-   execute if score temp glbs_common matches 16 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_recycle_shop
+   # 19 >> 切换到出售商店
+   execute if score temp glbs_common matches 19 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_sell_shop
 
-   # 22 >> 玩家个人设置
-   execute if score temp glbs_common matches 22 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_player_setting
+   # 22 >> 切换到回收商店
+   execute if score temp glbs_common matches 22 run function global_shop:logic/menu/handlers/main_menu_handler/handle/player_left_click/change_mode_to_recycle_shop

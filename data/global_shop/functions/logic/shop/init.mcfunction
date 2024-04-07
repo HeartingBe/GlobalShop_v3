@@ -107,7 +107,7 @@
       #define score_holder Mode::EDIT_CASH_EXCHANGE 编辑货币兑换
       #define score_holder Mode::PLAYER_SETTING 玩家个人设置
       #define score_holder Mode::ADMIN_SETTING 管理员全局设置
-      #define score_holder Mode::PLAYER_USE_MONEY_ITEM_EXCHANGE 玩家使用货币物品兑换
+      #define score_holder Mode::PLAYER_CASH_EXCHANGE 玩家使用货币物品兑换
       scoreboard players set Mode::MAIN glbs_common 0
       scoreboard players set Mode::PLAYER_SHOP_MAIN glbs_common 1
       scoreboard players set Mode::PLAYER_SHOP glbs_common 2
@@ -123,7 +123,7 @@
       scoreboard players set Mode::EDIT_CASH_EXCHANGE glbs_common 12
       scoreboard players set Mode::PLAYER_SETTING glbs_common 13
       scoreboard players set Mode::ADMIN_SETTING glbs_common 14
-      scoreboard players set Mode::PLAYER_USE_MONEY_ITEM_EXCHANGE glbs_common 15
+      scoreboard players set Mode::PLAYER_CASH_EXCHANGE glbs_common 15
       
    # 玩家操作类型 ACTION
       #define score_holder Action::NO_ACTION_THIS_PLAYER
@@ -183,34 +183,35 @@
          #define score_holder CONTROL_RESET_CASH 重置货币
          #define score_holder CONTROL_COIN_EXCHANGE 货币交换
          scoreboard players set CONTROL_NULL_ITEM glbs_common 0
-         scoreboard players set CONTROL_DATAPACK_INFO glbs_common 1
-         scoreboard players set CONTROL_ENTER_PLAYER_SHOP_MAIN glbs_common 2
-         scoreboard players set CONTROL_ENTER_EDIT glbs_common 3
-         scoreboard players set CONTROL_ENTER_SELL_SHOP glbs_common 4
-         scoreboard players set CONTROL_CASH_EXCHANGE glbs_common 5
-         scoreboard players set CONTROL_ENTER_RECYCLE_SHOP glbs_common 6
-         scoreboard players set CONTROL_PLAYER_SETTINGS glbs_common 7
-         scoreboard players set CONTROL_SELL_ITEM glbs_common 8
-         scoreboard players set CONTROL_VIEW_PLAYER_SHOP glbs_common 9
-         scoreboard players set CONTROL_VIEW_MY_SELLING glbs_common 10
-         scoreboard players set CONTROL_COLLECT_INCOME glbs_common 11
-         scoreboard players set CONTROL_VIEW_MONEY glbs_common 12
-         scoreboard players set CONTROL_VIEW_RETURN_ITEMS glbs_common 13
-         scoreboard players set CONTROL_VIEW_MY_BOUGHT glbs_common 14
-         scoreboard players set CONTROL_VIEW_MY_SOLD glbs_common 15
-         scoreboard players set CONTROL_ADD_ITEM_TO_SELL_SHOP glbs_common 16
-         scoreboard players set CONTROL_REMOVE_ITEM_FROM_SELL_SHOP glbs_common 17
-         scoreboard players set CONTROL_ADD_ITEM_TO_RECYCLE_SHOP glbs_common 18
-         scoreboard players set CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP glbs_common 19
-         scoreboard players set CONTROL_CHANGE_EXCHANGE_RATE glbs_common 20
-         scoreboard players set CONTROL_SETTING_PAGE glbs_common 21
-         scoreboard players set CONTROL_UNINSTALL glbs_common 22
-         scoreboard players set CONTROL_EDIT_CASH_ITEM glbs_common 23
-         scoreboard players set CONTROL_EDIT_CASH_PRICE glbs_common 24
-         scoreboard players set CONTROL_CASH_SWITCH_STATUS glbs_common 25
-         scoreboard players set CONTROL_DISABLED_CASH glbs_common 26
-         scoreboard players set CONTROL_RESET_CASH glbs_common 27
-         scoreboard players set CONTROL_COIN_EXCHANGE glbs_common 28
+         scoreboard players set CONTROL_WELCOME glbs_common 1
+         scoreboard players set CONTROL_DATAPACK_INFO glbs_common 2
+         scoreboard players set CONTROL_ENTER_PLAYER_SHOP_MAIN glbs_common 3
+         scoreboard players set CONTROL_ENTER_EDIT glbs_common 4
+         scoreboard players set CONTROL_ENTER_SELL_SHOP glbs_common 5
+         scoreboard players set CONTROL_CASH_EXCHANGE glbs_common 6
+         scoreboard players set CONTROL_ENTER_RECYCLE_SHOP glbs_common 7
+         scoreboard players set CONTROL_PLAYER_SETTINGS glbs_common 8
+         scoreboard players set CONTROL_SELL_ITEM glbs_common 9
+         scoreboard players set CONTROL_VIEW_PLAYER_SHOP glbs_common 10
+         scoreboard players set CONTROL_VIEW_MY_SELLING glbs_common 11
+         scoreboard players set CONTROL_COLLECT_INCOME glbs_common 12
+         scoreboard players set CONTROL_VIEW_MONEY glbs_common 13
+         scoreboard players set CONTROL_VIEW_RETURN_ITEMS glbs_common 14
+         scoreboard players set CONTROL_VIEW_MY_BOUGHT glbs_common 15
+         scoreboard players set CONTROL_VIEW_MY_SOLD glbs_common 16
+         scoreboard players set CONTROL_ADD_ITEM_TO_SELL_SHOP glbs_common 17
+         scoreboard players set CONTROL_REMOVE_ITEM_FROM_SELL_SHOP glbs_common 18
+         scoreboard players set CONTROL_ADD_ITEM_TO_RECYCLE_SHOP glbs_common 19
+         scoreboard players set CONTROL_REMOVE_ITEM_FROM_RECYCLE_SHOP glbs_common 20
+         scoreboard players set CONTROL_CHANGE_EXCHANGE_RATE glbs_common 21
+         scoreboard players set CONTROL_SETTING_PAGE glbs_common 22
+         scoreboard players set CONTROL_UNINSTALL glbs_common 23
+         scoreboard players set CONTROL_EDIT_CASH_ITEM glbs_common 24
+         scoreboard players set CONTROL_EDIT_CASH_PRICE glbs_common 25
+         scoreboard players set CONTROL_CASH_SWITCH_STATUS glbs_common 26
+         scoreboard players set CONTROL_DISABLED_CASH glbs_common 27
+         scoreboard players set CONTROL_RESET_CASH glbs_common 28
+         scoreboard players set CONTROL_COIN_EXCHANGE glbs_common 29
       # 设置按钮(0 是空项，从 1 开始编号)
          # 玩家个人设置
          #define score_holder SETTING_MODIFY_ITEM_FRAME_SIZE 调整物品信息框大小

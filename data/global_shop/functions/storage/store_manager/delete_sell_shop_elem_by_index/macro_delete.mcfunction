@@ -2,5 +2,5 @@
 # @macro {index: int}
 # @executor Menu
 
-# 从玩家商店总表中删除
+# 从出售商店列表中删除
 $data remove storage global_shop:storage g_sellShopList[$(index)]

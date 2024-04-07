@@ -3,4 +3,4 @@
 # @param reduce 要扣除的数额
 # @executor Player
 
-$scoreboard players operation @s $(scoreboard) -= reduce glbs_common
+$return run scoreboard players operation @s $(scoreboard) -= reduce glbs_common

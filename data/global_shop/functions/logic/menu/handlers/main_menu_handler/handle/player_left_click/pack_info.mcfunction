@@ -22,3 +22,5 @@ tellraw @s ["              ",{"text":">>>","color":"gray"},"     ",{"text":"Mini
 tellraw @s [{"text":""}]
 tellraw @s ["   ",{"text":"Works on Minecraft JE 1.20.3","color":"#ff6f44"}]
 tellraw @s [{"text":"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■","color":"#e7e7e7"}]
+
+function global_shop:sound/success

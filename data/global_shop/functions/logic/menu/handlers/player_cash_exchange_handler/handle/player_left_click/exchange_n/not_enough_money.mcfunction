@@ -1,4 +1,4 @@
-#> global_shop:logic/menu/handlers/player_use_money_item_exchange_handler/handle/player_left_click/exchange_n/not_enough_money
+#> global_shop:logic/menu/handlers/player_cash_exchange_handler/handle/player_left_click/exchange_n/not_enough_money
 # @param playerMoney glbs_common 玩家金钱
 # @param cashPrice glbs_common 货币面值
 # @executor Player

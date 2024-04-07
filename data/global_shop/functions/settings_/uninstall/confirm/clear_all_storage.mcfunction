@@ -71,4 +71,4 @@ data remove storage global_shop:menu_preset_and_control edit_cash
 data remove storage global_shop:menu_preset_and_control edit_mode
 data remove storage global_shop:menu_preset_and_control main
 data remove storage global_shop:menu_preset_and_control player_shop_main
-data remove storage global_shop:menu_preset_and_control player_use_money_item_exchange
+data remove storage global_shop:menu_preset_and_control player_cash_exchange
