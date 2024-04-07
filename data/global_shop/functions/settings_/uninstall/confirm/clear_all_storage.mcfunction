@@ -24,6 +24,9 @@ data remove storage global_shop:common args
 data remove storage global_shop:common originalString
 data remove storage global_shop:common splitNamespaceID
 data remove storage global_shop:common enchIdString
+data remove storage global_shop:common temp2
+data remove storage global_shop:common char
+data remove storage global_shop:common tempStr
 
 data remove storage global_shop:storage g_scoreboard
 data remove storage global_shop:storage enchantment
@@ -34,7 +37,9 @@ data remove storage global_shop:storage g_lang
 data remove storage global_shop:storage char
 
 data remove storage global_shop:menu_preset_and_control DEFAULT_CASH_INFO
+data remove storage global_shop:menu_preset_and_control DEFAULT_CASH_NAME
 data remove storage global_shop:menu_preset_and_control CONTROL_NULL_ITEM
+data remove storage global_shop:menu_preset_and_control CONTROL_WELCOME
 data remove storage global_shop:menu_preset_and_control CONTROL_DATAPACK_INFO
 data remove storage global_shop:menu_preset_and_control CONTROL_ENTER_PLAYER_SHOP_MAIN
 data remove storage global_shop:menu_preset_and_control CONTROL_ENTER_EDIT

@@ -6,5 +6,5 @@
     execute unless score @s open_global_shop matches 0 run function global_shop:logic/shop/perform/player_request_use_shop
 
 # 关闭了商店的玩家的逻辑（播放音效，并去除输入器权限等）
-#（玩家可能脱离 Menu 导致无法使用 execute 通过关系选中，可以用 glbs_use_time 记分板判断，有分数说明玩家过去一段时间使用了商店）
-execute if score @s glbs_use_time matches 0.. run function global_shop:logic/player/on_exit_shop
+#（玩家脱离 Menu 导致无法使用 execute 通过关系选中，可以用 glbs_use_time 记分板判断，有分数说明玩家过去一段时间使用了商店）
+execute if score @s glbs_use_time matches 0.. run function global_shop:logic/shop/perform/player/check_if_exit
