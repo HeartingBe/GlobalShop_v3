@@ -1,11 +1,12 @@
 #> global_shop:logic/item_data/parse_enchantment/foreach
 # 遍历附魔列表
 
-execute store result score length glbs_common run data get storage global_shop:common temp.enchantments
-execute if score length glbs_common matches ..0 run return 0
+# 递归函数，每执行一次，解析 enchantments[0]，然后去掉第一项
+# 如果 enchantments 列表不为空，继续解析
 
-# 开始翻译
+# 翻译第一项
 function global_shop:logic/item_data/parse_enchantment/parse
 
+# 去掉第一项，如果 enchantments 列表不为空，继续解析
 data remove storage global_shop:common temp.enchantments[0]
-function global_shop:logic/item_data/parse_enchantment/foreach
+execute if data storage global_shop:common temp.enchantments[0] run function global_shop:logic/item_data/parse_enchantment/foreach
