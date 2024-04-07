@@ -55,7 +55,7 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
    item replace entity @s weapon.mainhand with minecraft:air
 
    # 通知
-   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.player_shop_main.sell.success\"","color":"green"}]
+   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_shop_main.sell.success\"","color":"green"}]
    # 音效
    function global_shop:sound/success
 

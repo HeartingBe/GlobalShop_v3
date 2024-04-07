@@ -1,6 +1,6 @@
 # @executor Player
 
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.player_shop.jump_order.negative\"","color":"red"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_shop.jump_order.negative\"","color":"red"}]
 
 function global_shop:sound/fail
 

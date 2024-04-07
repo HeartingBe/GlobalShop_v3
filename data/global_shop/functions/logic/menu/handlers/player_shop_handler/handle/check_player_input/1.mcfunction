@@ -18,7 +18,7 @@ execute store result score temp glbs_common run function global_shop:storage/sto
    # 跳转
    execute on vehicle run scoreboard players operation @s glbs_begin_index = beginIndex glbs_common
    execute on vehicle run function global_shop:logic/menu/handlers/player_shop_handler/refresh
-   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.player_shop.jump_order.success\"","color":"green"}]
+   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_shop.jump_order.success\"","color":"green"}]
    # 音效 跳转
    function global_shop:sound/jump
 # 重置输入器状态

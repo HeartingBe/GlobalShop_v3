@@ -6,6 +6,6 @@ execute on vehicle if entity @s[type=minecraft:block_display,tag=global_shop] ru
 
 function global_shop:logic/player/init_scoreboard
 
-title @s actionbar [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.open.close\"","color":"yellow"}]
+title @s actionbar [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"open.close\"","color":"yellow"}]
 
 execute at @s run function global_shop:sound/exit

@@ -15,6 +15,6 @@ function global_shop:logic/menu/handlers/menu_handler/rotate
 # 更改模式
 scoreboard players operation @s glbs_mode = Mode::RECYCLE_SHOP glbs_common
 # 通知
-execute on passengers if entity @s[type=minecraft:player] run title @s actionbar [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.change_mode.recycle\"","color":"aqua"}]
+execute on passengers if entity @s[type=minecraft:player] run title @s actionbar [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"change_mode.recycle\"","color":"aqua"}]
 # 生成物品展示实体
 function global_shop:ui/display_manager/summon_whole_page_items

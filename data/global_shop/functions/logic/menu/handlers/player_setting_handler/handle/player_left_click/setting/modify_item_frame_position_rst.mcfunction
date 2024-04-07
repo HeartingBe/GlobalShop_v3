@@ -2,7 +2,7 @@ scoreboard players set @s glbs_st_item_frame_pos_v 0
 scoreboard players set @s glbs_st_item_frame_pos_h 0
 scoreboard players set @s glbs_st_item_frame_pos_d 0
 
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.player_settings.info_frame.pos.reset_success\"","color":"green"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_settings.info_frame.pos.reset_success\"","color":"green"}]
 
 function global_shop:sound/success
 

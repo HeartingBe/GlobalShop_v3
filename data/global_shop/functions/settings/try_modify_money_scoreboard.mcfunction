@@ -24,6 +24,6 @@ function global_shop:settings_/try_modify_money_scoreboard/macro_get_score with 
 execute if score temp glbs_common matches 0 run return run function global_shop:settings_/try_modify_money_scoreboard/invalid_scoreboard
 
 # 设置成功
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.admin_settings.money_sc.success.1\"","color":"green"}," ",{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_scoreboard\"","color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.admin_settings.money_sc.success.2\"","color":"green"}," ",{"type":"nbt","storage":"global_shop:common","nbt":"temp.scoreboard","color":"yellow"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"admin_settings.money_sc.success.1\"","color":"green"}," ",{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_scoreboard\"","color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"admin_settings.money_sc.success.2\"","color":"green"}," ",{"type":"nbt","storage":"global_shop:common","nbt":"temp.scoreboard","color":"yellow"}]
 data modify storage global_shop:storage g_scoreboard set from storage global_shop:common temp.scoreboard
 function global_shop:sound/success

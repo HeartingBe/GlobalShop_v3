@@ -21,5 +21,5 @@ scoreboard players operation addAmount glbs_common = price glbs_common
 execute store result score playerMoney glbs_common run function global_shop:logic/player/add_money
 
 # 输出玩家现在钱的数量
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.cash.exchange.save_success\"","color":"aqua"}," ",{"score":{"name":"playerMoney","objective":"glbs_common"},"color":"yellow"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"cash.exchange.save_success\"","color":"aqua"}," ",{"score":{"name":"playerMoney","objective":"glbs_common"},"color":"yellow"}]
 function global_shop:sound/success

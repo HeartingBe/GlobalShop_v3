@@ -1,5 +1,5 @@
 # 标记停止运行
-execute if score g_enable glbs_common matches 1 run tellraw @a [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.stop\"","color":"red"}]
+execute if score g_enable glbs_common matches 1 run tellraw @a [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"stop\"","color":"red"}]
 scoreboard players set g_enable glbs_common 0
 
 # 强制所有玩家退出
