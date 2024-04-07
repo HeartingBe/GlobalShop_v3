@@ -1,7 +1,13 @@
 # @param global_shop:common admin_input 玩家输入
 # @executor Admin
 
-execute unless data storage global_shop:common admin_input run return run function global_shop:settings_/try_modify_language/no_input
+# 未输入
+execute store result score temp glbs_common run data get storage global_shop:common admin_input
+execute if score temp glbs_common matches 0 run return run function global_shop:settings_/try_modify_language/no_input
+
+# 不允许输入空格
+execute store result score hasSpace glbs_common run function global_shop:logic/inputter/is_space_in_input
+execute if score hasSpace glbs_common matches 1 run return run function global_shop:logic/inputter/tip_cannot_input_space
 
 # 检查语言文件是否存在
     # 经尝试，对于 execute store result score A run function xxx

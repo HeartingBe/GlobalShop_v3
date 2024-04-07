@@ -11,10 +11,8 @@ scoreboard players operation ret glbs_common = SUCCESS glbs_err_code
 execute unless score @s glbs_uid matches -2147483648..2147483647 store result score ret glbs_common run function global_shop:storage/store_manager/register_player
 execute unless score ret glbs_common = SUCCESS glbs_err_code run return run function global_shop:logic/menu/menu/reach_max_reg_limit
 
-# 检查玩家是否被禁用商店
-    # 如果玩家是管理员，去掉封禁
-    execute if score @s glbs_permission matches 1 run scoreboard players set @s glbs_ban 0
-execute if score @s glbs_ban matches 1 run return run function global_shop:logic/menu/menu/banned
+# 检查玩家是否被禁用商店（管理员被封禁也可以打开）
+execute if score @s glbs_ban matches 1 if score @s glbs_permission matches 0 run return run function global_shop:logic/menu/menu/banned
 
 # 限制同时使用商店的玩家数量，使用的玩家数量存储在 g_connectNum glbs_common
 execute if score g_connectNum glbs_common >= MAX_CONNECT_NUM glbs_common unless score @s glbs_permission = Permission::ADMIN glbs_common run return run function global_shop:logic/menu/menu/reach_max_use_limit

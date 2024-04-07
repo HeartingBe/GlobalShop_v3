@@ -23,6 +23,7 @@ execute unless data storage global_shop:storage g_cashInfo run data modify stora
 # region char 记录某些常量字符
    data modify storage global_shop:storage char.SCOPE_RESOLUTION set value ":"
    data modify storage global_shop:storage char.BLANK set value ""
+   data modify storage global_shop:storage char.SPACE set value " "
    #换行符
    data modify storage global_shop:storage char.LINE_BREAK set value '"\\n"'
    data modify storage global_shop:storage char.LINE_BREAK_WITH_PADDING set value '"  \\n  "'
