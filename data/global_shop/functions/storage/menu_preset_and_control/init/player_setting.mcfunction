@@ -2,11 +2,11 @@ data remove storage global_shop:storage g_playerSettingList
 
 # 物品信息框大小
     # 调整物品信息框大小
-    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.control.player_settings.info_frame.size","color":"yellow"}]}}}
+    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.control.player_settings.info_frame.size\"","color":"yellow"}]}}}
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.id int 1 run scoreboard players get SETTING_MODIFY_ITEM_FRAME_SIZE glbs_common
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.type int 1 run scoreboard players get ItemDataType::SETTING glbs_common
     # 恢复默认物品信息框大小
-    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.control.player_settings.info_frame.size.reset","color":"yellow"}]}}}
+    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.control.player_settings.info_frame.size.reset\"","color":"yellow"}]}}}
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.id int 1 run scoreboard players get SETTING_MODIFY_ITEM_FRAME_SIZE_RST glbs_common
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.type int 1 run scoreboard players get ItemDataType::SETTING glbs_common
 
@@ -18,18 +18,18 @@ data modify storage global_shop:storage g_playerSettingList prepend from storage
 
 # 物品信息框位置
     # 调整物品信息框上下位置
-    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:glow_item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.control.player_settings.info_frame.pos_v","color":"yellow"}]}}}
+    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:glow_item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.control.player_settings.info_frame.pos_v\"","color":"yellow"}]}}}
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.id int 1 run scoreboard players get SETTING_MODIFY_ITEM_FRAME_POSITION_V glbs_common
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.type int 1 run scoreboard players get ItemDataType::SETTING glbs_common
     # 调整物品信息框左右位置
-    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:glow_item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.control.player_settings.info_frame.pos_h","color":"yellow"}]}}}
+    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:glow_item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.control.player_settings.info_frame.pos_h\"","color":"yellow"}]}}}
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.id int 1 run scoreboard players get SETTING_MODIFY_ITEM_FRAME_POSITION_H glbs_common
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.type int 1 run scoreboard players get ItemDataType::SETTING glbs_common
     # 调整物品信息框前后位置
-    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:glow_item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.control.player_settings.info_frame.pos_d","color":"yellow"}]}}}
+    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:glow_item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.control.player_settings.info_frame.pos_d\"","color":"yellow"}]}}}
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.id int 1 run scoreboard players get SETTING_MODIFY_ITEM_FRAME_POSITION_D glbs_common
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.type int 1 run scoreboard players get ItemDataType::SETTING glbs_common
     # 恢复默认物品信息框位置
-    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:glow_item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.control.player_settings.info_frame.pos.reset","color":"yellow"}]}}}
+    data modify storage global_shop:storage g_playerSettingList prepend value {id:"minecraft:glow_item_frame",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.control.player_settings.info_frame.pos.reset\"","color":"yellow"}]}}}
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.id int 1 run scoreboard players get SETTING_MODIFY_ITEM_FRAME_POSITION_RST glbs_common
     execute store result storage global_shop:storage g_playerSettingList[0].tag.global_shop.type int 1 run scoreboard players get ItemDataType::SETTING glbs_common

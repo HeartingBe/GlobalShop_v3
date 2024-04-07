@@ -5,4 +5,4 @@ execute on vehicle on passengers if entity @s[type=minecraft:item_display,tag=!g
 function global_shop:sound/success
 
 # g_lang.cash.reset_success
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.cash.reset_success","color":"green"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.cash.reset_success\"","color":"green"}]

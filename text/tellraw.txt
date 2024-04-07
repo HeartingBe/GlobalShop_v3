@@ -25,4 +25,4 @@
    tellraw @s ["\n\u00a76•\u00a7e•\u00a73•\n"]
 
 翻译引用模板（原始 json 文本格式模板）
-   {"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.xxx"}
+   {"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.xxx\""}

@@ -2,7 +2,7 @@
 # 
 # 初始化编辑货币的菜单、默认货币名称、默认货币列表
 
-data modify storage global_shop:menu_preset_and_control DEFAULT_CASH_NAME set value '{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.control.cash_custom_name","color":"yellow","italic":false}'
+data modify storage global_shop:menu_preset_and_control DEFAULT_CASH_NAME set value '{"type":"nbt","storage":"global_shop:storage","nbt":"\"g_lang.control.cash_custom_name\"","color":"yellow","italic":false}'
 
 data modify storage global_shop:menu_preset_and_control DEFAULT_CASH_INFO set value [{item:{id:"minecraft:paper",Count:1b,tag:{global_shop:{price:1},Enchantments:[{id:"minecraft:unknown",lvl:1s}]}}},{item:{id:"minecraft:paper",Count:1b,tag:{global_shop:{price:5},Enchantments:[{id:"minecraft:unknown",lvl:1s}]}}},{item:{id:"minecraft:paper",Count:1b,tag:{global_shop:{price:10},Enchantments:[{id:"minecraft:unknown",lvl:1s}]}}},{item:{id:"minecraft:paper",Count:1b,tag:{global_shop:{price:50},Enchantments:[{id:"minecraft:unknown",lvl:1s}]}}},{item:{id:"minecraft:paper",Count:1b,tag:{global_shop:{price:100},Enchantments:[{id:"minecraft:unknown",lvl:1s}]}}}]
 data modify storage global_shop:menu_preset_and_control DEFAULT_CASH_INFO[].tag.display.Name set from storage global_shop:menu_preset_and_control DEFAULT_CASH_NAME
