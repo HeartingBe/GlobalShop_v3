@@ -175,7 +175,7 @@ data modify storage global_shop:storage g_lang."cash.admin_enter.multi.1" set va
 data modify storage global_shop:storage g_lang."cash.admin_enter.multi.2" set value "同时只允许一个管理员编辑货币"
 data modify storage global_shop:storage g_lang."cash.player_enter.editing" set value "有管理员正在编辑货币兑换, 请等待管理员维护完成后再使用"
 data modify storage global_shop:storage g_lang."cash.exchange.disabled" set from storage global_shop:storage g_lang."common.cash_disabled"
-data modify storage global_shop:storage g_lang."cash.exchange.money_no_enough.1" set value "你的钱不够, 无法取钱。面值为 "
+data modify storage global_shop:storage g_lang."cash.exchange.money_no_enough.1" set value "你的钱不够, 无法取钱。面值为"
 data modify storage global_shop:storage g_lang."cash.exchange.money_no_enough.2" set from storage global_shop:storage g_lang."common.you_have_only"
 data modify storage global_shop:storage g_lang."cash.exchange.draw_success" set value "已取钱。你剩余的金钱为"
 data modify storage global_shop:storage g_lang."cash.exchange.too_much_money.1" set value "你的钱太多, 无法存钱。你的金钱为"

@@ -2,9 +2,9 @@ import openpyxl
 
 def gen(lang, translator):
     # 打开 excel 文档
-    workbook = openpyxl.load_workbook(lang+'.xlsx')
+    workbook = openpyxl.load_workbook('translate\\'+lang+'.xlsx')
 
-    # 创建一个新的文本文件
+    # 创建一个新的函数文件
     output_file = open(lang+'.mcfunction', 'w')
 
     # 写入开头信息
@@ -15,7 +15,7 @@ def gen(lang, translator):
     
     # 以下处理通用翻译键
     # 打开通用翻译键的表
-    sheet_common = workbook[lang+'_common']
+    sheet_common = workbook['common']
     
     max_row = sheet_common.max_row # 最大行数
 
@@ -32,7 +32,7 @@ def gen(lang, translator):
         translation = sheet_common.cell(row=i, column=4).value
         if translation is None:
             output_file.write(f"common translation error in row {i} col 4\n")
-            continue;
+            continue
         output_file.write(f'data modify storage global_shop:storage g_lang."{value[7:]}" set value "{translation}"\n')
 
     output_file.write('\n# ================ common translation ================' + '\n\n')
@@ -43,7 +43,7 @@ def gen(lang, translator):
 
     # 以下处理独立翻译键
     # 打开独立翻译键的表
-    sheet = workbook[lang]
+    sheet = workbook['translation']
     # 获取工作表的大小
     max_row = sheet.max_row # 最大行数
 

@@ -1,0 +1,2 @@
+execute if score selectScore glbs_common matches 9 run function global_shop:ui/display_manager/range_update_and_delete/2/9
+execute if score selectScore glbs_common matches 10 run function global_shop:ui/display_manager/range_update_and_delete/2/10

@@ -22,7 +22,5 @@ execute if score @s glbs_last_action = Action::LEFT_CLICK_CONFIRM glbs_common ru
    #execute on passengers if entity @s[type=minecraft:player] run title @s actionbar ["首次左键"]
    # Menu 更新自身状态
       # 实际此处无状态量和记录量需要更新
-   # 向玩家 tellraw 发送该物品信息
-   execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/player_shop_view_my_selling_handler/handle/send_item_info_to_player
-   # 音效
-   function global_shop:sound/target
+   # 向玩家 tellraw 发送该物品信息、音效
+   execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/player_shop_view_my_selling_handler/handle/player_left_click/tip

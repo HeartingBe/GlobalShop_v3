@@ -1,0 +1,2 @@
+execute if score selectScore glbs_common matches 21..23 run return run function global_shop:ui/display_manager/range_summon/select_item_to_summon/21_to_23
+function global_shop:ui/display_manager/range_summon/select_item_to_summon/24_to_26

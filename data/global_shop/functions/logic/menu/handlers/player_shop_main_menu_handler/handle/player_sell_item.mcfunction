@@ -54,9 +54,11 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
    # 移除玩家手中的物品
    item replace entity @s weapon.mainhand with minecraft:air
 
+   # 重置输入分数。如果是管理员，允许连续输入
+   scoreboard players set @s glbs_inputter_1 0
+   execute if score @s glbs_permission = Permission::ADMIN glbs_common run scoreboard players enable @s glbs_inputter_1
+
    # 通知
    tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_shop_main.sell.success\"","color":"green"}]
    # 音效
    function global_shop:sound/success
-
-scoreboard players set @s glbs_inputter_1 0

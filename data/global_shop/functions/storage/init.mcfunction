@@ -5,7 +5,7 @@
 execute unless data storage global_shop:storage g_scoreboard run data modify storage global_shop:storage g_scoreboard set value "glbs_money"
 
 # 默认语言
-execute unless data storage global_shop:storage g_lang run data modify storage global_shop:storage g_lang set value {lang:"zh_cn"}
+execute unless data storage global_shop:storage g_lang.lang run data modify storage global_shop:storage g_lang set value {lang:"zh_cn"}
 
 # 货币兑换的信息（从默认信息取，仅进行一次初始化）
 execute unless data storage global_shop:storage g_cashInfo run data modify storage global_shop:storage g_cashInfo set from storage global_shop:menu_preset_and_control DEFAULT_CASH_INFO

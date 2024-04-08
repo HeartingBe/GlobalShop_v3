@@ -1,0 +1,2 @@
+execute if score selectScore glbs_common matches 6 run function global_shop:ui/display_manager/summon_single_item/6
+execute if score selectScore glbs_common matches 7 run function global_shop:ui/display_manager/summon_single_item/7

@@ -1,0 +1,2 @@
+execute if score selectScore glbs_common matches 14..17 run return run function global_shop:ui/display_manager/range_update_and_delete/select_item_to_update/14_to_17
+function global_shop:ui/display_manager/range_update_and_delete/select_item_to_update/18_to_20
