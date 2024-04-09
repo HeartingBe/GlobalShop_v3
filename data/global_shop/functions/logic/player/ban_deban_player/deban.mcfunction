@@ -4,6 +4,6 @@
 
 $scoreboard players reset $(name) glbs_ban
 
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"admin_settings.ban_player.deban\"","color":"green"},{"text":": ","color":"green"},{"type":"nbt","storage":"global_shop:common","nbt":"admin_input","color":"yellow"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"admin_settings.ban_player.deban\"","color":"green"},{"text":": ","color":"green"},{"type":"nbt","storage":"global_shop:common","nbt":"admin_input","color":"yellow"}]
 
 function global_shop:sound/success

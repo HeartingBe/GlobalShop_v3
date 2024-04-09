@@ -33,7 +33,7 @@ execute if data entity @s SelectedItem.tag.global_shop.price run return run func
    function global_shop:storage/store_manager/append_to_sell_shop_list
 
    # 通知
-   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"sell_shop.set_success\"","color":"green"}]
+   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"sell_shop.set_success\"","color":"green"}]
    function global_shop:sound/success
 
 scoreboard players set @s glbs_inputter_1 0

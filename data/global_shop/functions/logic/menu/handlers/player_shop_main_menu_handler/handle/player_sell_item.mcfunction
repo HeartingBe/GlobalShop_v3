@@ -59,6 +59,6 @@ execute unless data entity @s SelectedItem run return run function global_shop:l
    execute if score @s glbs_permission = Permission::ADMIN glbs_common run scoreboard players enable @s glbs_inputter_1
 
    # 通知
-   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_shop_main.sell.success\"","color":"green"}]
+   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_shop_main.sell.success\"","color":"green"}]
    # 音效
    function global_shop:sound/success

@@ -11,4 +11,4 @@ execute if score if_disabled glbs_common matches 1 run return run function globa
 # 提示管理员设置价格
 scoreboard players enable @s glbs_inputter_1
 function global_shop:sound/success
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"cash.tip_input_value.1\"","color":"green","clickEvent":{"action":"suggest_command","value":"/trigger glbs_inputter_1 set ?"},"underlined":true,"hoverEvent":{"action":"show_text","contents":[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"cash.tip_input_value.2\"","color":"green"}]},"bold":true}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"cash.tip_input_value.1\"","color":"green","clickEvent":{"action":"suggest_command","value":"/trigger glbs_inputter_1 set ?"},"underlined":true,"hoverEvent":{"action":"show_text","contents":[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"cash.tip_input_value.2\"","color":"green"}]},"bold":true}]

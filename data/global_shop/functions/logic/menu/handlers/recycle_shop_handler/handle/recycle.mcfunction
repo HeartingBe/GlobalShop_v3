@@ -21,5 +21,5 @@ function global_shop:logic/player/add_money
 
 # 通知
 execute store result score playerMoney glbs_common run function global_shop:logic/player/get_money
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"recycle_shop.recycle.success.1\"","color":"green"}," ",{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"recycle_shop.recycle.success.2\"","color":"green"}," ",{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"recycle_shop.recycle.success.1\"","color":"green"}," ",{"score":{"objective":"glbs_common","name":"addAmount"},"color":"yellow"},"\n",{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"recycle_shop.recycle.success.2\"","color":"green"}," ",{"score":{"objective":"glbs_common","name":"playerMoney"},"color":"yellow"}]
 function global_shop:sound/success

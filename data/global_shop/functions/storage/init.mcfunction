@@ -10,15 +10,8 @@ execute unless data storage global_shop:storage g_lang.lang run data modify stor
 # 货币兑换的信息（从默认信息取，仅进行一次初始化）
 execute unless data storage global_shop:storage g_cashInfo run data modify storage global_shop:storage g_cashInfo set from storage global_shop:menu_preset_and_control DEFAULT_CASH_INFO
 
-# region 消息前缀，两层引号
-   #简化形式
-      #解析形式
-      #{"storage":"global_shop:storage","nbt":"TEXT_PREFIX_SIMPLE","interpret":1}
-   #data modify storage global_shop:storage TEXT_PREFIX_SIMPLE set value '"\\u00a7f\\u25a0\\u00a77\\u25a0\\u00a78\\u25a0 "'
-   #标准形式，用于直接写进 nbt 列表
-   #data modify storage global_shop:storage TEXT_PREFIX set value {"text":"","extra":[{"text":"■","color":"white"},{"text":"■","color":"gray"},{"text":"■ ","color":"dark_gray"}]}
-   #data modify storage global_shop:storage TEXT_PREFIX_INDENTATION set value {"text":"    ","color":"white"}
-#endregion
+# tellraw 前缀
+data modify storage global_shop:storage TELLRAW_PREFIX set value '"\\n\\u00a76•\\u00a7e•\\u00a73•\\n"'
 
 # region char 记录某些常量字符
    data modify storage global_shop:storage char.SCOPE_RESOLUTION set value ":"

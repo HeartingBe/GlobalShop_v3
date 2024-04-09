@@ -10,7 +10,7 @@ scoreboard players operation @s glbs_st_item_frame_pos_d += temp glbs_common
 execute if score @s glbs_st_item_frame_pos_d matches ..-51 run scoreboard players set @s glbs_st_item_frame_pos_d -50
 execute if score @s glbs_st_item_frame_pos_d matches 51.. run scoreboard players set @s glbs_st_item_frame_pos_d 50
 
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_settings.info_frame.pos_d.success\"","color":"green"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_settings.info_frame.pos_d.success\"","color":"green"}]
 
 function global_shop:sound/success
 

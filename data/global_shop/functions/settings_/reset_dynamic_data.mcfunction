@@ -6,5 +6,5 @@ execute store result score temp glbs_common run data modify storage global_shop:
 execute if score temp glbs_common matches 1 run return run function global_shop:settings_/reset_dynamic_data/fail
 
 # 清除动态数据
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"admin_settings.reset_dynamic_data.success\"","color":"yellow"}]
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"admin_settings.reset_dynamic_data.success\"","color":"yellow"}]
 function global_shop:settings_/uninstall/confirm/clear_shop_storage
