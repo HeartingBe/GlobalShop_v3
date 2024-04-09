@@ -1,11 +1,16 @@
 import openpyxl
+import os
 
 def gen(lang, translator):
     # 打开 excel 文档
     workbook = openpyxl.load_workbook('translate\\'+lang+'.xlsx')
 
-    # 创建一个新的函数文件
-    output_file = open(lang+'.mcfunction', 'w')
+    # 创建对应语言文件夹，在里面一个新的函数文件
+    if os.path.exists(lang):
+        print(f'folder {lang} already exists')
+        return
+    os.makedirs(lang)
+    output_file = open(lang+'\\init.mcfunction', 'w', encoding='utf-8')
 
     # 写入开头信息
     output_file.write('# language: ' + lang + '\n')
@@ -72,7 +77,9 @@ def gen(lang, translator):
 
     output_file.write('\n# ================ translation ================')
 
-    print("gen mcf done")
+    output_file.write('\nreturn 1')
+
+    print(f'gen mcf done, please check the folder "{lang}"')
 
     # 关闭文件
     workbook.close()

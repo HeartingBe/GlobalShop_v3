@@ -232,11 +232,13 @@
          #define score_holder SETTING_BAN_PLAYER 商店黑名单
          #define score_holder SETTING_BAN_PLAYER_STATE 查看某位玩家是否在黑名单内
          #define score_holder SETTING_RESET_DYNAMIC_DATA 重置所有玩家数据（玩家商店、出售商店、回收商店、购买记录、出售记录、退回物品）
+         #define score_holder SETTING_EASTER_EGG 开关彩蛋
          scoreboard players set SETTING_CUSTOM_MONEY_SCOREBOARD glbs_common 1
          scoreboard players set SETTING_CUSTOM_LANGUAGE glbs_common 2
          scoreboard players set SETTING_BAN_PLAYER glbs_common 3
          scoreboard players set SETTING_BAN_PLAYER_STATE glbs_common 4
          scoreboard players set SETTING_RESET_DYNAMIC_DATA glbs_common 5
+         scoreboard players set SETTING_EASTER_EGG glbs_common 6
 
 # Player 相关记分板
    # glbs_uid 玩家 uid

@@ -14,5 +14,7 @@
     # 禁止、允许某玩家使用商店
     execute if score @s glbs_last_view_id = SETTING_BAN_PLAYER glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/ban_deban_player
     # 重置所有玩家数据（玩家商店、出售商店、回收商店、购买记录、出售记录、退回物品）
-    execute if score @s glbs_last_view_id = SETTING_RESET_DYNAMIC_DATA glbs_common run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/reset_dynamic_data
+    execute if score @s glbs_last_view_id = SETTING_RESET_DYNAMIC_DATA glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/reset_dynamic_data
+    # 开关彩蛋
+    execute if score @s glbs_last_view_id = SETTING_EASTER_EGG glbs_common run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/admin_setting_handler/handle/player_left_click/setting/easter_egg
     

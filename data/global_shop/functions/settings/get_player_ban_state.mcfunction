@@ -15,6 +15,6 @@ data remove storage global_shop:common temp
 data modify storage global_shop:common temp.name set from storage global_shop:common admin_input
 function global_shop:logic/player/get_ban_state with storage global_shop:common temp
 
-execute if score banState glbs_common matches 0 run return run function global_shop:settings_/get_player_ban_state/banned
+execute if score banState glbs_common matches 1 run return run function global_shop:settings_/get_player_ban_state/banned
 
 function global_shop:settings_/get_player_ban_state/unbanned

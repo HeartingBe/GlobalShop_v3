@@ -1,0 +1,22 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "parent": "global_shop:root",
+    "display": {
+        "icon": {
+            "item": "minecraft:chest_minecart"
+        },
+        "title": {"text":"A strange chest minecart?","color":"aqua"},
+        "description": {"text":"open global shop and trigger the easter egg.\nThis may take a bit of luck!","color":"green"},
+        "announce_to_chat": false,
+        "show_toast": true,
+        "frame": "challenge",
+        "hidden": false
+    },
+    "rewards": {
+        "function": "global_shop:logic/player/notice_trigger_easter_egg"
+    }
+}

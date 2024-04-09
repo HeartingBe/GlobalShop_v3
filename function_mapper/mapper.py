@@ -25,12 +25,18 @@ def gen(namespace_to_map_functions):
     if os.path.exists(src_file):
         target_file = os.path.join(target_dir, 'pack.mcmeta')
         shutil.copy2(src_file, target_file)
+        print("copy pack.mcmeta done")
+    else:
+        print("no find pack.mcmeta")
 
     # 拷贝 pack.png
     src_file = os.path.join(project_dir, 'pack.png')
     if os.path.exists(src_file):
         target_file = os.path.join(target_dir, 'pack.png')
         shutil.copy2(src_file, target_file)
+        print("copy pack.png done")
+    else:
+        print("no find pack.png")
 
     # 递归拷贝所有命名空间文件夹
     src_dir = os.path.join(project_dir, 'data')
@@ -46,9 +52,11 @@ def gen(namespace_to_map_functions):
         else:
             # 不是需要映射函数的命名空间，直接复制所有的
             copy_all_2(src_item_dir, des_item_dir)
+    print(f"copy all namespace folders and map functions in {namespace_to_map_functions} done")
 
     # 遍历所有命名空间下的 mcfunction，去掉前导空格，去掉注释
     rm_leading_blanks_and_annotation(des_dir)
+    print("remove leading blanks and annotation in all namespace folders done")
     
     # 下面遍历所有命名空间文件夹，根据 function_dict 的映射进行正则匹配替换
     # 由于 function_dict 是 绝对路径 -> 绝对路径，需要先处理成 mcf 函数调用形式
@@ -76,6 +84,9 @@ def gen(namespace_to_map_functions):
         tags_functions_dir = os.path.join(os.path.join(item_dir, 'tags'), 'functions')
         if os.path.exists(tags_functions_dir):
             regex_replace_json(tags_functions_dir, namespace_to_map_functions, new_dict)
+    print("regex replace function call done")
+
+    print("done")
 
 def copy_all_2(src_dir, des_dir):
     if not os.path.exists(des_dir):

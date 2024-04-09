@@ -1,0 +1,19 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:impossible"
+        }
+    },
+    "display": {
+        "icon": {
+            "item": "minecraft:chest_minecart"
+        },
+        "title": {"text":"GlobalShop v3","color":"aqua"},
+        "description": {"text":"Buy the whole world!","color":"yellow"},
+        "announce_to_chat": false,
+        "show_toast": false,
+        "frame": "task",
+        "hidden": false,
+        "background": "minecraft:textures/block/light_blue_shulker_box.png"
+    }
+}
