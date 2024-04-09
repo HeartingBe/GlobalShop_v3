@@ -8,7 +8,7 @@
         "icon": {
             "item": "minecraft:chest_minecart"
         },
-        "title": {"text":"GlobalShop v3","color":"aqua"},
+        "title": {"text":"GlobalShop v3.0.1","color":"aqua"},
         "description": {"text":"Buy the whole world!","color":"yellow"},
         "announce_to_chat": false,
         "show_toast": false,
