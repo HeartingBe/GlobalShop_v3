@@ -1,6 +1,29 @@
 {
    "pack": {
       "pack_format": 26,
-      "description": "Global Shop by Mini_Ye"
+      "description": [
+         {
+            "text": "GlobalShop_v3",
+            "color": "yellow"
+         },
+         {
+            "text": "",
+            "extra": [
+               "\n"
+            ]
+         },
+         {
+            "text": "Alumopper_",
+            "color": "#ff78e8"
+         },
+         {
+            "text": " x ",
+            "color": "white"
+         },
+         {
+            "text": "Mini_Ye",
+            "color": "#3ed2ff"
+         }
+      ]
    }
 }
