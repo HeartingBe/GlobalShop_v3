@@ -79,11 +79,11 @@ def gen(namespace_to_map_functions):
 
         advancements_dir = os.path.join(item_dir, 'advancements')
         if os.path.exists(advancements_dir):
-            regex_replace_json(advancements_dir, namespace_to_map_functions, new_dict)
+            regex_replace_advancements(advancements_dir, namespace_to_map_functions, new_dict)
 
         tags_functions_dir = os.path.join(os.path.join(item_dir, 'tags'), 'functions')
         if os.path.exists(tags_functions_dir):
-            regex_replace_json(tags_functions_dir, namespace_to_map_functions, new_dict)
+            regex_replace_tags_functions(tags_functions_dir, namespace_to_map_functions, new_dict)
     print("regex replace function call done")
 
     print("done")
@@ -108,6 +108,11 @@ def map_functions(src_dir, des_dir):
         os.makedirs(des_dir)
 
     # 第一步，将除了 funcions 以外的文件夹复制过来
+    for item in os.listdir(src_dir):
+        src_item_dir = os.path.join(src_dir, item)
+        des_item_dir = os.path.join(des_dir, item)
+        if item != 'functions':
+            copy_all_2(src_item_dir, des_item_dir)
 
     # 第二步，遍历源 funcions 文件夹，将其加入字典并编号，得到 绝对路径 -> 编号 的映射
     # 但跳过 test 文件夹（不复制），不映射 settings 文件夹（映射后仍放在 settings 文件夹中）
@@ -153,7 +158,7 @@ def rm_leading_blanks_and_annotation(target_dir):
 
 def regex_replace_function(target_dir, func_dict):
     def function_finder(match):
-        func = match.group(2)
+        func = match.group(1)
         map_func = func
         if func in func_dict:
             map_func = func_dict[func]
@@ -168,13 +173,32 @@ def regex_replace_function(target_dir, func_dict):
                 content = file.read()
 
                 # 需要考虑宏函数，如果 function 命令带宏，也进行识别，只不过在 dict 中找不到，替换为自身即可
-                processed = re.sub(r'(function )([a-z0-9_/:()$]+)', function_finder, content)
+                processed = re.sub(r'function ([a-z0-9_/:()$]+)', function_finder, content)
                 
                 file.seek(0)
                 file.writelines(processed)
                 file.truncate()
 
-def regex_replace_json(target_dir, namespace_to_map_functions, func_dict):
+def regex_replace_advancements(target_dir, namespace_to_map_functions, func_dict):
+    def function_finder(match):
+        func = match.group(2)
+        return match.group(1) + func_dict[func]
+    
+    for item in os.listdir(target_dir):
+        item_dir = os.path.join(target_dir, item)
+        if os.path.isdir(item_dir):
+            regex_replace_json(item_dir, namespace_to_map_functions, func_dict)
+        else:
+            with open(item_dir, 'r+', encoding='utf-8') as file:
+                content = file.read()
+
+                processed = re.sub(r'("function"[ ]*:[ ]*")(' + namespace_to_map_functions + r':[a-z0-9_/]+)', function_finder, content)
+                
+                file.seek(0)
+                file.writelines(processed)
+                file.truncate()
+
+def regex_replace_tags_functions(target_dir, namespace_to_map_functions, func_dict):
     def function_finder(match):
         func = match.group(1)
         return func_dict[func]

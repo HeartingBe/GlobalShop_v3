@@ -3,7 +3,7 @@ import os
 
 def gen(lang, translator):
     # 打开 excel 文档
-    workbook = openpyxl.load_workbook('translate\\'+lang+'.xlsx')
+    workbook = openpyxl.load_workbook('languages\\'+lang+'.xlsx')
 
     # 创建对应语言文件夹，在里面一个新的函数文件
     if os.path.exists(lang):
