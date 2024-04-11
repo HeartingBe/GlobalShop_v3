@@ -23,6 +23,16 @@
          {
             "text": "Mini_Ye",
             "color": "#3ed2ff"
+         },
+         {
+            "text": "",
+            "extra": [
+               "\n"
+            ]
+         },
+         {
+            "text": "Copyright © Mini_Ye All rights reserved.",
+            "color": "aqua"
          }
       ]
    }

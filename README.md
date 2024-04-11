@@ -1,4 +1,4 @@
-Copyright ©️ Mini_Ye All rights reserved.
+Copyright © Mini_Ye All rights reserved.
 
 ---
 

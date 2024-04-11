@@ -9,7 +9,7 @@ tellraw @s ["              ",{"text":">>>","color":"gray"},"     ",{"text":"Alum
 tellraw @s ["              ",{"text":">>>","color":"gray"},"     ",{"text":"Mini_Ye","clickEvent":{"action":"open_url","value":"https://space.bilibili.com/133430292"},"hoverEvent":{"action":"show_text","contents":[{"text":"Click to access Mini_Ye's bilibili address","color":"#3ed2ff"}]},"color":"#3ed2ff"}]
 tellraw @s [{"text":""}]
 
-tellraw @s ["   ",{"text":"Works on Minecraft JE 1.20.3","color":"#ff6f44"}]
+tellraw @s ["   ",{"text":"Works on Minecraft JE 1.20.4","color":"#ff6f44"}]
 tellraw @s [{"text":"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■","color":"#e7e7e7"}]
 
 function global_shop:sound/success
