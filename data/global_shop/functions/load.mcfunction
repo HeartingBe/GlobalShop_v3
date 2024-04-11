@@ -11,6 +11,9 @@ scoreboard objectives add glbs_common dummy
    # 已初始化标记
    scoreboard players add g_isInit glbs_common 0
 
+# 不完整执行，阻止 load
+execute if score g_tickTag glbs_common matches 1 run return run execute as @a if score @s glbs_permission = Permission::ADMIN glbs_common at @s run function global_shop:load/no_fully_execute
+
 # 首次加载数据包，直接执行初始化函数
 execute if score g_isInit glbs_common matches 0 run return run function global_shop:init_classes
 

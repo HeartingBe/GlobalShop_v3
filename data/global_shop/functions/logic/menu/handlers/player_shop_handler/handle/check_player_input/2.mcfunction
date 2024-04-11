@@ -12,11 +12,15 @@ execute if score @s glbs_inputter_2 matches ..-1 run return run function global_
    # 不存在
    execute if score temp glbs_common matches -1 run return run function global_shop:logic/menu/handlers/player_shop_handler/handle/check_player_input/2/no_find
    # 处理 beginIndex
+      # 由于是倒着显示的，即视觉效果上 beginIndex 是相对于表尾的
+      # 但这里找出的下标 temp 却是相对于表头的，所以应该换算到表尾
+      execute store result score temp1 glbs_common run data get storage global_shop:storage g_playerShopList
+      scoreboard players remove temp1 glbs_common 1
+      scoreboard players operation temp1 glbs_common -= temp glbs_common
+      scoreboard players operation beginIndex glbs_common = temp1 glbs_common
       # 移除 13 是让定位的物品能显示在菜单的正中间（而不是显示在最左上角第一个物品，这会导致玩家还要移动到左上角才能看）
-      scoreboard players operation beginIndex glbs_common = temp glbs_common
       scoreboard players remove beginIndex glbs_common 13
    # 跳转
-   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_shop.jump_id.success\"","color":"green"}]
    execute on vehicle run scoreboard players operation @s glbs_begin_index = beginIndex glbs_common
    execute on vehicle run function global_shop:logic/menu/handlers/player_shop_handler/refresh
    # 音效 跳转

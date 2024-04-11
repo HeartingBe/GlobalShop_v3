@@ -12,7 +12,7 @@
    # 获取物品的价格
    execute store result score temp2 glbs_common run data get storage global_shop:common g_itemData.tag.global_shop.price
    # 钱不够
-   execute if score temp1 glbs_common < temp2 glbs_common run return run function global_shop:logic/menu/handlers/sell_shop_handler/handle/player_left_click_confirm/money_not_enough
+   execute if score temp1 glbs_common < temp2 glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/sell_shop_handler/handle/player_left_click_confirm/money_not_enough
 
 # 钱足够（temp2 是上面获取的物品价格）
    scoreboard players operation reduce glbs_common = temp2 glbs_common

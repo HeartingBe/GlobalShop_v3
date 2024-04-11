@@ -33,10 +33,10 @@ def gen(lang, translator):
         if value is None or not value.startswith("g_lang"):
             continue;
         # 到这里找到一个翻译键，检查其右侧格子有没有通用键
-        # 同行第 4 列即为值，输出命令
-        translation = sheet_common.cell(row=i, column=4).value
+        # 同行第 5 列即为值，输出命令
+        translation = sheet_common.cell(row=i, column=5).value
         if translation is None:
-            output_file.write(f"common translation error in row {i} col 4\n")
+            output_file.write(f"common translation error in row {i} col 5\n")
             continue
         output_file.write(f'data modify storage global_shop:storage g_lang."{value[7:]}" set value "{translation}"\n')
 
@@ -65,10 +65,10 @@ def gen(lang, translator):
         right_value = right_cell.value
         if right_value is None:
             # 右侧格子没有通用键，说明这是个独立翻译键
-            # 同行第 6 列即为值，输出命令
-            translation = sheet.cell(row=i, column=6).value
+            # 同行第 8 列即为值，输出命令
+            translation = sheet.cell(row=i, column=8).value
             if translation is None:
-                output_file.write(f"translation error in row {i} col 6\n")
+                output_file.write(f"translation error in row {i} col 8\n")
                 continue;
             output_file.write(f'data modify storage global_shop:storage g_lang."{value[7:]}" set value "{translation}"\n')
         else:

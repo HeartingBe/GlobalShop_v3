@@ -17,3 +17,5 @@ execute if score hasSpace glbs_common matches 1 run return run function global_s
 data remove storage global_shop:common temp
 data modify storage global_shop:common temp.input set from storage global_shop:common admin_input
 function global_shop:settings_/try_modify_language/macro_set_lang with storage global_shop:common temp
+
+data remove storage global_shop:common admin_input

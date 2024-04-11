@@ -20,6 +20,8 @@ function global_shop:text/init
 scoreboard players set g_isInit glbs_common 1
 # 标记未运行
 scoreboard players set g_enable glbs_common 0
+# 重置完整性标记
+scoreboard players set g_tickTag glbs_common 0
 
 # 通知和音效
 schedule function global_shop:init_classes/tip 1s

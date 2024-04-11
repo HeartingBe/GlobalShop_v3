@@ -8,7 +8,7 @@
 
 # 判断玩家的钱是否太多
 execute on passengers if entity @s[type=minecraft:player] store result score playerMoney glbs_common run function global_shop:logic/player/get_money
-execute if score playerMoney glbs_common > INT32_MAX_HALF glbs_common run return run function global_shop:logic/menu/handlers/recycle_shop_handler/handle/player_left_click_confirm/too_much_money
+execute if score playerMoney glbs_common > INT32_MAX_HALF glbs_common run return run execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/handlers/recycle_shop_handler/handle/player_left_click_confirm/too_much_money
 
 # 判断物品的数量是否足够
    # 获取物品情况

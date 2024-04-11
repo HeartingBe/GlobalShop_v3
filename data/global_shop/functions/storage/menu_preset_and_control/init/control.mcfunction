@@ -123,7 +123,7 @@ execute store result storage global_shop:menu_preset_and_control CONTROL_NULL_IT
     execute store result storage global_shop:menu_preset_and_control CONTROL_SETTING_PAGE.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 
     #卸载
-    data modify storage global_shop:menu_preset_and_control CONTROL_UNINSTALL set value {id:"minecraft:bedrock",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"control.edit_main.uninstall\"","color":"yellow"}]}}}
+    data modify storage global_shop:menu_preset_and_control CONTROL_UNINSTALL set value {id:"minecraft:bedrock",Count:1b,tag:{global_shop:{text:[{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"control.edit_main.uninstall\"","color":"dark_red","bold":1}]}}}
     execute store result storage global_shop:menu_preset_and_control CONTROL_UNINSTALL.tag.global_shop.id int 1 run scoreboard players get CONTROL_UNINSTALL glbs_common
     execute store result storage global_shop:menu_preset_and_control CONTROL_UNINSTALL.tag.global_shop.type int 1 run scoreboard players get ItemDataType::CONTROL glbs_common
 

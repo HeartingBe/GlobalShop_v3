@@ -9,3 +9,5 @@ execute store result score hasSpace glbs_common run function global_shop:logic/i
 execute if score hasSpace glbs_common matches 1 run return run function global_shop:logic/inputter/tip_cannot_input_space
 
 function global_shop:logic/player/ban_deban_player
+
+data remove storage global_shop:common admin_input

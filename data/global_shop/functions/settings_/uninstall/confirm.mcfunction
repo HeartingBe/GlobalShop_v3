@@ -6,5 +6,7 @@ execute store result score temp glbs_common run data modify storage global_shop:
 execute if score temp glbs_common matches 1 run return run function global_shop:settings_/uninstall/confirm/fail
 
 # 抹除数据
-tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"admin_settings.uninstall.success\"","color":"yellow"}]
 function global_shop:settings_/uninstall/confirm/clear
+tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"admin_settings.uninstall.success\"","color":"yellow"}]
+function global_shop:sound/success
+data remove storage global_shop:common admin_input
