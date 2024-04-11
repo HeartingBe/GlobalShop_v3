@@ -1,5 +1,6 @@
 # language: zh_cn
 # translator: Mini_Ye
+# Contact information/website: https://space.bilibili.com/133430292
 
 # ================ common translation ================
 

@@ -37,6 +37,15 @@ def gen(namespace_to_map_functions):
         print("copy pack.png done")
     else:
         print("no find pack.png")
+    
+    # 拷贝 README.md
+    src_file = os.path.join(project_dir, 'README.md')
+    if os.path.exists(src_file):
+        target_file = os.path.join(target_dir, 'README.md')
+        shutil.copy2(src_file, target_file)
+        print("copy README.md done")
+    else:
+        print("no find README.md")
 
     # 递归拷贝所有命名空间文件夹
     src_dir = os.path.join(project_dir, 'data')

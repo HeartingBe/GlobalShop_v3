@@ -1,7 +1,7 @@
 import openpyxl
 import os
 
-def gen(lang, translator):
+def gen(lang, translator, translator_info):
     # 打开 excel 文档
     workbook = openpyxl.load_workbook('languages\\'+lang+'.xlsx')
 
@@ -14,8 +14,8 @@ def gen(lang, translator):
 
     # 写入开头信息
     output_file.write('# language: ' + lang + '\n')
-    output_file.write('# translator: ' + translator + '\n\n')
-
+    output_file.write('# translator: ' + translator + '\n')
+    output_file.write('# Contact information/website: ' + translator_info + '\n\n')
     output_file.write('# ================ common translation ================' + '\n\n')
     
     # 以下处理通用翻译键
@@ -86,4 +86,4 @@ def gen(lang, translator):
     output_file.close()
 
 # 调用函数并传入 Excel 文件名和工作表名
-gen('zh_cn','Mini_Ye')
+gen('zh_cn','Mini_Ye',r'https://space.bilibili.com/133430292')
