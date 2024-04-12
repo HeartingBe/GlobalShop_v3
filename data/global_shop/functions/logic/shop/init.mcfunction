@@ -23,14 +23,20 @@
 
 # glbs_common 共用记分板，存储所有公共变量、常量等（已在 load.mcfunction 中创建）
    # 常量
+      #define score_holder SECONDS_PER_DAY
+      #define score_holder SECONDS_PER_HOUR
+      #define score_holder SECONDS_PER_MINUTE
       #define score_holder ITEM_NUM_PER_COLUMN
       #define score_holder SELL_ITEM_COOLING_TIME
       #define score_holder SELL_ITEM_EFFECTIVE_TIME
+      scoreboard players set SECONDS_PER_DAY glbs_common 86400
+      scoreboard players set SECONDS_PER_HOUR glbs_common 3600
+      scoreboard players set SECONDS_PER_MINUTE glbs_common 60
       scoreboard players set ITEM_NUM_PER_COLUMN glbs_common 3
       scoreboard players set ITEM_NUM_PER_PAGE glbs_common 27
       scoreboard players set SELL_ITEM_COOLING_TIME glbs_common 10
-      # 3天 = 259200s
-      scoreboard players set SELL_ITEM_EFFECTIVE_TIME glbs_common 259200
+      # 3天 = 259200s（3 * SECONDS_PER_DAY）
+      scoreboard players set SELL_ITEM_EFFECTIVE_TIME glbs_common 3
          # 约束相关
             #define score_holder MAX_REGIST_PLAYER_NUM 最大注册玩家数量
             #define score_holder MAX_CONNECT_NUM

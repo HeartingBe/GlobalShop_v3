@@ -28,6 +28,9 @@ data modify storage global_shop:common g_text append value {"text":"  "}
 # 解析商店物品信息
 function global_shop:logic/item_data/player_shop_item_data/parse_global_shop_info
 
+# 解析剩余时间
+function global_shop:logic/item_data/player_shop_item_data/parse_expire_time
+
 # 解析物品命名空间 id
 function global_shop:logic/item_data/parse_item_id
 
