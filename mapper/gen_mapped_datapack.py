@@ -63,8 +63,20 @@ def gen(namespace_to_map_functions):
             copy_all_2(src_item_dir, des_item_dir)
     print(f"copy all namespace folders and map functions in {namespace_to_map_functions} done")
 
-    # 遍历所有命名空间下的 mcfunction，去掉前导空格，去掉注释
-    rm_leading_blanks_and_annotation(des_dir)
+    # 遍历所有命名空间下的 mcfunction（仅遍历 <namespace>:functions），去掉前导空格，去掉注释
+    for item in os.listdir(des_dir):
+        des_item_dir = os.path.join(os.path.join(des_dir, item), 'functions')
+        if not os.path.exists(des_item_dir):
+            continue
+        if item == namespace_to_map_functions:
+            # 忽略需要映射函数的命名空间下的 settings 和 text 文件夹
+            for item2 in os.listdir(des_item_dir):
+                if item2 == 'settings' or item2 == 'text':
+                    continue
+                des_item2_dir = os.path.join(des_item_dir, item2)
+                rm_leading_blanks_and_annotation(des_item2_dir)
+        else:
+            rm_leading_blanks_and_annotation(des_item_dir)
     print("remove leading blanks and annotation in all namespace folders done")
     
     # 下面遍历所有命名空间文件夹，根据 function_dict 的映射进行正则匹配替换
