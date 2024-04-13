@@ -394,6 +394,10 @@ data modify storage global_shop:storage g_lang."item_frame.op" set value "管理
 data modify storage global_shop:storage g_lang."item_frame.return_reason" set value "退回原因"
 data modify storage global_shop:storage g_lang."item_frame.return_reason.expire" set value "超时下架"
 data modify storage global_shop:storage g_lang."item_frame.cash_value" set value "货币面值"
+data modify storage global_shop:storage g_lang."item_frame.expire_time.1" set value "限时"
+data modify storage global_shop:storage g_lang."item_frame.expire_time.2" set value "天"
+data modify storage global_shop:storage g_lang."item_frame.expire_time.3" set value "时"
+data modify storage global_shop:storage g_lang."item_frame.expire_time.4" set value "分"
 
 # ================ translation ================
 return 1
