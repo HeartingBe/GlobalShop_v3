@@ -1,11 +1,14 @@
 版本记录
 
 ---
+
+| GlobalShop version | Minecraft Version | branch |
+| ------------------ | ----------------- | ------ |
+| v3.0               | 1.20.4            | master |
+
+---
 ## v3.0
-适用版本:
-- JE 1.20.4
 
-分支: master
-
-### v3.0.1
-初始版本
+| Subversion | Modify / Repair | Remarks  |
+| ---------- | --------------- | -------- |
+| v3.0.1     | -               | 原始版本 |
