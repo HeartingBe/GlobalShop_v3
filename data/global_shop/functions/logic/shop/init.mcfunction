@@ -20,6 +20,8 @@
 
 # 定义实体UUID
 #define entity temp_world_text_display 00000d3a-0000-0d3a-0000-17cc0000edfa
+#define entity temp_world_item 00000d3a-0000-0d3a-0000-17cc0000edf9
+#define entity temp_world_marker 00000d3a-0000-0d3a-0000-17cc000017cc
 
 # glbs_common 共用记分板，存储所有公共变量、常量等（已在 load.mcfunction 中创建）
    # 常量
@@ -36,7 +38,7 @@
       scoreboard players set ITEM_NUM_PER_PAGE glbs_common 27
       scoreboard players set SELL_ITEM_COOLING_TIME glbs_common 10
       # 3天 = 259200s（3 * SECONDS_PER_DAY）
-      scoreboard players set SELL_ITEM_EFFECTIVE_TIME glbs_common 3
+      scoreboard players set SELL_ITEM_EFFECTIVE_TIME glbs_common 259200
          # 约束相关
             #define score_holder MAX_REGIST_PLAYER_NUM 最大注册玩家数量
             #define score_holder MAX_CONNECT_NUM
