@@ -38,7 +38,14 @@ https://alumopper.top/
 <font color=red>请注意</font>，升级你的存档时，本数据包的旧数据不可用。转换数据格式的成本过高，请原谅作者无力维护升级存档功能。例如，你在 JE 1.20.4 版本的存档中使用了本数据包的 v3.0 版本，当你将存档升级为 JE 1.20.5 时，虽然本数据包的 v3.1 版本适配 JE 1.20.5 版本的存档，但是你不能直接更换数据包压缩文件来试图升级，因为数据格式不相同。<font color=lightgreen>正确的做法是</font>，在存档升级之前，进入世界，在商店的编辑模式主菜单中按照步骤卸载商店，清空所有的数据（必要时应该提醒玩家取回物品），然后删除数据包的 v3.0 版本，之后升级你的存档。在新版本的存档中，再放入数据包的 v3.1 版本。
 
 ### 2. 如何生成可运行的数据包？
-运行 mapper/gen_mapped/datapack.py，在 mapper 文件夹中会新增 GlobalShop_v3 文件夹。进入 mapper/GlobalShop_v3 文件夹，将里面所有内容压缩为压缩包 GlobalShop_v3.zip，放入存档 datapacks 文件夹后，进入游戏执行 /reload 命令即可。
+<font color=red>不要将本项目的源代码直接放入游戏存档运行</font>
+
+如果你没有修改源代码，只是为了获取作者提供的版本，在 release 发布的正式版本中你将看到 `GlobalShop_v?.zip` 的文件，下载它，然后放入游戏存档的 datapacks 文件夹，执行 `/reload` 命令即可。
+
+如果你修改了源代码，请按照以下步骤生成数据包：
+1. 运行 mapper/gen_mapped/datapack.py，在 mapper 文件夹中会新增 GlobalShop_v3.?.? 文件夹
+2. 进入 mapper/GlobalShop_v3 文件夹，将里面所有内容压缩为压缩包 GlobalShop_v3.?.?.zip
+3. 放入游戏存档的 datapacks 文件夹后，进入游戏执行 `/reload` 命令。
 
 请注意，在压缩时不要包含 mapper/GlobalShop_v3 文件夹，否则游戏无法识别到数据包。换句话说，你应该选择所有 mapper/GlobalShop_v3 文件夹中的子文件和子文件夹进行压缩。
 

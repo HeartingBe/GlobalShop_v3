@@ -3,6 +3,10 @@
 # @executor Menu
 
 # 以下情况需要关闭该连接
+   # 检查坐标变化
+   execute store result score temp glbs_common run function global_shop:logic/menu/check_position_change
+   execute if score temp glbs_common matches 0 run return run function global_shop:logic/menu/perform/position_change
+
    # 检查商店整体完整性
    execute store result score temp glbs_common run function global_shop:logic/menu/check_completeness
    execute if score temp glbs_common matches 0 run return run function global_shop:logic/menu/perform/incomplete

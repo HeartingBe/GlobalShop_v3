@@ -22,6 +22,9 @@ scoreboard players reset @s glbs_last_view_order
 scoreboard players reset @s glbs_last_view_id
 scoreboard players reset @s glbs_last_target
 scoreboard players reset @s glbs_begin_index
+scoreboard players reset @s glbs_x
+scoreboard players reset @s glbs_y
+scoreboard players reset @s glbs_z
 #TODO
 
 # 缩小消失

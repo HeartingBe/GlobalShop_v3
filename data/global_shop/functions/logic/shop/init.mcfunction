@@ -297,6 +297,10 @@
       # 非旋转模式时玩家左键的物品的 id
       # 旋转模式时玩家左键的物品的 order
    scoreboard objectives add glbs_last_target dummy
+   # glbs_xyz 记录 Menu 生成时的三个坐标
+   scoreboard objectives add glbs_x dummy
+   scoreboard objectives add glbs_y dummy
+   scoreboard objectives add glbs_z dummy
 
 # glbs_err_code 错误码记分板（基本弃用）
 scoreboard objectives add glbs_err_code dummy
