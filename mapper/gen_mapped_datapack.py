@@ -108,6 +108,7 @@ def gen(namespace_to_map_functions):
     print("regex replace function call done")
 
     print("done")
+    input(f"Press Enter to close...")
 
 def copy_all_2(src_dir, des_dir):
     if not os.path.exists(des_dir):
@@ -128,21 +129,21 @@ def map_functions(src_dir, des_dir):
     if not os.path.exists(des_dir):
         os.makedirs(des_dir)
 
-    # 第一步，将除了 funcions 以外的文件夹复制过来
+    # 第一步，将除了 functions 以外的文件夹复制过来
     for item in os.listdir(src_dir):
         src_item_dir = os.path.join(src_dir, item)
         des_item_dir = os.path.join(des_dir, item)
         if item != 'functions':
             copy_all_2(src_item_dir, des_item_dir)
 
-    # 第二步，遍历源 funcions 文件夹，将其加入字典并编号，得到 绝对路径 -> 编号 的映射
+    # 第二步，遍历源 functions 文件夹，将其加入字典并编号，得到 绝对路径 -> 编号 的映射
     # 但跳过 test 文件夹（不复制），不映射 settings 文件夹（映射后仍放在 settings 文件夹中）
     functions_src_dir = os.path.join(src_dir, 'functions')
     functions_des_dir = os.path.join(des_dir, 'functions')
     function_dict = {}
     number_function(0, function_dict, functions_src_dir, functions_des_dir, len(functions_src_dir))
     
-    # 第三步，将 funcions 子文件夹所有文件映射到目标命名空间的 funcions/mapper/?.mcfunction 中
+    # 第三步，将 functions 子文件夹所有文件映射到目标命名空间的 functions/mapper/?.mcfunction 中
     for key, value in function_dict.items():
         target_dir, target_name = os.path.split(value)
         if not os.path.exists(target_dir):
