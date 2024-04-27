@@ -7,7 +7,7 @@
 | v3.0               | 1.20.4            | master |
 
 ---
-## v3.0
+## v3.0.x for JE 1.20.4
 
 | Subversion | Modify / Repair | Remarks  |
 | ---------- | --------------- | -------- |
