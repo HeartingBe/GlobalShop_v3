@@ -7,9 +7,8 @@
 scoreboard players add @s glbs_permission 0
 
 # 检查玩家是否注册
-scoreboard players operation ret glbs_common = SUCCESS glbs_err_code
 execute unless score @s glbs_uid matches -2147483648..2147483647 store result score ret glbs_common run function global_shop:storage/store_manager/register_player
-execute unless score ret glbs_common = SUCCESS glbs_err_code run return run function global_shop:logic/menu/menu/reach_max_reg_limit
+execute if score ret glbs_common matches 1 run return 0
 
 # 检查玩家是否被禁用商店（管理员被封禁也可以打开）
 execute if score @s glbs_ban matches 1 if score @s glbs_permission matches 0 run return run function global_shop:logic/menu/menu/banned

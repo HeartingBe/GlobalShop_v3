@@ -302,18 +302,18 @@
    scoreboard objectives add glbs_y dummy
    scoreboard objectives add glbs_z dummy
 
-# glbs_err_code 错误码记分板（基本弃用）
-scoreboard objectives add glbs_err_code dummy
-#define score_holder SUCCESS 成功
-#define score_holder INVALID_ENV 环境错误
-#define score_holder NO_PERMISSION 没有权限
-#define score_holder REGIST_PLAYER_NUM_LIMIT 超过注册玩家数量限制
-#define score_holder OTHER_ERROR 其他错误
-scoreboard players set SUCCESS glbs_err_code 0
-scoreboard players set INVALID_ENV glbs_err_code -1
-scoreboard players set NO_PERMISSION glbs_err_code -2
-scoreboard players set REGIST_PLAYER_NUM_LIMIT glbs_err_code -3
-scoreboard players set OTHER_ERROR glbs_err_code -10000
+# glbs_err_code 错误码记分板（已弃用）
+#scoreboard objectives add glbs_err_code dummy
+## define score_holder SUCCESS 成功
+## define score_holder INVALID_ENV 环境错误
+## define score_holder NO_PERMISSION 没有权限
+## define score_holder REGIST_PLAYER_NUM_LIMIT 超过注册玩家数量限制
+## define score_holder OTHER_ERROR 其他错误
+#scoreboard players set SUCCESS glbs_err_code 0
+#scoreboard players set INVALID_ENV glbs_err_code -1
+#scoreboard players set NO_PERMISSION glbs_err_code -2
+#scoreboard players set REGIST_PLAYER_NUM_LIMIT glbs_err_code -3
+#scoreboard players set OTHER_ERROR glbs_err_code -10000
 
 # glbs_order 记录物品展示实体的 order
 scoreboard objectives add glbs_order dummy

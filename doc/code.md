@@ -5,7 +5,7 @@
 ```c++
 // 数据类型定义（类图中不体现的在此处说明）
 
-// 错误码定义
+// 错误码定义（已弃用）
 using ErrCode = int;
 constexpr ErrCode SUCCESS = 0; // 成功
 constexpr ErrCode INVALID_ENV = -1; // 错误的执行环境（执行实体、执行位置、

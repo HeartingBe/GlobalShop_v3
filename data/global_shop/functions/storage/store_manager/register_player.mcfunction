@@ -1,10 +1,10 @@
 #> global_shop:storage/store_manager/register_player
 # 执行玩家注册相关操作
 # @executor Player
-# @throw REGIST_PLAYER_NUM_LIMIT=-3 注册玩家数量达到上限
+# @return 0 - 成功；1 - 失败
 
 # 注册玩家数达到上限
-execute if score g_nextUid glbs_common > MAX_REGIST_PLAYER_NUM glbs_common run return run scoreboard players get REGIST_PLAYER_NUM_LIMIT glbs_err_code
+execute if score g_nextUid glbs_common > MAX_REGIST_PLAYER_NUM glbs_common run return run function global_shop:storage/store_manager/register_player/reach_max_reg_limit
 
 # 分配 uid
 scoreboard players operation @s glbs_uid = g_nextUid glbs_common
@@ -22,9 +22,20 @@ scoreboard players add g_nextUid glbs_common 1
          # 出参在 g_playerNameJson:{name:""}，是单层引号 json
          data remove storage global_shop:common temp
          data modify storage global_shop:common temp.input set from storage global_shop:common g_playerNameJson
+         data remove storage global_shop:common g_playerNameJson
          function global_shop:logic/player/parse_player_name/get_name with storage global_shop:common temp
    # 用临时标签解析，最后去掉
    tag @s remove glbs_temp_parse_player_name
+
+# 判断解析是否失败
+data modify storage global_shop:common checkStrList set value ["0"]
+# temp 为 0 说明尾插失败，即 g_playerNameJson.name 不存在或不是字符串
+data modify storage global_shop:common g_playerNameJson.name set value {}
+execute store result score temp glbs_common run data modify storage global_shop:common checkStrList append from storage global_shop:common g_playerNameJson.name
+execute if score temp glbs_common matches 0 run return run function global_shop:storage/store_manager/register_player/parse_player_name_fail
+# 判断是否是空串
+execute store result score temp glbs_common run data get storage global_shop:common g_playerNameJson.name
+execute if score temp glbs_common matches 0 run return run function global_shop:storage/store_manager/register_player/parse_player_name_fail
 
 # 存储玩家名
    # macro {uid: int, playerName: string}
@@ -33,4 +44,4 @@ scoreboard players add g_nextUid glbs_common 1
    data modify storage global_shop:common temp.playerName set from storage global_shop:common g_playerNameJson.name
    function global_shop:storage/store_manager/register_player/set_kv with storage global_shop:common temp
 
-return run scoreboard players get SUCCESS glbs_err_code
+return 0

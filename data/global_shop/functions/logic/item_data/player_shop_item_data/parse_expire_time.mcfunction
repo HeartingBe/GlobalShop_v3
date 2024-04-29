@@ -3,6 +3,11 @@ function global_shop:logic/item_data/add_seperator
 
 # 获取和换算时间
 execute store result score expireTime glbs_common run data get storage global_shop:common g_itemData.tag.global_shop.expireTime
+
+# 已经过期，写入“即将退回”
+execute if score expireTime glbs_common < g_time glbs_common run return run data modify storage global_shop:common g_text append value {"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"item_frame.expire_time.1\"","color":"white","extra":[{"text":": ","color":"white"},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"item_frame.expire_time.5\"","color":"#FFA500"}]}
+
+# 未过期，计算并显示剩余时间
 scoreboard players operation expireTime glbs_common -= g_time glbs_common
 
 scoreboard players operation expireDay glbs_common = expireTime glbs_common

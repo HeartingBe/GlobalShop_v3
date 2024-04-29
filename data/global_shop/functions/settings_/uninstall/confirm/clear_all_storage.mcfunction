@@ -27,6 +27,7 @@ data remove storage global_shop:common enchIdString
 data remove storage global_shop:common temp2
 data remove storage global_shop:common char
 data remove storage global_shop:common tempStr
+data remove storage global_shop:common checkStrList
 
 data remove storage global_shop:storage g_scoreboard
 data remove storage global_shop:storage enchantment
