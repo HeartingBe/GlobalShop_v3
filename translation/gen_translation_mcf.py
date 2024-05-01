@@ -41,14 +41,14 @@ def gen(lang):
         # 获取第 B 列也就是第 2 列的值
         cell = sheet_common.cell(row=i, column=2)
         value = cell.value
-        # 如果当前单元格是空的，或者它的值并不是以 "g_lang" 开头，跳过
+        # 如果当前单元格是空的，或者它的值不是以 "g_lang" 开头，跳过
         if value is None or not value.startswith("g_lang"):
             continue;
         # 到这里找到一个翻译键，检查其右侧格子有没有通用键
-        # 同行第 5 列即为值，输出命令
-        translation = sheet_common.cell(row=i, column=5).value
+        # 同行第 7 列即为值，输出命令
+        translation = sheet_common.cell(row=i, column=7).value
         if translation is None:
-            output_file.write(f"common translation error in row {i} col 5\n")
+            output_file.write(f"common translation error in row {i} col 7\n")
             continue
         output_file.write(f'data modify storage global_shop:storage g_lang."{value[7:]}" set value "{translation}"\n')
 
@@ -69,7 +69,7 @@ def gen(lang):
         # 获取第 B 列也就是第 2 列的值
         cell = sheet.cell(row=i, column=2)
         value = cell.value
-        # 如果当前单元格是空的，或者它的值并不是以 "g_lang" 开头，跳过
+        # 如果当前单元格是空的，或者它的值不是以 "g_lang" 开头，跳过
         if value is None or not value.startswith("g_lang"):
             continue;
         # 到这里找到一个翻译键，检查其右侧格子有没有通用键

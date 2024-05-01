@@ -30,7 +30,6 @@ scoreboard players add g_nextUid glbs_common 1
 # 判断解析是否失败
 data modify storage global_shop:common checkStrList set value ["0"]
 # temp 为 0 说明尾插失败，即 g_playerNameJson.name 不存在或不是字符串
-data modify storage global_shop:common g_playerNameJson.name set value {}
 execute store result score temp glbs_common run data modify storage global_shop:common checkStrList append from storage global_shop:common g_playerNameJson.name
 execute if score temp glbs_common matches 0 run return run function global_shop:storage/store_manager/register_player/parse_player_name_fail
 # 判断是否是空串
