@@ -5,8 +5,9 @@ execute if score @s glbs_inputter_2 matches ..-1 run return run function global_
 
 # 判重、定位、跳转
    scoreboard players operation id glbs_common = @s glbs_inputter_2
-   # 已经在浏览
-   execute on vehicle if score @s glbs_last_view_id = id glbs_common on passengers if entity @s[type=minecraft:player] run return run function global_shop:logic/menu/handlers/player_shop_handler/handle/check_player_input/2/already
+   # 判断是否已经找到这个 id 的物品
+   execute on vehicle on passengers if entity @s[type=minecraft:item_display,tag=!glbs_killed] if score @s glbs_order matches 13 store result score id0 glbs_common run data get entity @s item.tag.global_shop.id
+   execute if score @s glbs_inputter_2 = id0 glbs_common run return run function global_shop:logic/menu/handlers/player_shop_handler/handle/check_player_input/2/already
    # 获取 index
    execute store result score temp glbs_common run function global_shop:storage/store_manager/locate_index_in_player_shop_list_by_id
    # 不存在
@@ -22,7 +23,8 @@ execute if score @s glbs_inputter_2 matches ..-1 run return run function global_
       scoreboard players remove beginIndex glbs_common 13
    # 跳转
    execute on vehicle run scoreboard players operation @s glbs_begin_index = beginIndex glbs_common
-   execute on vehicle run function global_shop:logic/menu/handlers/player_shop_handler/refresh
+   execute on vehicle run function global_shop:logic/menu/handlers/player_shop_handler/refresh_jump
+   tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"player_shop.jump_id.success\"","color":"green"}]
    # 音效 跳转
    function global_shop:sound/jump
 

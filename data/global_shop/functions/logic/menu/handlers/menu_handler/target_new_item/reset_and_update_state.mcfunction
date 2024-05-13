@@ -2,6 +2,9 @@
 # @param targetOrder 玩家看向的物品展示实体的序号
 # @executor Menu
 
+# 玩家看向了菜单外，记录 glbs_last_view_id 为 0
+execute if score targetOrder glbs_common matches -1 run scoreboard players set @s glbs_last_view_id 0
+
 # 更新上一次看向的物品展示实体的序号 lastActionTarget_
 scoreboard players operation @s glbs_last_view_order = targetOrder glbs_common
 

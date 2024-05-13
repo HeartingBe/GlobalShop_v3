@@ -6,6 +6,7 @@ execute store result score playerMoney glbs_common run function global_shop:logi
 execute if score playerMoney glbs_common > INT32_MAX_HALF glbs_common run return run function global_shop:logic/menu/handlers/player_cash_exchange_handler/handle/player_left_click/deposit/too_much_money
 
 # 获取主手的货币
+data remove storage global_shop:common g_itemData
 data modify storage global_shop:common g_itemData set from entity @s SelectedItem
 execute unless data storage global_shop:common g_itemData.tag.global_shop.price run return run function global_shop:logic/menu/handlers/player_cash_exchange_handler/handle/player_left_click/deposit/no_cash_on_hand
 # 计算货币总价值

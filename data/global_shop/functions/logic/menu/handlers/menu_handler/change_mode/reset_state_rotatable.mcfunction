@@ -6,7 +6,7 @@ execute on passengers if entity @s[type=minecraft:interaction] run function glob
 # 初始化 lastAction_
 scoreboard players operation @s glbs_last_action = Action::NO_ACTION_THIS_PLAYER glbs_common
 # 上一个看向的物品的序号 order
-scoreboard players set @s glbs_last_view_order 0
+scoreboard players set @s glbs_last_view_order -1
 # 上一个看向的物品的 id
 scoreboard players set @s glbs_last_view_id 0
 # 上一个左键的物品的 order 或 id
