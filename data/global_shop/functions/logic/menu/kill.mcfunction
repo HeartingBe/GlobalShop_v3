@@ -5,9 +5,6 @@
 # 清除 Interactor、TextDisplay、ItemDisplay
 function global_shop:logic/menu/kill/kill_passengers
 
-# 清除交互实体
-execute on passengers if entity @s[type=minecraft:interaction] run function global_shop:logic/interactor/kill
-
 # 需要对玩家进行的操作（玩家可能不存在，例如玩家脱离，但不影响）
 execute on passengers if entity @s[type=minecraft:player] run function global_shop:logic/menu/kill/player
 

@@ -3,6 +3,7 @@
 # 用 glbs_last_view_id 获取物品信息
    # 玩家点击空项或菜单外，无任何效果，然后返回
    execute if score @s glbs_last_view_id matches 0 run return run function global_shop:logic/menu/handlers/rotatable_menu_handler/handle/player_left_click/click_control_null_item
+   execute on passengers if entity @s[type=minecraft:player] store result score uid glbs_common run scoreboard players get @s glbs_uid
    # 玩家点击非空项，先获取物品信息
    function global_shop:storage/store_manager/get_return_list_elem_by_uid_and_id
 

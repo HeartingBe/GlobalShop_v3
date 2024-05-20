@@ -8,7 +8,9 @@ data remove storage global_shop:common g_text
 data remove storage global_shop:common g_checkSlotResult
 data remove storage global_shop:common inventory
 data remove storage global_shop:common g_itemIdTranslateJson
-data remove storage global_shop:common g_itemTagJson
+data remove storage global_shop:common g_itemIdTranslateString
+data remove storage global_shop:common g_itemHoverEventString
+data remove storage global_shop:common g_itemTagString
 data remove storage global_shop:common g_itemData
 data remove storage global_shop:common g_itemDataTemp
 data remove storage global_shop:common g_itemDataThisSlot
@@ -36,6 +38,7 @@ data remove storage global_shop:storage level1
 data remove storage global_shop:storage g_cashInfo
 data remove storage global_shop:storage g_lang
 data remove storage global_shop:storage char
+data remove storage global_shop:storage TELLRAW_PREFIX
 
 data remove storage global_shop:menu_preset_and_control DEFAULT_CASH_INFO
 data remove storage global_shop:menu_preset_and_control DEFAULT_CASH_NAME

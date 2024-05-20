@@ -6,6 +6,9 @@
 # 保证记分板有分数
 scoreboard players add @s glbs_permission 0
 
+# 检查玩家死亡
+execute if score @s glbs_deathCount matches 1.. run return run function global_shop:logic/menu/menu/die
+
 # 检查玩家是否注册
 scoreboard players set ret glbs_common 0
 execute unless score @s glbs_uid matches -2147483648..2147483647 store result score ret glbs_common run function global_shop:storage/store_manager/register_player

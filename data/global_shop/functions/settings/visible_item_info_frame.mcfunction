@@ -1,0 +1,1 @@
+execute on vehicle on passengers if entity @s[type=minecraft:text_display] run data merge entity @s {text_opacity:4b,background:0b}

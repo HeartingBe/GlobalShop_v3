@@ -1,6 +1,9 @@
 # @brief 玩家与秒相关的操作
 # @executor Player
 
+# 重置玩家死亡记分板
+scoreboard players reset @a[scores={glbs_deathCount=1..}] glbs_deathCount
+
 scoreboard players set temp glbs_common 0
 execute on vehicle if entity @s[type=minecraft:block_display,tag=global_shop] run scoreboard players set temp glbs_common 1
 

@@ -1,6 +1,8 @@
 # @brief 启动全球商店运行，由服务器管理员调用
 # @executor op
 
+execute if score g_enable glbs_common matches 1 run return run function global_shop:settings_/try_boot/already
+
 # 给该 op 权限
 execute unless score @s glbs_permission = Permission::ADMIN glbs_common run tellraw @s [{"type":"nbt","storage":"global_shop:storage","nbt":"TELLRAW_PREFIX","interpret":true},{"type":"nbt","storage":"global_shop:storage","nbt":"g_lang.\"boot.set_admin\"","color":"green"}]
 scoreboard players operation @s glbs_permission = Permission::ADMIN glbs_common

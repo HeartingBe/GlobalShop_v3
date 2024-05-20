@@ -281,6 +281,8 @@
    scoreboard objectives add glbs_use_time dummy
    # 玩家本是否被禁止使用商店，为 1 说明被封禁，为 0 或者没分数说明没有被封禁
    scoreboard objectives add glbs_ban dummy
+   # 玩家死亡次数，用于阻止在死亡后打开商店
+   scoreboard objectives add glbs_deathCount deathCount
 
 # Menu 相关记分板
    # glbs_mode 记录 mode_ 记分板

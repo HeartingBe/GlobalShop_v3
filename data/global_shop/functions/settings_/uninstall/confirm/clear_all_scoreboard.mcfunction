@@ -19,7 +19,8 @@ scoreboard objectives remove glbs_begin_index
 scoreboard objectives remove glbs_last_action
 scoreboard objectives remove glbs_last_view_id
 scoreboard objectives remove glbs_last_target
-# 已启用
+# 已弃用
 #scoreboard objectives remove glbs_err_code
 scoreboard objectives remove glbs_order
 scoreboard objectives remove glbs_ban
+scoreboard objectives remove glbs_deathCount

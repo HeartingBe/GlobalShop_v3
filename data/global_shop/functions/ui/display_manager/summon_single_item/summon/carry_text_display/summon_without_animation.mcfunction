@@ -1,7 +1,7 @@
 # @executor TextDisplayEntity
 
 # shadow 文本是否显示阴影
-data merge entity @s {Tags:["global_shop","glbs_to_set_state_normal"],transformation:{translation:[0.22f,0.0f,-5.0f],scale:[0.0f,0.0f,0.0f]},billboard:"fixed",alignment:"right",text_opacity:4b,background:0b,brightness:{block:15,sky:15},shadow:true}
+data merge entity @s {Tags:["global_shop","glbs_to_set_state_normal"],transformation:{translation:[0.22f,0.0f,-3.8f],scale:[1.1f,1.1f,1.1f]},billboard:"fixed",alignment:"right",text_opacity:-1b,background:0b,brightness:{block:15,sky:15},shadow:true}
 
 # 骑 ItemDisplay
 ride @s mount @e[type=minecraft:item_display,tag=glbs_to_carry_text_display,distance=..5,limit=1]
