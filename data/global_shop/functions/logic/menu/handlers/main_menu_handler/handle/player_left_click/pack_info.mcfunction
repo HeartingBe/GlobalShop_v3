@@ -1,7 +1,7 @@
 #（本版本为 v3.0，编号 1）
 
 tellraw @s [{"text":"■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■","color":"#e7e7e7"}]
-tellraw @s ["                 ",{"text":"GlobalShop v3.0.0","color":"#00f178","bold":true}]
+tellraw @s ["                 ",{"text":"GlobalShop v3.0.1","color":"#00f178","bold":true}]
 tellraw @s ["   ",{"text":"https://github.com/HeartingBe/GlobalShop_v3.git","clickEvent":{"action":"open_url","value":"https://github.com/HeartingBe/GlobalShop_v3.git"},"hoverEvent":{"action":"show_text","contents":["\u00a7bClick to access the project address"]},"color":"yellow","underlined":true}]
 tellraw @s [{"text":""}]
 tellraw @s ["                    ",{"text":"Developers","color":"#00f178","bold":true}]

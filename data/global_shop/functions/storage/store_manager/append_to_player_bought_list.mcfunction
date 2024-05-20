@@ -5,3 +5,5 @@
 # @executor Player
 
 $data modify storage global_shop:storage g_playerBoughtListMap.$(playerUid) append from storage global_shop:common g_itemData
+
+$execute if data storage global_shop:storage g_playerBoughtListMap.$(playerUid)[27] run data remove storage global_shop:storage g_playerBoughtListMap.$(playerUid)[0]
