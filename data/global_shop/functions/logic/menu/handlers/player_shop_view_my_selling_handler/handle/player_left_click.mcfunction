@@ -4,7 +4,7 @@
    # 玩家点击空项或菜单外，无任何效果，然后返回
    execute if score @s glbs_last_view_id matches 0 run return run function global_shop:logic/menu/handlers/rotatable_menu_handler/handle/player_left_click/click_control_null_item
    # 玩家点击非空项，先获取物品信息
-      # 同时，物品的 index 会存储在 index glbs_common（不能调 global_shop:storage/store_manager/get_player_selling_list_elem_by_id，因为需要获取 index）
+      # 同时，物品的 index 会存储在 index glbs_common（不能调 global_shop:storage/store_manager/get_player_selling_list_elem_by_id，因为需要获取 index 供后续使用）
    function global_shop:storage/store_manager/get_player_shop_list_elem_by_id
 
 # 物品不存在，刷新显示

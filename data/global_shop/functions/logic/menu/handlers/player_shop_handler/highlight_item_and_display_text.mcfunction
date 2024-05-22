@@ -12,8 +12,8 @@ execute unless score @s glbs_order = targetOrder glbs_common run return run func
    execute if score temp2 glbs_common matches 0 on vehicle run return run scoreboard players set @s glbs_last_view_id 0
    # 获取物品信息
    execute on vehicle run scoreboard players operation @s glbs_last_view_id = temp2 glbs_common
-   execute store result score sellerUid glbs_common run data get entity @s item.tag.global_shop.sourcePlayerUid
-   execute on vehicle run function global_shop:storage/store_manager/get_player_selling_list_elem_by_id
+   execute store result score uid glbs_common run data get entity @s item.tag.global_shop.sourcePlayerUid
+   execute on vehicle run function global_shop:storage/store_manager/get_player_selling_list_elem_by_uid_and_id
       # 物品不存在
       execute unless data storage global_shop:common g_itemData on vehicle run return run scoreboard players set @s glbs_last_view_id -1
       # 物品存在，高亮、展示文本
