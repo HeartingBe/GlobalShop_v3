@@ -112,7 +112,7 @@ Scheduler#Tick 函数调到 Shop#Perform，接着调用每个 Menu 实体的 Per
 
 **菜单示例: **
 <div style="text-align:center"><img src="md_images_design/shop_unit.png" width="75%"/></div>
-<center>玩家打开商店的整体组合</center>
+<center>玩家打开商店的整体组合(1.27 改为 3.8)</center>
 <br/>
 <div style="text-align:center"><img src="md_images_design/ui.png" width="85%"/></div>
 <center>ui</center>

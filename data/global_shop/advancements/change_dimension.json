@@ -1,0 +1,10 @@
+{
+    "criteria": {
+      "example": {
+        "trigger": "minecraft:changed_dimension"
+      }
+    },
+    "rewards": {
+        "function": "global_shop:advancements/change_dimension"
+    }
+  }
